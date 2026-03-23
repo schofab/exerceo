@@ -41,16 +41,16 @@ export default async function CollectionPage({ params }: PageProps) {
     supabase
       .from("creatures")
       .select("*")
-      .order("stars_required") as Promise<{ data: Creature[] | null }>,
+      .order("stars_required")
+      .returns<Creature[]>(),
     supabase
       .from("enfant_creatures")
       .select("creature_id, unlocked_at")
-      .eq("enfant_id", enfantId) as Promise<
-      { data: { creature_id: string; unlocked_at: string }[] | null }
-    >,
-    supabase.rpc("get_etoiles_enfant", { p_enfant_id: enfantId }) as Promise<{
-      data: number | null;
-    }>,
+      .eq("enfant_id", enfantId)
+      .returns<{ creature_id: string; unlocked_at: string }[]>(),
+    supabase
+      .rpc("get_etoiles_enfant", { p_enfant_id: enfantId })
+      .returns<number>(),
   ]);
 
   const etoiles = Number(totalEtoiles ?? 0);
