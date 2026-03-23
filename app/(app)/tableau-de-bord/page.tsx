@@ -54,7 +54,9 @@ export default async function TableauDeBordPage() {
       ),
       Promise.all(
         (enfants as Enfant[]).map((e) =>
-          (supabase.rpc("get_faiblesses_enfant", { p_enfant_id: e.id }) as Promise<{ data: NotionStats[] | null }>).then(
+          supabase
+  .rpc("get_faiblesses_enfant", { p_enfant_id: e.id })
+  .returns<NotionStats[]>().then(
             ({ data }) => ({ id: e.id, stats: data ?? [] })
           )
         )
