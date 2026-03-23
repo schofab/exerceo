@@ -77,9 +77,9 @@ export default async function NouvelleSessionPage({
     enfants.find((e) => e.id === defaultEnfantId) ?? enfants[0];
 
   // Faiblesses pour afficher la mission spéciale
-  const { data: faiblessesData } = await (
-    supabase.rpc("get_faiblesses_enfant", { p_enfant_id: enfantSelectionne.id }) as Promise<{ data: NotionStats[] | null }>
-  );
+  const { data: faiblessesData } = await supabase
+  .rpc("get_faiblesses_enfant", { p_enfant_id: enfantSelectionne.id })
+  .returns<NotionStats[]>();
   const faiblesses: NotionStats[] = (faiblessesData ?? []).filter((f) => f.est_fragile);
 
   const quizMatiere = getQuizMatiere();
