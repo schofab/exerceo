@@ -13,7 +13,9 @@ export const metadata: Metadata = {
   openGraph: { siteName: "Mixarto", locale: "fr_FR", type: "website" },
 }
 
-const ETSY_URL  = "https://www.etsy.com/shop/MixartoHappyStudio?ref=dashboard-header"
+const ETSY_URL          = "https://www.etsy.com/shop/MixartoHappyStudio?ref=dashboard-header"
+const ETSY_PORTRAITS    = "https://www.etsy.com/shop/MixartoHappyStudio?ref=dashboard-header&section_id=54554245"
+const ETSY_PRINTS       = "https://www.etsy.com/shop/MixartoHappyStudio?ref=dashboard-header&section_id=54429573"
 const EXERCEO   = "https://exerceo.mixarto.com"
 const NAVY      = "#071453"
 const GREEN     = "#6BD6A6"
@@ -178,7 +180,7 @@ export default function MixartoLanding() {
                     </p>
                   </div>
                   <a
-                    href={ETSY_URL}
+                    href={ETSY_PORTRAITS}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold text-white w-fit transition-opacity hover:opacity-90"
@@ -206,7 +208,7 @@ export default function MixartoLanding() {
                     </p>
                   </div>
                   <a
-                    href={ETSY_URL}
+                    href={ETSY_PRINTS}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold text-white w-fit transition-opacity hover:opacity-90"
@@ -283,17 +285,22 @@ export default function MixartoLanding() {
                 </div>
               </div>
 
-              {/* Vidéo en boucle — style gif, sans contrôles */}
-              <div className="rounded-2xl overflow-hidden aspect-[9/16] md:aspect-[3/4] max-w-xs mx-auto md:max-w-none" style={{ backgroundColor: "#C4B5FD" }}>
-                <video
-                  src="/videos/screen-exerceo.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
-                  aria-label="Démonstration de l'application Exerceo"
-                />
+              {/* Vidéo en boucle — style gif, sans contrôles, bandes rognées */}
+              <div className="flex justify-center md:justify-end">
+                <div
+                  className="rounded-2xl overflow-hidden"
+                  style={{ width: "220px", aspectRatio: "9/18", backgroundColor: "#C4B5FD" }}
+                >
+                  <video
+                    src="/videos/screen-exerceo.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover scale-[1.06]"
+                    aria-label="Démonstration de l'application Exerceo"
+                  />
+                </div>
               </div>
             </div>
           </div>
