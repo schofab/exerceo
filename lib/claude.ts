@@ -92,6 +92,24 @@ INTERDIT — double blanc : Ne jamais créer un exercice (de quelque type que ce
 - L'explication doit être factuelle et pédagogique — ne pas commencer par "Bravo" ou "Félicitations"
 - Adapte la difficulté EXACTEMENT au niveau et à la classe indiqués
 
+CHECKLIST DE VALIDATION FINALE — OBLIGATOIRE AVANT D'ÉCRIRE LE JSON :
+Pour chaque exercice, vérifie ces 5 points dans l'ordre. Si un seul échoue → REJETTE l'exercice et génère un exercice de remplacement.
+
+□ 1. UNICITÉ DE LA RÉPONSE : "Puis-je trouver 3 mots ou groupes de mots différents qui conviendraient aussi naturellement dans ce blank ?" — Si OUI → exercice INVALIDE. Reformule entièrement ou change de type. Cette règle s'applique SANS EXCEPTION à tous les types (texte_a_trous, conjugaison, calcul). Si le contexte ne contraint pas suffisamment la réponse → type "qcm" obligatoire.
+
+□ 2. NATURALITÉ DU FRANÇAIS ÉCRIT SOIGNÉ : "La phrase reconstituée (avec la réponse remplie) est-elle du français naturel et sans redondance ?" — Si NON → exercice INVALIDE. Cas concrets à bannir absolument :
+   ✗ "Le gâteau c'était très bon" → pléonasme (sujet nominal + c') → INVALIDE. Correct : "C'était un gâteau délicieux."
+   ✗ "Ce sont ses chats préférés de Margot" → double marquage possessif (ses + de Margot) → INVALIDE. Choisir soit "Ce sont ses chats préférés." soit "Ce sont les chats préférés de Margot."
+   ✗ Tout blank adverbe/CCM libre : "Lucas range ses affaires _____ dans son sac." → "rapidement", "soigneusement", "vite", "lentement" sont tous valides → INVALIDE. → QCM avec 4 adverbes proposés.
+
+□ 3. HOMOPHONES = QCM SANS EXCEPTION : Dès qu'un homophone est l'objet de l'exercice (ces/ses, c'est/s'est, c'était/s'était, a/à, ou/où, son/sont, leur/leurs…) → type "qcm" OBLIGATOIRE avec 4 options. Le type "texte_a_trous" est INTERDIT pour tout exercice portant sur les homophones, sans aucune exception.
+
+□ 4. CCM ET ADVERBES EN TEXTE_A_TROUS = INTERDIT : Tout blank occupant la position syntaxique d'un adverbe de manière, de lieu, de temps ou d'un CCL/CCT/CCM est interdit en texte_a_trous. → Utilise "qcm" avec 4 adverbes/groupes proposés dont un seul convient grammaticalement et sémantiquement (les 3 autres doivent être plausibles mais incorrects selon le contexte).
+
+□ 5. ORTHOGRAPHE DE L'ÉNONCÉ : Relis l'énoncé mot à mot. Vérifie : (a) accords en genre et en nombre de TOUS les adjectifs et déterminants, (b) accents, (c) conjugaisons présentes dans la phrase exemple. La moindre faute rend l'exercice invalide → reformule entièrement.
+
+RÈGLE GÉNÉRALE : en cas de doute sur l'unicité de la réponse ou la naturalité de la phrase → change de type ("qcm") ou change complètement de notion. Ne jamais garder un exercice incertain. Agis comme un enseignant exigeant qui relit chaque exercice avant de le remettre à un élève.
+
 RÈGLES D'ADAPTATION AU PROFIL — OBLIGATOIRES :
 Le champ "Niveau général" détermine la complexité de TOUS les exercices :
   • débutant → notions de début d'année, formulations courtes et simples, petits nombres (≤20 en maths), vocabulaire courant, évite les cas particuliers et les exceptions ; vise à rassurer et consolider les bases
@@ -203,7 +221,8 @@ INSTRUCTIONS FINALES :
 3. Pour chaque lacune listée, génère au moins un exercice ciblé mais accessible.
 4. Pour chaque point fort listé, augmente d'un cran la difficulté des exercices correspondants.
 5. Génère exactement ${nbExercices} exercices variés — types, sous-domaines et contextes TOUS différents.
-6. Répartis les exercices équitablement entre les matières demandées.`;
+6. Répartis les exercices équitablement entre les matières demandées.
+7. AVANT d'écrire le JSON final, applique les 5 contrôles de la CHECKLIST DE VALIDATION FINALE pour chaque exercice. Si un exercice échoue à un contrôle → génère un exercice de remplacement. N'inclure dans le JSON QUE des exercices ayant passé les 5 contrôles.`;
 
   const message = await client.messages.create({
     model: "claude-haiku-4-5-20251001",

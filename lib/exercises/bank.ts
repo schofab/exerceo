@@ -1,0 +1,43 @@
+import { Exercise } from "./types";
+
+export const EXERCISE_BANK: Exercise[] = [
+  {
+    id: "fr-homophone-ses-001",
+    matiere: "francais",
+    sous_domaine: "homophones",
+    notion: "ses_ces",
+    niveau: "CE2",
+    type: "qcm",
+    consigne: "Choisis le bon homophone.",
+    question: "Mon frère a oublié ___ cahiers à l'école.",
+    options: ["ses", "ces", "c'est", "s'est"],
+    bonne_reponse: "ses",
+    explication: "On écrit 'ses' car il s'agit d'un déterminant possessif.",
+  },
+  {
+    id: "fr-homophone-cest-001",
+    matiere: "francais",
+    sous_domaine: "homophones",
+    notion: "cest_sest",
+    niveau: "CE2",
+    type: "qcm",
+    consigne: "Choisis le bon homophone.",
+    question: "___ une belle histoire.",
+    options: ["c'est", "s'est"],
+    bonne_reponse: "c'est",
+    explication: "On écrit 'c'est' car cela signifie 'cela est'.",
+  },
+  {
+    id: "fr-homophone-a-001",
+    matiere: "francais",
+    sous_domaine: "homophones",
+    notion: "a_a",
+    niveau: "CE2",
+    type: "qcm",
+    consigne: "Choisis le bon homophone.",
+    question: "Lina ___ un joli carnet.",
+    options: ["a", "à"],
+    bonne_reponse: "a",
+    explication: "On écrit 'a' car c'est le verbe avoir.",
+  },
+];
