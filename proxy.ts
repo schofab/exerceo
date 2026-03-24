@@ -38,6 +38,21 @@ export async function proxy(request: NextRequest) {
     } = await supabase.auth.getUser();
 
     const pathname = request.nextUrl.pathname;
+    const host = request.headers.get("host") ?? "";
+
+    // ── Routage sous-domaine exerceo.mixarto.com ─────────────────────────────
+    // Sur "/", redirige vers l'app selon l'état de connexion.
+    // Les autres routes (ex : /connexion, /tableau-de-bord) passent normalement.
+    const isExerceoSubdomain =
+      host.startsWith("exerceo.") ||
+      host === "exerceo.localhost" ||
+      host === "exerceo.localhost:3000";
+
+    if (isExerceoSubdomain && pathname === "/") {
+      const url = request.nextUrl.clone();
+      url.pathname = user ? "/tableau-de-bord" : "/connexion";
+      return NextResponse.redirect(url);
+    }
 
     // Routes protégées
     const protectedPaths = [
