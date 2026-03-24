@@ -3,55 +3,66 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
+import { usePathname } from "next/navigation"
 
 const NAV = [
-  { href: "/#apps",     label: "Apps"       },
-  { href: "/#boutique", label: "Boutique"   },
-  { href: "/#a-propos", label: "À propos"   },
-  { href: "/contact",   label: "Contact"    },
+  { href: "/#apps",     label: "Apps",      hash: "apps"     },
+  { href: "/#boutique", label: "Boutique",  hash: "boutique" },
+  { href: "/#a-propos", label: "À propos",  hash: "a-propos" },
+  { href: "/contact",   label: "Contact",   hash: null       },
 ]
 
+const NAVY  = "#071453"
+const GREEN = "#6BD6A6"
+
 export default function MarketingHeader() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen]   = useState(false)
+  const pathname          = usePathname()
+
+  // Détermine si un lien est "actif" : page contact ou section hash
+  function isActive(href: string) {
+    if (href === "/contact") return pathname === "/contact"
+    return false // les ancres (#) sont gérées côté client via IntersectionObserver — non implémenté
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-stone-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
 
-          {/* Logo mixarto happy studio */}
-          <Link href="/" className="flex flex-col leading-none" aria-label="Mixarto — accueil">
+          {/* Logo mixarto en couleur avec "happy studio" */}
+          <Link href="/" aria-label="Mixarto — accueil" className="inline-flex">
             <Image
               src="/icons/Logo-mixarto.svg"
-              alt="mixarto"
-              width={96}
-              height={26}
+              alt="mixarto happy studio"
+              width={110}
+              height={43}
               priority
             />
-            <span className="text-[10px] font-semibold tracking-widest uppercase mt-0.5" style={{ color: "#6BD6A6" }}>
-              happy studio
-            </span>
           </Link>
 
           {/* Navigation desktop */}
           <nav className="hidden md:flex items-center gap-8" aria-label="Navigation principale">
-            {NAV.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className="text-sm font-medium transition-colors hover:opacity-80"
-                style={{ color: label === "Apps" ? "#6BD6A6" : "#071453" }}
-              >
-                {label}
-              </Link>
-            ))}
+            {NAV.map(({ href, label }) => {
+              const active = isActive(href)
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  className="text-sm font-medium transition-colors hover:opacity-70"
+                  style={{ color: active ? GREEN : NAVY }}
+                >
+                  {label}
+                </Link>
+              )
+            })}
           </nav>
 
           {/* CTA desktop */}
           <a
             href="https://exerceo.mixarto.com/"
             className="hidden md:inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "#071453" }}
+            style={{ backgroundColor: NAVY }}
           >
             Tester Exerceo
           </a>
@@ -60,7 +71,7 @@ export default function MarketingHeader() {
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden p-2 -mr-2 transition-colors"
-            style={{ color: "#071453" }}
+            style={{ color: NAVY }}
             aria-expanded={open}
             aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
           >
@@ -79,23 +90,26 @@ export default function MarketingHeader() {
         {/* Menu mobile */}
         {open && (
           <nav className="md:hidden border-t border-stone-100 py-4 space-y-1" aria-label="Navigation mobile">
-            {NAV.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                onClick={() => setOpen(false)}
-                className="block px-2 py-2.5 rounded-lg text-sm font-medium transition-colors hover:bg-stone-50"
-                style={{ color: label === "Apps" ? "#6BD6A6" : "#071453" }}
-              >
-                {label}
-              </Link>
-            ))}
+            {NAV.map(({ href, label }) => {
+              const active = isActive(href)
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  onClick={() => setOpen(false)}
+                  className="block px-2 py-2.5 rounded-lg text-sm font-medium transition-colors hover:bg-stone-50"
+                  style={{ color: active ? GREEN : NAVY }}
+                >
+                  {label}
+                </Link>
+              )
+            })}
             <div className="pt-3">
               <a
                 href="https://exerceo.mixarto.com/"
                 onClick={() => setOpen(false)}
                 className="block text-sm font-semibold px-4 py-3 rounded-xl text-white text-center hover:opacity-90 transition-opacity"
-                style={{ backgroundColor: "#071453" }}
+                style={{ backgroundColor: NAVY }}
               >
                 Tester Exerceo
               </a>

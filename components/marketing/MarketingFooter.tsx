@@ -11,12 +11,9 @@ export default function MarketingFooter() {
         {/* Grille principale */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8 pb-10 border-b" style={{ borderColor: "rgba(255,255,255,0.1)" }}>
 
-          {/* Logo + tagline */}
+          {/* Logo blanc + tagline */}
           <div className="col-span-2 md:col-span-1">
-            <Image src="/icons/Logo-mixarto.svg" alt="mixarto" width={96} height={26} className="brightness-0 invert mb-1" />
-            <p className="text-[10px] font-semibold tracking-widest uppercase mb-4" style={{ color: "#6BD6A6" }}>
-              happy studio
-            </p>
+            <Image src="/icons/Logo-mixarto-blanc.svg" alt="mixarto happy studio" width={110} height={43} className="mb-3" />
             <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
               Créations visuelles décalées &amp; apps imaginées pour le quotidien.
             </p>
