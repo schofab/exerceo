@@ -1,40 +1,41 @@
 import Link from "next/link"
+import Image from "next/image"
 
 const ETSY_URL = "https://www.etsy.com/shop/MixartoHappyStudio?ref=dashboard-header"
 
 export default function MarketingFooter() {
   return (
-    <footer className="bg-neutral-900 text-neutral-300">
+    <footer style={{ backgroundColor: "#071453" }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
 
         {/* Grille principale */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8 pb-12 border-b border-neutral-800">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8 pb-10 border-b" style={{ borderColor: "rgba(255,255,255,0.1)" }}>
 
-          {/* Marque */}
+          {/* Logo + tagline */}
           <div className="col-span-2 md:col-span-1">
-            <div className="text-xl font-bold text-white mb-3 tracking-tight">mixarto</div>
-            <p className="text-sm text-neutral-400 leading-relaxed max-w-xs">
-              Créations visuelles et applications utiles, conçus avec soin pour le quotidien.
+            <Image src="/icons/Logo-mixarto.svg" alt="mixarto" width={96} height={26} className="brightness-0 invert mb-1" />
+            <p className="text-[10px] font-semibold tracking-widest uppercase mb-4" style={{ color: "#6BD6A6" }}>
+              happy studio
+            </p>
+            <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
+              Créations visuelles décalées &amp; apps imaginées pour le quotidien.
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <h3 className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-5">
+            <h3 className="text-[10px] font-bold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.35)" }}>
               Navigation
             </h3>
             <ul className="space-y-3">
               {[
-                { href: "/", label: "Accueil" },
-                { href: "/exerceo", label: "Exerceo" },
-                { href: "/#boutique", label: "Boutique" },
-                { href: "/#a-propos", label: "À propos" },
+                { href: "/",          label: "Accueil"   },
+                { href: "/#apps",     label: "Exerceo"   },
+                { href: "/#boutique", label: "Boutique"  },
+                { href: "/#a-propos", label: "À propos"  },
               ].map(({ href, label }) => (
                 <li key={href}>
-                  <Link
-                    href={href}
-                    className="text-sm text-neutral-400 hover:text-white transition-colors"
-                  >
+                  <Link href={href} className="text-sm hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.55)" }}>
                     {label}
                   </Link>
                 </li>
@@ -42,24 +43,16 @@ export default function MarketingFooter() {
             </ul>
           </div>
 
-          {/* Boutique */}
+          {/* Boutique Etsy */}
           <div>
-            <h3 className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-5">
+            <h3 className="text-[10px] font-bold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.35)" }}>
               Boutique Etsy
             </h3>
             <ul className="space-y-3">
-              {[
-                "Portraits personnalisés",
-                "Digital prints",
-                "Cadeaux créatifs",
-              ].map((label) => (
+              {["Portraits personnalisés", "Digital prints"].map((label) => (
                 <li key={label}>
-                  <a
-                    href={ETSY_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-neutral-400 hover:text-white transition-colors"
-                  >
+                  <a href={ETSY_URL} target="_blank" rel="noopener noreferrer"
+                    className="text-sm hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.55)" }}>
                     {label}
                   </a>
                 </li>
@@ -67,29 +60,20 @@ export default function MarketingFooter() {
             </ul>
           </div>
 
-          {/* Légal */}
+          {/* Informations légales */}
           <div>
-            <h3 className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-5">
+            <h3 className="text-[10px] font-bold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.35)" }}>
               Informations
             </h3>
             <ul className="space-y-3">
               {[
-                { href: "/contact", label: "Contact" },
-                { href: "/mentions-legales", label: "Mentions légales" },
-                {
-                  href: "/politique-de-confidentialite",
-                  label: "Confidentialité",
-                },
-                {
-                  href: "/conditions-dutilisation",
-                  label: "CGU",
-                },
+                { href: "/contact",                        label: "Contact"          },
+                { href: "/mentions-legales",               label: "Mentions légales" },
+                { href: "/politique-de-confidentialite",   label: "Confidentialité"  },
+                { href: "/conditions-dutilisation",        label: "CGU"              },
               ].map(({ href, label }) => (
                 <li key={href}>
-                  <Link
-                    href={href}
-                    className="text-sm text-neutral-400 hover:text-white transition-colors"
-                  >
+                  <Link href={href} className="text-sm hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.55)" }}>
                     {label}
                   </Link>
                 </li>
@@ -99,11 +83,11 @@ export default function MarketingFooter() {
         </div>
 
         {/* Bas de page */}
-        <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <p className="text-xs text-neutral-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
             © {new Date().getFullYear()} Mixarto. Tous droits réservés.
           </p>
-          <p className="text-xs text-neutral-600">
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
             Fait avec soin en France
           </p>
         </div>

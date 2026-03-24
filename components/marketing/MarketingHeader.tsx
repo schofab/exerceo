@@ -1,7 +1,15 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
+
+const NAV = [
+  { href: "/#apps",     label: "Apps"       },
+  { href: "/#boutique", label: "Boutique"   },
+  { href: "/#a-propos", label: "À propos"   },
+  { href: "/contact",   label: "Contact"    },
+]
 
 export default function MarketingHeader() {
   const [open, setOpen] = useState(false)
@@ -11,58 +19,48 @@ export default function MarketingHeader() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
 
-          {/* Wordmark */}
-          <Link href="/" className="flex items-baseline gap-1.5 group" aria-label="Mixarto — accueil">
-            <span className="text-lg font-bold tracking-tight text-neutral-900 group-hover:text-neutral-700 transition-colors">
-              mixarto
-            </span>
-            <span className="text-[10px] font-semibold text-neutral-400 uppercase tracking-widest hidden sm:inline">
-              studio
+          {/* Logo mixarto happy studio */}
+          <Link href="/" className="flex flex-col leading-none" aria-label="Mixarto — accueil">
+            <Image
+              src="/icons/Logo-mixarto.svg"
+              alt="mixarto"
+              width={96}
+              height={26}
+              priority
+            />
+            <span className="text-[10px] font-semibold tracking-widest uppercase mt-0.5" style={{ color: "#6BD6A6" }}>
+              happy studio
             </span>
           </Link>
 
           {/* Navigation desktop */}
-          <nav className="hidden md:flex items-center gap-7" aria-label="Navigation principale">
-            <Link
-              href="/exerceo"
-              className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors font-medium"
-            >
-              Exerceo
-            </Link>
-            <Link
-              href="/#boutique"
-              className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
-            >
-              Boutique
-            </Link>
-            <Link
-              href="/#a-propos"
-              className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
-            >
-              À propos
-            </Link>
-            <Link
-              href="/contact"
-              className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
-            >
-              Contact
-            </Link>
+          <nav className="hidden md:flex items-center gap-8" aria-label="Navigation principale">
+            {NAV.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className="text-sm font-medium transition-colors hover:opacity-80"
+                style={{ color: label === "Apps" ? "#6BD6A6" : "#071453" }}
+              >
+                {label}
+              </Link>
+            ))}
           </nav>
 
           {/* CTA desktop */}
-          <div className="hidden md:flex items-center gap-3">
-            <a
-              href="https://exerceo.mixarto.com/"
-              className="text-sm font-semibold px-4 py-2 rounded-lg bg-neutral-900 text-white hover:bg-neutral-700 transition-colors"
-            >
-              Tester Exerceo
-            </a>
-          </div>
+          <a
+            href="https://exerceo.mixarto.com/"
+            className="hidden md:inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            style={{ backgroundColor: "#071453" }}
+          >
+            Tester Exerceo
+          </a>
 
           {/* Burger mobile */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden p-2 -mr-2 text-neutral-600 hover:text-neutral-900 transition-colors"
+            className="md:hidden p-2 -mr-2 transition-colors"
+            style={{ color: "#071453" }}
             aria-expanded={open}
             aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
           >
@@ -80,25 +78,14 @@ export default function MarketingHeader() {
 
         {/* Menu mobile */}
         {open && (
-          <nav
-            className="md:hidden border-t border-stone-100 py-4 space-y-1"
-            aria-label="Navigation mobile"
-          >
-            {[
-              { href: "/exerceo", label: "Exerceo", bold: true },
-              { href: "/#boutique", label: "Boutique", bold: false },
-              { href: "/#a-propos", label: "À propos", bold: false },
-              { href: "/contact", label: "Contact", bold: false },
-            ].map(({ href, label, bold }) => (
+          <nav className="md:hidden border-t border-stone-100 py-4 space-y-1" aria-label="Navigation mobile">
+            {NAV.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
-                className={`block px-2 py-2.5 rounded-lg text-sm transition-colors ${
-                  bold
-                    ? "font-semibold text-neutral-800 hover:bg-stone-50"
-                    : "text-neutral-600 hover:text-neutral-900 hover:bg-stone-50"
-                }`}
+                className="block px-2 py-2.5 rounded-lg text-sm font-medium transition-colors hover:bg-stone-50"
+                style={{ color: label === "Apps" ? "#6BD6A6" : "#071453" }}
               >
                 {label}
               </Link>
@@ -107,7 +94,8 @@ export default function MarketingHeader() {
               <a
                 href="https://exerceo.mixarto.com/"
                 onClick={() => setOpen(false)}
-                className="block text-sm font-semibold px-4 py-3 rounded-xl bg-neutral-900 text-white text-center hover:bg-neutral-700 transition-colors"
+                className="block text-sm font-semibold px-4 py-3 rounded-xl text-white text-center hover:opacity-90 transition-opacity"
+                style={{ backgroundColor: "#071453" }}
               >
                 Tester Exerceo
               </a>
