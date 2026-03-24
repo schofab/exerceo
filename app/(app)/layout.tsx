@@ -38,7 +38,7 @@ export default async function AppLayout({
       {/* ── Nav principale ── */}
       <nav className="bg-white border-b border-gray-100 px-4 py-3 sticky top-0 z-20 shadow-sm">
         <div className="max-w-md mx-auto flex items-center justify-between">
-          <Logo href="/" className="scale-75 origin-left" />
+          <Logo className="scale-75 origin-left" />
           <div className="flex items-center gap-3">
             {profile?.is_premium ? (
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border" style={{ backgroundColor: "#6bd6a6", color: "#071453", borderColor: "#6bd6a6" }}>

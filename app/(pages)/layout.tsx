@@ -12,7 +12,7 @@ export default function PagesLayout({
       {/* ── Header simple ── */}
       <header className="border-b border-gray-100 px-4 py-3">
         <div className="max-w-md mx-auto flex items-center justify-between">
-          <Logo href="/" />
+          <Logo />
           <Link
             href="/"
             className="text-sm font-medium text-gray-400 hover:text-gray-600 transition-colors"
