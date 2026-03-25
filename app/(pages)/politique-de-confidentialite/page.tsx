@@ -1,26 +1,33 @@
 export const metadata = {
-  title: "Politique de confidentialité — Exerceo",
+  title: "Politique de confidentialité — Mixarto",
 };
 
-function Section({ titre, children }: { titre: string; children: React.ReactNode }) {
+const NAVY = "#071453";
+const PURPLE = "#748bf7";
+
+function Section({ numero, titre, children }: { numero: number; titre: string; children: React.ReactNode }) {
   return (
     <section className="space-y-2">
-      <h2 className="text-base font-bold" style={{ color: "#071453" }}>
+      <h2 className="text-base font-bold flex items-baseline gap-2" style={{ color: NAVY }}>
+        <span
+          className="text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
+          style={{ background: "#f0f2ff", color: PURPLE }}
+        >
+          {numero}
+        </span>
         {titre}
       </h2>
-      <div className="text-sm leading-relaxed text-gray-600 space-y-2">
-        {children}
-      </div>
+      <div className="text-sm leading-relaxed text-gray-600 space-y-2 pl-7">{children}</div>
     </section>
   );
 }
 
 function Liste({ items }: { items: string[] }) {
   return (
-    <ul className="space-y-1 pl-1">
+    <ul className="space-y-1">
       {items.map((item) => (
         <li key={item} className="flex items-start gap-2">
-          <span style={{ color: "#748bf7" }} className="font-bold mt-0.5 flex-shrink-0">·</span>
+          <span style={{ color: PURPLE }} className="font-bold mt-0.5 flex-shrink-0">·</span>
           <span>{item}</span>
         </li>
       ))}
@@ -31,103 +38,96 @@ function Liste({ items }: { items: string[] }) {
 export default function PolitiqueConfidentialitePage() {
   return (
     <article className="space-y-7 animate-fade-slide-up">
-      <h1 className="text-2xl font-extrabold" style={{ color: "#071453" }}>
+      <h1 className="text-2xl font-extrabold" style={{ color: NAVY }}>
         Politique de confidentialité
       </h1>
 
-      <p className="text-sm leading-relaxed text-gray-600">
-        La présente politique de confidentialité décrit la manière dont
-        l'application Exerceo collecte, utilise et protège les données des
-        utilisateurs.
-      </p>
+      <Section numero={1} titre="Introduction">
+        <p>Mixarto attache une grande importance à la protection des données personnelles.</p>
+      </Section>
 
-      <Section titre="Données collectées">
+      <Section numero={2} titre="Données collectées">
+        <p>Nous pouvons collecter :</p>
+        <Liste
+          items={[
+            "Adresse email",
+            "Données liées à l'utilisation de l'application Exerceo",
+            "Données de navigation (cookies, analytics)",
+          ]}
+        />
+      </Section>
+
+      <Section numero={3} titre="Finalité de la collecte">
+        <p>Les données sont utilisées pour :</p>
+        <Liste
+          items={[
+            "Fournir et améliorer l'application",
+            "Personnaliser les exercices",
+            "Gérer les comptes utilisateurs",
+            "Assurer le support client",
+          ]}
+        />
+      </Section>
+
+      <Section numero={4} titre="Base légale">
+        <Liste
+          items={[
+            "Exécution du service",
+            "Consentement (cookies)",
+            "Intérêt légitime (amélioration produit)",
+          ]}
+        />
+      </Section>
+
+      <Section numero={5} titre="Hébergement des données">
+        <p>Les données sont stockées via : <strong>Supabase</strong>.</p>
+      </Section>
+
+      <Section numero={6} titre="Durée de conservation">
+        <p>Les données sont conservées uniquement le temps nécessaire au service.</p>
+      </Section>
+
+      <Section numero={7} titre="Partage des données">
         <p>
-          Lors de l'utilisation de l'application Exerceo, certaines données
-          peuvent être collectées afin d'assurer le bon fonctionnement du
-          service :
+          Les données ne sont jamais revendues. Elles peuvent être utilisées via des services tiers :
         </p>
         <Liste
           items={[
-            "Adresse email du parent lors de la création du compte",
-            "Informations liées à l'utilisation de l'application",
-            "Progression de l'enfant dans les exercices",
-            "Statistiques d'utilisation nécessaires à l'amélioration du service",
+            "Stripe (paiement)",
+            "Supabase (base de données)",
           ]}
         />
-        <p>
-          Aucune donnée personnelle de l'enfant n'est collectée à des fins
-          commerciales.
-        </p>
       </Section>
 
-      <Section titre="Utilisation des données">
-        <p>Les données collectées sont utilisées uniquement pour :</p>
+      <Section numero={8} titre="Sécurité">
+        <p>Des mesures techniques sont mises en place pour protéger les données.</p>
+      </Section>
+
+      <Section numero={9} titre="Droits des utilisateurs">
+        <p>Conformément au RGPD, vous pouvez :</p>
         <Liste
           items={[
-            "Permettre la création et la gestion du compte utilisateur",
-            "Sauvegarder la progression dans l'application",
-            "Améliorer les fonctionnalités du service",
+            "Accéder à vos données",
+            "Demander leur modification ou suppression",
+            "Demander leur portabilité",
           ]}
         />
         <p>
-          Les données ne sont pas revendues ni partagées à des tiers à des fins
-          commerciales.
+          Contact :{" "}
+          <a href="mailto:hellomixarto@gmail.com" className="font-semibold" style={{ color: PURPLE }}>
+            hellomixarto@gmail.com
+          </a>
         </p>
       </Section>
 
-      <Section titre="Paiements">
-        <p>
-          Les paiements effectués dans l'application sont traités par la
-          plateforme sécurisée Stripe. Les informations bancaires ne sont jamais
-          stockées par Exerceo.
-        </p>
-      </Section>
-
-      <Section titre="Hébergement des données">
-        <p>
-          Les données des utilisateurs sont hébergées via la plateforme
-          Supabase. Des mesures techniques et organisationnelles sont mises en
-          place afin d'assurer la sécurité des données.
-        </p>
-      </Section>
-
-      <Section titre="Conservation des données">
-        <p>
-          Les données sont conservées pendant la durée d'utilisation du compte
-          utilisateur. Les utilisateurs peuvent demander la suppression de leurs
-          données à tout moment en contactant l'adresse suivante :
-        </p>
-        <a
-          href="mailto:hellomixarto@gmail.com"
-          className="font-semibold"
-          style={{ color: "#748bf7" }}
-        >
-          hellomixarto@gmail.com
-        </a>
-      </Section>
-
-      <Section titre="Droits des utilisateurs">
-        <p>
-          Conformément au Règlement général sur la protection des données
-          (RGPD), chaque utilisateur dispose des droits suivants :
-        </p>
+      <Section numero={10} titre="Cookies">
+        <p>Le site peut utiliser des cookies pour :</p>
         <Liste
           items={[
-            "Droit d'accès aux données",
-            "Droit de rectification",
-            "Droit de suppression",
-            "Droit à la portabilité",
+            "Améliorer l'expérience utilisateur",
+            "Analyser l'usage du site",
           ]}
         />
-        <p>Toute demande peut être adressée à :</p>
-        <a
-          href="mailto:hellomixarto@gmail.com"
-          className="font-semibold"
-          style={{ color: "#748bf7" }}
-        >
-          hellomixarto@gmail.com
-        </a>
       </Section>
     </article>
   );

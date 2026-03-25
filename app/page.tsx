@@ -3,6 +3,18 @@ import Image from "next/image"
 import Link from "next/link"
 import MarketingHeader from "@/components/marketing/MarketingHeader"
 import MarketingFooter from "@/components/marketing/MarketingFooter"
+import Carousel from "@/components/marketing/Carousel"
+
+const CAROUSEL_IMAGES = [
+  { src: "/images/carousel/01.jpg", alt: "Création Mixarto" },
+  { src: "/images/carousel/02.jpg", alt: "Création Mixarto" },
+  { src: "/images/carousel/03.jpg", alt: "Création Mixarto" },
+  { src: "/images/carousel/04.jpg", alt: "Création Mixarto" },
+  { src: "/images/carousel/05.jpg", alt: "Création Mixarto" },
+  { src: "/images/carousel/06.jpg", alt: "Création Mixarto" },
+  { src: "/images/carousel/07.jpg", alt: "Création Mixarto" },
+  { src: "/images/carousel/08.jpg", alt: "Création Mixarto" },
+]
 
 export const metadata: Metadata = {
   title: "Mixarto — Créations visuelles & applications pour le quotidien",
@@ -68,15 +80,9 @@ export default function MixartoLanding() {
                 </div>
               </div>
 
-              {/* Carousel placeholder */}
-              <div
-                className="rounded-2xl aspect-video flex items-center justify-center"
-                style={{ backgroundColor: NAVY }}
-                aria-label="Carousel de présentation"
-              >
-                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.3)" }}>
-                  Carousel
-                </span>
+              {/* Carousel */}
+              <div className="rounded-2xl aspect-[4/3] w-full overflow-hidden">
+                <Carousel images={CAROUSEL_IMAGES} />
               </div>
             </div>
           </div>
@@ -189,9 +195,14 @@ export default function MixartoLanding() {
                     Voir sur Etsy
                   </a>
                 </div>
-                {/* Image placeholder */}
-                <div className="w-32 md:w-40 shrink-0 flex items-center justify-center" style={{ backgroundColor: "rgba(255,255,255,0.3)" }}>
-                  <span className="text-3xl">🐾</span>
+                <div className="w-32 md:w-40 shrink-0 relative">
+                  <Image
+                    src="/images/portrait.jpg"
+                    alt="Portrait personnalisé d'animal"
+                    fill
+                    className="object-cover"
+                    sizes="160px"
+                  />
                 </div>
               </article>
 
@@ -217,9 +228,14 @@ export default function MixartoLanding() {
                     Voir sur Etsy
                   </a>
                 </div>
-                {/* Image placeholder */}
-                <div className="w-32 md:w-40 shrink-0 flex items-center justify-center" style={{ backgroundColor: "rgba(255,255,255,0.3)" }}>
-                  <span className="text-3xl">🖼️</span>
+                <div className="w-32 md:w-40 shrink-0 relative">
+                  <Image
+                    src="/images/digital-print.jpg"
+                    alt="Digital print à télécharger"
+                    fill
+                    className="object-cover"
+                    sizes="160px"
+                  />
                 </div>
               </article>
             </div>
@@ -285,11 +301,14 @@ export default function MixartoLanding() {
                 </div>
               </div>
 
-              {/* Vidéo en boucle — style gif, sans contrôles, bandes rognées */}
-              <div className="flex justify-center md:justify-end">
+              {/* Vidéo en boucle — bloc coloré centré */}
+              <div
+                className="rounded-3xl flex items-center justify-center py-4 px-4"
+                style={{ backgroundColor: GREEN }}
+              >
                 <div
-                  className="rounded-2xl overflow-hidden"
-                  style={{ width: "220px", aspectRatio: "9/18", backgroundColor: "#C4B5FD" }}
+                  className="rounded-2xl overflow-hidden shadow-xl"
+                  style={{ width: "290px", aspectRatio: "9/18" }}
                 >
                   <video
                     src="/videos/screen-exerceo.mp4"
@@ -297,7 +316,7 @@ export default function MixartoLanding() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover scale-[1.06]"
+                    className="w-full h-full object-cover object-top"
                     aria-label="Démonstration de l'application Exerceo"
                   />
                 </div>
