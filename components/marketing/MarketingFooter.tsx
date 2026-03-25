@@ -1,10 +1,14 @@
 import Link from "next/link"
 import Image from "next/image"
+import ScrollToTop from "@/components/marketing/ScrollToTop"
 
-const ETSY_URL = "https://www.etsy.com/shop/MixartoHappyStudio?ref=dashboard-header"
+const ETSY_PORTRAITS  = "https://www.etsy.com/shop/MixartoHappyStudio?ref=dashboard-header&section_id=54554245"
+const ETSY_PRINTS     = "https://www.etsy.com/shop/MixartoHappyStudio?ref=dashboard-header&section_id=54429573"
 
 export default function MarketingFooter() {
   return (
+    <>
+    <ScrollToTop />
     <footer style={{ backgroundColor: "#071453" }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-20">
 
@@ -46,9 +50,12 @@ export default function MarketingFooter() {
               Boutique Etsy
             </h3>
             <ul className="space-y-3">
-              {["Portraits personnalisés", "Digital prints"].map((label) => (
+              {[
+                { href: ETSY_PORTRAITS, label: "Portraits personnalisés" },
+                { href: ETSY_PRINTS,    label: "Digital prints"          },
+              ].map(({ href, label }) => (
                 <li key={label}>
-                  <a href={ETSY_URL} target="_blank" rel="noopener noreferrer"
+                  <a href={href} target="_blank" rel="noopener noreferrer"
                     className="text-sm hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.55)" }}>
                     {label}
                   </a>
@@ -90,5 +97,6 @@ export default function MarketingFooter() {
         </div>
       </div>
     </footer>
+    </>
   )
 }
