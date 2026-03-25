@@ -1,6 +1,5 @@
-import Link from "next/link";
-import Logo from "@/components/Logo";
-import Footer from "@/components/Footer";
+import MarketingHeader from "@/components/marketing/MarketingHeader";
+import MarketingFooter from "@/components/marketing/MarketingFooter";
 
 export default function PagesLayout({
   children,
@@ -9,25 +8,14 @@ export default function PagesLayout({
 }) {
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      {/* ── Header simple ── */}
-      <header className="border-b border-gray-100 px-4 py-3">
-        <div className="max-w-md mx-auto flex items-center justify-between">
-          <Logo />
-          <Link
-            href="/"
-            className="text-sm font-medium text-gray-400 hover:text-gray-600 transition-colors"
-          >
-            ← Accueil
-          </Link>
-        </div>
-      </header>
+      <MarketingHeader />
 
       {/* ── Contenu ── */}
-      <main className="flex-1 max-w-md mx-auto w-full px-4 py-8">
+      <main className="flex-1 max-w-3xl mx-auto w-full px-4 sm:px-6 py-12">
         {children}
       </main>
 
-      <Footer />
+      <MarketingFooter />
     </div>
   );
 }
