@@ -75,11 +75,15 @@ export default async function TableauDeBordPage() {
   const lundi = new Date();
   lundi.setDate(lundi.getDate() - ((lundi.getDay() + 6) % 7));
   lundi.setHours(0, 0, 0, 0);
-  const sessionsSemaine = (allSessions ?? []).filter(
-    (s: { enfant_id: string; created_at: string }) =>
-      new Date(s.created_at) >= lundi
-  ).length;
   const objectifSemaine = 5;
+
+  // Sessions cette semaine par enfant
+  const sessionsSemaineParEnfant: Record<string, number> = {};
+  (allSessions ?? []).forEach((s: { enfant_id: string; created_at: string }) => {
+    if (new Date(s.created_at) >= lundi) {
+      sessionsSemaineParEnfant[s.enfant_id] = (sessionsSemaineParEnfant[s.enfant_id] ?? 0) + 1;
+    }
+  });
 
   const sessionRestantes =
     LIMITE_SESSIONS_GRATUITES - (profile?.sessions_used ?? 0);
@@ -132,35 +136,6 @@ export default async function TableauDeBordPage() {
         </div>
       )}
 
-      {/* ── Objectif de la semaine ── */}
-      {(allSessions ?? []).length > 0 && (
-        <div
-          className="rounded-2xl border border-blue-100 px-5 py-4"
-          style={{ backgroundColor: "#f5f9ff" }}
-        >
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="font-bold flex items-center gap-2" style={{ color: "#071453" }}>
-              <Image src="/icons/picto-cible.svg" alt="" width={22} height={22} />
-              Objectif de la semaine
-            </h3>
-            <span className="text-sm font-medium" style={{ color: "#071453" }}>
-              {sessionsSemaine}/{objectifSemaine} sessions
-            </span>
-          </div>
-          <div className="flex items-center gap-1">
-            {Array.from({ length: objectifSemaine }).map((_, i) => (
-              i < sessionsSemaine
-                ? <Image key={i} src="/icons/picto-etoile-pleine.svg" alt="" width={36} height={36} />
-                : <Image key={i} src="/icons/picto-etoile-vide.svg" alt="" width={36} height={36} />
-            ))}
-          </div>
-          {sessionsSemaine >= objectifSemaine && (
-            <p className="text-xs font-semibold mt-2" style={{ color: "#6bd6a6" }}>
-              Objectif atteint cette semaine ! Bravo !
-            </p>
-          )}
-        </div>
-      )}
 
       {/* ── Profils enfants ── */}
       <div>
@@ -191,6 +166,9 @@ export default async function TableauDeBordPage() {
             {(enfants as Enfant[]).map((enfant) => {
               const nbSessions = sessionsParEnfant[enfant.id] ?? 0;
               const classeCouleur = CLASSE_COULEUR[enfant.classe] ?? "blue";
+              const sessionsSemaine = Math.min(sessionsSemaineParEnfant[enfant.id] ?? 0, objectifSemaine);
+              const progressPct = Math.round((sessionsSemaine / objectifSemaine) * 100);
+              const objectifAtteint = sessionsSemaine >= objectifSemaine;
               return (
                 <Card key={enfant.id}>
                   {/* Row 1 : prénom + classe + poubelle */}
@@ -222,6 +200,31 @@ export default async function TableauDeBordPage() {
 
                   {/* Progression (forces / faiblesses) */}
                   <ProgressionEnfant stats={faiblessesParEnfant[enfant.id] ?? []} />
+
+                  {/* Objectif de la semaine */}
+                  <div className="mt-3 mb-1">
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-xs font-semibold flex items-center gap-1" style={{ color: "#071453" }}>
+                        <Image src="/icons/picto-cible.svg" alt="" width={13} height={13} />
+                        Objectif semaine
+                      </span>
+                      <span className="text-xs font-bold" style={{ color: objectifAtteint ? "#6bd6a6" : "#748bf7" }}>
+                        {sessionsSemaine}/{objectifSemaine}
+                        {objectifAtteint && " 🎉"}
+                      </span>
+                    </div>
+                    <div className="h-2 rounded-full overflow-hidden" style={{ backgroundColor: "#eef0ff" }}>
+                      <div
+                        className="h-full rounded-full transition-all duration-500"
+                        style={{
+                          width: `${progressPct}%`,
+                          background: objectifAtteint
+                            ? "linear-gradient(90deg, #6bd6a6, #48c997)"
+                            : "linear-gradient(90deg, #748bf7, #6bd6a6)",
+                        }}
+                      />
+                    </div>
+                  </div>
 
                   {/* Row 4 : actions */}
                   <div className="flex gap-2 mt-2">
