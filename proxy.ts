@@ -50,7 +50,7 @@ export async function proxy(request: NextRequest) {
 
     if (isExerceoSubdomain && pathname === "/") {
       const url = request.nextUrl.clone();
-      url.pathname = user ? "/tableau-de-bord" : "/connexion";
+      url.pathname = "/accueil";
       return NextResponse.redirect(url);
     }
 

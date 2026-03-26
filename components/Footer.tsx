@@ -14,7 +14,7 @@ export default function Footer() {
     <footer className="mt-12 border-t border-gray-100 py-8 px-4">
       <div className="max-w-md mx-auto space-y-4">
         {/* Logos sur une ligne */}
-        <Link href="/" className="inline-flex items-center gap-2">
+        <Link href="/accueil" className="inline-flex items-center gap-2">
           <Image src="/icons/Logo-exerceo.svg" alt="exerceō" width={90} height={24} />
           <span className="text-xs font-medium text-gray-400">par</span>
           <Image src="/icons/Logo-mixarto.svg" alt="mixarto" width={72} height={20} />

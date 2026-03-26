@@ -10,8 +10,8 @@ import Link from "next/link";
 export default function Logo({ className = "" }: { className?: string }) {
   return (
     <div className={`flex flex-col items-start gap-0.5 ${className}`}>
-      {/* Ligne 1 : logo exerceō cliquable → tableau de bord */}
-      <Link href="/tableau-de-bord" className="inline-flex">
+      {/* Ligne 1 : logo exerceō cliquable → page d'accueil */}
+      <Link href="/accueil" className="inline-flex">
         <Image
           src="/icons/Logo-exerceo.svg"
           alt="exerceō"
