@@ -132,8 +132,6 @@ export default async function TableauDeBordPage() {
         </div>
       )}
 
-      <p>TEST</p>
-
       {/* ── Objectif de la semaine ── */}
       {(allSessions ?? []).length > 0 && (
         <div
