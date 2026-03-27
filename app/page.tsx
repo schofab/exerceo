@@ -291,13 +291,13 @@ export default function MixartoLanding() {
                   >
                     Tester exerceo
                   </a>
-                  <a
-                    href={EXERCEO}
+                  <Link
+                    href="/exerceo"
                     className="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90"
                     style={{ backgroundColor: NAVY }}
                   >
                     En savoir plus
-                  </a>
+                  </Link>
                 </div>
               </div>
 
