@@ -18,24 +18,28 @@ const GREEN  = "#6bd6a6"
 
 const FEATURES = [
   {
-    icon: "📚",
     titre: "Programme officiel",
     texte: "Exercices alignés sur les attendus de l'Éducation Nationale, du CP au CM2.",
+    bg: "#6bd6a6",
+    color: "#071453",
   },
   {
-    icon: "🎯",
     titre: "Profil personnalisé",
     texte: "Adapté à l'âge, la classe, les forces et les difficultés de chaque enfant.",
+    bg: "#ffb86b",
+    color: "#071453",
   },
   {
-    icon: "🏆",
     titre: "Récompenses",
     texte: "Étoiles, badges de progression et créatures Doceo à débloquer.",
+    bg: "#f9de6f",
+    color: "#071453",
   },
   {
-    icon: "⚡",
     titre: "Rapide & ludique",
     texte: "3 à 12 exercices en 5 à 20 minutes. Pas de pression, juste du plaisir.",
+    bg: "#e190c9",
+    color: "#071453",
   },
 ]
 
@@ -162,18 +166,15 @@ export default async function AccueilPage() {
         {/* ── Hero ── */}
         <section
           className="px-4 pt-10 pb-12 text-center"
-          style={{
-            background: `linear-gradient(160deg, #f5f9ff 0%, #faf5ff 50%, #f0fff8 100%)`,
-          }}
+          style={{ backgroundColor: NAVY }}
         >
           <div className="max-w-lg mx-auto space-y-5">
-            <div className="text-5xl">✏️</div>
-            <h1 className="text-3xl font-extrabold leading-tight" style={{ color: NAVY }}>
+            <h1 className="text-3xl font-extrabold leading-tight text-white">
               Des exercices{" "}
-              <span style={{ color: PURPLE }}>sur-mesure</span>{" "}
+              <span style={{ color: GREEN }}>sur-mesure</span>{" "}
               pour votre enfant
             </h1>
-            <p className="text-base text-gray-600 leading-relaxed max-w-sm mx-auto">
+            <p className="text-base leading-relaxed max-w-sm mx-auto" style={{ color: "rgba(255,255,255,0.75)" }}>
               En quelques minutes, générez des exercices ludiques et personnalisés
               selon la classe, le niveau et le profil de votre enfant.
             </p>
@@ -207,8 +208,8 @@ export default async function AccueilPage() {
                   </Link>
                   <Link
                     href="/connexion"
-                    className="inline-flex items-center justify-center px-6 py-3 rounded-2xl font-bold text-base border-2 transition-colors hover:bg-gray-50"
-                    style={{ color: NAVY, borderColor: "#e0e7ff" }}
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-2xl font-bold text-base border-2 transition-colors"
+                    style={{ color: "white", borderColor: "rgba(255,255,255,0.35)" }}
                   >
                     Se connecter
                   </Link>
@@ -216,7 +217,7 @@ export default async function AccueilPage() {
               )}
             </div>
             {!user && (
-              <p className="text-xs text-gray-400">
+              <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
                 Gratuit · 3 sessions offertes · Sans engagement
               </p>
             )}
@@ -331,14 +332,13 @@ export default async function AccueilPage() {
             {FEATURES.map((f) => (
               <div
                 key={f.titre}
-                className="rounded-2xl border border-gray-100 p-4 space-y-2"
-                style={{ backgroundColor: "#fafbff" }}
+                className="rounded-2xl p-4 space-y-2"
+                style={{ backgroundColor: f.bg }}
               >
-                <div className="text-2xl">{f.icon}</div>
-                <p className="text-sm font-bold" style={{ color: NAVY }}>
+                <p className="text-sm font-extrabold" style={{ color: f.color }}>
                   {f.titre}
                 </p>
-                <p className="text-xs text-gray-500 leading-relaxed">{f.texte}</p>
+                <p className="text-xs leading-relaxed" style={{ color: f.color, opacity: 0.8 }}>{f.texte}</p>
               </div>
             ))}
           </div>
@@ -347,14 +347,13 @@ export default async function AccueilPage() {
         {/* ── Doceo teaser ── */}
         <section
           className="px-4 py-10"
-          style={{ background: `linear-gradient(135deg, #f0f2ff, #f0fff8)` }}
+          style={{ backgroundColor: NAVY }}
         >
           <div className="max-w-lg mx-auto text-center space-y-4">
-            <div className="text-4xl">🐾</div>
-            <h2 className="text-xl font-extrabold" style={{ color: NAVY }}>
+            <h2 className="text-xl font-extrabold text-white">
               La collection Doceo
             </h2>
-            <p className="text-sm text-gray-600 leading-relaxed max-w-xs mx-auto">
+            <p className="text-sm leading-relaxed max-w-xs mx-auto" style={{ color: "rgba(255,255,255,0.75)" }}>
               À chaque session réussie, ton enfant gagne des étoiles et débloque
               des créatures Doceo à collectionner. Une motivation supplémentaire
               à chaque exercice !
