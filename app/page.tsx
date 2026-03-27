@@ -306,16 +306,17 @@ export default function MixartoLanding() {
                 className="rounded-3xl flex items-center justify-center py-4 px-4"
                 style={{ backgroundColor: GREEN }}
               >
-                <video
-                  src="/videos/screen-exerceo.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="rounded-2xl shadow-xl"
-                  style={{ maxWidth: "320px", width: "100%", display: "block" }}
-                  aria-label="Démonstration de l'application Exerceo"
-                />
+                <div className="rounded-2xl shadow-xl overflow-hidden" style={{ maxWidth: "360px", width: "100%" }}>
+                  <video
+                    src="/videos/screen-exerceo.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    style={{ display: "block", width: "100%", marginTop: "-3px", marginBottom: "-3px" }}
+                    aria-label="Démonstration de l'application Exerceo"
+                  />
+                </div>
               </div>
             </div>
           </div>
