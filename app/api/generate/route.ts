@@ -157,20 +157,55 @@ export async function POST(request: Request) {
         ? Math.max(1, Math.round(NB_TOTAL / matieres.length))
         : NB_TOTAL;
 
-    const selected = selectFrenchExercises(enfant.classe, nbFrancais);
+    // Récupérer les IDs d'exercices de bank.ts déjà présentés à cet enfant
+    // (5 dernières sessions) pour éviter les répétitions
+    let seenBankIds: string[] = [];
+    try {
+      const { data: sessionsRecentes } = await supabase
+        .from("sessions")
+        .select("id")
+        .eq("enfant_id", enfant_id)
+        .neq("id", sessionData.id)          // exclure la session courante
+        .order("created_at", { ascending: false })
+        .limit(5);
+
+      if (sessionsRecentes && sessionsRecentes.length > 0) {
+        const ids = sessionsRecentes.map((s: { id: string }) => s.id);
+        const { data: exRecents } = await supabase
+          .from("exercices")
+          .select("contenu")
+          .in("session_id", ids)
+          .eq("matiere", "Français");
+
+        seenBankIds = (exRecents ?? [])
+          .map((ex: { contenu: { _debug?: { bank_id?: string | null } } }) =>
+            ex.contenu?._debug?.bank_id
+          )
+          .filter((id): id is string => typeof id === "string" && id.length > 0);
+      }
+    } catch {
+      // Non-bloquant — si la requête échoue, on sélectionne sans historique
+      console.warn("[EXERCEO] Impossible de récupérer l'historique des exercices vus.");
+    }
+
+    const selected = selectFrenchExercises(enfant.classe, nbFrancais, 1, seenBankIds);
     exercicesBank.push(...selected);
 
     // ── DEBUG LOG ──
     console.log(`\n[EXERCEO DEBUG] ── Session ${sessionData.id} | ${enfant.prenom} (${enfant.classe}) ──`);
+    console.log(
+      `[EXERCEO DEBUG] Historique : ${seenBankIds.length} exercices vus dans les 5 dernières sessions`
+    );
     console.log(`[EXERCEO DEBUG] Français → bank.ts : ${selected.length}/${nbFrancais} exercices sélectionnés`);
     selected.forEach((ex) => {
       console.log(
-        `  ✓ source=bank.ts | bank_id=${ex._bank_id} | sous_matiere=${ex.sous_matiere} | validated=true`
+        `  ✓ source=bank.ts | id=${ex._bank_id} | classe=${ex._debug_classe}`
+        + ` | skill=${ex._debug_skill} | validated=true`
       );
     });
     if (selected.length < nbFrancais) {
       console.warn(
-        `[EXERCEO DEBUG] ⚠ Seulement ${selected.length} exercices disponibles pour classe=${enfant.classe}`
+        `[EXERCEO DEBUG] ⚠ Seulement ${selected.length}/${nbFrancais} exercices sélectionnés`
       );
     }
   }
@@ -250,9 +285,11 @@ export async function POST(request: Request) {
       sous_matiere:  ex.sous_matiere ?? null,
       // ── DEBUG (temporaire — peut être supprimé) ──
       _debug: {
-        source:     ex._bank_id ? "bank.ts" : "claude",
-        bank_id:    ex._bank_id ?? null,
-        validated:  true,
+        source:    ex._bank_id ? "bank.ts" : "claude",
+        bank_id:   ex._bank_id ?? null,
+        classe:    (ex as SelectedBankExercise)._debug_classe ?? null,
+        skill:     (ex as SelectedBankExercise)._debug_skill  ?? null,
+        validated: true,
       },
     },
     reponse_correcte: ex.reponse_correcte,

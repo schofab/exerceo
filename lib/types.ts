@@ -95,8 +95,10 @@ export interface ContenuExercice {
   sous_matiere?: string; // ex: "Orthographe", "Calcul mental", "Histoire"
   /** Temporaire — informations de debug sur la source de l'exercice (peut être supprimé) */
   _debug?: {
-    source: "bank.ts" | "claude";
-    bank_id?: string | null; // identifiant dans EXERCISE_BANK si source=bank.ts
+    source:    "bank.ts" | "claude";
+    bank_id?:  string | null;  // identifiant dans EXERCISE_BANK si source=bank.ts
+    classe?:   string;         // niveau de l'exercice dans la banque (CP, CE1…)
+    skill?:    string;         // sous_domaine de l'exercice (orthographe, grammaire…)
     validated: boolean;
     validation_error?: string;
   };
