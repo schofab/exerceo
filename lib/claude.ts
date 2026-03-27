@@ -7,8 +7,8 @@ const client = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
-// Nombre d'exercices selon le temps disponible
-const NB_EXERCICES_PAR_DUREE: Record<number, number> = {
+// Nombre d'exercices selon le temps disponible (exporté pour route.ts)
+export const NB_EXERCICES_PAR_DUREE: Record<number, number> = {
   5:  3,
   10: 6,
   15: 9,
@@ -245,9 +245,10 @@ export async function genererExercices(
   matieres: Matiere[],
   tempsDisponible: number,
   difficultes: string,
-  faiblesses: NotionStats[] = []
+  faiblesses: NotionStats[] = [],
+  nbOverride?: number        // override le nb d'exercices calculé (ex: pour les matières non-Français)
 ): Promise<ExerciceGenere[]> {
-  const nbExercices = NB_EXERCICES_PAR_DUREE[tempsDisponible] ?? 3;
+  const nbExercices = nbOverride ?? NB_EXERCICES_PAR_DUREE[tempsDisponible] ?? 3;
 
   const niveauTexte: Record<string, string> = {
     debutant:      "débutant (besoins de soutien, exercices simples)",

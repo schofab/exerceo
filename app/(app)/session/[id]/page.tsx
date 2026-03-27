@@ -224,13 +224,37 @@ export default function SessionPage() {
 
       {/* ── Exercices ── */}
       {exercices.map((ex, i) => (
-        <ExerciceCard
-          key={ex.id}
-          exercice={ex}
-          numero={i + 1}
-          onReponse={handleReponse}
-          onRetry={handleRetry}
-        />
+        <div key={ex.id}>
+          <ExerciceCard
+            exercice={ex}
+            numero={i + 1}
+            onReponse={handleReponse}
+            onRetry={handleRetry}
+          />
+          {/* ── DEBUG TEMPORAIRE — source de chaque exercice (à supprimer) ── */}
+          {ex.contenu._debug && (
+            <div className="text-[10px] font-mono px-3 py-1 mt-0.5 rounded-b-xl border border-t-0 border-gray-100 bg-gray-50 text-gray-400 flex items-center gap-2 flex-wrap">
+              <span>🔍 exercice {i + 1}</span>
+              <span
+                className="font-semibold"
+                style={{
+                  color: ex.contenu._debug.source === "bank.ts" ? "#16a34a" : "#2563eb",
+                }}
+              >
+                source : {ex.contenu._debug.source}
+              </span>
+              {ex.contenu._debug.bank_id && (
+                <span>id : {ex.contenu._debug.bank_id}</span>
+              )}
+              <span>
+                validé :{" "}
+                <span style={{ color: ex.contenu._debug.validated ? "#16a34a" : "#dc2626" }}>
+                  {ex.contenu._debug.validated ? "✓ oui" : "✗ non"}
+                </span>
+              </span>
+            </div>
+          )}
+        </div>
       ))}
 
       {/* ── Popup créature débloquée ── */}
