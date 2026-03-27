@@ -5,7 +5,12 @@ export type Matiere = "francais";
 export type SousDomaine =
   | "homophones"
   | "accords"
-  | "conjugaison";
+  | "conjugaison"
+  | "lecture"
+  | "orthographe"
+  | "grammaire"
+  | "vocabulaire"
+  | "expression_ecrite";
 
 export type ExerciseType = "qcm";
 
