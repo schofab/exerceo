@@ -103,7 +103,7 @@ export function selectFrenchExercises(
   console.log(
     `[EXERCEO] Pool Français pour ${classe} : `
     + `${poolNouveaux.length} nouveaux + ${poolDejaVus.length} déjà vus`
-    + ` (total : ${poolComplet.length})`
+    + ` (total : ${poolComplet.length}, demandés : ${count})`
   );
 
   // 4. Sélectionner les exercices avec diversité de skills
@@ -114,14 +114,32 @@ export function selectFrenchExercises(
   const nouveauxMelanges = shuffle(poolNouveaux);
   selectWithSkillDiversity(nouveauxMelanges, count, selected, usedSkills);
 
-  // Passe B — depuis les déjà vus si la banque est insuffisante
+  // Passe B — depuis les déjà vus si les nouveaux sont insuffisants
   if (selected.length < count) {
     console.warn(
       `[EXERCEO] Seulement ${selected.length}/${count} nouveaux disponibles, `
       + `fallback sur ${poolDejaVus.length} déjà vus.`
     );
-    const dejuVusMelanges = shuffle(poolDejaVus);
-    selectWithSkillDiversity(dejuVusMelanges, count, selected, usedSkills);
+    const dejaVusMelanges = shuffle(poolDejaVus);
+    selectWithSkillDiversity(dejaVusMelanges, count, selected, usedSkills);
+  }
+
+  // Passe C (dernier recours) — recycler si la banque totale est plus petite que le quota demandé.
+  // Cas typique : CP n'a que 6 QCM, mais la session en demande 9 ou 12.
+  // On réutilise les exercices en tournant sur le pool complet (mélangé différemment).
+  if (selected.length < count && poolComplet.length > 0) {
+    console.warn(
+      `[EXERCEO] Banque insuffisante pour classe=${classe} : `
+      + `${poolComplet.length} exercices uniques disponibles, ${count} demandés. `
+      + `Recyclage de ${count - selected.length} exercice(s).`
+    );
+    const poolRecyclage = shuffle(poolComplet);
+    let i = 0;
+    while (selected.length < count) {
+      selected.push(poolRecyclage[i % poolRecyclage.length]);
+      i++;
+      if (i > count * 4) break; // sécurité anti-boucle infinie
+    }
   }
 
   // 5. Mapper vers SelectedBankExercise
