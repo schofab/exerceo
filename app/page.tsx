@@ -316,7 +316,8 @@ export default function MixartoLanding() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover object-center"
+                    style={{ transform: "scale(1.08)" }}
                     aria-label="Démonstration de l'application Exerceo"
                   />
                 </div>
