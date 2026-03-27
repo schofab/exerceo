@@ -164,17 +164,14 @@ export default async function AccueilPage() {
       <main className="flex-1">
 
         {/* ── Hero ── */}
-        <section
-          className="px-4 pt-10 pb-12 text-center"
-          style={{ backgroundColor: NAVY }}
-        >
+        <section className="px-4 pt-10 pb-12 text-center bg-white">
           <div className="max-w-lg mx-auto space-y-5">
-            <h1 className="text-3xl font-extrabold leading-tight text-white">
+            <h1 className="text-3xl font-extrabold leading-tight" style={{ color: NAVY }}>
               Des exercices{" "}
-              <span style={{ color: GREEN }}>sur-mesure</span>{" "}
+              <span style={{ color: PURPLE }}>sur-mesure</span>{" "}
               pour votre enfant
             </h1>
-            <p className="text-base leading-relaxed max-w-sm mx-auto" style={{ color: "rgba(255,255,255,0.75)" }}>
+            <p className="text-base text-gray-600 leading-relaxed max-w-sm mx-auto">
               En quelques minutes, générez des exercices ludiques et personnalisés
               selon la classe, le niveau et le profil de votre enfant.
             </p>
@@ -184,7 +181,7 @@ export default async function AccueilPage() {
                   <Link
                     href="/session/nouvelle"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl text-white font-bold text-base transition-opacity hover:opacity-90"
-                    style={{ background: `linear-gradient(135deg, ${PURPLE}, ${GREEN})`, boxShadow: `0 4px 16px rgba(116,139,247,0.35)` }}
+                    style={{ backgroundColor: PURPLE }}
                   >
                     <span className="text-lg font-black">+</span>
                     Nouvelle session
@@ -202,14 +199,14 @@ export default async function AccueilPage() {
                   <Link
                     href="/inscription"
                     className="inline-flex items-center justify-center px-6 py-3 rounded-2xl text-white font-bold text-base transition-opacity hover:opacity-90"
-                    style={{ background: `linear-gradient(135deg, ${PURPLE}, ${GREEN})`, boxShadow: `0 4px 16px rgba(116,139,247,0.35)` }}
+                    style={{ backgroundColor: PURPLE }}
                   >
                     Essayer gratuitement
                   </Link>
                   <Link
                     href="/connexion"
-                    className="inline-flex items-center justify-center px-6 py-3 rounded-2xl font-bold text-base border-2 transition-colors"
-                    style={{ color: "white", borderColor: "rgba(255,255,255,0.35)" }}
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-2xl font-bold text-base border-2 transition-colors hover:bg-gray-50"
+                    style={{ color: NAVY, borderColor: "#e0e7ff" }}
                   >
                     Se connecter
                   </Link>
@@ -217,7 +214,7 @@ export default async function AccueilPage() {
               )}
             </div>
             {!user && (
-              <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+              <p className="text-xs text-gray-400">
                 Gratuit · 3 sessions offertes · Sans engagement
               </p>
             )}
@@ -311,7 +308,7 @@ export default async function AccueilPage() {
                     <Link
                       href={`/session/nouvelle?enfant=${enfant.id}`}
                       className="flex items-center justify-center gap-2 w-full py-2 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90"
-                      style={{ background: `linear-gradient(135deg, ${PURPLE}, ${GREEN})` }}
+                      style={{ backgroundColor: PURPLE }}
                     >
                       <span className="font-black">+</span>
                       Nouvelle session pour {enfant.prenom}
@@ -345,15 +342,12 @@ export default async function AccueilPage() {
         </section>
 
         {/* ── Doceo teaser ── */}
-        <section
-          className="px-4 py-10"
-          style={{ backgroundColor: NAVY }}
-        >
+        <section className="px-4 py-10 bg-white">
           <div className="max-w-lg mx-auto text-center space-y-4">
-            <h2 className="text-xl font-extrabold text-white">
+            <h2 className="text-xl font-extrabold" style={{ color: NAVY }}>
               La collection Doceo
             </h2>
-            <p className="text-sm leading-relaxed max-w-xs mx-auto" style={{ color: "rgba(255,255,255,0.75)" }}>
+            <p className="text-sm text-gray-600 leading-relaxed max-w-xs mx-auto">
               À chaque session réussie, ton enfant gagne des étoiles et débloque
               des créatures Doceo à collectionner. Une motivation supplémentaire
               à chaque exercice !
@@ -382,10 +376,7 @@ export default async function AccueilPage() {
             <Link
               href="/inscription"
               className="inline-flex items-center justify-center px-8 py-3 rounded-2xl text-white font-bold text-base transition-opacity hover:opacity-90"
-              style={{
-                background: `linear-gradient(135deg, ${PURPLE}, ${GREEN})`,
-                boxShadow: `0 4px 20px rgba(116,139,247,0.35)`,
-              }}
+              style={{ backgroundColor: PURPLE }}
             >
               Créer un compte gratuitement
             </Link>
