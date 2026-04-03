@@ -19,23 +19,16 @@ export default function CreatureCard({ creature }: CreatureCardProps) {
     return (
       <Card className="overflow-hidden p-0">
         {/* Header blanc */}
-        <div className="flex items-center justify-center py-4 relative bg-white">
+        <div className="flex items-center justify-center py-4 bg-white">
           <img
             src={imgSrc}
             alt={creature.name}
             className="w-28 h-28 object-contain select-none"
           />
-          {/* Badge débloqué — couleur matière */}
-          <span
-            className="absolute top-2 right-2 text-xs font-bold px-2 py-0.5 rounded-full text-white"
-            style={{ backgroundColor: couleur.bg }}
-          >
-            ✓
-          </span>
         </div>
         {/* Infos */}
         <div className="px-3 py-3 text-center">
-          <p className="font-extrabold text-sm truncate" style={{ color: "#071453" }}>
+          <p className="font-extrabold text-sm truncate" style={{ color: couleur.bg }}>
             {creature.name}
           </p>
           <p className="text-xs text-gray-400 mt-0.5 truncate">{creature.subject}</p>
@@ -51,7 +44,7 @@ export default function CreatureCard({ creature }: CreatureCardProps) {
   return (
     <Card className="overflow-hidden p-0 opacity-80">
       {/* Header blanc */}
-      <div className="flex items-center justify-center py-4 bg-white relative">
+      <div className="flex items-center justify-center py-4 bg-white">
         <img
           src={imgSrc}
           alt="Doceo mystère"
@@ -60,8 +53,6 @@ export default function CreatureCard({ creature }: CreatureCardProps) {
             filter: "grayscale(1) brightness(0.12) contrast(1.2)",
           }}
         />
-        {/* Cadenas */}
-        <span className="absolute top-2 right-2 text-base opacity-40">🔒</span>
       </div>
       {/* Infos */}
       <div className="px-3 py-3 text-center">
