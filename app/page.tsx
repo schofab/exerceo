@@ -93,7 +93,7 @@ export default function MixartoLanding() {
         ══════════════════════════════════════════════════════ */}
         <section className="bg-white py-16 md:py-20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 
               {/* Carte créations — fond vert */}
               <article className="rounded-2xl p-8 md:p-10" style={{ backgroundColor: GREEN }}>
@@ -117,31 +117,30 @@ export default function MixartoLanding() {
               </article>
 
               {/* Carte apps — fond navy */}
-              <div>
-                <article className="rounded-2xl p-8 md:p-10" style={{ backgroundColor: NAVY }}>
-                  <h2 className="text-lg font-extrabold mb-4" style={{ color: GREEN }}>
-                    Des apps simples et utiles*
-                  </h2>
-                  <p className="text-sm leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.75)" }}>
-                    Des outils conçus pour apprendre, créer ou s&apos;organiser
-                    avec plaisir.<br />
-                    Chaque app est pensée pour faciliter le quotidien.
-                  </p>
-                  <a
-                    href="#apps"
-                    className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold border-2 transition-opacity hover:opacity-80"
-                    style={{ borderColor: GREEN, color: GREEN }}
-                  >
-                    Découvrir les apps
-                  </a>
-                </article>
-                <p className="text-xs mt-3 leading-relaxed" style={{ color: "#9298c8" }}>
-                  *Mixarto développe progressivement de nouvelles applications et créations.
-                  Exerceo est la première d&apos;une série d&apos;outils pensés avec la même exigence :
-                  simplicité, utilité et plaisir d&apos;usage.
+              <article className="rounded-2xl p-8 md:p-10" style={{ backgroundColor: NAVY }}>
+                <h2 className="text-lg font-extrabold mb-4" style={{ color: GREEN }}>
+                  Des apps simples et utiles*
+                </h2>
+                <p className="text-sm leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.75)" }}>
+                  Des outils conçus pour apprendre, créer ou s&apos;organiser
+                  avec plaisir.<br />
+                  Chaque app est pensée pour faciliter le quotidien.
                 </p>
-              </div>
+                <a
+                  href="#apps"
+                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold border-2 transition-opacity hover:opacity-80"
+                  style={{ borderColor: GREEN, color: GREEN }}
+                >
+                  Découvrir les apps
+                </a>
+              </article>
             </div>
+
+            <p className="text-xs mt-3 leading-relaxed" style={{ color: "#9298c8" }}>
+              *Mixarto développe progressivement de nouvelles applications et créations.
+              Exerceo est la première d&apos;une série d&apos;outils pensés avec la même exigence :
+              simplicité, utilité et plaisir d&apos;usage.
+            </p>
           </div>
         </section>
 
