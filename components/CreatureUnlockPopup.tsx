@@ -44,16 +44,12 @@ export default function CreatureUnlockPopup({ creatures, onClose }: Props) {
         className="w-full max-w-xs rounded-3xl overflow-hidden shadow-2xl animate-confetti-pop"
         style={{ backgroundColor: "#ffffff" }}
       >
-        {/* Header coloré */}
-        <div
-          className="flex flex-col items-center justify-center pt-8 pb-6 gap-2"
-          style={{ backgroundColor: couleur.bg }}
-        >
+        {/* Header blanc */}
+        <div className="flex flex-col items-center justify-center pt-8 pb-6 gap-2 bg-white">
           <img
             src={`/creatures/${current.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}.png`}
             alt={current.name}
-            className="w-28 h-28 object-contain select-none animate-bounce-gentle"
-            style={{ mixBlendMode: "multiply" }}
+            className="w-36 h-36 object-contain select-none animate-bounce-gentle"
           />
         </div>
 

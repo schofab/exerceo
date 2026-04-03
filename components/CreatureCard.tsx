@@ -18,21 +18,17 @@ export default function CreatureCard({ creature }: CreatureCardProps) {
   if (creature.unlocked) {
     return (
       <Card className="overflow-hidden p-0">
-        {/* Header coloré */}
-        <div
-          className="flex items-center justify-center py-5 relative"
-          style={{ backgroundColor: couleur.bg }}
-        >
+        {/* Header blanc */}
+        <div className="flex items-center justify-center py-4 relative bg-white">
           <img
             src={imgSrc}
             alt={creature.name}
-            className="w-20 h-20 object-contain select-none"
-            style={{ mixBlendMode: "multiply" }}
+            className="w-28 h-28 object-contain select-none"
           />
-          {/* Badge débloqué */}
+          {/* Badge débloqué — couleur matière */}
           <span
-            className="absolute top-2 right-2 text-xs font-bold px-2 py-0.5 rounded-full"
-            style={{ backgroundColor: "rgba(255,255,255,0.8)", color: couleur.bg }}
+            className="absolute top-2 right-2 text-xs font-bold px-2 py-0.5 rounded-full text-white"
+            style={{ backgroundColor: couleur.bg }}
           >
             ✓
           </span>
@@ -54,15 +50,14 @@ export default function CreatureCard({ creature }: CreatureCardProps) {
   // Verrouillée — silhouette mystère
   return (
     <Card className="overflow-hidden p-0 opacity-80">
-      {/* Header gris neutre */}
-      <div className="flex items-center justify-center py-5 bg-gray-100 relative">
+      {/* Header blanc */}
+      <div className="flex items-center justify-center py-4 bg-white relative">
         <img
           src={imgSrc}
           alt="Doceo mystère"
-          className="w-20 h-20 object-contain select-none"
+          className="w-28 h-28 object-contain select-none"
           style={{
-            mixBlendMode: "multiply",
-            filter: "grayscale(1) brightness(0.25)",
+            filter: "grayscale(1) brightness(0.12) contrast(1.2)",
           }}
         />
         {/* Cadenas */}
