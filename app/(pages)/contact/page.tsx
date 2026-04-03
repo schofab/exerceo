@@ -31,7 +31,7 @@ export default function ContactPage() {
         </h1>
         <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
           Pour toute question concernant la boutique, l&apos;application Exerceo
-          ou vos commandes, contactez-nous à l&apos;adresse suivante :
+          ou vos commandes, contactez-moi à l&apos;adresse suivante :
         </p>
       </div>
 
@@ -50,7 +50,7 @@ export default function ContactPage() {
       </div>
 
       <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
-        Nous faisons de notre mieux pour répondre dans les meilleurs délais.
+        Je ferai de mon mieux pour répondre dans les meilleurs délais.
       </p>
 
       {/* Liens légaux */}
