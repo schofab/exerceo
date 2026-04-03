@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import Footer from "@/components/Footer";
-import BottomNav from "@/components/BottomNav";
 
 export const dynamic = "force-dynamic";
 
@@ -82,15 +81,10 @@ export default async function AppLayout({
       </div>
 
       {/* ── Contenu ── */}
-      <main className="max-w-md mx-auto px-4 py-6 pb-28">{children}</main>
+      <main className="max-w-md mx-auto px-4 py-6">{children}</main>
 
       {/* ── Footer ── */}
-      <div className="pb-20">
-        <Footer />
-      </div>
-
-      {/* ── Barre de navigation basse ── */}
-      <BottomNav />
+      <Footer />
     </div>
   );
 }
