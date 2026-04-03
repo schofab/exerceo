@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { createPortal } from "react-dom";
 import Card from "@/components/ui/Card";
 import { MATIERE_COLORS } from "@/lib/matieres";
 import type { CreatureAvecStatut } from "@/lib/types";
@@ -14,24 +15,29 @@ function creatureImageSrc(name: string): string {
   return `/creatures/${slug}.png`;
 }
 
+const MODAL_HEIGHT = 460; // hauteur approx du modal en px
+
 function CreatureZoomModal({
   creature,
+  modalTop,
   onClose,
 }: {
   creature: CreatureAvecStatut;
+  modalTop: number;
   onClose: () => void;
 }) {
   const couleur = MATIERE_COLORS[creature.subject] ?? { bg: "#e5e7eb", text: "#071453" };
   const imgSrc = creatureImageSrc(creature.name);
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-6"
+      className="fixed inset-0 z-50"
       style={{ backgroundColor: "rgba(7, 20, 83, 0.55)" }}
       onClick={onClose}
     >
       <div
-        className="w-full max-w-xs rounded-3xl overflow-hidden shadow-2xl bg-white animate-confetti-pop"
+        className="absolute left-1/2 -translate-x-1/2 w-full max-w-xs rounded-3xl overflow-hidden shadow-2xl bg-white animate-confetti-pop"
+        style={{ top: modalTop }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Image grande */}
@@ -68,44 +74,66 @@ function CreatureZoomModal({
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
 export default function CreatureCard({ creature }: CreatureCardProps) {
-  const [zoomed, setZoomed] = useState(false);
+  const [modalTop, setModalTop] = useState<number | null>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
   const couleur = MATIERE_COLORS[creature.subject] ?? { bg: "#e5e7eb", text: "#071453" };
   const imgSrc = creatureImageSrc(creature.name);
+
+  function handleOpen() {
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (rect) {
+      const cardCenterY = rect.top + rect.height / 2;
+      const top = Math.max(
+        16,
+        Math.min(cardCenterY - MODAL_HEIGHT / 2, window.innerHeight - MODAL_HEIGHT - 16)
+      );
+      setModalTop(top);
+    } else {
+      setModalTop(Math.max(16, (window.innerHeight - MODAL_HEIGHT) / 2));
+    }
+  }
 
   if (creature.unlocked) {
     return (
       <>
-        <Card
-          className="overflow-hidden p-0 cursor-pointer active:scale-95 transition-transform"
-          onClick={() => setZoomed(true)}
-        >
-          {/* Header blanc */}
-          <div className="flex items-center justify-center py-4 bg-white">
-            <img
-              src={imgSrc}
-              alt={creature.name}
-              className="w-28 h-28 object-contain select-none"
-            />
-          </div>
-          {/* Infos */}
-          <div className="px-3 py-3 text-center">
-            <p className="font-extrabold text-sm truncate" style={{ color: couleur.bg }}>
-              {creature.name}
-            </p>
-            <p className="text-xs text-gray-400 mt-0.5 truncate">{creature.subject}</p>
-            <p className="text-xs font-semibold mt-1" style={{ color: "#748bf7" }}>
-              ⭐ {creature.stars_required}
-            </p>
-          </div>
-        </Card>
+        <div ref={cardRef}>
+          <Card
+            className="overflow-hidden p-0 cursor-pointer active:scale-95 transition-transform"
+            onClick={handleOpen}
+          >
+            {/* Header blanc */}
+            <div className="flex items-center justify-center py-4 bg-white">
+              <img
+                src={imgSrc}
+                alt={creature.name}
+                className="w-28 h-28 object-contain select-none"
+              />
+            </div>
+            {/* Infos */}
+            <div className="px-3 py-3 text-center">
+              <p className="font-extrabold text-sm truncate" style={{ color: couleur.bg }}>
+                {creature.name}
+              </p>
+              <p className="text-xs text-gray-400 mt-0.5 truncate">{creature.subject}</p>
+              <p className="text-xs font-semibold mt-1" style={{ color: "#748bf7" }}>
+                ⭐ {creature.stars_required}
+              </p>
+            </div>
+          </Card>
+        </div>
 
-        {zoomed && (
-          <CreatureZoomModal creature={creature} onClose={() => setZoomed(false)} />
+        {modalTop !== null && (
+          <CreatureZoomModal
+            creature={creature}
+            modalTop={modalTop}
+            onClose={() => setModalTop(null)}
+          />
         )}
       </>
     );
