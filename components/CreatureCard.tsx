@@ -6,8 +6,14 @@ interface CreatureCardProps {
   creature: CreatureAvecStatut;
 }
 
+function creatureImageSrc(name: string): string {
+  const slug = name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  return `/creatures/${slug}.png`;
+}
+
 export default function CreatureCard({ creature }: CreatureCardProps) {
   const couleur = MATIERE_COLORS[creature.subject] ?? { bg: "#e5e7eb", text: "#071453" };
+  const imgSrc = creatureImageSrc(creature.name);
 
   if (creature.unlocked) {
     return (
@@ -17,13 +23,12 @@ export default function CreatureCard({ creature }: CreatureCardProps) {
           className="flex items-center justify-center py-5 relative"
           style={{ backgroundColor: couleur.bg }}
         >
-          {/* Silhouette colorée (teinte sujet) */}
-          <span
-            className="text-5xl select-none"
-            style={{ filter: "brightness(0) saturate(0) opacity(0.25) drop-shadow(0 0 6px currentColor)" }}
-          >
-            {creature.emoji}
-          </span>
+          <img
+            src={imgSrc}
+            alt={creature.name}
+            className="w-20 h-20 object-contain select-none"
+            style={{ mixBlendMode: "multiply" }}
+          />
           {/* Badge débloqué */}
           <span
             className="absolute top-2 right-2 text-xs font-bold px-2 py-0.5 rounded-full"
@@ -46,17 +51,20 @@ export default function CreatureCard({ creature }: CreatureCardProps) {
     );
   }
 
-  // Verrouillée — silhouette noire mystère
+  // Verrouillée — silhouette mystère
   return (
     <Card className="overflow-hidden p-0 opacity-80">
       {/* Header gris neutre */}
       <div className="flex items-center justify-center py-5 bg-gray-100 relative">
-        <span
-          className="text-5xl select-none"
-          style={{ filter: "brightness(0) saturate(0) opacity(0.15)" }}
-        >
-          {creature.emoji}
-        </span>
+        <img
+          src={imgSrc}
+          alt="Doceo mystère"
+          className="w-20 h-20 object-contain select-none"
+          style={{
+            mixBlendMode: "multiply",
+            filter: "grayscale(1) brightness(0.25)",
+          }}
+        />
         {/* Cadenas */}
         <span className="absolute top-2 right-2 text-base opacity-40">🔒</span>
       </div>

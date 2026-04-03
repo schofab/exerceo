@@ -49,9 +49,12 @@ export default function CreatureUnlockPopup({ creatures, onClose }: Props) {
           className="flex flex-col items-center justify-center pt-8 pb-6 gap-2"
           style={{ backgroundColor: couleur.bg }}
         >
-          <span className="text-7xl animate-bounce-gentle select-none">
-            {current.emoji}
-          </span>
+          <img
+            src={`/creatures/${current.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}.png`}
+            alt={current.name}
+            className="w-28 h-28 object-contain select-none animate-bounce-gentle"
+            style={{ mixBlendMode: "multiply" }}
+          />
         </div>
 
         {/* Corps */}
