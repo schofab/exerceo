@@ -69,34 +69,6 @@ export interface StudentProfile {
   weaknesses?: string[];
 }
 
-/* Type Exercise de l’app principale */
-
-export interface Exercise {
-  id: string;
-  matiere: 'francais';
-  sous_domaine: SousDomaine;
-  notion: string;
-  niveau: SchoolClass;
-  type: 'qcm';
-  consigne: string;
-  question: string;
-  options: string[];
-  bonne_reponse: string;
-  explication: string;
-}
-
-/* =========================
-   SOUS-DOMAINES APP
-========================= */
-
-export type SousDomaine =
-  | 'lecture'
-  | 'orthographe'
-  | 'grammaire'
-  | 'conjugaison'
-  | 'vocabulaire'
-  | 'expression_ecrite';
-
 /* =========================
    ADAPTATIONS PAR DÉFAUT
 ========================= */
