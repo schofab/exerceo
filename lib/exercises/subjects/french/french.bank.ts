@@ -137,11 +137,11 @@ export const frenchExercises: FrenchExercise[] = [
     instructions: 'Choisis la phrase qui veut dire presque la même chose.',
     prompt: 'Le chat dort sur le canapé.',
     options: [
-      { id: 'a', text: 'Le chat dort sur le canapé', isCorrect: true },
+      { id: 'a', text: 'Le chat est endormi sur le canapé', isCorrect: true },
       { id: 'b', text: 'Le chat mange sous la table', isCorrect: false },
       { id: 'c', text: 'Le chien dort dehors', isCorrect: false }
     ],
-    correctAnswer: 'Le chat dort sur le canapé',
+    correctAnswer: 'Le chat est endormi sur le canapé',
     explanation: 'La première réponse reprend exactement le sens de la phrase.',
     hint: 'Compare le personnage, l’action et le lieu.',
     tags: ['cp','lecture','association','maison','qcm'],
