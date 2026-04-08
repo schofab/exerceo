@@ -1,5 +1,18 @@
-export * from "./types";
-export * from "./bank";
-export * from "./validator";
-export * from "./fallback";
-export * from "./generator";
+// Core types & utilities
+export * from './core/exercise-core.types';
+export * from './core/exercise-core.adaptations';
+export * from './core/exercise-core.validation';
+export * from './core/exercise-core.selection';
+
+// French subject
+export * from './subjects/french/french.types';
+export * from './subjects/french/french.bank';
+export * from './subjects/french/french.validation';
+export * from './subjects/french/french.selection';
+export * from './subjects/french/french.mapping';
+
+// Legacy exercises/types.ts, validator, fallback, generator
+export * from './types';
+export * from './validator';
+export * from './fallback';
+export * from './generator';
