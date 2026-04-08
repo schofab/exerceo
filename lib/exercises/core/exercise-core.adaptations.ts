@@ -1,32 +1,28 @@
 import type { ExerciseProfileAdaptation, LearningProfile } from './exercise-core.types';
 
 export const DEFAULT_ADAPTATIONS: ExerciseProfileAdaptation[] = [
-  { profile: 'standard' as LearningProfile },
+  { profile: 'standard' },
   {
-    profile: 'lecture_simplifiee' as LearningProfile,
-    instruction: 'Lis bien. Fais un petit exercice à la fois.',
+    profile: 'lecture_simplifiee',
+    instruction: 'Lis bien la phrase puis réponds.',
+    extraHint: 'Prends ton temps, tu peux relire plusieurs fois.',
     reducedChoices: true,
     maxChoices: 2,
-    shorterContent: true,
-    extraHint: 'Prends ton temps.',
   },
   {
-    profile: 'attention_courte' as LearningProfile,
-    instruction: 'Exercice court. Trouve vite la bonne réponse.',
+    profile: 'attention_courte',
+    instruction: 'Lis vite la phrase et choisis ta réponse.',
+    extraHint: 'Concentre-toi sur les mots importants.',
     reducedChoices: true,
-    maxChoices: 2,
-    extraHint: 'Concentre-toi sur un seul indice.',
+    maxChoices: 3,
   },
   {
-    profile: 'progressif' as LearningProfile,
-    instruction: 'Avance étape par étape.',
-    splitSteps: ["Lis.", "Cherche l'indice.", "Réponds."],
-    extraHint: 'Tu peux relire avant de répondre.',
+    profile: 'progressif',
+    extraHint: 'Cherche les indices dans la phrase.',
   },
   {
-    profile: 'defi_avance' as LearningProfile,
-    instruction: 'Trouve la bonne réponse, puis fais le petit défi bonus.',
-    challengeExtension: 'Explique pourquoi ta réponse est correcte.',
+    profile: 'defi_avance',
+    extraHint: "Explique ensuite ta réponse à l'oral.",
   },
 ];
 

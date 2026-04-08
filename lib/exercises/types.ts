@@ -1,6 +1,6 @@
 export type Niveau = "CP" | "CE1" | "CE2" | "CM1" | "CM2";
 
-export type Matiere = "francais";
+export type Matiere = "francais" | "mathematiques";
 
 export type SousDomaine =
   | "homophones"
@@ -10,7 +10,13 @@ export type SousDomaine =
   | "orthographe"
   | "grammaire"
   | "vocabulaire"
-  | "expression_ecrite";
+  | "expression_ecrite"
+  | "numeration"
+  | "calcul"
+  | "geometrie"
+  | "mesures"
+  | "problemes"
+  | "logique";
 
 export type ExerciseType = "qcm";
 

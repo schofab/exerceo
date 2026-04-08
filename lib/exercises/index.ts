@@ -11,6 +11,13 @@ export * from './subjects/french/french.validation';
 export * from './subjects/french/french.selection';
 export * from './subjects/french/french.mapping';
 
+// Maths subject
+export * from './subjects/maths/maths.types';
+export * from './subjects/maths/maths.bank';
+export * from './subjects/maths/maths.validation';
+export * from './subjects/maths/maths.selection';
+export * from './subjects/maths/maths.mapping';
+
 // Legacy exercises/types.ts, validator, fallback, generator
 export * from './types';
 export * from './validator';
