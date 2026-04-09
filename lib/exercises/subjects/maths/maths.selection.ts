@@ -126,6 +126,9 @@ function applyProfileAdaptation(
   };
 }
 
+// Au plus 2 exercices du même skill par session (évite "5 calculs d'affilée").
+const MAX_SAME_SKILL = 2;
+
 function selectWithDiversity(
   scored: Array<{ exercise: MathExercise; score: number }>,
   limit: number
@@ -133,29 +136,32 @@ function selectWithDiversity(
   const selected: MathExercise[] = [];
   const selectedIds = new Set<string>();
   const subskillCounts = new Map<string, number>();
+  const skillCounts = new Map<string, number>();
 
   function greedyPick(
     candidates: typeof scored,
-    maxSameSubskill: number
+    maxSameSubskill: number,
+    maxSameSkill: number
   ): void {
     for (const { exercise } of candidates) {
       if (selected.length >= limit) break;
       if (selectedIds.has(exercise.id)) continue;
-      const count = subskillCounts.get(exercise.subskill) ?? 0;
-      if (count >= maxSameSubskill) continue;
+      if ((subskillCounts.get(exercise.subskill) ?? 0) >= maxSameSubskill) continue;
+      if ((skillCounts.get(exercise.skill) ?? 0) >= maxSameSkill) continue;
       selected.push(exercise);
       selectedIds.add(exercise.id);
-      subskillCounts.set(exercise.subskill, count + 1);
+      subskillCounts.set(exercise.subskill, (subskillCounts.get(exercise.subskill) ?? 0) + 1);
+      skillCounts.set(exercise.skill, (skillCounts.get(exercise.skill) ?? 0) + 1);
     }
   }
 
   const freshCandidates = scored.filter((s) => s.score >= 0);
   const M = DIVERSITY_CONFIG.MAX_SAME_SUBSKILL;
 
-  greedyPick(freshCandidates, M);            // Passe A
-  if (selected.length < limit) greedyPick(scored, M);        // Passe B
-  if (selected.length < limit) greedyPick(scored, M * 2);    // Passe C
-  if (selected.length < limit) greedyPick(scored, Infinity); // Passe D
+  greedyPick(freshCandidates, M,       MAX_SAME_SKILL);      // Passe A : strict
+  if (selected.length < limit) greedyPick(scored, M,       MAX_SAME_SKILL);      // Passe B : tout pool
+  if (selected.length < limit) greedyPick(scored, M * 2,   MAX_SAME_SKILL + 1);  // Passe C : relâché
+  if (selected.length < limit) greedyPick(scored, Infinity, Infinity);            // Passe D : fallback
 
   return selected;
 }

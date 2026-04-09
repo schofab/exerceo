@@ -13,13 +13,33 @@ export function validateMathExercise(
     ...validateExerciseByFormat(exercise),
   ];
 
-  // Math-specific: subject must be 'mathematiques'
+  // subject
   if (!exercise.subject || exercise.subject !== 'mathematiques') {
-    errors.push('subject invalide');
+    errors.push('subject invalide : doit être "mathematiques"');
   }
-  // title check (not in base)
-  if (!exercise.title) {
+  // title
+  if (!exercise.title?.trim()) {
     errors.push('title manquant');
+  }
+  // subskill
+  if (!exercise.subskill?.trim()) {
+    errors.push('subskill manquant');
+  }
+  // hint (recommandé)
+  if (!exercise.hint?.trim()) {
+    errors.push('hint manquant (recommandé)');
+  }
+  // adaptations
+  if (!exercise.adaptations || exercise.adaptations.length === 0) {
+    errors.push('adaptations manquantes');
+  }
+  // estimatedMinutes cohérent
+  if (
+    typeof exercise.estimatedMinutes !== 'number' ||
+    exercise.estimatedMinutes <= 0 ||
+    exercise.estimatedMinutes > 15
+  ) {
+    errors.push('estimatedMinutes invalide (doit être entre 1 et 15)');
   }
 
   return {
@@ -35,9 +55,7 @@ export function validateMathBank(
   return exercises.map(validateMathExercise);
 }
 
-export function getMathBankValidationSummary(
-  exercises: MathExercise[]
-): {
+export function getMathBankValidationSummary(exercises: MathExercise[]): {
   total: number;
   valid: number;
   invalid: number;
