@@ -2156,7 +2156,7 @@ export const frenchExercises: FrenchExercise[] = [
     subskill: 'phrase correcte',
     format: 'qcm',
     instructions: 'Choisis la phrase complète.',
-    prompt: 'Quelle phrase est complète ?',
+    prompt: 'Quelle solution est correcte ?',
     options: [
       { id: 'a', text: 'La poule picore.', isCorrect: true },
       { id: 'b', text: 'La poule', isCorrect: false },
@@ -2228,7 +2228,7 @@ export const frenchExercises: FrenchExercise[] = [
     subskill: 'coherence de phrase',
     format: 'qcm',
     instructions: 'Choisis la phrase qui a du sens.',
-    prompt: 'Quelle phrase a du sens ?',
+    prompt: 'Quelle est la bonne formulation ?',
     options: [
       { id: 'a', text: 'La banane lit un cartable.', isCorrect: false },
       { id: 'b', text: 'Le garçon mange une pomme.', isCorrect: true },
@@ -2251,7 +2251,7 @@ export const frenchExercises: FrenchExercise[] = [
     skill: 'expression_ecrite',
     subskill: 'phrase correcte',
     format: 'qcm',
-    instructions: 'Choisis la meilleure phrase.',
+    instructions: 'Choisis la meilleure formulation.',
     prompt: 'Quelle phrase est la mieux écrite ?',
     options: [
       { id: 'a', text: 'Ma sœur chante.', isCorrect: true },
@@ -2275,7 +2275,7 @@ export const frenchExercises: FrenchExercise[] = [
     skill: 'expression_ecrite',
     subskill: 'ponctuation simple',
     format: 'qcm',
-    instructions: 'Choisis la bonne phrase.',
+    instructions: 'Choisis la bonne formulation.',
     prompt: 'Quelle phrase est bien écrite ?',
     options: [
       { id: 'a', text: 'Nous jouons dehors.', isCorrect: true },
@@ -2641,7 +2641,7 @@ export const frenchExercises: FrenchExercise[] = [
     instructions: 'Choisis la phrase qui correspond.',
     prompt: 'Le chien aboie devant la maison.',
     options: [
-      { id: 'a', text: 'Le chien aboie devant la maison', isCorrect: true },
+      { id: 'a', text: 'Le chien fait du bruit devant la maison', isCorrect: true },
       { id: 'b', text: 'Le chien dort sous la table', isCorrect: false },
       { id: 'c', text: 'La maison aboie sur le chien', isCorrect: false }
     ],
@@ -3578,8 +3578,8 @@ export const frenchExercises: FrenchExercise[] = [
     skill: 'grammaire',
     subskill: 'nature des mots',
     format: 'qcm',
-    instructions: 'Dans « Le chien dort », le mot chien est :',
-    prompt: 'Le chien dort.',
+    instructions: 'Identifie la nature du mot.',
+    prompt: 'Dans « Le chien dort », le mot « chien » est :',
     options: [
       { id: 'a', text: 'un nom', isCorrect: true },
       { id: 'b', text: 'un verbe', isCorrect: false }
@@ -4451,7 +4451,7 @@ export const frenchExercises: FrenchExercise[] = [
     subskill: 'phrase correcte',
     format: 'qcm',
     instructions: 'Choisis la phrase complète.',
-    prompt: 'Quelle phrase est complète ?',
+    prompt: 'Quelle solution est correcte ?',
     options: [
       { id: 'a', text: 'La poule picore.', isCorrect: true },
       { id: 'b', text: 'La poule', isCorrect: false },
@@ -5901,8 +5901,8 @@ export const frenchExercises: FrenchExercise[] = [
     skill: 'grammaire',
     subskill: 'nature des mots',
     format: 'qcm',
-    instructions: 'Dans « Sage, le chien attend », le mot sage est :',
-    prompt: 'Sage, le chien attend.',
+    instructions: 'Identifie la nature du mot.',
+    prompt: 'Dans « Sage, le chien attend », le mot « sage » est :',
     options: [
       { id: 'a', text: 'un adjectif', isCorrect: true },
       { id: 'b', text: 'un nom', isCorrect: false },
@@ -6799,7 +6799,7 @@ export const frenchExercises: FrenchExercise[] = [
     subskill: 'phrase correcte',
     format: 'qcm',
     instructions: 'Choisis la phrase complète.',
-    prompt: 'Quelle phrase est complète ?',
+    prompt: 'Quelle solution est correcte ?',
     options: [
       { id: 'a', text: 'Le train entre en gare.', isCorrect: true },
       { id: 'b', text: 'Le train dans', isCorrect: false },

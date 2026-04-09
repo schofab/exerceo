@@ -18,7 +18,7 @@ export const mathsExercises: MathExercise[] = [
     subskill: 'suite numérique',
     format: 'qcm',
     instructions: 'Réponds à la question.',
-    prompt: 'Quel nombre vient après 4 ?',
+    prompt: 'Quel chiffre vient après 4 ?',
     options: [
       { id: 'a', text: '3', isCorrect: false },
       { id: 'b', text: '5', isCorrect: true },
@@ -398,7 +398,7 @@ export const mathsExercises: MathExercise[] = [
     subskill: 'comparaison',
     format: 'qcm',
     instructions: 'Quel est le plus grand nombre ?',
-    prompt: 'Quel est le plus grand ?',
+    prompt: 'Quel est le plus grand : 45, 54 ou 49 ?',
     options: [
       { id: 'a', text: '45', isCorrect: false },
       { id: 'b', text: '54', isCorrect: true },
@@ -895,7 +895,7 @@ export const mathsExercises: MathExercise[] = [
     subskill: 'comparaison',
     format: 'qcm',
     instructions: 'Quel est le plus grand nombre ?',
-    prompt: 'Quel est le plus grand : 489, 498 ou 487 ?',
+    prompt: '489, 498 ou 487 ?',
     options: [
       { id: 'a', text: '489', isCorrect: false },
       { id: 'b', text: '498', isCorrect: true },
@@ -1981,7 +1981,7 @@ export const mathsExercises: MathExercise[] = [
     subskill: 'comparaison de masses',
     format: 'qcm',
     instructions: 'Quel est le plus lourd ?',
-    prompt: 'Quel est le plus lourd : 2 kg ou 800 g ?',
+    prompt: '2 kg ou 800 g ?',
     options: [
       { id: 'a', text: '800 g', isCorrect: false },
       { id: 'b', text: '2 kg', isCorrect: true },
