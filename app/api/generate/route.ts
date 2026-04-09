@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { genererExercices, NB_EXERCICES_PAR_DUREE } from "@/lib/claude";
 import { selectFrenchExercises } from "@/lib/exercises/french-selector";
+import { selectMathExercises } from "@/lib/exercises/maths-selector";
 import type { SelectedBankExercise } from "@/lib/exercises/french-selector";
 import type { Enfant, ExerciceGenere, Matiere, NotionStats } from "@/lib/types";
 import { LIMITE_SESSIONS_GRATUITES } from "@/lib/types";
@@ -136,26 +137,32 @@ export async function POST(request: Request) {
   // GÉNÉRATION DES EXERCICES
   //
   // Règle absolue :
-  //   • Français → UNIQUEMENT depuis EXERCISE_BANK (bank.ts), jamais d'IA
+  //   • Français       → UNIQUEMENT depuis EXERCISE_BANK (bank.ts), jamais d'IA
+  //   • Mathématiques  → UNIQUEMENT depuis EXERCISE_BANK_MATHS, jamais d'IA
   //   • Autres matières → Claude (génération IA), avec validation stricte
   //
   // ═══════════════════════════════════════════════════════════════════════════
 
   const NB_TOTAL = NB_EXERCICES_PAR_DUREE[temps_disponible] ?? 3;
   const inclusFrancais = matieres.includes("Français");
-  const autresMatieres = matieres.filter((m) => m !== "Français") as Matiere[];
+  const inclusMaths    = matieres.includes("Mathématiques");
+  // Matières envoyées à Claude = tout ce qui n'est ni Français ni Mathématiques
+  const autresMatieres = matieres.filter(
+    (m) => m !== "Français" && m !== "Mathématiques"
+  ) as Matiere[];
+  // Nombre d'exercices par matière (proportionnel au total de la session)
+  const nbParMatiere = matieres.length > 1
+    ? Math.max(1, Math.round(NB_TOTAL / matieres.length))
+    : NB_TOTAL;
 
   type ExerciceAvecDebug = ExerciceGenere & { _bank_id?: string };
 
   const exercicesBank: SelectedBankExercise[] = [];
   const exercicesClaude: ExerciceGenere[] = [];
 
-  // ── ÉTAPE 1 : Français depuis bank.ts ─────────────────────────────────────
+  // ── ÉTAPE 1a : Français depuis bank.ts ────────────────────────────────────
   if (inclusFrancais) {
-    const nbFrancais =
-      autresMatieres.length > 0
-        ? Math.max(1, Math.round(NB_TOTAL / matieres.length))
-        : NB_TOTAL;
+    const nbFrancais = matieres.length > 1 ? nbParMatiere : NB_TOTAL;
 
     // Récupérer les IDs d'exercices de bank.ts déjà présentés à cet enfant
     // (5 dernières sessions) pour éviter les répétitions
@@ -208,6 +215,60 @@ export async function POST(request: Request) {
         `[EXERCEO DEBUG] ⚠ Seulement ${selected.length}/${nbFrancais} exercices sélectionnés`
       );
     }
+  }
+
+  // ── ÉTAPE 1b : Mathématiques depuis EXERCISE_BANK_MATHS ───────────────────
+  if (inclusMaths) {
+    const nbMaths = autresMatieres.length > 0
+      ? nbParMatiere
+      : NB_TOTAL - exercicesBank.length;
+
+    let seenMathIds: string[] = [];
+    try {
+      const { data: sessionsRecentes } = await supabase
+        .from("sessions")
+        .select("id")
+        .eq("enfant_id", enfant_id)
+        .neq("id", sessionData.id)
+        .order("created_at", { ascending: false })
+        .limit(5);
+
+      if (sessionsRecentes && sessionsRecentes.length > 0) {
+        const ids = sessionsRecentes.map((s: { id: string }) => s.id);
+        const { data: exRecents } = await supabase
+          .from("exercices")
+          .select("contenu")
+          .in("session_id", ids)
+          .eq("matiere", "Mathématiques");
+
+        seenMathIds = (exRecents ?? [])
+          .map((ex: { contenu: { _debug?: { bank_id?: string | null } } }) =>
+            ex.contenu?._debug?.bank_id
+          )
+          .filter((id): id is string => typeof id === "string" && id.length > 0);
+      }
+    } catch {
+      console.warn("[EXERCEO] Impossible de récupérer l'historique maths.");
+    }
+
+    const selected = selectMathExercises(
+      enfant.classe,
+      nbMaths,
+      exercicesBank.length + 1,
+      seenMathIds,
+    );
+    exercicesBank.push(...selected);
+
+    console.log(
+      `[EXERCEO DEBUG] Maths → bank : ${selected.length}/${nbMaths} exercices`
+      + ` (historique : ${seenMathIds.length} vus)`
+    );
+    selected.forEach((ex) => {
+      console.log(
+        `  ✓ source=bank | id=${ex._bank_id} | classe=${ex._debug_classe}`
+        + ` | skill=${ex._debug_skill}`
+      );
+    });
   }
 
   // ── ÉTAPE 2 : Autres matières depuis Claude ────────────────────────────────
