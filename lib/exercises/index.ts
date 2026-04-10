@@ -24,6 +24,12 @@ export * from './subjects/english/english.bank';
 export * from './subjects/english/english.validation';
 export * from './subjects/english/english.mapping';
 
+// Science subject
+export * from './subjects/science/science.types';
+export * from './subjects/science/science.bank';
+export * from './subjects/science/science.validation';
+export * from './subjects/science/science.mapping';
+
 // Legacy exercises/types.ts, validator, fallback, generator
 export * from './types';
 export * from './validator';
