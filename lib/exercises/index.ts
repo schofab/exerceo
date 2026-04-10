@@ -18,6 +18,12 @@ export * from './subjects/maths/maths.validation';
 export * from './subjects/maths/maths.selection';
 export * from './subjects/maths/maths.mapping';
 
+// English subject
+export * from './subjects/english/english.types';
+export * from './subjects/english/english.bank';
+export * from './subjects/english/english.validation';
+export * from './subjects/english/english.mapping';
+
 // Legacy exercises/types.ts, validator, fallback, generator
 export * from './types';
 export * from './validator';

@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { genererExercices, NB_EXERCICES_PAR_DUREE } from "@/lib/claude";
 import { selectFrenchExercises } from "@/lib/exercises/french-selector";
 import { selectMathExercises } from "@/lib/exercises/maths-selector";
+import { selectEnglishExercises } from "@/lib/exercises/english-selector";
 import type { SelectedBankExercise } from "@/lib/exercises/french-selector";
 import type { Enfant, ExerciceGenere, Matiere, NotionStats } from "@/lib/types";
 import { LIMITE_SESSIONS_GRATUITES } from "@/lib/types";
@@ -139,6 +140,7 @@ export async function POST(request: Request) {
   // Règle absolue :
   //   • Français       → UNIQUEMENT depuis EXERCISE_BANK (bank.ts), jamais d'IA
   //   • Mathématiques  → UNIQUEMENT depuis EXERCISE_BANK_MATHS, jamais d'IA
+  //   • Anglais        → UNIQUEMENT depuis EXERCISE_BANK_ENGLISH, jamais d'IA
   //   • Autres matières → Claude (génération IA), avec validation stricte
   //
   // ═══════════════════════════════════════════════════════════════════════════
@@ -146,9 +148,10 @@ export async function POST(request: Request) {
   const NB_TOTAL = NB_EXERCICES_PAR_DUREE[temps_disponible] ?? 3;
   const inclusFrancais = matieres.includes("Français");
   const inclusMaths    = matieres.includes("Mathématiques");
-  // Matières envoyées à Claude = tout ce qui n'est ni Français ni Mathématiques
+  const inclusAnglais  = matieres.includes("Anglais");
+  // Matières envoyées à Claude = tout ce qui n'est ni Français ni Mathématiques ni Anglais
   const autresMatieres = matieres.filter(
-    (m) => m !== "Français" && m !== "Mathématiques"
+    (m) => m !== "Français" && m !== "Mathématiques" && m !== "Anglais"
   ) as Matiere[];
   // Nombre d'exercices par matière (proportionnel au total de la session)
   const nbParMatiere = matieres.length > 1
@@ -262,6 +265,60 @@ export async function POST(request: Request) {
     console.log(
       `[EXERCEO DEBUG] Maths → bank : ${selected.length}/${nbMaths} exercices`
       + ` (historique : ${seenMathIds.length} vus)`
+    );
+    selected.forEach((ex) => {
+      console.log(
+        `  ✓ source=bank | id=${ex._bank_id} | classe=${ex._debug_classe}`
+        + ` | skill=${ex._debug_skill}`
+      );
+    });
+  }
+
+  // ── ÉTAPE 1c : Anglais depuis EXERCISE_BANK_ENGLISH ──────────────────────
+  if (inclusAnglais) {
+    const nbAnglais = autresMatieres.length > 0
+      ? nbParMatiere
+      : NB_TOTAL - exercicesBank.length;
+
+    let seenEnglishIds: string[] = [];
+    try {
+      const { data: sessionsRecentes } = await supabase
+        .from("sessions")
+        .select("id")
+        .eq("enfant_id", enfant_id)
+        .neq("id", sessionData.id)
+        .order("created_at", { ascending: false })
+        .limit(5);
+
+      if (sessionsRecentes && sessionsRecentes.length > 0) {
+        const ids = sessionsRecentes.map((s: { id: string }) => s.id);
+        const { data: exRecents } = await supabase
+          .from("exercices")
+          .select("contenu")
+          .in("session_id", ids)
+          .eq("matiere", "Anglais");
+
+        seenEnglishIds = (exRecents ?? [])
+          .map((ex: { contenu: { _debug?: { bank_id?: string | null } } }) =>
+            ex.contenu?._debug?.bank_id
+          )
+          .filter((id): id is string => typeof id === "string" && id.length > 0);
+      }
+    } catch {
+      console.warn("[EXERCEO] Impossible de récupérer l'historique anglais.");
+    }
+
+    const selected = selectEnglishExercises(
+      enfant.classe,
+      nbAnglais,
+      exercicesBank.length + 1,
+      seenEnglishIds,
+    );
+    exercicesBank.push(...selected);
+
+    console.log(
+      `[EXERCEO DEBUG] Anglais → bank : ${selected.length}/${nbAnglais} exercices`
+      + ` (historique : ${seenEnglishIds.length} vus)`
     );
     selected.forEach((ex) => {
       console.log(
