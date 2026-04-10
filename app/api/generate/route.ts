@@ -5,6 +5,7 @@ import { selectFrenchExercises } from "@/lib/exercises/french-selector";
 import { selectMathExercises } from "@/lib/exercises/maths-selector";
 import { selectEnglishExercises } from "@/lib/exercises/english-selector";
 import { selectScienceExercises } from "@/lib/exercises/science-selector";
+import { selectDecouverteDuMondeExercises } from "@/lib/exercises/decouverte-selector";
 import type { SelectedBankExercise } from "@/lib/exercises/french-selector";
 import type { Enfant, ExerciceGenere, Matiere, NotionStats } from "@/lib/types";
 import { LIMITE_SESSIONS_GRATUITES } from "@/lib/types";
@@ -142,8 +143,9 @@ export async function POST(request: Request) {
   //   • Français       → UNIQUEMENT depuis EXERCISE_BANK (bank.ts), jamais d'IA
   //   • Mathématiques  → UNIQUEMENT depuis EXERCISE_BANK_MATHS, jamais d'IA
   //   • Anglais        → UNIQUEMENT depuis EXERCISE_BANK_ENGLISH, jamais d'IA
-  //   • Sciences       → UNIQUEMENT depuis EXERCISE_BANK_SCIENCE, jamais d'IA
-  //   • Autres matières → Claude (génération IA), avec validation stricte
+  //   • Sciences              → UNIQUEMENT depuis EXERCISE_BANK_SCIENCE, jamais d'IA
+  //   • Découverte du monde  → UNIQUEMENT depuis EXERCISE_BANK_DECOUVERTE, jamais d'IA
+  //   • Autres matières       → Claude (génération IA), avec validation stricte
   //
   // ═══════════════════════════════════════════════════════════════════════════
 
@@ -151,10 +153,11 @@ export async function POST(request: Request) {
   const inclusFrancais = matieres.includes("Français");
   const inclusMaths    = matieres.includes("Mathématiques");
   const inclusAnglais  = matieres.includes("Anglais");
-  const inclusSciences = matieres.includes("Sciences");
-  // Matières envoyées à Claude = tout ce qui n'est ni Français, ni Maths, ni Anglais, ni Sciences
+  const inclusSciences  = matieres.includes("Sciences");
+  const inclusDecouverte = matieres.includes("Découverte du monde");
+  // Matières envoyées à Claude = tout ce qui n'est ni Français, ni Maths, ni Anglais, ni Sciences, ni Découverte du monde
   const autresMatieres = matieres.filter(
-    (m) => m !== "Français" && m !== "Mathématiques" && m !== "Anglais" && m !== "Sciences"
+    (m) => m !== "Français" && m !== "Mathématiques" && m !== "Anglais" && m !== "Sciences" && m !== "Découverte du monde"
   ) as Matiere[];
   // Nombre d'exercices par matière (proportionnel au total de la session)
   const nbParMatiere = matieres.length > 1
@@ -376,6 +379,60 @@ export async function POST(request: Request) {
     console.log(
       `[EXERCEO DEBUG] Sciences → bank : ${selected.length}/${nbSciences} exercices`
       + ` (historique : ${seenScienceIds.length} vus)`
+    );
+    selected.forEach((ex) => {
+      console.log(
+        `  ✓ source=bank | id=${ex._bank_id} | classe=${ex._debug_classe}`
+        + ` | skill=${ex._debug_skill}`
+      );
+    });
+  }
+
+  // ── ÉTAPE 1e : Découverte du monde depuis EXERCISE_BANK_DECOUVERTE ──────────
+  if (inclusDecouverte) {
+    const nbDecouverte = autresMatieres.length > 0
+      ? nbParMatiere
+      : NB_TOTAL - exercicesBank.length;
+
+    let seenDecouverteIds: string[] = [];
+    try {
+      const { data: sessionsRecentes } = await supabase
+        .from("sessions")
+        .select("id")
+        .eq("enfant_id", enfant_id)
+        .neq("id", sessionData.id)
+        .order("created_at", { ascending: false })
+        .limit(5);
+
+      if (sessionsRecentes && sessionsRecentes.length > 0) {
+        const ids = sessionsRecentes.map((s: { id: string }) => s.id);
+        const { data: exRecents } = await supabase
+          .from("exercices")
+          .select("contenu")
+          .in("session_id", ids)
+          .eq("matiere", "Découverte du monde");
+
+        seenDecouverteIds = (exRecents ?? [])
+          .map((ex: { contenu: { _debug?: { bank_id?: string | null } } }) =>
+            ex.contenu?._debug?.bank_id
+          )
+          .filter((id): id is string => typeof id === "string" && id.length > 0);
+      }
+    } catch {
+      console.warn("[EXERCEO] Impossible de récupérer l'historique découverte du monde.");
+    }
+
+    const selected = selectDecouverteDuMondeExercises(
+      enfant.classe,
+      nbDecouverte,
+      exercicesBank.length + 1,
+      seenDecouverteIds,
+    );
+    exercicesBank.push(...selected);
+
+    console.log(
+      `[EXERCEO DEBUG] Découverte du monde → bank : ${selected.length}/${nbDecouverte} exercices`
+      + ` (historique : ${seenDecouverteIds.length} vus)`
     );
     selected.forEach((ex) => {
       console.log(

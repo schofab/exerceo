@@ -79,7 +79,8 @@ export type Matiere =
   | "Français"
   | "Sciences"
   | "Histoire-Géographie"
-  | "Anglais";
+  | "Anglais"
+  | "Découverte du monde";
 export type TypeExercice =
   | "calcul"
   | "qcm"

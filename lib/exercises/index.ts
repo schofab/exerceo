@@ -24,6 +24,12 @@ export * from './subjects/english/english.bank';
 export * from './subjects/english/english.validation';
 export * from './subjects/english/english.mapping';
 
+// Découverte du monde subject
+export * from './subjects/decouverte_du_monde/decouverte_du_monde.types';
+export * from './subjects/decouverte_du_monde/decouverte_du_monde.bank';
+export * from './subjects/decouverte_du_monde/decouverte_du_monde.validation';
+export * from './subjects/decouverte_du_monde/decouverte_du_monde.mapping';
+
 // Science subject
 export * from './subjects/science/science.types';
 export * from './subjects/science/science.bank';
