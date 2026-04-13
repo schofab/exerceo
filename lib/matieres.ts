@@ -12,6 +12,7 @@ export const MATIERE_COLORS: Record<
   "Sciences":            { bg: "#ffb86b", text: "#071453" },
   "Histoire-Géographie": { bg: "#f9de6f", text: "#071453" },
   "Anglais":             { bg: "#e190c9", text: "#071453" },
+  "Découverte du monde": { bg: "#5bc4d4", text: "#ffffff" },
 };
 
 // Labels courts pour les boutons
@@ -21,6 +22,7 @@ export const MATIERE_LABELS: Record<string, string> = {
   "Sciences":            "Sciences",
   "Histoire-Géographie": "Histoire-Géo",
   "Anglais":             "Anglais",
+  "Découverte du monde": "Questionner le monde",
 };
 
 // Pictos SVG par matière (version couleur — pour fonds clairs)
@@ -30,6 +32,7 @@ export const MATIERE_PICTOS: Record<string, string> = {
   "Sciences":            "/icons/picto-sciences.svg",
   "Histoire-Géographie": "/icons/picto-histoire-geo.svg",
   "Anglais":             "/icons/picto-anglais.svg",
+  "Découverte du monde": "/icons/picto-sciences.svg",
 };
 
 // Pictos SVG blancs par matière (version blanche — pour fonds colorés)
@@ -39,9 +42,10 @@ export const MATIERE_PICTOS_BLANC: Record<string, string> = {
   "Sciences":            "/icons/picto-sciences-blanc.svg",
   "Histoire-Géographie": "/icons/picto-histoire-geo-blanc.svg",
   "Anglais":             "/icons/picto-anglais-blanc.svg",
+  "Découverte du monde": "/icons/picto-sciences-blanc.svg",
 };
 
-// Liste ordonnée des matières
+// Liste ordonnée des matières (legacy — préférer getMatieresByClasse)
 export const MATIERES_LIST = [
   "Mathématiques",
   "Français",
@@ -49,3 +53,32 @@ export const MATIERES_LIST = [
   "Histoire-Géographie",
   "Anglais",
 ] as const;
+
+// ─── Cycle scolaire ───────────────────────────────────────────────────────────
+
+const CYCLE_2_CLASSES = ["CP", "CE1", "CE2"] as const;
+const CYCLE_3_CLASSES = ["CM1", "CM2"] as const;
+
+/**
+ * Retourne la liste des matières disponibles pour une classe donnée.
+ * Cycle 2 (CP/CE1/CE2) : inclut "Découverte du monde", pas "Histoire-Géographie".
+ * Cycle 3 (CM1/CM2)    : inclut "Histoire-Géographie", pas "Découverte du monde".
+ */
+export function getMatieresByClasse(classe: string): string[] {
+  if ((CYCLE_2_CLASSES as readonly string[]).includes(classe)) {
+    return ["Mathématiques", "Français", "Sciences", "Découverte du monde", "Anglais"];
+  }
+  return ["Mathématiques", "Français", "Sciences", "Histoire-Géographie", "Anglais"];
+}
+
+/**
+ * Retourne le libellé d'affichage d'une matière en tenant compte du cycle scolaire.
+ * - "Sciences" en cycle 3 → "Sciences et techno"
+ * - "Découverte du monde" → "Questionner le monde" (toujours cycle 2)
+ * - Autres → valeur de MATIERE_LABELS
+ */
+export function getSubjectLabel(matiere: string, classe: string): string {
+  const isCycle3 = (CYCLE_3_CLASSES as readonly string[]).includes(classe);
+  if (matiere === "Sciences" && isCycle3) return "Sciences et techno";
+  return MATIERE_LABELS[matiere] ?? matiere;
+}

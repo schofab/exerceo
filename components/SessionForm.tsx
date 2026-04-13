@@ -5,15 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import type { Enfant, Matiere } from "@/lib/types";
 import Button from "./ui/Button";
-import { MATIERE_COLORS, MATIERE_LABELS } from "@/lib/matieres";
-
-const MATIERES_CONFIG: { value: Matiere }[] = [
-  { value: "Mathématiques" },
-  { value: "Français" },
-  { value: "Sciences" },
-  { value: "Histoire-Géographie" },
-  { value: "Anglais" },
-];
+import { MATIERE_COLORS, getMatieresByClasse, getSubjectLabel } from "@/lib/matieres";
 
 const DUREES = [
   { value: 5,  label: "5 min",  count: 3 },
@@ -49,20 +41,28 @@ export default function SessionForm({ enfants, defaultEnfantId }: SessionFormPro
   const [loading, setLoading]         = useState(false);
   const [error, setError]             = useState("");
 
+  const enfantSelectionne = enfants.find((e) => e.id === enfantId);
+  const classeEnfant = enfantSelectionne?.classe ?? "CP";
+  const matieresList = getMatieresByClasse(classeEnfant) as Matiere[];
+
   const maxMatieres = DUREES.find((d) => d.value === temps)?.count ?? 5;
-  const limiteActive = matieres.length >= Math.min(maxMatieres, MATIERES_CONFIG.length);
+  const limiteActive = matieres.length >= Math.min(maxMatieres, matieresList.length);
 
   useEffect(() => {
-    const max = Math.min(maxMatieres, MATIERES_CONFIG.length);
+    const max = Math.min(maxMatieres, matieresList.length);
     if (matieres.length > max) {
       setMatieres((prev) => prev.slice(0, max));
     }
   }, [temps]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  useEffect(() => {
+    setMatieres((prev) => prev.filter((m) => matieresList.includes(m)));
+  }, [enfantId]); // eslint-disable-line react-hooks/exhaustive-deps
+
   function toggleMatiere(m: Matiere) {
     setMatieres((prev) => {
       if (prev.includes(m)) return prev.filter((x) => x !== m);
-      const max = Math.min(maxMatieres, MATIERES_CONFIG.length);
+      const max = Math.min(maxMatieres, matieresList.length);
       if (prev.length >= max) return prev;
       return [...prev, m];
     });
@@ -163,12 +163,12 @@ export default function SessionForm({ enfants, defaultEnfantId }: SessionFormPro
           <span className="text-gray-400 font-normal">(au moins une)</span>
           {limiteActive && matieres.length > 0 && (
             <span className="ml-2 text-xs font-medium" style={{ color: "#748bf7" }}>
-              {matieres.length}/{Math.min(maxMatieres, MATIERES_CONFIG.length)} max pour {temps} min
+              {matieres.length}/{Math.min(maxMatieres, matieresList.length)} max pour {temps} min
             </span>
           )}
         </label>
         <div className="flex flex-wrap gap-2">
-          {MATIERES_CONFIG.map(({ value }) => {
+          {matieresList.map((value) => {
             const selectionnee = matieres.includes(value);
             const desactivee   = !selectionnee && limiteActive;
             const couleur      = MATIERE_COLORS[value] ?? { bg: "#748bf7", text: "#ffffff" };
@@ -185,7 +185,7 @@ export default function SessionForm({ enfants, defaultEnfantId }: SessionFormPro
                     : { backgroundColor: "#ffffff", color: "#071453", borderColor: "#e9ecf8" }
                 }
               >
-                {MATIERE_LABELS[value]}
+                {getSubjectLabel(value, classeEnfant)}
               </button>
             );
           })}

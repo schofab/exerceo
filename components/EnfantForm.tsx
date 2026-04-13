@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/client";
 import type { Classe, Enfant, LearningProfile, Matiere, Niveau } from "@/lib/types";
 import Button from "./ui/Button";
 import Input from "./ui/Input";
+import { getMatieresByClasse, getSubjectLabel } from "@/lib/matieres";
 
 const CLASSES: Classe[] = ["CP", "CE1", "CE2", "CM1", "CM2"];
 const NIVEAUX: { value: Niveau; label: string }[] = [
@@ -44,13 +45,6 @@ const PROFILS: { value: LearningProfile; label: string; desc: string; emoji: str
     desc: "Exercices complexes et stimulants",
     emoji: "🏆",
   },
-];
-const MATIERES: Matiere[] = [
-  "Mathématiques",
-  "Français",
-  "Sciences",
-  "Histoire-Géographie",
-  "Anglais",
 ];
 
 interface EnfantFormProps {
@@ -241,18 +235,18 @@ export default function EnfantForm({ enfant, userId }: EnfantFormProps) {
           <span className="text-gray-400 font-normal">(optionnel)</span>
         </label>
         <div className="flex flex-wrap gap-2">
-          {MATIERES.map((m) => (
+          {getMatieresByClasse(classe).map((m) => (
             <button
               key={m}
               type="button"
-              onClick={() => toggleMatiere(m, facilites, setFacilites)}
+              onClick={() => toggleMatiere(m as Matiere, facilites, setFacilites)}
               className={`px-3 py-1.5 rounded-xl text-sm border-2 transition ${
-                facilites.includes(m)
+                facilites.includes(m as Matiere)
                   ? "border-green-500 bg-green-50 text-green-700"
                   : "border-gray-200 text-gray-600 hover:border-green-300"
               }`}
             >
-              {m}
+              {getSubjectLabel(m, classe)}
             </button>
           ))}
         </div>
@@ -265,18 +259,18 @@ export default function EnfantForm({ enfant, userId }: EnfantFormProps) {
           <span className="text-gray-400 font-normal">(optionnel)</span>
         </label>
         <div className="flex flex-wrap gap-2">
-          {MATIERES.map((m) => (
+          {getMatieresByClasse(classe).map((m) => (
             <button
               key={m}
               type="button"
-              onClick={() => toggleMatiere(m, lacunes, setLacunes)}
+              onClick={() => toggleMatiere(m as Matiere, lacunes, setLacunes)}
               className={`px-3 py-1.5 rounded-xl text-sm border-2 transition ${
-                lacunes.includes(m)
+                lacunes.includes(m as Matiere)
                   ? "border-orange-500 bg-orange-50 text-orange-700"
                   : "border-gray-200 text-gray-600 hover:border-orange-300"
               }`}
             >
-              {m}
+              {getSubjectLabel(m, classe)}
             </button>
           ))}
         </div>

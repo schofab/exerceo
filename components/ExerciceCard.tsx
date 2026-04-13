@@ -4,7 +4,7 @@ import { useState } from "react";
 import type { Exercice } from "@/lib/types";
 import Card from "./ui/Card";
 import Button from "./ui/Button";
-import { MATIERE_COLORS } from "@/lib/matieres";
+import { MATIERE_COLORS, MATIERE_LABELS } from "@/lib/matieres";
 
 const MESSAGES_SUCCES = [
   "Bravo !", "Super réponse !", "Bien joué !", "Excellent !",
@@ -115,7 +115,7 @@ export default function ExerciceCard({
             className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold"
             style={{ backgroundColor: matiereStyle.bg, color: matiereStyle.text }}
           >
-            {exercice.matiere === "Histoire-Géographie" ? "Histoire-Géo" : exercice.matiere}
+            {MATIERE_LABELS[exercice.matiere] ?? exercice.matiere}
             {contenu.sous_matiere && (
               <span className="font-normal opacity-80">
                 &nbsp;—&nbsp;{contenu.sous_matiere}
