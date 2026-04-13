@@ -23,11 +23,10 @@ const FEATURES = [
   { titre: "Sans publicité",               texte: "Aucune pub, aucun tracking inutile. Une expérience propre et respectueuse des données.",    bg: "#f0f2ff",  color: NAVY    },
 ]
 
-const STEPS = [
-  { num: "1", titre: "Créez un profil enfant",            texte: "Prénom, classe, niveau, matières préférées et profil d'apprentissage." },
-  { num: "2", titre: "Choisissez une durée",              texte: "5, 10, 15 ou 20 minutes. Sélectionnez les matières du moment." },
-  { num: "3", titre: "Exercices personnalisés à chaque session", texte: "Des exercices sélectionnés selon le niveau, les matières et le profil d'apprentissage de votre enfant." },
-  { num: "4", titre: "Récompenses & progression",         texte: "Étoiles gagnées, créatures Doceo débloquées, objectif hebdomadaire suivi." },
+const MINI_STEPS = [
+  { num: "1", texte: "Choisissez votre enfant, les matières et le temps disponible." },
+  { num: "2", texte: "Exerceo compose une séance d'exercices adaptée à sa classe et à ses besoins." },
+  { num: "3", texte: "Votre enfant s'entraîne, progresse et gagne des récompenses au fil des sessions." },
 ]
 
 export default function ExerceoPage() {
@@ -69,23 +68,34 @@ export default function ExerceoPage() {
       </section>
 
       {/* ── Comment ça marche ── */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-extrabold" style={{ color: NAVY }}>Comment ça marche ?</h2>
-        <div className="grid sm:grid-cols-2 gap-4">
-          {STEPS.map((s) => (
-            <div key={s.num} className="flex gap-4 p-4 rounded-2xl border border-gray-100 bg-gray-50">
+      <section className="space-y-5">
+        <div>
+          <h2 className="text-2xl font-extrabold mb-1" style={{ color: NAVY }}>Comment ça marche ?</h2>
+          <p className="text-sm text-gray-500 leading-relaxed max-w-lg">
+            Une séance adaptée en quelques clics, selon la classe, les matières et le profil de votre enfant.
+          </p>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-3">
+          {MINI_STEPS.map((s) => (
+            <div key={s.num} className="flex-1 flex gap-3 p-4 rounded-2xl border border-gray-100 bg-gray-50">
               <span
-                className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-extrabold text-white"
+                className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-extrabold text-white"
                 style={{ backgroundColor: PURPLE }}
               >
                 {s.num}
               </span>
-              <div>
-                <p className="font-bold text-sm mb-1" style={{ color: NAVY }}>{s.titre}</p>
-                <p className="text-xs text-gray-500 leading-relaxed">{s.texte}</p>
-              </div>
+              <p className="text-xs text-gray-600 leading-relaxed">{s.texte}</p>
             </div>
           ))}
+        </div>
+        <div>
+          <a
+            href="/comment-ca-marche"
+            className="inline-flex items-center gap-1 text-sm font-semibold transition-opacity hover:opacity-70"
+            style={{ color: PURPLE }}
+          >
+            En savoir plus →
+          </a>
         </div>
       </section>
 
