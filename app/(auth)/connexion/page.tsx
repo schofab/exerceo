@@ -23,13 +23,6 @@ export default function ConnexionPage() {
           <AuthForm mode="connexion" />
         </div>
 
-        <p className="text-center text-sm text-gray-500">
-          Pas encore de compte ?{" "}
-          <Link href="/inscription" className="font-bold hover:underline" style={{ color: "#748bf7" }}>
-            S&apos;inscrire gratuitement
-          </Link>
-        </p>
-
       </div>
     </div>
   );
