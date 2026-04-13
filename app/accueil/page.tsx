@@ -43,6 +43,12 @@ const FEATURES = [
   },
 ]
 
+const MINI_STEPS = [
+  { num: "1", texte: "Choisissez votre enfant, les matières et le temps disponible." },
+  { num: "2", texte: "Exerceo compose une séance d'exercices adaptée à sa classe et à ses besoins." },
+  { num: "3", texte: "Votre enfant s'entraîne, progresse et gagne des récompenses au fil des sessions." },
+]
+
 const CLASSE_COULEUR: Record<string, string> = {
   CP:  "#6bd6a6",
   CE1: "#748bf7",
@@ -320,11 +326,48 @@ export default async function AccueilPage() {
           </section>
         )}
 
-        {/* ── Features ── */}
-        <section className="px-4 py-10 max-w-lg mx-auto">
-          <h2 className="text-xl font-extrabold text-center mb-6" style={{ color: NAVY }}>
-            Comment ça marche ?
-          </h2>
+        {/* ── Comment ça marche ── */}
+        <section className="px-4 py-10 max-w-lg mx-auto space-y-5">
+
+          {/* Mini bloc 3 étapes */}
+          <div className="space-y-4">
+            <div className="text-center">
+              <h2 className="text-xl font-extrabold mb-1" style={{ color: NAVY }}>
+                Comment ça marche ?
+              </h2>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Une séance adaptée en quelques clics, selon la classe, les matières et le profil de votre enfant.
+              </p>
+            </div>
+            <div className="space-y-2">
+              {MINI_STEPS.map((s) => (
+                <div
+                  key={s.num}
+                  className="flex items-start gap-3 p-4 rounded-2xl border border-gray-100"
+                  style={{ backgroundColor: "#f5f9ff" }}
+                >
+                  <span
+                    className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-extrabold text-white mt-0.5"
+                    style={{ backgroundColor: PURPLE }}
+                  >
+                    {s.num}
+                  </span>
+                  <p className="text-sm text-gray-600 leading-relaxed">{s.texte}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center">
+              <Link
+                href="/comment-ca-marche"
+                className="inline-flex items-center gap-1 text-sm font-semibold transition-opacity hover:opacity-70"
+                style={{ color: PURPLE }}
+              >
+                En savoir plus →
+              </Link>
+            </div>
+          </div>
+
+          {/* 4 cartes bénéfices */}
           <div className="grid grid-cols-2 gap-3">
             {FEATURES.map((f) => (
               <div
@@ -335,10 +378,13 @@ export default async function AccueilPage() {
                 <p className="text-sm font-extrabold" style={{ color: f.color }}>
                   {f.titre}
                 </p>
-                <p className="text-xs leading-relaxed" style={{ color: f.color, opacity: 0.8 }}>{f.texte}</p>
+                <p className="text-xs leading-relaxed" style={{ color: f.color, opacity: 0.8 }}>
+                  {f.texte}
+                </p>
               </div>
             ))}
           </div>
+
         </section>
 
         {/* ── Doceo teaser ── */}
