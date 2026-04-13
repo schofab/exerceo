@@ -343,7 +343,7 @@ export default async function AccueilPage() {
                   >
                     {s.num}
                   </span>
-                  <p className="text-base leading-snug pt-1" style={{ color: NAVY }}>
+                  <p className="text-sm leading-snug pt-1" style={{ color: NAVY }}>
                     {s.texte}
                   </p>
                 </div>
@@ -394,7 +394,7 @@ export default async function AccueilPage() {
                 className="flex-shrink-0 drop-shadow-sm"
               />
               <p className="flex-1 text-sm leading-relaxed text-center" style={{ color: NAVY }}>
-                À chaque session réussie, ton enfant gagne des étoiles et débloque
+                À chaque session réussie, votre enfant gagne des étoiles et débloque
                 des créatures Doceo à collectionner. Une motivation supplémentaire
                 à chaque exercice !
               </p>
