@@ -218,7 +218,6 @@ export default function EnfantForm({ enfant, userId }: EnfantFormProps) {
                 onChange={() => setLearningProfile(p.value)}
                 className="text-blue-600 mt-0.5 flex-shrink-0"
               />
-              <span className="text-lg flex-shrink-0 leading-none">{p.emoji}</span>
               <span className="flex flex-col">
                 <span className="text-sm font-semibold text-gray-800">{p.label}</span>
                 <span className="text-xs text-gray-500">{p.desc}</span>
