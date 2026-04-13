@@ -331,38 +331,29 @@ export default async function AccueilPage() {
 
           {/* Mini bloc 3 étapes */}
           <div className="space-y-4">
-            <div className="text-center">
-              <h2 className="text-xl font-extrabold mb-1" style={{ color: NAVY }}>
-                Comment ça marche ?
-              </h2>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Une séance adaptée en quelques clics, selon la classe, les matières et le profil de votre enfant.
-              </p>
-            </div>
-            <div className="space-y-2">
+            <h2 className="text-xl font-extrabold text-center" style={{ color: NAVY }}>
+              Comment ça marche ?
+            </h2>
+            <div className="rounded-3xl p-5 space-y-5" style={{ backgroundColor: "#eef1ff" }}>
               {MINI_STEPS.map((s) => (
-                <div
-                  key={s.num}
-                  className="flex items-start gap-3 p-4 rounded-2xl border border-gray-100"
-                  style={{ backgroundColor: "#f5f9ff" }}
-                >
+                <div key={s.num} className="flex items-start gap-4">
                   <span
-                    className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-extrabold text-white mt-0.5"
+                    className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-extrabold text-white"
                     style={{ backgroundColor: PURPLE }}
                   >
                     {s.num}
                   </span>
-                  <p className="text-sm text-gray-600 leading-relaxed">{s.texte}</p>
+                  <p className="text-base leading-snug pt-1" style={{ color: NAVY }}>
+                    {s.texte}
+                  </p>
                 </div>
               ))}
-            </div>
-            <div className="text-center">
               <Link
                 href="/comment-ca-marche"
-                className="inline-flex items-center gap-1 text-sm font-semibold transition-opacity hover:opacity-70"
-                style={{ color: PURPLE }}
+                className="flex items-center justify-center w-full py-3 rounded-2xl text-base font-bold text-white transition-opacity hover:opacity-90 mt-2"
+                style={{ backgroundColor: PURPLE }}
               >
-                En savoir plus →
+                En savoir plus
               </Link>
             </div>
           </div>
