@@ -10,7 +10,7 @@ const PURPLE      = "#748bf7"
 export const metadata: Metadata = {
   title: "exerceō — App éducative pour les enfants du primaire | Mixarto",
   description:
-    "exerceō génère des exercices scolaires personnalisés pour les enfants du CP au CM2. Adapté au niveau, aux matières et au profil d'apprentissage de chaque enfant.",
+    "exerceō propose des exercices scolaires personnalisés pour les enfants du CP au CM2. Adapté au niveau, aux matières et au profil d'apprentissage de chaque enfant.",
   alternates: { canonical: "https://mixarto.com/exerceo" },
 }
 
@@ -26,7 +26,7 @@ const FEATURES = [
 const STEPS = [
   { num: "1", titre: "Créez un profil enfant",            texte: "Prénom, classe, niveau, matières préférées et profil d'apprentissage." },
   { num: "2", titre: "Choisissez une durée",              texte: "5, 10, 15 ou 20 minutes. Sélectionnez les matières du moment." },
-  { num: "3", titre: "Exercices générés en temps réel",   texte: "L'IA crée des exercices uniques, adaptés et vérifiés à chaque session." },
+  { num: "3", titre: "Exercices personnalisés à chaque session", texte: "Des exercices sélectionnés selon le niveau, les matières et le profil d'apprentissage de votre enfant." },
   { num: "4", titre: "Récompenses & progression",         texte: "Étoiles gagnées, créatures Doceo débloquées, objectif hebdomadaire suivi." },
 ]
 
@@ -40,13 +40,13 @@ export default function ExerceoPage() {
         <h1 className="text-3xl font-extrabold leading-tight" style={{ color: NAVY }}>
           Des exercices scolaires{" "}
           <span style={{ color: PURPLE }}>sur-mesure</span>,<br />
-          générés par intelligence artificielle
+          alignés sur les programmes de l'Éducation Nationale
         </h1>
         <p className="text-base text-gray-600 leading-relaxed max-w-xl">
-          exerceō est une application éducative qui génère des exercices
+          exerceō est une application éducative qui propose des exercices
           personnalisés pour les enfants du primaire. En quelques secondes,
           votre enfant dispose d'une session adaptée à son niveau, ses
-          matières et son profil d'apprentissage — basée sur les programmes
+          matières et son profil d'apprentissage — basée sur les attendus
           officiels de l'Éducation Nationale.
         </p>
         <div className="flex flex-wrap gap-3">
@@ -156,7 +156,7 @@ export default function ExerceoPage() {
       <section className="rounded-3xl p-8 text-center space-y-4" style={{ backgroundColor: "#f5f9ff" }}>
         <h2 className="text-xl font-extrabold" style={{ color: NAVY }}>Prêt à essayer ?</h2>
         <p className="text-sm text-gray-600 max-w-sm mx-auto leading-relaxed">
-          Créez votre compte en 30 secondes et générez votre première session gratuitement.
+          Créez votre compte en 30 secondes et lancez votre première session gratuitement.
         </p>
         <a
           href={`${EXERCEO_URL}/inscription`}

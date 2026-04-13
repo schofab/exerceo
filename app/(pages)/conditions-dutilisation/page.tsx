@@ -74,8 +74,14 @@ export default function ConditionsUtilisationPage() {
 
       <Section numero={5} titre="Application Exerceo">
         <p>
-          Exerceo propose des exercices éducatifs personnalisés. Les résultats sont indicatifs
-          et ne remplacent pas un suivi pédagogique professionnel.
+          Exerceo est un outil d'entraînement et de révision qui complète la scolarité de votre
+          enfant. Les exercices sont conçus à partir des attendus de l'Éducation Nationale, mais
+          l'app ne remplace ni l'enseignement en classe ni le suivi de l'enseignant, et ne
+          reflète pas toujours l'ordre exact dans lequel les notions sont vues dans chaque école.
+        </p>
+        <p>
+          Les résultats obtenus dans l'application sont indicatifs et ne constituent pas une
+          évaluation scolaire officielle.
         </p>
       </Section>
 
