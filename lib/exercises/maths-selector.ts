@@ -14,6 +14,7 @@
 
 import { EXERCISE_BANK_MATHS } from "./subjects/maths/maths.mapping";
 import { validateExercise } from "./validator";
+import { antiRepeatSort } from "./core/exercise-core.anti-repetition";
 import type { Exercise, SousDomaine } from "./types";
 import type { ExerciceGenere, Matiere, TypeExercice } from "../types";
 import type { SelectedBankExercise } from "./french-selector";
@@ -90,8 +91,8 @@ export function selectMathExercises(
   const selected: Exercise[] = [];
   const usedSkills = new Set<string>();
 
-  // Passe A — depuis les nouveaux
-  selectWithSkillDiversity(shuffle(poolNouveaux), count, selected, usedSkills);
+  // Passe A — depuis les nouveaux (triés anti-répétition)
+  selectWithSkillDiversity(antiRepeatSort(shuffle(poolNouveaux), seenBankIds, EXERCISE_BANK_MATHS), count, selected, usedSkills);
 
   // Passe B — fallback sur les déjà vus
   if (selected.length < count) {

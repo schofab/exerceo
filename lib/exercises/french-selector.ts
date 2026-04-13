@@ -14,6 +14,7 @@
 
 import { EXERCISE_BANK } from "./bank";
 import { validateExercise } from "./validator";
+import { antiRepeatSort } from "./core/exercise-core.anti-repetition";
 import type { Exercise, SousDomaine } from "./types";
 import type { ExerciceGenere, Matiere, TypeExercice } from "../types";
 
@@ -111,7 +112,7 @@ export function selectFrenchExercises(
   const usedSkills = new Set<string>();
 
   // Passe A — depuis les nouveaux (shuffle)
-  const nouveauxMelanges = shuffle(poolNouveaux);
+  const nouveauxMelanges = antiRepeatSort(shuffle(poolNouveaux), seenBankIds, EXERCISE_BANK);
   selectWithSkillDiversity(nouveauxMelanges, count, selected, usedSkills);
 
   // Passe B — depuis les déjà vus si les nouveaux sont insuffisants

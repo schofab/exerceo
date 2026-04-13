@@ -14,6 +14,7 @@
 
 import { EXERCISE_BANK_SCIENCE } from "./subjects/science/science.mapping";
 import { validateExercise } from "./validator";
+import { antiRepeatSort } from "./core/exercise-core.anti-repetition";
 import type { Exercise, SousDomaine } from "./types";
 import type { ExerciceGenere, Matiere, TypeExercice } from "../types";
 import type { SelectedBankExercise } from "./french-selector";
@@ -85,7 +86,7 @@ export function selectScienceExercises(
   const usedSkills = new Set<string>();
 
   // Passe A — depuis les nouveaux
-  selectWithSkillDiversity(shuffle(poolNouveaux), count, selected, usedSkills);
+  selectWithSkillDiversity(antiRepeatSort(shuffle(poolNouveaux), seenBankIds, EXERCISE_BANK_SCIENCE), count, selected, usedSkills);
 
   // Passe B — fallback sur les déjà vus
   if (selected.length < count) {
