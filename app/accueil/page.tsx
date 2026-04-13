@@ -379,20 +379,47 @@ export default async function AccueilPage() {
         </section>
 
         {/* ── Doceo teaser ── */}
-        <section className="px-4 py-10 bg-white">
-          <div className="max-w-lg mx-auto text-center space-y-4">
-            <h2 className="text-xl font-extrabold" style={{ color: NAVY }}>
-              La collection Doceo
-            </h2>
-            <p className="text-sm text-gray-600 leading-relaxed max-w-xs mx-auto">
-              À chaque session réussie, ton enfant gagne des étoiles et débloque
-              des créatures Doceo à collectionner. Une motivation supplémentaire
-              à chaque exercice !
-            </p>
+        <section className="px-4 py-10 max-w-lg mx-auto">
+          <h2 className="text-xl font-extrabold text-center mb-4" style={{ color: NAVY }}>
+            La collection Doceo
+          </h2>
+          <div className="rounded-3xl p-5 space-y-4" style={{ backgroundColor: "#eef1ff" }}>
+            {/* Créatures + texte */}
+            <div className="flex items-center gap-3">
+              <Image
+                src="/creatures/terria.png"
+                alt="Terria"
+                width={80}
+                height={80}
+                className="flex-shrink-0 drop-shadow-sm"
+              />
+              <p className="flex-1 text-sm leading-relaxed text-center" style={{ color: NAVY }}>
+                À chaque session réussie, ton enfant gagne des étoiles et débloque
+                des créatures Doceo à collectionner. Une motivation supplémentaire
+                à chaque exercice !
+              </p>
+              <Image
+                src="/creatures/chrono.png"
+                alt="Chrono"
+                width={80}
+                height={80}
+                className="flex-shrink-0 drop-shadow-sm"
+              />
+            </div>
+            {/* Bouton */}
             {user && enfants.length > 0 && (
               <Link
                 href={`/collection/${enfants[0].id}`}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm text-white transition-opacity hover:opacity-90"
+                className="flex items-center justify-center w-full py-3 rounded-2xl text-base font-bold text-white transition-opacity hover:opacity-90"
+                style={{ backgroundColor: PURPLE }}
+              >
+                Voir ma collection
+              </Link>
+            )}
+            {!user && (
+              <Link
+                href="/inscription"
+                className="flex items-center justify-center w-full py-3 rounded-2xl text-base font-bold text-white transition-opacity hover:opacity-90"
                 style={{ backgroundColor: PURPLE }}
               >
                 Voir ma collection
