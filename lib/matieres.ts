@@ -12,7 +12,7 @@ export const MATIERE_COLORS: Record<
   "Sciences":            { bg: "#ffb86b", text: "#071453" },
   "Histoire-Géographie": { bg: "#f9de6f", text: "#071453" },
   "Anglais":             { bg: "#e190c9", text: "#071453" },
-  "Découverte du monde": { bg: "#5bc4d4", text: "#ffffff" },
+  "Découverte du monde": { bg: "#f9de6f", text: "#071453" },
 };
 
 // Labels courts pour les boutons
