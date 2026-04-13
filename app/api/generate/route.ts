@@ -153,11 +153,13 @@ export async function POST(request: Request) {
   const inclusFrancais = matieres.includes("Français");
   const inclusMaths    = matieres.includes("Mathématiques");
   const inclusAnglais  = matieres.includes("Anglais");
-  const inclusSciences  = matieres.includes("Sciences");
+  const inclusSciences   = matieres.includes("Sciences");
   const inclusDecouverte = matieres.includes("Découverte du monde");
-  // Matières envoyées à Claude = tout ce qui n'est ni Français, ni Maths, ni Anglais, ni Sciences, ni Découverte du monde
+  const inclusQtm        = matieres.includes("Questionner le monde"); // cycle 2 — fusionne Sciences + Découverte
+  // Matières envoyées à Claude = tout ce qui n'est ni banque locale, ni Questionner le monde
   const autresMatieres = matieres.filter(
-    (m) => m !== "Français" && m !== "Mathématiques" && m !== "Anglais" && m !== "Sciences" && m !== "Découverte du monde"
+    (m) => m !== "Français" && m !== "Mathématiques" && m !== "Anglais"
+        && m !== "Sciences" && m !== "Découverte du monde" && m !== "Questionner le monde"
   ) as Matiere[];
   // Nombre d'exercices par matière (proportionnel au total de la session)
   const nbParMatiere = matieres.length > 1
@@ -435,6 +437,69 @@ export async function POST(request: Request) {
       + ` (historique : ${seenDecouverteIds.length} vus)`
     );
     selected.forEach((ex) => {
+      console.log(
+        `  ✓ source=bank | id=${ex._bank_id} | classe=${ex._debug_classe}`
+        + ` | skill=${ex._debug_skill}`
+      );
+    });
+  }
+
+  // ── ÉTAPE 1f : Questionner le monde (Sciences + Découverte du monde) — cycle 2 ──
+  if (inclusQtm) {
+    const nbQtm = autresMatieres.length > 0
+      ? nbParMatiere
+      : NB_TOTAL - exercicesBank.length;
+
+    // Split : moitié sciences, moitié découverte (arrondi : découverte reçoit le reste)
+    const nbSc  = Math.floor(nbQtm / 2);
+    const nbDdm = nbQtm - nbSc;
+
+    // Historique : exercices vus dans les deux banques + la nouvelle clé fusionnée
+    let seenQtmIds: string[] = [];
+    try {
+      const { data: sessionsRecentes } = await supabase
+        .from("sessions")
+        .select("id")
+        .eq("enfant_id", enfant_id)
+        .neq("id", sessionData.id)
+        .order("created_at", { ascending: false })
+        .limit(5);
+
+      if (sessionsRecentes && sessionsRecentes.length > 0) {
+        const ids = sessionsRecentes.map((s: { id: string }) => s.id);
+        const { data: exRecents } = await supabase
+          .from("exercices")
+          .select("contenu")
+          .in("session_id", ids)
+          .in("matiere", ["Sciences", "Découverte du monde", "Questionner le monde"]);
+
+        seenQtmIds = (exRecents ?? [])
+          .map((ex: { contenu: { _debug?: { bank_id?: string | null } } }) =>
+            ex.contenu?._debug?.bank_id
+          )
+          .filter((id): id is string => typeof id === "string" && id.length > 0);
+      }
+    } catch {
+      console.warn("[EXERCEO] Impossible de récupérer l'historique Questionner le monde.");
+    }
+
+    const selectedSc = selectScienceExercises(
+      enfant.classe, nbSc, exercicesBank.length + 1, seenQtmIds,
+    ).map((ex) => ({ ...ex, matiere: "Questionner le monde" as Matiere }));
+
+    const selectedDdm = selectDecouverteDuMondeExercises(
+      enfant.classe, nbDdm, exercicesBank.length + selectedSc.length + 1, seenQtmIds,
+    ).map((ex) => ({ ...ex, matiere: "Questionner le monde" as Matiere }));
+
+    exercicesBank.push(...selectedSc, ...selectedDdm);
+
+    console.log(
+      `[EXERCEO DEBUG] Questionner le monde → bank : `
+      + `${selectedSc.length + selectedDdm.length}/${nbQtm} exercices`
+      + ` (sciences=${selectedSc.length}, découverte=${selectedDdm.length},`
+      + ` historique=${seenQtmIds.length} vus)`
+    );
+    [...selectedSc, ...selectedDdm].forEach((ex) => {
       console.log(
         `  ✓ source=bank | id=${ex._bank_id} | classe=${ex._debug_classe}`
         + ` | skill=${ex._debug_skill}`

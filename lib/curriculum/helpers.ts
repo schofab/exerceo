@@ -3,11 +3,13 @@ import { CURRICULUM_ACTUEL } from "./france-primary";
 
 // Correspondance entre les noms de matières de l'app et les IDs du curriculum
 const MATIERE_APP_VERS_CURRICULUM: Record<string, string> = {
-  "Mathématiques":       "mathematiques",
-  "Français":            "francais",
-  "Sciences":            "sciences_et_technologie",
-  "Histoire-Géographie": "histoire_geographie",
-  "Anglais":             "langues_vivantes", // géré séparément (pas dans le curriculum détaillé)
+  "Mathématiques":        "mathematiques",
+  "Français":             "francais",
+  "Sciences":             "sciences_et_technologie",
+  "Histoire-Géographie":  "histoire_geographie",
+  "Anglais":              "langues_vivantes",       // géré séparément (pas dans le curriculum détaillé)
+  "Questionner le monde": "questionner_le_monde",   // cycle 2 — banque locale, fallback Claude si besoin
+  "Découverte du monde":  "questionner_le_monde",   // alias legacy
 };
 
 /**
