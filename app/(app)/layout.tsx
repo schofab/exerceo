@@ -62,18 +62,30 @@ export default async function AppLayout({
         </div>
       </nav>
 
-      {/* ── Barre Tableau de bord (sous le header, toujours visible) ── */}
+      {/* ── Barre de navigation secondaire ── */}
       <div className="sticky top-[57px] z-10 bg-white border-b border-blue-50" style={{ boxShadow: "0 2px 8px rgba(116,139,247,0.06)" }}>
-        <div className="max-w-md mx-auto px-4 h-10 flex items-center">
+        <div className="max-w-md mx-auto px-4 h-10 flex items-center gap-5">
           <Link
-            href="/tableau-de-bord"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors hover:opacity-80"
+            href="/accueil"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold transition-opacity hover:opacity-70"
             style={{ color: "#748bf7" }}
           >
+            {/* icône maison */}
             <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round"
                 d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
               />
+            </svg>
+            Accueil
+          </Link>
+          <Link
+            href="/tableau-de-bord"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold transition-opacity hover:opacity-70"
+            style={{ color: "#748bf7" }}
+          >
+            {/* icône liste */}
+            <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
             </svg>
             Tableau de bord
           </Link>
