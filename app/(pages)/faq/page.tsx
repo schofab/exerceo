@@ -217,21 +217,31 @@ export default function FaqPage() {
         </p>
       </div>
 
-      {/* Liste Q&A */}
-      <div className="space-y-4">
+      {/* Liste Q&A — accordéon */}
+      <div className="space-y-2">
         {FAQ.map((item, i) => (
-          <div
+          <details
             key={i}
-            className="rounded-2xl border border-gray-100 p-6 space-y-3"
+            className="group rounded-2xl border border-gray-100 overflow-hidden"
             style={{ backgroundColor: "#f8f9ff" }}
           >
-            <h2 className="text-base font-bold leading-snug" style={{ color: NAVY }}>
-              {item.question}
-            </h2>
-            <div className="text-sm text-gray-600 leading-relaxed space-y-2">
+            <summary
+              className="flex items-center justify-between gap-3 px-5 py-4 cursor-pointer list-none"
+              style={{ color: NAVY }}
+            >
+              <span className="text-sm font-bold leading-snug">{item.question}</span>
+              <svg
+                className="flex-shrink-0 transition-transform duration-200 group-open:rotate-180"
+                width="16" height="16" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" strokeWidth={2.5}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div className="px-5 pb-5 text-sm text-gray-600 leading-relaxed space-y-2 border-t border-gray-100 pt-4">
               {item.reponse}
             </div>
-          </div>
+          </details>
         ))}
       </div>
 
@@ -244,7 +254,7 @@ export default function FaqPage() {
           Une question sans réponse ?
         </p>
         <p className="text-sm text-gray-500">
-          Contactez-moi, je réponds sous 24 h.
+          Je ferai de mon mieux pour répondre dans les meilleurs délais.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a

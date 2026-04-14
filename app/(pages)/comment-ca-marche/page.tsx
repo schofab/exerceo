@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 
 const NAVY   = "#071453";
 const PURPLE = "#748bf7";
-const GREEN  = "#6bd6a6";
 
 const SECTIONS = [
   {
@@ -46,20 +45,6 @@ const SECTIONS = [
   },
 ];
 
-const FAQ = [
-  {
-    q: "Pourquoi les exercices peuvent-ils varier ?",
-    r: "exerceō sélectionne les exercices en fonction de la classe de l'enfant, des matières choisies et de sa progression dans l'app. L'objectif est de proposer des exercices variés d'une session à l'autre, pour éviter la répétition et maintenir l'intérêt.",
-  },
-  {
-    q: "Peut-on choisir plusieurs matières ?",
-    r: "Oui. Vous pouvez sélectionner une ou plusieurs matières par session, dans la limite du nombre d'exercices disponibles pour la durée choisie. Par exemple, pour une session de 10 minutes (6 exercices), vous pouvez choisir jusqu'à 6 matières.",
-  },
-  {
-    q: "À qui s'adresse exerceō ?",
-    r: "exerceō s'adresse aux enfants scolarisés du CP au CM2. L'app est conçue pour être utilisée à la maison, en complément de l'école, avec ou sans l'aide d'un parent. Elle convient aussi bien pour réviser, s'entraîner que pour consolider des acquis.",
-  },
-];
 
 export default function CommentCaMarchePage() {
   return (
@@ -133,50 +118,29 @@ export default function CommentCaMarchePage() {
             "L'accompagnement d'un adulte reste utile pour adapter l'usage.",
           ].map((item) => (
             <div key={item} className="flex items-start gap-2 text-sm text-gray-600">
-              <span style={{ color: GREEN }} className="font-bold mt-0.5 flex-shrink-0">·</span>
+              <span style={{ color: "#6bd6a6" }} className="font-bold mt-0.5 flex-shrink-0">·</span>
               <span>{item}</span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* ── FAQ ── */}
-      <div className="space-y-4">
-        <h2 className="font-extrabold text-base" style={{ color: NAVY }}>
-          Questions fréquentes
-        </h2>
-        <div className="space-y-3">
-          {FAQ.map((item) => (
-            <div
-              key={item.q}
-              className="rounded-2xl p-5 space-y-2 border border-gray-100"
-              style={{ backgroundColor: "#fafafa" }}
-            >
-              <p className="font-bold text-sm" style={{ color: NAVY }}>
-                {item.q}
-              </p>
-              <p className="text-sm text-gray-600 leading-relaxed">{item.r}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ── CTA retour ── */}
-      <div className="pt-2 flex flex-wrap gap-4 items-center">
-        <Link
-          href="/exerceo"
-          className="text-sm font-semibold transition-opacity hover:opacity-70"
-          style={{ color: PURPLE }}
-        >
-          ← Retour à la présentation
-        </Link>
-        <a
-          href="https://exerceo.mixarto.com/inscription"
-          className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-bold text-white transition-opacity hover:opacity-90"
-          style={{ backgroundColor: PURPLE }}
-        >
-          Essayer gratuitement
-        </a>
+      {/* ── Renvoi FAQ ── */}
+      <div
+        className="rounded-2xl p-5 flex items-center gap-4"
+        style={{ backgroundColor: "#eef1ff" }}
+      >
+        <p className="flex-1 text-sm leading-relaxed" style={{ color: NAVY }}>
+          D'autres questions ? N'hésitez pas à consulter la{" "}
+          <Link
+            href="/aide"
+            className="font-bold underline transition-opacity hover:opacity-70"
+            style={{ color: PURPLE }}
+          >
+            FAQ
+          </Link>
+          .
+        </p>
       </div>
 
     </article>
