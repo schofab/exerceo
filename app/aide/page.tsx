@@ -109,6 +109,11 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
           <li>20 min → 12 exercices</li>
         </ul>
         <p className="mt-2">
+          Ces durées sont indicatives : chaque enfant avance à son propre rythme,
+          et certains prendront un peu plus ou un peu moins de temps selon les
+          exercices proposés.
+        </p>
+        <p className="mt-2">
           L'objectif est de proposer des sessions courtes et régulières, sans
           surcharger l'enfant.
         </p>
