@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Contact — Mixarto",
@@ -7,7 +6,6 @@ export const metadata: Metadata = {
 }
 
 const NAVY  = "#071453"
-const GREEN = "#6BD6A6"
 
 export default function ContactPage() {
   return (
@@ -41,28 +39,6 @@ export default function ContactPage() {
         Je ferai de mon mieux pour répondre dans les meilleurs délais.
       </p>
 
-      {/* Liens légaux */}
-      <div className="border-t pt-6" style={{ borderColor: "#e5e7eb" }}>
-        <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: "#9298c8" }}>
-          Liens utiles
-        </p>
-        <div className="flex flex-wrap gap-3">
-          {[
-            { href: "/mentions-legales",             label: "Mentions légales"            },
-            { href: "/politique-de-confidentialite", label: "Politique de confidentialité" },
-            { href: "/conditions-dutilisation",      label: "CGU"                          },
-          ].map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              className="text-sm font-medium px-4 py-2 rounded-full border transition-opacity hover:opacity-70"
-              style={{ borderColor: GREEN, color: NAVY }}
-            >
-              {label}
-            </Link>
-          ))}
-        </div>
-      </div>
     </article>
   )
 }
