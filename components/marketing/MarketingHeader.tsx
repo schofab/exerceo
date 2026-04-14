@@ -65,7 +65,7 @@ export default function MarketingHeader() {
             className="hidden md:inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90"
             style={{ backgroundColor: NAVY }}
           >
-            Tester Exerceo
+            Tester exerceō
           </a>
 
           {/* Burger mobile */}
@@ -112,7 +112,7 @@ export default function MarketingHeader() {
                 className="block text-sm font-semibold px-4 py-3 rounded-xl text-white text-center hover:opacity-90 transition-opacity"
                 style={{ backgroundColor: NAVY }}
               >
-                Tester Exerceo
+                Tester exerceō
               </a>
             </div>
           </nav>

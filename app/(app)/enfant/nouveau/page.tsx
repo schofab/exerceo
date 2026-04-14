@@ -38,7 +38,7 @@ export default async function NouvelEnfantPage() {
           que vous voulez.
         </p>
         <Link href="/api/stripe/checkout">
-          <Button size="lg">Passer Premium — 29 €</Button>
+          <Button size="lg">Passer Premium — 15 €</Button>
         </Link>
       </div>
     );

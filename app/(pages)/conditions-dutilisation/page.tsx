@@ -45,7 +45,7 @@ export default function ConditionsUtilisationPage() {
       <Section numero={1} titre="Objet">
         <p>
           Les présentes CGU définissent les conditions d'utilisation du site Mixarto
-          et de l'application Exerceo.
+          et de l'application exerceō.
         </p>
       </Section>
 
@@ -72,9 +72,9 @@ export default function ConditionsUtilisationPage() {
         </p>
       </Section>
 
-      <Section numero={5} titre="Application Exerceo">
+      <Section numero={5} titre="Application exerceō">
         <p>
-          Exerceo est un outil d'entraînement et de révision qui complète la scolarité de votre
+          exerceō est un outil d'entraînement et de révision qui complète la scolarité de votre
           enfant. Les exercices sont conçus à partir des attendus de l'Éducation Nationale, mais
           l'app ne remplace ni l'enseignement en classe ni le suivi de l'enseignant, et ne
           reflète pas toujours l'ordre exact dans lequel les notions sont vues dans chaque école.

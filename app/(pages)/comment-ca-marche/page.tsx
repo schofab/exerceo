@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Comment ça marche — Exerceo",
+  title: "Comment ça marche — exerceō",
   description:
-    "Découvrez comment Exerceo compose des séances d'exercices adaptées à votre enfant, du CP au CM2, en quelques clics.",
+    "Découvrez comment exerceō compose des séances d'exercices adaptées à votre enfant, du CP au CM2, en quelques clics.",
 };
 
 const NAVY   = "#071453";
@@ -17,14 +17,14 @@ const SECTIONS = [
     titre: "Choisir une séance",
     texte: [
       "En quelques clics, vous choisissez l'enfant concerné, la ou les matières à travailler, ainsi que le temps disponible.",
-      "Exerceo permet de créer une séance adaptée au niveau scolaire et au profil de chaque enfant.",
+      "exerceō permet de créer une séance adaptée au niveau scolaire et au profil de chaque enfant.",
     ],
   },
   {
     num: "2",
     titre: "Obtenir une séance adaptée",
     texte: [
-      "À partir de vos choix, Exerceo propose une série d'exercices conçus pour l'entraînement et la révision.",
+      "À partir de vos choix, exerceō propose une série d'exercices conçus pour l'entraînement et la révision.",
       "Les contenus s'appuient sur les attendus de l'Éducation nationale, tout en tenant compte du niveau scolaire et de la progression de l'enfant dans l'app.",
     ],
   },
@@ -49,15 +49,15 @@ const SECTIONS = [
 const FAQ = [
   {
     q: "Pourquoi les exercices peuvent-ils varier ?",
-    r: "Exerceo sélectionne les exercices en fonction de la classe de l'enfant, des matières choisies et de sa progression dans l'app. L'objectif est de proposer des exercices variés d'une session à l'autre, pour éviter la répétition et maintenir l'intérêt.",
+    r: "exerceō sélectionne les exercices en fonction de la classe de l'enfant, des matières choisies et de sa progression dans l'app. L'objectif est de proposer des exercices variés d'une session à l'autre, pour éviter la répétition et maintenir l'intérêt.",
   },
   {
     q: "Peut-on choisir plusieurs matières ?",
     r: "Oui. Vous pouvez sélectionner une ou plusieurs matières par session, dans la limite du nombre d'exercices disponibles pour la durée choisie. Par exemple, pour une session de 10 minutes (6 exercices), vous pouvez choisir jusqu'à 6 matières.",
   },
   {
-    q: "À qui s'adresse Exerceo ?",
-    r: "Exerceo s'adresse aux enfants scolarisés du CP au CM2. L'app est conçue pour être utilisée à la maison, en complément de l'école, avec ou sans l'aide d'un parent. Elle convient aussi bien pour réviser, s'entraîner que pour consolider des acquis.",
+    q: "À qui s'adresse exerceō ?",
+    r: "exerceō s'adresse aux enfants scolarisés du CP au CM2. L'app est conçue pour être utilisée à la maison, en complément de l'école, avec ou sans l'aide d'un parent. Elle convient aussi bien pour réviser, s'entraîner que pour consolider des acquis.",
   },
 ];
 
@@ -109,11 +109,11 @@ export default function CommentCaMarchePage() {
         style={{ backgroundColor: "#fffdf5" }}
       >
         <h2 className="font-extrabold text-sm" style={{ color: NAVY }}>
-          Ce qu&apos;Exerceo est — et n&apos;est pas
+          Ce qu&apos;exerceō est — et n&apos;est pas
         </h2>
         <div className="space-y-3 text-sm text-gray-600 leading-relaxed">
           <p>
-            Exerceo est un outil d&apos;entraînement et de révision qui complète la
+            exerceō est un outil d&apos;entraînement et de révision qui complète la
             scolarité de votre enfant.
           </p>
           <p>

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "Questions fréquentes — exerceō",
   description:
-    "Toutes les réponses aux questions fréquentes sur Exerceo : tarifs, fonctionnement, matières disponibles, profils enfants et plus encore.",
+    "Toutes les réponses aux questions fréquentes sur exerceō : tarifs, fonctionnement, matières disponibles, profils enfants et plus encore.",
 };
 
 const NAVY   = "#071453";
@@ -13,10 +13,10 @@ const PURPLE = "#748bf7";
 
 const FAQ: { question: string; reponse: React.ReactNode }[] = [
   {
-    question: "Combien coûte Exerceo et que comprend le prix ?",
+    question: "Combien coûte exerceō et que comprend le prix ?",
     reponse: (
       <>
-        <p>Exerceo est disponible en deux formules :</p>
+        <p>exerceō est disponible en deux formules :</p>
         <ul className="mt-2 space-y-1 list-disc list-inside text-gray-600">
           <li>
             <strong>Gratuit — 0 €</strong> : 1 profil enfant, 3 sessions pour
@@ -24,10 +24,10 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
             récompenses Doceo.
           </li>
           <li>
-            <strong>Premium — 19 € une seule fois</strong> : enfants illimités,
+            <strong>Premium — 15 € une seule fois</strong> : enfants illimités,
             sessions illimitées, accès à vie sans abonnement.{" "}
             <span style={{ color: PURPLE }} className="font-semibold">
-              Offre de lancement : 19 € au lieu de 29 €.
+              Offre de lancement : 15 € au lieu de 19 €.
             </span>
           </li>
         </ul>
@@ -43,8 +43,8 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
     reponse: (
       <>
         <p>
-          Exerceo est développé et maintenu de façon indépendante, sans
-          investisseurs ni modèle publicitaire. Le prix unique de 19 € couvre
+          exerceō est développé et maintenu de façon indépendante, sans
+          investisseurs ni modèle publicitaire. Le prix unique de 15 € couvre
           les coûts d'infrastructure (hébergement, base de données, API
           d'intelligence artificielle) et permet à l'application d'exister
           durablement.
@@ -57,10 +57,10 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
     ),
   },
   {
-    question: "Exerceo remplace-t-il un enseignant ou des cours particuliers ?",
+    question: "exerceō remplace-t-il un enseignant ou des cours particuliers ?",
     reponse: (
       <p>
-        Non. Exerceo est un outil de consolidation et d'entraînement à la
+        Non. exerceō est un outil de consolidation et d'entraînement à la
         maison, pas un substitut à l'enseignement scolaire. Il permet à votre
         enfant de revoir régulièrement les notions vues en classe, à son rythme
         et de façon ludique. Pour des besoins spécifiques ou des difficultés
@@ -70,7 +70,7 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
     ),
   },
   {
-    question: "Exerceo suit-il exactement le programme de la classe de mon enfant ?",
+    question: "exerceō suit-il exactement le programme de la classe de mon enfant ?",
     reponse: (
       <p>
         Les exercices générés s'appuient sur le programme officiel de
@@ -78,17 +78,17 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
         adaptés à la classe et aux matières sélectionnées. Cependant, chaque
         enseignant avançant à son propre rythme, certaines notions peuvent être
         abordées légèrement en avance ou en décalage par rapport au cours de la
-        semaine. Exerceo est conçu pour consolider les acquis, pas pour
+        semaine. exerceō est conçu pour consolider les acquis, pas pour
         anticiper systématiquement les leçons à venir.
       </p>
     ),
   },
   {
-    question: "Puis-je utiliser Exerceo pour plusieurs enfants ?",
+    question: "Puis-je utiliser exerceō pour plusieurs enfants ?",
     reponse: (
       <p>
         Avec le compte gratuit, vous pouvez créer <strong>1 profil enfant</strong>.
-        Avec le compte Premium (19 € une fois), vous pouvez créer{" "}
+        Avec le compte Premium (15 € une fois), vous pouvez créer{" "}
         <strong>autant de profils que vous le souhaitez</strong> — pratique pour
         les familles avec plusieurs enfants à des niveaux différents.
       </p>
@@ -119,7 +119,7 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
     question: "Mon enfant n'aime pas les devoirs. Est-ce que ça va lui convenir ?",
     reponse: (
       <p>
-        Exerceo est pensé pour rendre l'entraînement moins contraignant. Les
+        exerceō est pensé pour rendre l'entraînement moins contraignant. Les
         sessions sont courtes, les exercices variés, et un système de
         récompenses (étoiles, créatures Doceo à collectionner) donne à l'enfant
         une motivation concrète au-delà de la note. Bien sûr, chaque enfant est
@@ -145,7 +145,7 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
     reponse: (
       <>
         <p>
-          Exerceo couvre toutes les classes du primaire :
+          exerceō couvre toutes les classes du primaire :
           <strong> CP, CE1, CE2, CM1 et CM2</strong>.
         </p>
         <p className="mt-2">Les matières disponibles selon le niveau :</p>
@@ -186,10 +186,10 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
     ),
   },
   {
-    question: "À qui s'adresse Exerceo ?",
+    question: "À qui s'adresse exerceō ?",
     reponse: (
       <p>
-        Exerceo s'adresse aux parents d'enfants scolarisés en primaire (du CP
+        exerceō s'adresse aux parents d'enfants scolarisés en primaire (du CP
         au CM2) qui souhaitent proposer un entraînement régulier et adapté à
         la maison. L'application est pensée pour des sessions du soir ou du
         week-end, en complément de la scolarité classique.
@@ -255,7 +255,7 @@ export default function AidePage() {
           </h1>
           <p className="text-base text-gray-500 leading-relaxed">
             Tout ce que vous devez savoir avant de commencer, ou pour mieux
-            comprendre comment fonctionne Exerceo.
+            comprendre comment fonctionne exerceō.
           </p>
         </div>
 

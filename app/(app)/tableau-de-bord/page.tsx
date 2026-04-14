@@ -112,7 +112,7 @@ export default async function TableauDeBordPage() {
                   {sessionRestantes > 1 ? "s" : ""}
                 </p>
                 <p className="text-sm text-blue-600 mt-0.5">
-                  Ensuite <s>29 €</s> 19 € à vie pour un accès illimité.
+                  Ensuite <s>19 €</s> 15 € à vie pour un accès illimité.
                 </p>
               </>
             ) : (
@@ -129,7 +129,7 @@ export default async function TableauDeBordPage() {
           {sessionRestantes <= 0 && (
             <Link href="/api/stripe/checkout" prefetch={false}>
               <Button size="sm" className="whitespace-nowrap">
-                Passer Premium — <s className="opacity-60">29&nbsp;€</s>&nbsp;19&nbsp;€
+                Passer Premium — <s className="opacity-60">19&nbsp;€</s>&nbsp;15&nbsp;€
               </Button>
             </Link>
           )}

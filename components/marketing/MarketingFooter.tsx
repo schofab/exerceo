@@ -31,7 +31,7 @@ export default function MarketingFooter() {
             <ul className="space-y-3">
               {[
                 { href: "/",          label: "Accueil"   },
-                { href: "/#apps",     label: "Exerceo"   },
+                { href: "/#apps",     label: "exerceō"   },
                 { href: "/#boutique", label: "Boutique"  },
                 { href: "/#a-propos", label: "À propos"  },
               ].map(({ href, label }) => (

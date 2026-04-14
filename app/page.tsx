@@ -19,7 +19,7 @@ const CAROUSEL_IMAGES = [
 export const metadata: Metadata = {
   title: "Mixarto — Créations visuelles & applications pour le quotidien",
   description:
-    "Portraits personnalisés d'animaux, affiches à télécharger et applications éducatives pensées avec soin. Découvrez la boutique Mixarto et l'app Exerceo.",
+    "Portraits personnalisés d'animaux, affiches à télécharger et applications éducatives pensées avec soin. Découvrez la boutique Mixarto et l'app exerceō.",
   keywords: ["portrait animal personnalisé", "affiches à télécharger", "exercices enfants", "app éducative enfant"],
   alternates: { canonical: "https://mixarto.com" },
   openGraph: { siteName: "Mixarto", locale: "fr_FR", type: "website" },
@@ -138,7 +138,7 @@ export default function MixartoLanding() {
 
             <p className="text-xs mt-3 leading-relaxed" style={{ color: "#9298c8" }}>
               *Mixarto développe progressivement de nouvelles applications et créations.
-              Exerceo est la première d&apos;une série d&apos;outils pensés avec la même exigence :
+              exerceō est la première d&apos;une série d&apos;outils pensés avec la même exigence :
               simplicité, utilité et plaisir d&apos;usage.
             </p>
           </div>
@@ -313,7 +313,7 @@ export default function MixartoLanding() {
                     muted
                     playsInline
                     style={{ display: "block", width: "100%", marginTop: "-3px", marginBottom: "-3px" }}
-                    aria-label="Démonstration de l'application Exerceo"
+                    aria-label="Démonstration de l'application exerceō"
                   />
                 </div>
               </div>
@@ -336,7 +336,7 @@ export default function MixartoLanding() {
               En tant que graphiste, photographe et créateur indépendant, j&apos;explore depuis plusieurs années différentes formes d&apos;expression, notamment à travers des portraits personnalisés d&apos;animaux et des illustrations digitales que je propose sur ma boutique Etsy.
             </p>
             <p className="text-sm leading-relaxed mb-4" style={{ color: NAVY }}>
-              Avec Exerceo, j&apos;ai voulu aller plus loin en mettant cette sensibilité créative au service d&apos;un besoin concret : accompagner les enfants dans leurs apprentissages de manière simple, ludique et personnalisée.
+              Avec exerceō, j&apos;ai voulu aller plus loin en mettant cette sensibilité créative au service d&apos;un besoin concret : accompagner les enfants dans leurs apprentissages de manière simple, ludique et personnalisée.
             </p>
             <p className="text-sm leading-relaxed mb-10" style={{ color: NAVY }}>
               Mixarto est ainsi devenu un espace où design, créativité et utilité se rencontrent, avec une même exigence : proposer des expériences à la fois esthétiques, accessibles et réellement utiles au quotidien.
@@ -363,7 +363,7 @@ export default function MixartoLanding() {
             </h2>
             <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
               Mixarto développe progressivement de nouvelles applications et créations.
-              Exerceo est la première d&apos;une série d&apos;outils pensés avec la même
+              exerceō est la première d&apos;une série d&apos;outils pensés avec la même
               exigence : simplicité, utilité et plaisir d&apos;usage.
             </p>
           </div>

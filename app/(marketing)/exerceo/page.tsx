@@ -25,7 +25,7 @@ const FEATURES = [
 
 const MINI_STEPS = [
   { num: "1", texte: "Choisissez votre enfant, les matières et le temps disponible." },
-  { num: "2", texte: "Exerceo compose une séance d'exercices adaptée à sa classe et à ses besoins." },
+  { num: "2", texte: "exerceō compose une séance d'exercices adaptée à sa classe et à ses besoins." },
   { num: "3", texte: "Votre enfant s'entraîne, progresse et gagne des récompenses au fil des sessions." },
 ]
 
@@ -141,8 +141,8 @@ export default function ExerceoPage() {
               <span className="text-xs font-bold px-2.5 py-1 rounded-full" style={{ backgroundColor: GREEN, color: NAVY }}>À vie</span>
             </div>
             <p className="text-3xl font-extrabold text-white">
-              <span className="line-through opacity-40 text-2xl mr-1">29 €</span>
-              19 € <span className="text-sm font-medium opacity-60">une seule fois</span>
+              <span className="line-through opacity-40 text-2xl mr-1">19 €</span>
+              15 € <span className="text-sm font-medium opacity-60">une seule fois</span>
             </p>
             <ul className="space-y-2 text-sm text-white opacity-90 flex-1">
               {["Enfants illimités", "Sessions illimitées", "Toutes les matières", "Récompenses & Doceo", "Accès à vie, sans abonnement"].map((item) => (

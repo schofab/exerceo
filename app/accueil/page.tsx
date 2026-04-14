@@ -45,7 +45,7 @@ const FEATURES = [
 
 const MINI_STEPS = [
   { num: "1", texte: "Choisissez votre enfant, les matières et le temps disponible." },
-  { num: "2", texte: "Exerceo compose une séance d'exercices adaptée à sa classe et à ses besoins." },
+  { num: "2", texte: "exerceō compose une séance d'exercices adaptée à sa classe et à ses besoins." },
   { num: "3", texte: "Votre enfant s'entraîne, progresse et gagne des récompenses au fil des sessions." },
 ]
 

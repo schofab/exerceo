@@ -24,7 +24,7 @@ export default function Footer() {
 
         {/* Phrase rassurante */}
         <p className="text-xs text-gray-500 leading-relaxed">
-          Exerceo est une application éducative sans publicité et respectueuse
+          exerceō est une application éducative sans publicité et respectueuse
           des données personnelles.
         </p>
 

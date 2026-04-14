@@ -51,7 +51,7 @@ export default function PolitiqueConfidentialitePage() {
         <Liste
           items={[
             "Adresse email",
-            "Données liées à l'utilisation de l'application Exerceo",
+            "Données liées à l'utilisation de l'application exerceō",
             "Données de navigation (cookies, analytics)",
           ]}
         />

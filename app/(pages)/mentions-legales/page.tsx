@@ -78,7 +78,7 @@ export default function MentionsLegalesPage() {
         <p>Mixarto propose :</p>
         <Liste
           items={[
-            "Une application éducative (Exerceo)",
+            "Une application éducative (exerceō)",
             "Des créations graphiques (portraits personnalisés, affiches digitales)",
           ]}
         />

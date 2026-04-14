@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Contact — Mixarto",
-  description: "Contactez Mixarto pour toute question sur la boutique, l'application Exerceo ou vos commandes.",
+  description: "Contactez Mixarto pour toute question sur la boutique, l'application exerceō ou vos commandes.",
 }
 
 const NAVY  = "#071453"
@@ -30,7 +30,7 @@ export default function ContactPage() {
           Contact
         </h1>
         <p className="text-sm leading-relaxed" style={{ color: "#6b7280" }}>
-          Pour toute question concernant la boutique, l&apos;application Exerceo
+          Pour toute question concernant la boutique, l&apos;application exerceō
           ou vos commandes, contactez-moi à l&apos;adresse suivante :
         </p>
       </div>
