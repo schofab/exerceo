@@ -44,9 +44,9 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
         <p>
           exerceō est développé et maintenu de façon indépendante, sans
           investisseurs ni modèle publicitaire. Le prix unique de 15 € couvre
-          les coûts d'infrastructure (hébergement, base de données, API
-          d'intelligence artificielle) et permet à l'application d'exister
-          durablement.
+          les coûts d'infrastructure (hébergement, base de données,
+          enrichissement continu de la banque d'exercices) et permet à
+          l'application d'exister durablement.
         </p>
         <p className="mt-2">
           Pas de données revendues, pas de publicité ciblée. Votre enfant
@@ -170,11 +170,12 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
     question: "Pourquoi les exercices varient-ils d'une session à l'autre ?",
     reponse: (
       <p>
-        Chaque session est générée à la volée par intelligence artificielle en
-        tenant compte du profil de l'enfant (classe, niveau, points forts,
-        lacunes) et des matières sélectionnées. Cela garantit des exercices
-        toujours nouveaux et adaptés, sans répétition mécanique. La variété
-        fait partie du processus d'apprentissage.
+        exerceō s'appuie sur une banque d'exercices structurée et enrichie en
+        continu, organisée par niveau, matière et type d'exercice. À chaque
+        session, les exercices sont sélectionnés en tenant compte du profil de
+        l'enfant (classe, points forts, lacunes) et des matières choisies. La
+        banque est régulièrement mise à jour pour apporter toujours plus de
+        diversité.
       </p>
     ),
   },
@@ -243,7 +244,7 @@ export default function FaqPage() {
           Une question sans réponse ?
         </p>
         <p className="text-sm text-gray-500">
-          Contactez-nous, nous répondons sous 24 h.
+          Contactez-moi, je réponds sous 24 h.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
@@ -251,7 +252,7 @@ export default function FaqPage() {
             className="inline-flex items-center justify-center px-6 py-3 rounded-2xl text-white font-bold text-sm transition-opacity hover:opacity-90"
             style={{ backgroundColor: PURPLE }}
           >
-            Nous contacter
+            Me contacter
           </a>
           <a
             href="/inscription"
