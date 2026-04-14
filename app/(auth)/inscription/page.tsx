@@ -1,5 +1,4 @@
 import AuthForm from "@/components/AuthForm";
-import Link from "next/link";
 import Logo from "@/components/Logo";
 
 export const metadata = { title: "Inscription — exerceō" };
@@ -22,13 +21,6 @@ export default function InscriptionPage() {
           </p>
           <AuthForm mode="inscription" />
         </div>
-
-        <p className="text-center text-sm text-gray-500">
-          Déjà un compte ?{" "}
-          <Link href="/connexion" className="font-bold hover:underline" style={{ color: "#748bf7" }}>
-            Se connecter
-          </Link>
-        </p>
 
       </div>
     </div>
