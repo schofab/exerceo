@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "@/components/Footer";
+import { createClient } from "@/lib/supabase/server";
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Questions fréquentes — exerceō",
@@ -204,7 +207,10 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
   },
 ];
 
-export default function AidePage() {
+export default async function AidePage() {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+
   return (
     <div className="min-h-screen bg-white flex flex-col">
 
@@ -223,20 +229,32 @@ export default function AidePage() {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <Link
-              href="/connexion"
-              className="text-sm font-semibold px-3 py-1.5 rounded-xl border transition-colors hover:bg-gray-50"
-              style={{ color: NAVY, borderColor: "#e0e7ff" }}
-            >
-              Se connecter
-            </Link>
-            <Link
-              href="/inscription"
-              className="text-sm font-semibold px-3 py-1.5 rounded-xl text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: PURPLE }}
-            >
-              S'inscrire
-            </Link>
+            {user ? (
+              <Link
+                href="/tableau-de-bord"
+                className="text-sm font-semibold px-3 py-1.5 rounded-xl text-white transition-opacity hover:opacity-90"
+                style={{ backgroundColor: PURPLE }}
+              >
+                Tableau de bord
+              </Link>
+            ) : (
+              <>
+                <Link
+                  href="/connexion"
+                  className="text-sm font-semibold px-3 py-1.5 rounded-xl border transition-colors hover:bg-gray-50"
+                  style={{ color: NAVY, borderColor: "#e0e7ff" }}
+                >
+                  Se connecter
+                </Link>
+                <Link
+                  href="/inscription"
+                  className="text-sm font-semibold px-3 py-1.5 rounded-xl text-white transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: PURPLE }}
+                >
+                  S'inscrire
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </header>
@@ -302,17 +320,29 @@ export default function AidePage() {
             >
               Me contacter
             </Link>
-            <Link
-              href="/inscription"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-2xl font-bold text-sm border-2 transition-colors hover:bg-white"
-              style={{ color: NAVY, borderColor: "#e0e7ff" }}
-            >
-              Essayer gratuitement
-            </Link>
+            {user ? (
+              <Link
+                href="/tableau-de-bord"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-2xl font-bold text-sm border-2 transition-colors hover:bg-white"
+                style={{ color: NAVY, borderColor: "#e0e7ff" }}
+              >
+                Tableau de bord
+              </Link>
+            ) : (
+              <Link
+                href="/inscription"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-2xl font-bold text-sm border-2 transition-colors hover:bg-white"
+                style={{ color: NAVY, borderColor: "#e0e7ff" }}
+              >
+                Essayer gratuitement
+              </Link>
+            )}
           </div>
-          <p className="text-xs text-gray-400">
-            3 sessions offertes · Sans carte bancaire
-          </p>
+          {!user && (
+            <p className="text-xs text-gray-400">
+              3 sessions offertes · Sans carte bancaire
+            </p>
+          )}
         </div>
       </main>
 
