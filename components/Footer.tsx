@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const LIENS = [
-  { label: "FAQ",                          href: "/faq" },
+  { label: "FAQ",                          href: "/aide" },
   { label: "Comment ça marche",            href: "/comment-ca-marche" },
   { label: "À propos",                     href: "/a-propos" },
   { label: "Contact",                      href: "/contact" },
