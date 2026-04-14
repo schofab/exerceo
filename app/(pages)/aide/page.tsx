@@ -1,9 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-import Footer from "@/components/Footer";
 import { createClient } from "@/lib/supabase/server";
-
-export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Questions fréquentes — exerceō",
@@ -212,141 +208,90 @@ export default async function AidePage() {
   const { data: { user } } = await supabase.auth.getUser();
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="space-y-10">
 
-      {/* ── Header Exerceo ── */}
-      <header className="sticky top-0 z-20 bg-white border-b border-gray-100 shadow-sm">
-        <div className="max-w-lg mx-auto px-4 h-14 flex items-center justify-between gap-3">
-          <div className="flex flex-col items-start gap-0.5">
-            <Link href="/accueil" className="inline-flex">
-              <Image src="/icons/Logo-exerceo.svg" alt="exerceō" width={130} height={34} priority />
-            </Link>
-            <div className="flex items-center gap-1">
-              <span className="text-[10px] font-medium leading-none" style={{ color: NAVY }}>par</span>
-              <Link href="https://mixarto.com" target="_blank" rel="noopener noreferrer" className="inline-flex">
-                <Image src="/icons/Logo-mixarto.svg" alt="mixarto" width={48} height={12} priority />
-              </Link>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            {user ? (
-              <Link
-                href="/tableau-de-bord"
-                className="text-sm font-semibold px-3 py-1.5 rounded-xl text-white transition-opacity hover:opacity-90"
-                style={{ backgroundColor: PURPLE }}
-              >
-                Tableau de bord
-              </Link>
-            ) : (
-              <>
-                <Link
-                  href="/connexion"
-                  className="text-sm font-semibold px-3 py-1.5 rounded-xl border transition-colors hover:bg-gray-50"
-                  style={{ color: NAVY, borderColor: "#e0e7ff" }}
-                >
-                  Se connecter
-                </Link>
-                <Link
-                  href="/inscription"
-                  className="text-sm font-semibold px-3 py-1.5 rounded-xl text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: PURPLE }}
-                >
-                  S'inscrire
-                </Link>
-              </>
-            )}
-          </div>
-        </div>
-      </header>
-
-      {/* ── Contenu ── */}
-      <main className="flex-1 max-w-lg mx-auto w-full px-4 py-10 space-y-10">
-
-        {/* En-tête */}
-        <div className="space-y-3">
-          <Link
-            href="/accueil"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold transition-opacity hover:opacity-70"
-            style={{ color: PURPLE }}
-          >
-            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-            Retour à l'accueil
-          </Link>
-          <h1 className="text-3xl font-extrabold" style={{ color: NAVY }}>
-            Questions fréquentes
-          </h1>
-          <p className="text-base text-gray-500 leading-relaxed">
-            Tout ce que vous devez savoir avant de commencer, ou pour mieux
-            comprendre comment fonctionne exerceō.
-          </p>
-        </div>
-
-        {/* Liste Q&A */}
-        <div className="space-y-4">
-          {FAQ.map((item, i) => (
-            <div
-              key={i}
-              className="rounded-2xl border border-gray-100 p-5 space-y-3"
-              style={{ backgroundColor: "#f8f9ff" }}
-            >
-              <h2 className="text-base font-bold leading-snug" style={{ color: NAVY }}>
-                {item.question}
-              </h2>
-              <div className="text-sm text-gray-600 leading-relaxed space-y-2">
-                {item.reponse}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA bas de page */}
-        <div
-          className="rounded-3xl p-7 text-center space-y-4"
-          style={{ backgroundColor: "#eef1ff" }}
+      {/* En-tête */}
+      <div className="space-y-3">
+        <Link
+          href="/accueil"
+          className="inline-flex items-center gap-1.5 text-sm font-semibold transition-opacity hover:opacity-70"
+          style={{ color: PURPLE }}
         >
-          <p className="text-lg font-extrabold" style={{ color: NAVY }}>
-            Une question sans réponse ?
-          </p>
-          <p className="text-sm text-gray-500">
-            Contactez-moi, je réponds sous 24 h.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-2xl text-white font-bold text-sm transition-opacity hover:opacity-90"
-              style={{ backgroundColor: PURPLE }}
-            >
-              Me contacter
-            </Link>
-            {user ? (
-              <Link
-                href="/tableau-de-bord"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-2xl font-bold text-sm border-2 transition-colors hover:bg-white"
-                style={{ color: NAVY, borderColor: "#e0e7ff" }}
-              >
-                Tableau de bord
-              </Link>
-            ) : (
-              <Link
-                href="/inscription"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-2xl font-bold text-sm border-2 transition-colors hover:bg-white"
-                style={{ color: NAVY, borderColor: "#e0e7ff" }}
-              >
-                Essayer gratuitement
-              </Link>
-            )}
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          Retour à l'accueil
+        </Link>
+        <h1 className="text-3xl font-extrabold" style={{ color: NAVY }}>
+          Questions fréquentes
+        </h1>
+        <p className="text-base text-gray-500 leading-relaxed">
+          Tout ce que vous devez savoir avant de commencer, ou pour mieux
+          comprendre comment fonctionne exerceō.
+        </p>
+      </div>
+
+      {/* Liste Q&A */}
+      <div className="space-y-4">
+        {FAQ.map((item, i) => (
+          <div
+            key={i}
+            className="rounded-2xl border border-gray-100 p-5 space-y-3"
+            style={{ backgroundColor: "#f8f9ff" }}
+          >
+            <h2 className="text-base font-bold leading-snug" style={{ color: NAVY }}>
+              {item.question}
+            </h2>
+            <div className="text-sm text-gray-600 leading-relaxed space-y-2">
+              {item.reponse}
+            </div>
           </div>
-          {!user && (
-            <p className="text-xs text-gray-400">
-              3 sessions offertes · Sans carte bancaire
-            </p>
+        ))}
+      </div>
+
+      {/* CTA bas de page */}
+      <div
+        className="rounded-3xl p-7 text-center space-y-4"
+        style={{ backgroundColor: "#eef1ff" }}
+      >
+        <p className="text-lg font-extrabold" style={{ color: NAVY }}>
+          Une question sans réponse ?
+        </p>
+        <p className="text-sm text-gray-500">
+          Contactez-moi, je réponds sous 24 h.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-2xl text-white font-bold text-sm transition-opacity hover:opacity-90"
+            style={{ backgroundColor: PURPLE }}
+          >
+            Me contacter
+          </Link>
+          {user ? (
+            <Link
+              href="/tableau-de-bord"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-2xl font-bold text-sm border-2 transition-colors hover:bg-white"
+              style={{ color: NAVY, borderColor: "#e0e7ff" }}
+            >
+              Tableau de bord
+            </Link>
+          ) : (
+            <Link
+              href="/inscription"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-2xl font-bold text-sm border-2 transition-colors hover:bg-white"
+              style={{ color: NAVY, borderColor: "#e0e7ff" }}
+            >
+              Essayer gratuitement
+            </Link>
           )}
         </div>
-      </main>
-
-      <Footer />
+        {!user && (
+          <p className="text-xs text-gray-400">
+            3 sessions offertes · Sans carte bancaire
+          </p>
+        )}
+      </div>
     </div>
   );
 }

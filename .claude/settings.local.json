@@ -9,7 +9,8 @@
       "Bash(ls -la \"/Users/loveandvibes/Downloads/Fabien/Web Apps/Minis-Exos-Enfants/app/\\(auth\\)/\")",
       "Bash(ls -la \"/Users/loveandvibes/Downloads/Fabien/Web Apps/Minis-Exos-Enfants/app/\\(app\\)/tableau-de-bord/\")",
       "Bash(cp \"/Users/loveandvibes/Downloads/Fabien/Web Apps/Minis-Exos-Enfants/TYPOS/alan_sans/fonts/webfonts/\"*.woff2 \"/Users/loveandvibes/Downloads/Fabien/Web Apps/Minis-Exos-Enfants/public/fonts/\")",
-      "Bash(cp \"/Users/loveandvibes/Downloads/Fabien/Web Apps/Minis-Exos-Enfants/CHARTE GRAPHIQUE/\"*.svg \"/Users/loveandvibes/Downloads/Fabien/Web Apps/Minis-Exos-Enfants/public/icons/\")"
+      "Bash(cp \"/Users/loveandvibes/Downloads/Fabien/Web Apps/Minis-Exos-Enfants/CHARTE GRAPHIQUE/\"*.svg \"/Users/loveandvibes/Downloads/Fabien/Web Apps/Minis-Exos-Enfants/public/icons/\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/a-propos)"
     ]
   }
 }
