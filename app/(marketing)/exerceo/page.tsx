@@ -160,6 +160,12 @@ export default function ExerceoPage() {
             </a>
           </div>
         </div>
+        <p className="text-center text-sm" style={{ color: "#9298c8" }}>
+          Des questions sur les tarifs ou le fonctionnement ?{" "}
+          <a href="/faq" className="underline hover:opacity-70 transition-opacity">
+            Consultez la FAQ
+          </a>
+        </p>
       </section>
 
       {/* ── CTA final ── */}

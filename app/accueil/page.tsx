@@ -444,6 +444,12 @@ export default async function AccueilPage() {
             >
               Créer un compte gratuitement
             </Link>
+            <p className="mt-4 text-xs" style={{ color: "#9298c8" }}>
+              Des questions ?{" "}
+              <Link href="/faq" className="underline hover:opacity-70 transition-opacity">
+                Consultez notre FAQ
+              </Link>
+            </p>
           </section>
         )}
       </main>

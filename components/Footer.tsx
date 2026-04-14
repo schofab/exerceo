@@ -2,11 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 const LIENS = [
-  { label: "À propos",                    href: "/a-propos" },
-  { label: "Contact",                     href: "/contact" },
-  { label: "Mentions légales",            href: "/mentions-legales" },
+  { label: "FAQ",                          href: "/faq" },
+  { label: "Comment ça marche",            href: "/comment-ca-marche" },
+  { label: "À propos",                     href: "/a-propos" },
+  { label: "Contact",                      href: "/contact" },
+  { label: "Mentions légales",             href: "/mentions-legales" },
   { label: "Politique de confidentialité", href: "/politique-de-confidentialite" },
-  { label: "Conditions d'utilisation",    href: "/conditions-dutilisation" },
+  { label: "Conditions d'utilisation",     href: "/conditions-dutilisation" },
 ];
 
 export default function Footer() {

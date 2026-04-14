@@ -71,6 +71,7 @@ export default function MarketingFooter() {
             </h3>
             <ul className="space-y-3">
               {[
+                { href: "/faq",                            label: "FAQ"              },
                 { href: "/contact",                        label: "Contact"          },
                 { href: "/mentions-legales",               label: "Mentions légales" },
                 { href: "/politique-de-confidentialite",   label: "Confidentialité"  },
