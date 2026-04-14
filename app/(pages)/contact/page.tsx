@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Image from "next/image"
 import Link from "next/link"
 
 export const metadata: Metadata = {
@@ -13,17 +12,6 @@ const GREEN = "#6BD6A6"
 export default function ContactPage() {
   return (
     <article className="space-y-8 animate-fade-slide-up">
-
-      {/* Logo mixarto en couleur */}
-      <div>
-        <Image
-          src="/icons/Logo-mixarto.svg"
-          alt="mixarto happy studio"
-          width={130}
-          height={50}
-          priority
-        />
-      </div>
 
       <div>
         <h1 className="text-2xl font-extrabold mb-2" style={{ color: NAVY }}>
