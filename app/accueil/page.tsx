@@ -18,35 +18,35 @@ const GREEN  = "#6bd6a6"
 
 const FEATURES = [
   {
-    titre: "Programme officiel",
-    texte: "Exercices alignés sur les attendus de l'Éducation Nationale, du CP au CM2.",
+    titre: "Aligné avec l'école primaire",
+    texte: "Des exercices pensés à partir des attentes générales de l'école primaire, du CP au CM2.",
     bg: "#6bd6a6",
     color: "#071453",
   },
   {
-    titre: "Profil personnalisé",
-    texte: "Adapté à l'âge, la classe, les forces et les difficultés de chaque enfant.",
+    titre: "Adapté à chaque enfant",
+    texte: "La séance tient compte de la classe, de l'âge, du niveau et des besoins de l'enfant.",
     bg: "#ffb86b",
     color: "#071453",
   },
   {
-    titre: "Récompenses",
-    texte: "Étoiles, badges de progression et créatures Doceo à débloquer.",
+    titre: "Ludique sans perdre l'essentiel",
+    texte: "Des récompenses, des étoiles et des créatures à collectionner pour encourager l'envie de continuer.",
     bg: "#f9de6f",
     color: "#071453",
   },
   {
-    titre: "Rapide & ludique",
-    texte: "3 à 12 exercices en 5 à 20 minutes. Pas de pression, juste du plaisir.",
+    titre: "Courte et motivante",
+    texte: "Des séances de 5 à 20 minutes pour s'entraîner sans surcharge ni découragement.",
     bg: "#e190c9",
     color: "#071453",
   },
 ]
 
 const MINI_STEPS = [
-  { num: "1", texte: "Choisissez votre enfant, les matières et le temps disponible." },
-  { num: "2", texte: "exerceō compose une séance d'exercices adaptée à sa classe et à ses besoins." },
-  { num: "3", texte: "Votre enfant s'entraîne, progresse et gagne des récompenses au fil des sessions." },
+  { num: "1", texte: "Choisissez la classe, les matières et le temps disponible." },
+  { num: "2", texte: "Exerceo compose une séance adaptée au niveau et aux besoins de votre enfant." },
+  { num: "3", texte: "Votre enfant s'entraîne à son rythme, progresse et débloque des récompenses au fil des sessions." },
 ]
 
 const CLASSE_COULEUR: Record<string, string> = {
@@ -173,13 +173,11 @@ export default async function AccueilPage() {
         <section className="px-4 pt-10 pb-12 text-center bg-white">
           <div className="max-w-lg mx-auto space-y-5">
             <h1 className="text-3xl font-extrabold leading-tight" style={{ color: NAVY }}>
-              Des exercices{" "}
-              <span style={{ color: PURPLE }}>sur-mesure</span>{" "}
-              pour votre enfant
+              Des exercices adaptés à la classe et au rythme de votre enfant
             </h1>
             <p className="text-base text-gray-600 leading-relaxed max-w-sm mx-auto">
-              En quelques minutes, générez des exercices ludiques et personnalisés
-              selon la classe, le niveau et le profil de votre enfant.
+              Créez en quelques minutes une séance ludique selon son niveau, ses besoins
+              et le temps dont vous disposez.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
               {user ? (
@@ -220,9 +218,14 @@ export default async function AccueilPage() {
               )}
             </div>
             {!user && (
-              <p className="text-xs text-gray-400">
-                Gratuit · 3 sessions offertes · Sans engagement
-              </p>
+              <>
+                <p className="text-xs text-gray-400">
+                  3 séances offertes · Sans carte bancaire · Sans engagement
+                </p>
+                <p className="text-xs" style={{ color: "#9298c8" }}>
+                  Du CP au CM2 · Séances courtes · Exercices pensés pour l'entraînement à la maison
+                </p>
+              </>
             )}
           </div>
         </section>
@@ -353,7 +356,7 @@ export default async function AccueilPage() {
                 className="flex items-center justify-center w-full py-3 rounded-2xl text-base font-bold text-white transition-opacity hover:opacity-90 mt-2"
                 style={{ backgroundColor: PURPLE }}
               >
-                En savoir plus
+                Découvrir le fonctionnement
               </Link>
             </div>
           </div>
@@ -381,7 +384,7 @@ export default async function AccueilPage() {
         {/* ── Doceo teaser ── */}
         <section className="px-4 py-10 max-w-lg mx-auto">
           <h2 className="text-xl font-extrabold text-center mb-4" style={{ color: NAVY }}>
-            La collection Doceo
+            Une motivation en plus à chaque séance
           </h2>
           <div className="rounded-3xl p-5 space-y-4" style={{ backgroundColor: "#eef1ff" }}>
             {/* Créatures + texte */}
@@ -395,8 +398,8 @@ export default async function AccueilPage() {
               />
               <p className="flex-1 text-sm leading-relaxed text-center" style={{ color: NAVY }}>
                 À chaque session réussie, votre enfant gagne des étoiles et débloque
-                des créatures Doceo à collectionner. Une motivation supplémentaire
-                à chaque exercice !
+                des créatures Doceo à collectionner. Une façon simple de rendre
+                l'entraînement plus motivant, sans détourner l'attention de l'essentiel.
               </p>
               <Image
                 src="/creatures/chrono.png"
@@ -413,7 +416,7 @@ export default async function AccueilPage() {
                 className="flex items-center justify-center w-full py-3 rounded-2xl text-base font-bold text-white transition-opacity hover:opacity-90"
                 style={{ backgroundColor: PURPLE }}
               >
-                Voir ma collection
+                Découvrir la collection
               </Link>
             )}
             {!user && (
@@ -422,7 +425,7 @@ export default async function AccueilPage() {
                 className="flex items-center justify-center w-full py-3 rounded-2xl text-base font-bold text-white transition-opacity hover:opacity-90"
                 style={{ backgroundColor: PURPLE }}
               >
-                Voir ma collection
+                Découvrir la collection
               </Link>
             )}
           </div>
@@ -435,7 +438,7 @@ export default async function AccueilPage() {
               Prêt à commencer ?
             </h2>
             <p className="text-sm text-gray-500 mb-6">
-              3 sessions gratuites, sans carte bancaire.
+              Essayez Exerceo gratuitement avec 3 sessions offertes, sans carte bancaire.
             </p>
             <Link
               href="/inscription"
@@ -445,9 +448,8 @@ export default async function AccueilPage() {
               Créer un compte gratuitement
             </Link>
             <p className="mt-4 text-xs" style={{ color: "#9298c8" }}>
-              Des questions ?{" "}
               <Link href="/aide" className="underline hover:opacity-70 transition-opacity">
-                Consultez notre FAQ
+                Consulter la FAQ
               </Link>
             </p>
           </section>
