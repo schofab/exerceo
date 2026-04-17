@@ -77,7 +77,7 @@ export default function MarketingFooter() {
                 { href: "/contact",                        label: "Contact"                      },
                 { href: "/mentions-legales",               label: "Mentions légales"             },
                 { href: "/politique-de-confidentialite",   label: "Politique de confidentialité" },
-                { href: "/conditions-dutilisation",        label: "CGU"                          },
+                { href: "/conditions-dutilisation",        label: "Conditions d'utilisation"     },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link href={href} className="text-sm hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.55)" }}>
