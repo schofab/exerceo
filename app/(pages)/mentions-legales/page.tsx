@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Mentions légales — Mixarto",
+  title: "Mentions légales — exerceō",
 };
 
 const NAVY = "#071453";
@@ -31,25 +31,18 @@ function Field({ label, value, href }: { label: string; value: string; href?: st
   );
 }
 
-function Liste({ items }: { items: string[] }) {
-  return (
-    <ul className="space-y-1 pl-1">
-      {items.map((item) => (
-        <li key={item} className="flex items-start gap-2">
-          <span style={{ color: PURPLE }} className="font-bold mt-0.5 flex-shrink-0">·</span>
-          <span>{item}</span>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 export default function MentionsLegalesPage() {
   return (
     <article className="space-y-8 animate-fade-slide-up">
-      <h1 className="text-2xl font-extrabold" style={{ color: NAVY }}>
-        Mentions légales
-      </h1>
+      <div className="space-y-2">
+        <h1 className="text-2xl font-extrabold" style={{ color: NAVY }}>
+          Mentions légales
+        </h1>
+        <p className="text-sm text-gray-500 leading-relaxed">
+          Les présentes mentions légales concernent le site exerceo.mixarto.com
+          et le service exerceō, édités par Mixarto.
+        </p>
+      </div>
 
       <Section titre="Éditeur du site">
         <div className="rounded-2xl overflow-hidden border border-gray-100">
@@ -74,33 +67,50 @@ export default function MentionsLegalesPage() {
         </div>
       </Section>
 
-      <Section titre="Activités">
-        <p>Mixarto propose :</p>
-        <Liste
-          items={[
-            "Une application éducative (exerceō)",
-            "Des créations graphiques (portraits personnalisés, affiches digitales)",
-          ]}
-        />
+      <Section titre="Objet du service">
+        <p>
+          exerceō est une application éducative proposant des exercices
+          d'entraînement et de révision pour les enfants du primaire (CP au CM2).
+        </p>
+        <p>
+          Les contenus sont conçus à partir des attendus de l'Éducation
+          nationale. exerceō a pour objectif d'accompagner l'entraînement de
+          l'enfant, sans se substituer à l'enseignement en classe ni au suivi
+          pédagogique de l'enseignant.
+        </p>
       </Section>
 
       <Section titre="Propriété intellectuelle">
         <p>
-          L'ensemble des contenus présents sur le site (textes, images, graphismes, logo, etc.)
-          est la propriété exclusive de Mixarto, sauf mention contraire. Toute reproduction,
-          distribution ou utilisation sans autorisation est interdite.
+          L'ensemble des contenus présents sur le site exerceo.mixarto.com et
+          dans le service exerceō, notamment les textes, exercices, visuels,
+          logos, graphismes, éléments d'interface et codes, est protégé par le
+          droit de la propriété intellectuelle.
+        </p>
+        <p>
+          Sauf mention contraire, ces contenus sont la propriété exclusive de
+          Mixarto / Fabien Schorsch. Toute reproduction, représentation,
+          diffusion, adaptation ou exploitation, totale ou partielle, sans
+          autorisation préalable, est interdite.
         </p>
       </Section>
 
       <Section titre="Responsabilité">
         <p>
-          L'éditeur s'efforce de fournir des informations fiables, mais ne saurait garantir
-          l'exactitude, la complétude ou l'actualité des contenus.
+          L'éditeur s'efforce de fournir un service accessible et des
+          informations aussi exactes que possible. Toutefois, il ne peut
+          garantir l'absence d'erreurs, d'interruptions temporaires ou
+          d'indisponibilités techniques.
+        </p>
+        <p>
+          Les résultats, scores, progressions et indications fournis dans
+          exerceō ont une valeur informative et pédagogique uniquement ; ils ne
+          constituent pas une évaluation scolaire officielle.
         </p>
       </Section>
 
       <Section titre="Contact">
-        <p>Pour toute question :</p>
+        <p>Pour toute question relative au site ou au service exerceō :</p>
         <a href="mailto:hellomixarto@gmail.com" className="font-semibold" style={{ color: PURPLE }}>
           hellomixarto@gmail.com
         </a>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import CookieBanner from "@/components/CookieBanner";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: "exerceō — Des exercices sur-mesure pour votre enfant",
@@ -14,7 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className="min-h-screen antialiased">{children}</body>
+      <body className="min-h-screen antialiased">
+        {children}
+        <CookieBanner />
+        <GoogleAnalytics />
+      </body>
     </html>
   );
 }

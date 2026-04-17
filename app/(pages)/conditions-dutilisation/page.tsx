@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Conditions générales d'utilisation — Mixarto",
+  title: "Conditions générales d'utilisation — exerceō",
 };
 
 const NAVY = "#071453";
@@ -38,80 +38,122 @@ function Liste({ items }: { items: string[] }) {
 export default function ConditionsUtilisationPage() {
   return (
     <article className="space-y-7 animate-fade-slide-up">
-      <h1 className="text-2xl font-extrabold" style={{ color: NAVY }}>
-        Conditions générales d'utilisation
-      </h1>
+      <div className="space-y-2">
+        <h1 className="text-2xl font-extrabold" style={{ color: NAVY }}>
+          Conditions générales d'utilisation
+        </h1>
+        <p className="text-sm text-gray-500 leading-relaxed">
+          Les présentes Conditions générales d'utilisation encadrent l'accès et
+          l'utilisation du site exerceo.mixarto.com et du service exerceō.
+        </p>
+      </div>
 
       <Section numero={1} titre="Objet">
         <p>
-          Les présentes CGU définissent les conditions d'utilisation du site Mixarto
-          et de l'application exerceō.
+          exerceō est un service numérique proposant des exercices
+          d'entraînement et de révision à destination des utilisateurs du
+          service. Les présentes CGU ont pour objet de définir les conditions
+          dans lesquelles les utilisateurs peuvent accéder au site et utiliser
+          les fonctionnalités proposées.
         </p>
       </Section>
 
       <Section numero={2} titre="Accès au service">
         <p>
-          Le site est accessible gratuitement. Certaines fonctionnalités peuvent
-          nécessiter la création d'un compte.
+          Le service est accessible en ligne. Certaines fonctionnalités sont
+          accessibles librement, tandis que d'autres nécessitent la création
+          d'un compte utilisateur. L'éditeur se réserve le droit de modifier,
+          suspendre ou interrompre tout ou partie du service, notamment pour
+          maintenance, mise à jour ou évolution technique.
         </p>
       </Section>
 
       <Section numero={3} titre="Compte utilisateur">
-        <p>L'utilisateur s'engage à :</p>
+        <p>Lorsqu'un compte est nécessaire, l'utilisateur s'engage à :</p>
         <Liste
           items={[
-            "Fournir des informations exactes",
-            "Ne pas partager son compte",
+            "Fournir des informations exactes et les maintenir à jour",
+            "Maintenir la confidentialité de ses identifiants",
+            "Ne pas céder, prêter ou partager ses accès de manière non autorisée",
           ]}
         />
       </Section>
 
-      <Section numero={4} titre="Utilisation du service">
+      <Section numero={4} titre="Règles d'utilisation">
         <p>
-          L'utilisateur s'engage à utiliser le service de manière conforme et respectueuse.
+          L'utilisateur s'engage à utiliser exerceō de manière loyale, conforme
+          à sa finalité et dans le respect des lois applicables. Il s'interdit
+          notamment :
         </p>
+        <Liste
+          items={[
+            "De détourner le service de son usage normal",
+            "De tenter d'accéder de manière non autorisée aux systèmes ou données",
+            "De perturber le fonctionnement du service",
+            "De reproduire, extraire ou exploiter massivement les contenus sans autorisation",
+          ]}
+        />
       </Section>
 
-      <Section numero={5} titre="Application exerceō">
+      <Section numero={5} titre="Finalité pédagogique">
         <p>
-          exerceō est un outil d'entraînement et de révision qui complète la scolarité de votre
-          enfant. Les exercices sont conçus à partir des attendus de l'Éducation Nationale, mais
-          l'app ne remplace ni l'enseignement en classe ni le suivi de l'enseignant, et ne
-          reflète pas toujours l'ordre exact dans lequel les notions sont vues dans chaque école.
+          exerceō est un outil d'entraînement et de révision. Les exercices sont
+          conçus à partir des attendus de l'Éducation nationale, mais le service
+          ne remplace ni l'enseignement dispensé en classe ni l'accompagnement
+          par l'enseignant.
         </p>
         <p>
-          Les résultats obtenus dans l'application sont indicatifs et ne constituent pas une
-          évaluation scolaire officielle.
+          L'ordre d'apprentissage des notions peut varier selon les
+          établissements, les classes et les enseignants. Les résultats obtenus
+          dans le service sont indicatifs et ne constituent pas une évaluation
+          scolaire officielle.
         </p>
       </Section>
 
       <Section numero={6} titre="Paiement">
         <p>
-          Certaines fonctionnalités peuvent être payantes. Les paiements sont
-          sécurisés via <strong>Stripe</strong>.
+          Certaines fonctionnalités sont payantes. Les conditions tarifaires
+          applicables sont précisées au moment de l'accès au service. Le
+          paiement est sécurisé via Stripe.
         </p>
       </Section>
 
       <Section numero={7} titre="Propriété intellectuelle">
-        <p>Tous les contenus restent la propriété de Mixarto.</p>
+        <p>
+          Le site, le service, les contenus, les exercices, les textes, les
+          visuels, les graphismes, la structure et les éléments techniques
+          d'exerceō sont protégés par le droit de la propriété intellectuelle.
+          Toute reproduction, représentation, diffusion, adaptation ou
+          exploitation non autorisée est interdite.
+        </p>
       </Section>
 
       <Section numero={8} titre="Responsabilité">
-        <p>Mixarto ne saurait être tenu responsable :</p>
+        <p>L'éditeur ne saurait être tenu responsable :</p>
         <Liste
           items={[
-            "D'un mauvais usage du service",
-            "D'interruptions techniques",
+            "D'interruptions temporaires ou d'anomalies techniques",
+            "D'une utilisation non conforme du service par l'utilisateur",
+            "De conséquences pédagogiques ou scolaires résultant d'une mauvaise interprétation des résultats",
           ]}
         />
       </Section>
 
-      <Section numero={9} titre="Résiliation">
-        <p>Mixarto peut suspendre un compte en cas d'abus.</p>
+      <Section numero={9} titre="Suspension ou résiliation">
+        <p>
+          En cas de non-respect des présentes CGU, d'usage abusif ou de
+          comportement portant atteinte au bon fonctionnement du service,
+          l'éditeur se réserve le droit de suspendre ou de supprimer l'accès au
+          service, temporairement ou définitivement.
+        </p>
       </Section>
 
-      <Section numero={10} titre="Modification">
-        <p>Les CGU peuvent être modifiées à tout moment.</p>
+      <Section numero={10} titre="Modification des CGU">
+        <p>
+          Les présentes CGU peuvent être modifiées à tout moment. La version
+          applicable est celle publiée sur le site au moment de l'utilisation du
+          service.
+        </p>
       </Section>
 
       <Section numero={11} titre="Droit applicable">
