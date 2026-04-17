@@ -64,18 +64,20 @@ export default function MarketingFooter() {
             </ul>
           </div>
 
-          {/* Informations légales */}
+          {/* Informations */}
           <div>
             <h3 className="text-[10px] font-bold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.35)" }}>
               Informations
             </h3>
             <ul className="space-y-3">
               {[
-                { href: "/faq",                            label: "FAQ"              },
-                { href: "/contact",                        label: "Contact"          },
-                { href: "/mentions-legales",               label: "Mentions légales" },
-                { href: "/politique-de-confidentialite",   label: "Confidentialité"  },
-                { href: "/conditions-dutilisation",        label: "CGU"              },
+                { href: "/faq",                            label: "FAQ"                          },
+                { href: "/comment-ca-marche",              label: "Comment ça marche"            },
+                { href: "/a-propos",                       label: "À propos"                     },
+                { href: "/contact",                        label: "Contact"                      },
+                { href: "/mentions-legales",               label: "Mentions légales"             },
+                { href: "/politique-de-confidentialite",   label: "Politique de confidentialité" },
+                { href: "/conditions-dutilisation",        label: "CGU"                          },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link href={href} className="text-sm hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.55)" }}>
