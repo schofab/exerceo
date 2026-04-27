@@ -9,6 +9,7 @@ import type { Enfant, NotionStats, Profile } from "@/lib/types";
 import { LIMITE_ENFANTS_GRATUIT, LIMITE_SESSIONS_GRATUITES } from "@/lib/types";
 import DeleteEnfantButton from "@/components/DeleteEnfantButton";
 import ProgressionEnfant from "@/components/ProgressionEnfant";
+import TrialBanner from "@/components/TrialBanner";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Tableau de bord — exerceō" };
@@ -93,48 +94,8 @@ export default async function TableauDeBordPage() {
   return (
     <div className="space-y-6 animate-fade-slide-up">
 
-      {/* ── Bannière quota ── */}
-      {!profile?.is_premium && (
-        <div
-          className={`rounded-2xl p-4 flex items-center justify-between gap-4 border ${
-            sessionRestantes > 0
-              ? "bg-blue-50 border-blue-200"
-              : "bg-orange-50 border-orange-200"
-          }`}
-        >
-          <div>
-            {sessionRestantes > 0 ? (
-              <>
-                <p className="font-semibold text-blue-800">
-                  {sessionRestantes} session
-                  {sessionRestantes > 1 ? "s" : ""} gratuite
-                  {sessionRestantes > 1 ? "s" : ""} restante
-                  {sessionRestantes > 1 ? "s" : ""}
-                </p>
-                <p className="text-sm text-blue-600 mt-0.5">
-                  Ensuite <s>19 €</s> 15 € à vie pour un accès illimité.
-                </p>
-              </>
-            ) : (
-              <>
-                <p className="font-semibold text-orange-800">
-                  Quota gratuit atteint
-                </p>
-                <p className="text-sm text-orange-700 mt-0.5">
-                  Passez Premium pour continuer.
-                </p>
-              </>
-            )}
-          </div>
-          {sessionRestantes <= 0 && (
-            <Link href="/api/stripe/checkout" prefetch={false}>
-              <Button size="sm" className="whitespace-nowrap">
-                Passer Premium — <s className="opacity-60">19&nbsp;€</s>&nbsp;15&nbsp;€
-              </Button>
-            </Link>
-          )}
-        </div>
-      )}
+      {/* ── Bannière statut d'essai / premium ── */}
+      <TrialBanner />
 
 
       {/* ── Profils enfants ── */}
