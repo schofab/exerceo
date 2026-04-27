@@ -8,7 +8,7 @@ import { selectScienceExercises } from "@/lib/exercises/science-selector";
 import { selectDecouverteDuMondeExercises } from "@/lib/exercises/decouverte-selector";
 import type { SelectedBankExercise } from "@/lib/exercises/french-selector";
 import type { Enfant, ExerciceGenere, Matiere, NotionStats } from "@/lib/types";
-import { LIMITE_SESSIONS_GRATUITES } from "@/lib/types";
+import { computeTrialStatus } from "@/lib/trial";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Validation stricte des exercices générés par Claude avant insertion en base.
@@ -68,7 +68,7 @@ export async function POST(request: Request) {
   // Récupérer le profil
   const { data: profile } = await supabase
     .from("profiles")
-    .select("is_premium, sessions_used")
+    .select("is_premium, sessions_used, created_at")
     .eq("id", user.id)
     .single();
 
@@ -77,12 +77,18 @@ export async function POST(request: Request) {
   }
 
   // Vérifier le quota
-  if (!profile.is_premium && profile.sessions_used >= LIMITE_SESSIONS_GRATUITES) {
-    return NextResponse.json(
-      { error: "Quota dépassé", checkout_url: "/api/stripe/checkout" },
-      { status: 402 }
-    );
-  }
+const trial = computeTrialStatus(profile);
+
+if (!trial.isTrialActive) {
+  return NextResponse.json(
+    {
+      error: "Essai gratuit terminé",
+      reason: trial.reason,
+      checkout_url: "/api/stripe/checkout", // à adapter plus tard
+    },
+    { status: 402 }
+  );
+}
 
   // Parser le corps de la requête
   let body: {
@@ -605,10 +611,31 @@ export async function POST(request: Request) {
   }
 
   // Incrémenter le compteur de sessions
-  await supabase
-    .from("profiles")
-    .update({ sessions_used: profile.sessions_used + 1 })
-    .eq("id", user.id);
+const newCount = profile.sessions_used + 1;
+const now = new Date().toISOString();
 
-  return NextResponse.json({ session_id: sessionData.id });
+const metricsUpdate = {
+  sessions_used: newCount,
+  last_session_at: now,
+  ...(newCount === 1 ? { first_session_at: now } : {}),
+  ...(newCount === 2 ? { second_session_at: now } : {}),
+};
+
+console.log("DEBUG user.id =", user.id);
+console.log("DEBUG metricsUpdate =", metricsUpdate);
+
+const { data: updatedProfile, error: updateError } = await supabase
+  .from("profiles")
+  .update(metricsUpdate)
+  .eq("id", user.id)
+  .select("id, sessions_used, first_session_at, second_session_at, last_session_at");
+
+console.log("DEBUG updatedProfile =", updatedProfile);
+console.log("DEBUG updateError =", updateError);
+
+return NextResponse.json({
+  session_id: sessionData.id,
+  debug_profile: updatedProfile,
+  debug_error: updateError,
+});
 }

@@ -33,6 +33,7 @@ export interface Enfant {
   age: number;
   classe: Classe;
   niveau: Niveau;
+  progression_stage: ProgressionStage;
   facilites: Matiere[];
   lacunes: Matiere[];
   learning_profile: LearningProfile;
@@ -74,6 +75,7 @@ export interface Reponse {
 // Énumérations
 export type Classe = "CP" | "CE1" | "CE2" | "CM1" | "CM2";
 export type Niveau = "debutant" | "intermediaire" | "avance";
+export type ProgressionStage = "early" | "mid" | "late";
 export type Matiere =
   | "Mathématiques"
   | "Français"
