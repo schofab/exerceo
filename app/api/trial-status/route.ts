@@ -1,0 +1,52 @@
+import { NextResponse } from "next/server";
+import { createServerClient } from "@supabase/ssr";
+import { cookies } from "next/headers";
+import { computeTrialStatus } from "@/lib/trial";
+
+export async function GET() {
+  const cookieStore = await cookies();
+
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return cookieStore.getAll();
+        },
+        setAll() {
+          // no-op dans un GET
+        },
+      },
+    }
+  );
+
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
+
+  if (userError || !user) {
+    return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
+  }
+
+  const { data: profile, error: profileError } = await supabase
+    .from("profiles")
+    .select("is_premium, sessions_used, created_at")
+    .eq("id", user.id)
+    .single();
+
+  if (profileError || !profile) {
+    return NextResponse.json({ error: "Profil introuvable" }, { status: 404 });
+  }
+
+  const trial = computeTrialStatus(profile);
+
+  return NextResponse.json({
+    isPremium: trial.isPremium,
+    isTrialActive: trial.isTrialActive,
+    sessionsUsed: trial.sessionsUsed,
+    sessionsLeft: trial.sessionsLeft,
+    reason: trial.reason,
+  });
+}
