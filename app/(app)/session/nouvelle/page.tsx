@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import { MATIERES_LIST } from "@/lib/matieres";
+import { computeTrialStatus } from "@/lib/trial";
 
 export const metadata = { title: "Nouvelle session — exerceō" };
 
@@ -53,6 +54,12 @@ export default async function NouvelleSessionPage({
   } = await supabase.auth.getUser();
   if (!user) redirect("/connexion");
 
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("is_premium, sessions_used, created_at")
+    .eq("id", user.id)
+    .single();
+
   const { data: enfants } = await supabase
     .from("enfants")
     .select("*")
@@ -69,6 +76,40 @@ export default async function NouvelleSessionPage({
         <Link href="/enfant/nouveau">
           <Button>Créer un profil enfant</Button>
         </Link>
+      </div>
+    );
+  }
+
+  if (!profile) {
+    redirect("/tableau-de-bord");
+  }
+
+  const trial = computeTrialStatus(profile);
+
+  if (!trial.isTrialActive) {
+    return (
+      <div className="space-y-5 animate-fade-slide-up">
+        <div
+          className="rounded-2xl px-5 py-5"
+          style={{ backgroundColor: "#fff7ed", border: "1.5px solid #fed7aa" }}
+        >
+          <p className="text-base font-extrabold" style={{ color: "#9a3412" }}>
+            Votre essai gratuit est terminé.
+          </p>
+          <p className="text-sm mt-1" style={{ color: "#c2410c" }}>
+            Passez à Premium pour continuer à créer de nouvelles sessions.
+          </p>
+
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link href="/api/stripe/checkout" prefetch={false}>
+              <Button>Passer Premium</Button>
+            </Link>
+
+            <Link href="/tableau-de-bord">
+              <Button variant="ghost">Retour au tableau de bord</Button>
+            </Link>
+          </div>
+        </div>
       </div>
     );
   }
