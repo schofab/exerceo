@@ -39,15 +39,13 @@ export default async function AppLayout({
         <div className="max-w-md mx-auto flex items-center justify-between">
           <Logo className="scale-75 origin-left" />
           <div className="flex items-center gap-3">
-            {profile?.is_premium ? (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border" style={{ backgroundColor: "#6bd6a6", color: "#071453", borderColor: "#6bd6a6" }}>
+                        {profile?.is_premium && (
+              <span
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border"
+                style={{ backgroundColor: "#6bd6a6", color: "#071453", borderColor: "#6bd6a6" }}
+              >
                 <Image src="/icons/picto-premium-blanc.svg" alt="" width={14} height={14} />
                 Premium
-              </span>
-            ) : (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border" style={{ backgroundColor: "#f5f9ff", color: "#748bf7", borderColor: "#e0e7ff" }}>
-                <Image src="/icons/picto-cible.svg" alt="" width={14} height={14} />
-                {profile?.sessions_used ?? 0}/3
               </span>
             )}
             <form action={signOut}>
