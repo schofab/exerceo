@@ -448,7 +448,7 @@ export default function SessionPage() {
               </Button>
             ) : (
               <Button
-                onClick={() => router.push("/premium")}
+                onClick={() => router.push("/abonnement")}
                 size="lg"
               >
                 Passer Premium
