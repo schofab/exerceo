@@ -18,6 +18,15 @@ interface Reponse {
   est_correct: boolean;
 }
 
+type TrialStatus = {
+  isPremium: boolean;
+  isTrialActive: boolean;
+  freeSessionsTotal: number;
+  freeSessionsUsed: number;
+  freeSessionsRemaining: number | null;
+  reason: "premium" | "trial_active" | "trial_expired_sessions";
+};
+
 // Messages de motivation par tranche de score
 const MESSAGES = {
   parfait: [
@@ -60,17 +69,20 @@ export default function SessionPage() {
   const router = useRouter();
   const supabase = createClient();
 
-  const [session, setSession]     = useState<Session | null>(null);
-  const [enfant, setEnfant]       = useState<Enfant | null>(null);
+  const [session, setSession] = useState<Session | null>(null);
+  const [enfant, setEnfant] = useState<Enfant | null>(null);
   const [exercices, setExercices] = useState<Exercice[]>([]);
-  const [reponses, setReponses]   = useState<Reponse[]>([]);
-  const [loading, setLoading]     = useState(true);
-  const [termine, setTermine]     = useState(false);
-  const [message, setMessage]     = useState("");
+  const [reponses, setReponses] = useState<Reponse[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [termine, setTermine] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const [trialStatus, setTrialStatus] = useState<TrialStatus | null>(null);
+  const [trialLoading, setTrialLoading] = useState(false);
 
   // Créatures
   const [nouvellesCreatures, setNouvellesCreatures] = useState<Creature[]>([]);
-  const [showPopup, setShowPopup]                   = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
   const creatureCheckDone = useRef(false); // empêche double-appel sur retry
 
   useEffect(() => {
@@ -80,7 +92,12 @@ export default function SessionPage() {
         .select("*")
         .eq("id", id)
         .single<Session>();
-      if (!s) { router.push("/tableau-de-bord"); return; }
+
+      if (!s) {
+        router.push("/tableau-de-bord");
+        return;
+      }
+
       setSession(s);
 
       const [{ data: ex }, { data: enf }] = await Promise.all([
@@ -101,6 +118,7 @@ export default function SessionPage() {
       setEnfant(enf);
       setLoading(false);
     }
+
     charger();
   }, [id, supabase, router]);
 
@@ -129,9 +147,10 @@ export default function SessionPage() {
 
     if (nouvelles.length === exercices.length) {
       const nbOk = nouvelles.filter((r) => r.est_correct).length;
-      const s    = exercices.length > 0
-        ? Math.round((nbOk / exercices.length) * 100)
-        : 0;
+      const s =
+        exercices.length > 0
+          ? Math.round((nbOk / exercices.length) * 100)
+          : 0;
       setMessage(getMsg(s));
       setTermine(true);
     }
@@ -140,12 +159,14 @@ export default function SessionPage() {
   function handleRetry(exerciceId: string) {
     setReponses((prev) => prev.filter((r) => r.exercice_id !== exerciceId));
     setTermine(false);
+    setTrialStatus(null);
     // Ne pas réinitialiser creatureCheckDone — les créatures débloquées le restent
   }
 
   // Vérification des créatures à débloquer (une seule fois par session)
   useEffect(() => {
     if (!termine || creatureCheckDone.current || !session?.enfant_id) return;
+
     creatureCheckDone.current = true;
 
     fetch("/api/creatures/unlock", {
@@ -165,6 +186,33 @@ export default function SessionPage() {
       });
   }, [termine, session]);
 
+  // Chargement du statut d'essai uniquement quand la session est terminée
+  useEffect(() => {
+    if (!termine) return;
+
+    let active = true;
+    setTrialLoading(true);
+
+    fetch("/api/trial-status", { cache: "no-store" })
+      .then((res) => {
+        if (!res.ok) throw new Error("Erreur chargement trial-status");
+        return res.json();
+      })
+      .then((data: TrialStatus) => {
+        if (active) setTrialStatus(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      })
+      .finally(() => {
+        if (active) setTrialLoading(false);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [termine]);
+
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
@@ -179,11 +227,18 @@ export default function SessionPage() {
   }
 
   const nbCorrects = reponses.filter((r) => r.est_correct).length;
-  const score      = exercices.length > 0
-    ? Math.round((nbCorrects / exercices.length) * 100)
-    : 0;
+  const score =
+    exercices.length > 0
+      ? Math.round((nbCorrects / exercices.length) * 100)
+      : 0;
 
-    return (
+  const canStartNewSession =
+    !!trialStatus &&
+    (trialStatus.isPremium ||
+      (trialStatus.isTrialActive &&
+        (trialStatus.freeSessionsRemaining ?? 0) > 0));
+
+  return (
     <div className="space-y-5">
       <TrialBanner />
 
@@ -203,19 +258,32 @@ export default function SessionPage() {
 
       {/* ── Profil enfant ── */}
       {enfant && (
-        <div className="flex items-center gap-3 px-4 py-3 rounded-2xl border border-blue-100" style={{ backgroundColor: "#f5f9ff" }}>
+        <div
+          className="flex items-center gap-3 px-4 py-3 rounded-2xl border border-blue-100"
+          style={{ backgroundColor: "#f5f9ff" }}
+        >
           <div>
-            <p className="font-bold text-sm" style={{ color: "#071453" }}>{enfant.prenom}</p>
+            <p
+              className="font-bold text-sm"
+              style={{ color: "#071453" }}
+            >
+              {enfant.prenom}
+            </p>
             <p className="text-xs text-gray-500">
               {enfant.age} ans · {enfant.classe}
             </p>
           </div>
+
           <div className="ml-auto text-right">
             <p className="text-xs text-gray-400">Session en cours</p>
-            <p className="text-xs font-semibold" style={{ color: "#748bf7" }}>
+            <p
+              className="text-xs font-semibold"
+              style={{ color: "#748bf7" }}
+            >
               {session?.matieres?.join(", ")}
             </p>
           </div>
+
           <Link
             href={`/enfant/${enfant.id}`}
             className="flex-shrink-0 text-xs font-medium text-gray-400 hover:text-blue-600 transition-colors px-2 py-1 rounded-lg hover:bg-blue-50 cursor-pointer"
@@ -234,30 +302,48 @@ export default function SessionPage() {
             onReponse={handleReponse}
             onRetry={handleRetry}
           />
+
           {/* ── DEBUG TEMPORAIRE — source, classe, skill, id (à supprimer) ── */}
           {ex.contenu._debug && (
             <div className="text-[10px] font-mono px-3 py-1 mt-0.5 rounded-b-xl border border-t-0 border-gray-100 bg-gray-50 text-gray-400 flex items-center gap-2 flex-wrap">
               <span>🔍 #{i + 1}</span>
               <span
                 className="font-semibold"
-                style={{ color: ex.contenu._debug.source === "bank.ts" ? "#16a34a" : "#2563eb" }}
+                style={{
+                  color:
+                    ex.contenu._debug.source === "bank.ts"
+                      ? "#16a34a"
+                      : "#2563eb",
+                }}
               >
                 {ex.contenu._debug.source}
               </span>
               {ex.contenu._debug.bank_id && (
-                <span className="text-gray-500">id:{ex.contenu._debug.bank_id}</span>
+                <span className="text-gray-500">
+                  id:{ex.contenu._debug.bank_id}
+                </span>
               )}
               {ex.contenu._debug.classe && (
                 <span>
-                  classe:<span className="font-semibold text-gray-600">{ex.contenu._debug.classe}</span>
+                  classe:
+                  <span className="font-semibold text-gray-600">
+                    {ex.contenu._debug.classe}
+                  </span>
                 </span>
               )}
               {ex.contenu._debug.skill && (
                 <span>
-                  skill:<span className="font-semibold text-gray-600">{ex.contenu._debug.skill}</span>
+                  skill:
+                  <span className="font-semibold text-gray-600">
+                    {ex.contenu._debug.skill}
+                  </span>
                 </span>
               )}
-              <span style={{ color: ex.contenu._debug.validated ? "#16a34a" : "#dc2626" }}>
+              <span
+                style={{
+                  color: ex.contenu._debug.validated ? "#16a34a" : "#dc2626",
+                }}
+              >
                 {ex.contenu._debug.validated ? "✓" : "✗"} validé
               </span>
             </div>
@@ -275,21 +361,38 @@ export default function SessionPage() {
 
       {/* ── Écran de fin gamifié ── */}
       {termine && (
-        <Card className="text-center py-10 border-blue-100 animate-fade-slide-up" style={{ background: "linear-gradient(to bottom, #f5f9ff, #ffffff, #f0fdf8)" }}>
+        <Card
+          className="text-center py-10 border-blue-100 animate-fade-slide-up"
+          style={{
+            background: "linear-gradient(to bottom, #f5f9ff, #ffffff, #f0fdf8)",
+          }}
+        >
           {/* Score */}
-          <p className="text-5xl font-extrabold mb-2" style={{ color: "#748bf7" }}>
+          <p
+            className="text-5xl font-extrabold mb-2"
+            style={{ color: "#748bf7" }}
+          >
             {score}%
           </p>
 
           {/* Message de motivation */}
-          <p className="text-xl font-extrabold mb-1" style={{ color: "#071453" }}>{message}</p>
+          <p
+            className="text-xl font-extrabold mb-1"
+            style={{ color: "#071453" }}
+          >
+            {message}
+          </p>
           <p className="text-gray-500 mb-2 text-sm">
             {nbCorrects}/{exercices.length} bonnes réponses
           </p>
 
           {/* Étoiles gagnées cette session */}
-          <p className="text-sm font-semibold mb-5" style={{ color: "#748bf7" }}>
-            +{nbCorrects} étoile{nbCorrects !== 1 ? "s" : ""} gagnée{nbCorrects !== 1 ? "s" : ""} !
+          <p
+            className="text-sm font-semibold mb-5"
+            style={{ color: "#748bf7" }}
+          >
+            +{nbCorrects} étoile{nbCorrects !== 1 ? "s" : ""} gagnée
+            {nbCorrects !== 1 ? "s" : ""} !
           </p>
 
           {/* Étoiles SVG avec délais */}
@@ -298,10 +401,18 @@ export default function SessionPage() {
               <span
                 key={i}
                 className={i < nbCorrects ? "animate-star-pop" : "opacity-20"}
-                style={i < nbCorrects ? { animationDelay: `${i * 0.15}s` } : undefined}
+                style={
+                  i < nbCorrects
+                    ? { animationDelay: `${i * 0.15}s` }
+                    : undefined
+                }
               >
                 <Image
-                  src={i < nbCorrects ? "/icons/picto-etoile-pleine.svg" : "/icons/picto-etoile-vide.svg"}
+                  src={
+                    i < nbCorrects
+                      ? "/icons/picto-etoile-pleine.svg"
+                      : "/icons/picto-etoile-vide.svg"
+                  }
                   alt=""
                   width={36}
                   height={36}
@@ -314,17 +425,36 @@ export default function SessionPage() {
           <div className="w-full max-w-xs mx-auto bg-gray-100 rounded-full h-2.5 mb-8">
             <div
               className="h-2.5 rounded-full transition-all duration-1000"
-              style={{ width: `${score}%`, background: "linear-gradient(to right, #748bf7, #6bd6a6)" }}
+              style={{
+                width: `${score}%`,
+                background: "linear-gradient(to right, #748bf7, #6bd6a6)",
+              }}
             />
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button
-              onClick={() => router.push(`/session/nouvelle?enfant=${session?.enfant_id}`)}
-              size="lg"
-            >
-              Nouvelle session
-            </Button>
+            {trialLoading || !trialStatus ? (
+              <Button size="lg" disabled>
+                Vérification de l’essai...
+              </Button>
+            ) : canStartNewSession ? (
+              <Button
+                onClick={() =>
+                  router.push(`/session/nouvelle?enfant=${session?.enfant_id}`)
+                }
+                size="lg"
+              >
+                Nouvelle session
+              </Button>
+            ) : (
+              <Button
+                onClick={() => router.push("/premium")}
+                size="lg"
+              >
+                Passer Premium
+              </Button>
+            )}
+
             <Button
               variant="ghost"
               onClick={() => router.push("/tableau-de-bord")}

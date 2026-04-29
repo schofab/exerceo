@@ -5,9 +5,10 @@ import { useEffect, useState } from "react";
 type TrialStatus = {
   isPremium: boolean;
   isTrialActive: boolean;
-  sessionsUsed: number;
-  sessionsLeft: number | null;
-  reason: "premium" | "trial_active" | "trial_expired_sessions" | "trial_expired_days";
+  freeSessionsTotal: number;
+  freeSessionsUsed: number;
+  freeSessionsRemaining: number | null;
+  reason: "premium" | "trial_active" | "trial_expired_sessions";
 };
 
 export default function TrialBanner() {
@@ -49,7 +50,9 @@ export default function TrialBanner() {
   if (status.isTrialActive) {
     return (
       <div className="rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800">
-        Il vous reste {status.sessionsLeft} séance{status.sessionsLeft === 1 ? "" : "s"} gratuite{status.sessionsLeft === 1 ? "" : "s"}.
+        Il vous reste {status.freeSessionsRemaining} séance
+        {status.freeSessionsRemaining === 1 ? "" : "s"} gratuite
+        {status.freeSessionsRemaining === 1 ? "" : "s"} sur {status.freeSessionsTotal}.
       </div>
     );
   }
