@@ -303,51 +303,6 @@ export default function SessionPage() {
             onRetry={handleRetry}
           />
 
-          {/* ── DEBUG TEMPORAIRE — source, classe, skill, id (à supprimer) ── */}
-          {ex.contenu._debug && (
-            <div className="text-[10px] font-mono px-3 py-1 mt-0.5 rounded-b-xl border border-t-0 border-gray-100 bg-gray-50 text-gray-400 flex items-center gap-2 flex-wrap">
-              <span>🔍 #{i + 1}</span>
-              <span
-                className="font-semibold"
-                style={{
-                  color:
-                    ex.contenu._debug.source === "bank.ts"
-                      ? "#16a34a"
-                      : "#2563eb",
-                }}
-              >
-                {ex.contenu._debug.source}
-              </span>
-              {ex.contenu._debug.bank_id && (
-                <span className="text-gray-500">
-                  id:{ex.contenu._debug.bank_id}
-                </span>
-              )}
-              {ex.contenu._debug.classe && (
-                <span>
-                  classe:
-                  <span className="font-semibold text-gray-600">
-                    {ex.contenu._debug.classe}
-                  </span>
-                </span>
-              )}
-              {ex.contenu._debug.skill && (
-                <span>
-                  skill:
-                  <span className="font-semibold text-gray-600">
-                    {ex.contenu._debug.skill}
-                  </span>
-                </span>
-              )}
-              <span
-                style={{
-                  color: ex.contenu._debug.validated ? "#16a34a" : "#dc2626",
-                }}
-              >
-                {ex.contenu._debug.validated ? "✓" : "✗"} validé
-              </span>
-            </div>
-          )}
         </div>
       ))}
 
