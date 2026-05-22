@@ -192,6 +192,9 @@ export default async function TableauDeBordPage() {
                     <Link href={`/session/nouvelle?enfant=${enfant.id}`} className="flex-1">
                       <Button size="sm" fullWidth>Nouvelle session</Button>
                     </Link>
+                    <Link href={`/statistiques/${enfant.id}`}>
+                      <Button size="sm" variant="ghost">Stats</Button>
+                    </Link>
                     <Link href={`/collection/${enfant.id}`}>
                       <Button size="sm" variant="ghost">Doceo</Button>
                     </Link>

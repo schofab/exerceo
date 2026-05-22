@@ -139,6 +139,35 @@ export default function SessionPage() {
       est_correct: estCorrect,
     });
 
+    // Mise à jour silencieuse des compétences (fire-and-forget)
+    if (session?.enfant_id) {
+      const ex = exercices.find((e) => e.id === exerciceId);
+      if (ex) {
+        const sousDomaine = ex.contenu._debug?.skill ?? ex.contenu.sous_matiere ?? "inconnu";
+        const matiereNorm = ex.matiere
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[̀-ͯ]/g, "")
+          .replace(/[^a-z]/g, "_");
+        const skillId = `${matiereNorm}:${sousDomaine.toLowerCase().replace(/\s+/g, "_")}`;
+        const skillLabel = ex.contenu.sous_matiere ?? ex.matiere;
+
+        fetch("/api/competences/update", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            enfant_id: session.enfant_id,
+            matiere: ex.matiere,
+            skill_id: skillId,
+            skill_label: skillLabel,
+            est_correct: estCorrect,
+          }),
+        }).catch(() => {
+          // Silencieux — les compétences se recalculeront à la prochaine réponse
+        });
+      }
+    }
+
     const nouvelles = [
       ...reponses.filter((r) => r.exercice_id !== exerciceId),
       nouvelleReponse,
