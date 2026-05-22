@@ -8,6 +8,7 @@ import { selectScienceExercises } from "@/lib/exercises/science-selector";
 import { selectDecouverteDuMondeExercises } from "@/lib/exercises/decouverte-selector";
 import type { SelectedBankExercise } from "@/lib/exercises/french-selector";
 import type { Enfant, ExerciceGenere, Matiere, NotionStats } from "@/lib/types";
+import type { EnfantCompetence } from "@/lib/competences/types";
 import { computeTrialStatus } from "@/lib/trial";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -268,11 +269,26 @@ if (!trial.isTrialActive) {
       console.warn("[EXERCEO] Impossible de récupérer l'historique maths.");
     }
 
+    // Charger les compétences maths pour la sélection adaptive
+    let mathCompetences: EnfantCompetence[] = [];
+    try {
+      const { data: compData } = await supabase
+        .from("enfant_competences")
+        .select("*")
+        .eq("enfant_id", enfant_id)
+        .eq("matiere", "Mathématiques")
+        .returns<EnfantCompetence[]>();
+      mathCompetences = compData ?? [];
+    } catch {
+      console.warn("[EXERCEO] Impossible de récupérer les compétences maths.");
+    }
+
     const selected = selectMathExercises(
       enfant.classe,
       nbMaths,
       exercicesBank.length + 1,
       seenMathIds,
+      mathCompetences,
     );
     exercicesBank.push(...selected);
 
