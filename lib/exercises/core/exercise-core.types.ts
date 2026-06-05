@@ -6,6 +6,28 @@ export type SchoolClass = 'CP' | 'CE1' | 'CE2' | 'CM1' | 'CM2';
 
 export type GeneralLevel = 'beginner' | 'intermediate' | 'advanced';
 
+/**
+ * Calibrage éditorial de difficulté — taxonomie commune à toutes les matières.
+ * À NE PAS CONFONDRE avec `generalLevel` (héritage historique, utilisé par
+ * les moteurs de sélection par profil).
+ *
+ *   - foundation : exercice direct, guidé, faible ambiguïté — entrée ou consolidation.
+ *   - standard   : exercice au niveau attendu de la classe.
+ *   - advanced   : exercice plus discriminant mais dans le programme (inférence,
+ *                  distracteurs fins, plusieurs étapes).
+ */
+export type DifficultyTier = 'foundation' | 'standard' | 'advanced';
+
+/**
+ * Période de l'année scolaire où l'exercice est le plus pertinent.
+ * Fenêtre de pertinence pédagogique, pas une date stricte.
+ *
+ *   - debut  : accessible dès le début d'année.
+ *   - milieu : cœur du programme.
+ *   - fin    : notions intégrées, transfert plus marqué.
+ */
+export type SchoolPeriod = 'debut' | 'milieu' | 'fin';
+
 export type LearningProfile =
   | 'standard'
   | 'lecture_simplifiee'

@@ -744,6 +744,9 @@ export const mathsExercises: MathExercise[] = [
     tags: ['ce2', 'calcul', 'multiplication', 'tables', 'qcm'],
     estimatedMinutes: 2,
     adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'mathematiques:calcul',
   },
   {
     id: 'ma-ce2-calcul-002',
@@ -767,6 +770,9 @@ export const mathsExercises: MathExercise[] = [
     tags: ['ce2', 'calcul', 'multiplication', 'tables', 'qcm'],
     estimatedMinutes: 2,
     adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'mathematiques:calcul',
   },
   {
     id: 'ma-ce2-calcul-003',
@@ -790,6 +796,9 @@ export const mathsExercises: MathExercise[] = [
     tags: ['ce2', 'calcul', 'multiplication', 'tables', 'qcm'],
     estimatedMinutes: 2,
     adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'mathematiques:calcul',
   },
   {
     id: 'ma-ce2-calcul-004',
@@ -813,6 +822,9 @@ export const mathsExercises: MathExercise[] = [
     tags: ['ce2', 'calcul', 'division', 'qcm'],
     estimatedMinutes: 2,
     adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'mathematiques:calcul',
   },
   {
     id: 'ma-ce2-calcul-005',
@@ -836,6 +848,9 @@ export const mathsExercises: MathExercise[] = [
     tags: ['ce2', 'calcul', 'multiplication', 'tables', 'qcm'],
     estimatedMinutes: 2,
     adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'milieu',
+    skill_id: 'mathematiques:calcul',
   },
 
   // CE2 — numeration (3)
@@ -861,6 +876,9 @@ export const mathsExercises: MathExercise[] = [
     tags: ['ce2', 'numeration', 'centaines', 'qcm'],
     estimatedMinutes: 2,
     adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'mathematiques:numeration',
   },
   {
     id: 'ma-ce2-numeration-002',
@@ -884,6 +902,9 @@ export const mathsExercises: MathExercise[] = [
     tags: ['ce2', 'numeration', 'centaines', 'décomposition', 'qcm'],
     estimatedMinutes: 2,
     adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'mathematiques:numeration',
   },
   {
     id: 'ma-ce2-numeration-003',
@@ -907,6 +928,9 @@ export const mathsExercises: MathExercise[] = [
     tags: ['ce2', 'numeration', 'comparaison', 'qcm'],
     estimatedMinutes: 2,
     adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'mathematiques:numeration',
   },
 
   // CE2 — geometrie (3)
@@ -932,6 +956,9 @@ export const mathsExercises: MathExercise[] = [
     tags: ['ce2', 'geometrie', 'périmètre', 'carré', 'qcm'],
     estimatedMinutes: 2,
     adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'milieu',
+    skill_id: 'mathematiques:geometrie',
   },
   {
     id: 'ma-ce2-geometrie-002',
@@ -955,6 +982,9 @@ export const mathsExercises: MathExercise[] = [
     tags: ['ce2', 'geometrie', 'périmètre', 'rectangle', 'qcm'],
     estimatedMinutes: 2,
     adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'fin',
+    skill_id: 'mathematiques:geometrie',
   },
   {
     id: 'ma-ce2-geometrie-003',
@@ -978,6 +1008,9 @@ export const mathsExercises: MathExercise[] = [
     tags: ['ce2', 'geometrie', 'formes', 'hexagone', 'qcm'],
     estimatedMinutes: 2,
     adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'mathematiques:geometrie',
   },
 
   // CE2 — mesures (2)
@@ -1003,6 +1036,9 @@ export const mathsExercises: MathExercise[] = [
     tags: ['ce2', 'mesures', 'conversions', 'longueurs', 'qcm'],
     estimatedMinutes: 2,
     adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'mathematiques:mesures',
   },
   {
     id: 'ma-ce2-mesures-002',
@@ -1026,6 +1062,9 @@ export const mathsExercises: MathExercise[] = [
     tags: ['ce2', 'mesures', 'temps', 'minutes', 'qcm'],
     estimatedMinutes: 2,
     adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'mathematiques:mesures',
   },
 
   // CE2 — problemes (2)
@@ -1051,6 +1090,9 @@ export const mathsExercises: MathExercise[] = [
     tags: ['ce2', 'problemes', 'multiplication', 'qcm'],
     estimatedMinutes: 2,
     adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'mathematiques:problemes',
   },
   {
     id: 'ma-ce2-problemes-002',
@@ -1074,6 +1116,9 @@ export const mathsExercises: MathExercise[] = [
     tags: ['ce2', 'problemes', 'division', 'qcm'],
     estimatedMinutes: 2,
     adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'mathematiques:problemes',
   },
 
   // ══════════════════════════════════════════════════════════════════
