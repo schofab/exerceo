@@ -7,6 +7,7 @@ import Image from "next/image";
 import { createClient } from "@/lib/supabase/client";
 import type { Creature, Enfant, Exercice, Session } from "@/lib/types";
 import ExerciceCard from "@/components/ExerciceCard";
+import type { FeedbackSignal } from "@/components/ExerciceFeedback";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import CreatureUnlockPopup from "@/components/CreatureUnlockPopup";
@@ -185,6 +186,23 @@ export default function SessionPage() {
     }
   }
 
+  function handleFeedback(exerciceId: string, signal: FeedbackSignal) {
+    if (!session?.enfant_id) return;
+    const ex = exercices.find((e) => e.id === exerciceId);
+    fetch("/api/feedback", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        exercice_id: exerciceId,
+        enfant_id:   session.enfant_id,
+        bank_id:     ex?.contenu._debug?.bank_id ?? null,
+        signal,
+      }),
+    }).catch(() => {
+      // Silencieux — le feedback est best-effort
+    });
+  }
+
   function handleRetry(exerciceId: string) {
     setReponses((prev) => prev.filter((r) => r.exercice_id !== exerciceId));
     setTermine(false);
@@ -330,6 +348,7 @@ export default function SessionPage() {
             numero={i + 1}
             onReponse={handleReponse}
             onRetry={handleRetry}
+            onFeedback={handleFeedback}
           />
 
         </div>

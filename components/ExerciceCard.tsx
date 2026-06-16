@@ -5,6 +5,7 @@ import type { Exercice } from "@/lib/types";
 import Card from "./ui/Card";
 import Button from "./ui/Button";
 import { MATIERE_COLORS, MATIERE_LABELS } from "@/lib/matieres";
+import ExerciceFeedback, { type FeedbackSignal } from "./ExerciceFeedback";
 
 const MESSAGES_SUCCES = [
   "Bravo !", "Super réponse !", "Bien joué !", "Excellent !",
@@ -41,6 +42,7 @@ interface ExerciceCardProps {
   numero: number;
   onReponse: (exerciceId: string, reponse: string, estCorrect: boolean) => void;
   onRetry?: (exerciceId: string) => void;
+  onFeedback?: (exerciceId: string, signal: FeedbackSignal) => void;
 }
 
 export default function ExerciceCard({
@@ -48,6 +50,7 @@ export default function ExerciceCard({
   numero,
   onReponse,
   onRetry,
+  onFeedback,
 }: ExerciceCardProps) {
   const [reponseSelectionnee, setReponseSelectionnee] = useState<string>("");
   const [reponseTexte, setReponseTexte]               = useState("");
@@ -205,6 +208,11 @@ export default function ExerciceCard({
                 Essaie encore
               </Button>
             </>
+          )}
+          {onFeedback && (
+            <ExerciceFeedback
+              onFeedback={(signal) => onFeedback(exercice.id, signal)}
+            />
           )}
         </div>
       )}
