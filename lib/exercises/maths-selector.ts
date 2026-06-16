@@ -23,6 +23,7 @@ import type { Exercise, SousDomaine } from "./types";
 import type { ExerciceGenere, Matiere, TypeExercice } from "../types";
 import type { SelectedBankExercise } from "./french-selector";
 import type { EnfantCompetence } from "../competences/types";
+import type { GeneralLevel } from "./core/exercise-core.types";
 
 // ─── Progression pédagogique : niveaux autorisés par classe ──────────────────
 const NIVEAUX_AUTORISES: Record<string, string[]> = {
@@ -52,6 +53,22 @@ const SKILL_PRIORITY_ORDER_MATHS: SousDomaine[] = [
   "mesures",
   "logique",
 ];
+
+// ─── Filtre par profil élève (difficulty_tier) ────────────────────────────────
+const TIERS_AUTORISES_MATHS: Record<GeneralLevel, Set<string>> = {
+  beginner:     new Set(['foundation']),
+  intermediate: new Set(['foundation', 'standard']),
+  advanced:     new Set(['standard', 'advanced']),
+};
+
+function filterByGeneralLevel(
+  pool: Exercise[],
+  generalLevel: GeneralLevel | undefined,
+): Exercise[] {
+  if (!generalLevel) return pool;
+  const allowed = TIERS_AUTORISES_MATHS[generalLevel];
+  return pool.filter((e) => !e.difficulty_tier || allowed.has(e.difficulty_tier));
+}
 
 // ─── Scores de priorité adaptatifs ───────────────────────────────────────────
 //
@@ -152,12 +169,21 @@ export function selectMathExercises(
   ordreDebut: number = 1,
   seenBankIds: string[] = [],
   competences: EnfantCompetence[] = [],
+  generalLevel?: GeneralLevel,
 ): SelectedBankExercise[] {
   const niveauxAutorises = NIVEAUX_AUTORISES[classe] ?? [classe];
 
-  const poolComplet = EXERCISE_BANK_MATHS.filter(
-    (e) => niveauxAutorises.includes(e.niveau) && validateExercise(e)
+  const poolComplet = filterByGeneralLevel(
+    EXERCISE_BANK_MATHS.filter((e) => niveauxAutorises.includes(e.niveau) && validateExercise(e)),
+    generalLevel,
   );
+
+  if (generalLevel) {
+    console.log(
+      `[EXERCEO] Maths filtre generalLevel=${generalLevel} : `
+      + `${poolComplet.length} items dans le profil`
+    );
+  }
 
   if (poolComplet.length === 0) {
     console.error(

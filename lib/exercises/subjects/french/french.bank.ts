@@ -26,7 +26,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche le verbe dans la phrase.',
     tags: ['cp','lecture','action','maison','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -50,7 +53,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Relis la fin de la phrase.',
     tags: ['cp','lecture','lieu','ecole','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -74,7 +80,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche qui fait l’action.',
     tags: ['cp','lecture','sujet','famille','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -98,7 +107,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche ce que Nora dessine.',
     tags: ['cp','lecture','objet','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -122,7 +134,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche où vit le poisson.',
     tags: ['cp','lecture','phrase-simple','animaux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -146,7 +161,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Compare le personnage, l’action et le lieu.',
     tags: ['cp','lecture','association','maison','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -170,7 +188,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche l’objet de l’action.',
     tags: ['cp','lecture','objet','famille','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -194,7 +215,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche le lieu.',
     tags: ['cp','lecture','lieu','maison','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -218,7 +242,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche qui fait l’action.',
     tags: ['cp','lecture','sujet','animaux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -242,7 +269,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche ce que Tom mange.',
     tags: ['cp','lecture','nourriture','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -266,7 +296,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à l’école.',
     tags: ['cp','lecture','ecole','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -290,7 +323,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche l’animal.',
     tags: ['cp','lecture','animaux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -314,7 +350,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche le lieu.',
     tags: ['cp','lecture','nature','lieu','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -338,7 +377,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche l’action.',
     tags: ['cp','lecture','ecole','action','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -353,16 +395,19 @@ export const frenchExercises: FrenchExercise[] = [
     instructions: 'Choisis la phrase qui dit la même chose.',
     prompt: 'Un oiseau chante sur le toit.',
     options: [
-      { id: 'a', text: 'Un oiseau chante sur le toit', isCorrect: true },
+      { id: 'a', text: 'Sur le toit, un oiseau chante.', isCorrect: true },
       { id: 'b', text: 'Un oiseau dort sous la table', isCorrect: false },
       { id: 'c', text: 'Le toit chante', isCorrect: false }
     ],
-    correctAnswer: 'Un oiseau chante sur le toit',
-    explanation: 'La première proposition reprend le même sens.',
+    correctAnswer: 'Sur le toit, un oiseau chante.',
+    explanation: 'La phrase dit la même chose, les mots sont juste dans un ordre différent.',
     hint: 'Relis toute la phrase.',
     tags: ['cp','lecture','association','nature','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -386,7 +431,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche l’objet.',
     tags: ['cp','lecture','ecole','objet','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -410,7 +458,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Qui fait l’action ?',
     tags: ['cp','lecture','sujet','ecole','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -434,7 +485,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Relis la fin.',
     tags: ['cp','lecture','cause','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -458,7 +512,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche où elle va.',
     tags: ['cp','lecture','lieu','jeux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
   {
@@ -473,16 +530,19 @@ export const frenchExercises: FrenchExercise[] = [
     instructions: 'Choisis la phrase qui correspond.',
     prompt: 'Le bébé pleure dans son lit.',
     options: [
-      { id: 'a', text: 'Le bébé pleure dans son lit', isCorrect: true },
+      { id: 'a', text: 'Dans son lit, le bébé pleure.', isCorrect: true },
       { id: 'b', text: 'Le bébé rit dans le jardin', isCorrect: false },
       { id: 'c', text: 'Le lit pleure', isCorrect: false }
     ],
-    correctAnswer: 'Le bébé pleure dans son lit',
-    explanation: 'Une seule phrase reprend le bon personnage, la bonne action et le bon lieu.',
+    correctAnswer: 'Dans son lit, le bébé pleure.',
+    explanation: 'Les mots sont les mêmes, dans un ordre légèrement différent — le sens ne change pas.',
     hint: 'Compare tous les mots.',
     tags: ['cp','lecture','association','famille','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
   /* =====================================================================
@@ -508,7 +568,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Girafe est féminin.',
     tags: ['cp','orthographe','determinants','un-une','animaux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -531,7 +594,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Ballon est masculin.',
     tags: ['cp','orthographe','determinants','le-la','jeux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -554,7 +620,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Il y en a plusieurs.',
     tags: ['cp','orthographe','pluriel','animaux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -577,7 +646,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Veste est féminin.',
     tags: ['cp','orthographe','ma-mon','vetements','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -600,7 +672,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Ici, on ajoute une personne.',
     tags: ['cp','orthographe','et-est','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -623,7 +698,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'On montre un objet.',
     tags: ['cp','orthographe','son-sont','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -646,7 +724,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Tomate est féminin.',
     tags: ['cp','orthographe','determinants','un-une','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -669,7 +750,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Vélo est masculin.',
     tags: ['cp','orthographe','determinants','le-la','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -692,7 +776,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Chambre est féminin.',
     tags: ['cp','orthographe','ma-mon','maison','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -715,7 +802,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cahier est masculin.',
     tags: ['cp','orthographe','ma-mon','ecole','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -738,7 +828,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Ils sont plusieurs.',
     tags: ['cp','orthographe','pluriel','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -761,7 +854,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Regarde s’il y en a plusieurs.',
     tags: ['cp','orthographe','pluriel','animaux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -784,7 +880,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Peut-on dire était ?',
     tags: ['cp','orthographe','et-est','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -807,7 +906,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Peut-on dire ils étaient ?',
     tags: ['cp','orthographe','son-sont','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -830,7 +932,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Soleil est masculin.',
     tags: ['cp','orthographe','determinants','nature','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -853,7 +958,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Règle est féminin.',
     tags: ['cp','orthographe','determinants','ecole','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -876,7 +984,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Frère est masculin.',
     tags: ['cp','orthographe','ma-mon','famille','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
   {
@@ -899,7 +1010,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'On parle de plusieurs objets.',
     tags: ['cp','orthographe','pluriel','ecole','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
   /* =====================================================================
@@ -925,7 +1039,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche l’action.',
     tags: ['cp','grammaire','verbe','animaux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -948,7 +1065,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Le nom désigne un être vivant ou une chose.',
     tags: ['cp','grammaire','nom','animaux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -971,7 +1091,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Qui rit ?',
     tags: ['cp','grammaire','sujet','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -994,7 +1117,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Y en a-t-il une ou plusieurs ?',
     tags: ['cp','grammaire','singulier-pluriel','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -1017,7 +1143,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Essaie avec une robe.',
     tags: ['cp','grammaire','masculin-feminin','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -1041,7 +1170,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche le petit mot devant le nom.',
     tags: ['cp','grammaire','determinant','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -1064,7 +1196,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Est-ce une action ?',
     tags: ['cp','grammaire','nature-des-mots','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -1087,7 +1222,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Le nom désigne une chose.',
     tags: ['cp','grammaire','nom','ecole','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -1110,7 +1248,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche l’action.',
     tags: ['cp','grammaire','verbe','famille','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -1133,7 +1274,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Qui saute ?',
     tags: ['cp','grammaire','sujet','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -1156,7 +1300,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Y en a-t-il un seul ?',
     tags: ['cp','grammaire','singulier-pluriel','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -1179,7 +1326,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Essaie avec une girafe.',
     tags: ['cp','grammaire','masculin-feminin','animaux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -1203,7 +1353,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche le petit mot avant le nom.',
     tags: ['cp','grammaire','determinant','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -1226,7 +1379,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Peut-on le faire ?',
     tags: ['cp','grammaire','nature-des-mots','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -1249,7 +1405,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'C’est un animal.',
     tags: ['cp','grammaire','nom','animaux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -1272,7 +1431,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Que fait la cloche ?',
     tags: ['cp','grammaire','verbe','ecole','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -1295,7 +1457,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Qui chante ?',
     tags: ['cp','grammaire','sujet','animaux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
   {
@@ -1318,7 +1483,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Essaie avec un cartable.',
     tags: ['cp','grammaire','masculin-feminin','ecole','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
   /* =====================================================================
@@ -1345,7 +1513,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à : je suis.',
     tags: ['cp','conjugaison','etre','present','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:conjugaison',
   },
 
   {
@@ -1369,7 +1540,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à : tu es.',
     tags: ['cp','conjugaison','etre','present','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:conjugaison',
   },
 
   {
@@ -1393,7 +1567,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à : il a.',
     tags: ['cp','conjugaison','avoir','present','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:conjugaison',
   },
 
   {
@@ -1417,7 +1594,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à : nous allons.',
     tags: ['cp','conjugaison','aller','present','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
   {
@@ -1441,7 +1621,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à : il est.',
     tags: ['cp','conjugaison','etre','present','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:conjugaison',
   },
 
   {
@@ -1465,7 +1648,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à : j’ai.',
     tags: ['cp','conjugaison','avoir','present','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:conjugaison',
   },
 
   {
@@ -1489,7 +1675,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à : tu as.',
     tags: ['cp','conjugaison','avoir','present','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:conjugaison',
   },
 
   {
@@ -1513,7 +1702,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à : je vais.',
     tags: ['cp','conjugaison','aller','present','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
   {
@@ -1537,7 +1729,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à : je joue.',
     tags: ['cp','conjugaison','1er-groupe','present','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
   {
@@ -1561,7 +1756,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à : nous chantons.',
     tags: ['cp','conjugaison','1er-groupe','present','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
   {
@@ -1585,7 +1783,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à : nous sommes.',
     tags: ['cp','conjugaison','etre','present','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
   {
@@ -1609,7 +1810,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à : nous avons.',
     tags: ['cp','conjugaison','avoir','present','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
   {
@@ -1633,7 +1837,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à : ils vont.',
     tags: ['cp','conjugaison','aller','present','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:conjugaison',
   },
 
   {
@@ -1657,7 +1864,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à : ils sont.',
     tags: ['cp','conjugaison','etre','present','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:conjugaison',
   },
 
   {
@@ -1681,7 +1891,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à : elles ont.',
     tags: ['cp','conjugaison','avoir','present','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:conjugaison',
   },
 
   {
@@ -1705,7 +1918,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à : tu dessines.',
     tags: ['cp','conjugaison','1er-groupe','present','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
   /* =====================================================================
@@ -1732,7 +1948,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche un être vivant.',
     tags: ['cp','vocabulaire','categories','animaux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
   {
@@ -1756,7 +1975,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'On le porte sur soi.',
     tags: ['cp','vocabulaire','categories','vetements','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
   {
@@ -1780,7 +2002,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche le mot opposé.',
     tags: ['cp','vocabulaire','contraires','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
   {
@@ -1804,7 +2029,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Deux mots vont ensemble.',
     tags: ['cp','vocabulaire','intrus','fruits','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
   {
@@ -1828,7 +2056,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche un objet pour apprendre.',
     tags: ['cp','vocabulaire','ecole','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
   {
@@ -1852,7 +2083,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'On peut le manger.',
     tags: ['cp','vocabulaire','fruits','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
   {
@@ -1876,7 +2110,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche l’opposé.',
     tags: ['cp','vocabulaire','contraires','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
   {
@@ -1900,7 +2137,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Deux mots parlent d’animaux.',
     tags: ['cp','vocabulaire','intrus','animaux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
   {
@@ -1924,7 +2164,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche un objet du salon.',
     tags: ['cp','vocabulaire','maison','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
   {
@@ -1948,7 +2191,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche un objet de jeu.',
     tags: ['cp','vocabulaire','jeux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
   {
@@ -1972,7 +2218,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Pense à une porte.',
     tags: ['cp','vocabulaire','contraires','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
   {
@@ -1996,7 +2245,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Deux mots se portent.',
     tags: ['cp','vocabulaire','intrus','vetements','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
   {
@@ -2020,7 +2272,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche un animal.',
     tags: ['cp','vocabulaire','animaux','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
   {
@@ -2044,7 +2299,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche un objet d’école.',
     tags: ['cp','vocabulaire','ecole','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
   {
@@ -2068,7 +2326,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche le mouvement inverse.',
     tags: ['cp','vocabulaire','contraires','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
   {
@@ -2092,7 +2353,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Deux mots vont dans la trousse ou sur la table.',
     tags: ['cp','vocabulaire','intrus','ecole','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
  /* =====================================================================
@@ -2119,7 +2383,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche la phrase qui sonne juste.',
     tags: ['cp','expression-ecrite','phrase-correcte','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:expression_ecrite',
   },
 
   {
@@ -2143,7 +2410,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Commence par le personnage.',
     tags: ['cp','expression-ecrite','ordre-des-mots','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:expression_ecrite',
   },
 
   {
@@ -2167,7 +2437,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche une phrase qui finit bien.',
     tags: ['cp','expression-ecrite','phrase-correcte','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:expression_ecrite',
   },
 
   {
@@ -2191,7 +2464,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Qui fait l’action ?',
     tags: ['cp','expression-ecrite','ordre-des-mots','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:expression_ecrite',
   },
 
   {
@@ -2215,7 +2491,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Regarde le début et la fin.',
     tags: ['cp','expression-ecrite','ponctuation','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:expression_ecrite',
   },
 
   {
@@ -2239,7 +2518,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Cherche une scène possible.',
     tags: ['cp','expression-ecrite','coherence','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:expression_ecrite',
   },
 
   {
@@ -2263,7 +2545,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Lis les phrases à voix basse.',
     tags: ['cp','expression-ecrite','phrase-correcte','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:expression_ecrite',
   },
 
   {
@@ -2287,7 +2572,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: 'Regarde la majuscule, l’ordre et le point.',
     tags: ['cp','expression-ecrite','ponctuation','ordre-des-mots','qcm'],
     estimatedMinutes: 2,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:expression_ecrite',
   },
 
   /* =====================================================================
@@ -7485,7 +7773,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche les indices liés au temps.",
     tags: ['cm1', 'lecture', 'inference', 'meteo', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -7509,55 +7800,64 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Compare les deux horaires.",
     tags: ['cm1', 'lecture', 'horaire', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
 {
     id: "fr-cm1-lecture-103",
     subject: "francais",
-    title: "Cause d\'une action",
+    title: "Cause implicite d'une action",
     schoolClass: "CM1",
-    generalLevel: "beginner",
+    generalLevel: "intermediate",
     skill: "lecture",
-    subskill: "comprehension explicite",
+    subskill: "inference",
     format: "qcm",
     instructions: "Lis puis réponds.",
-    prompt: "Malo chuchote parce que sa petite sœur dort. Pourquoi parle-t-il doucement ?",
+    prompt: "Après avoir relu ses réponses deux fois, Camille pose son stylo et lève la tête. Pourquoi lève-t-elle la tête ?",
     options: [
-      { id: "a", text: "Parce que sa petite sœur dort", isCorrect: true },
-      { id: "b", text: "Parce qu\'il est dans la cour", isCorrect: false },
-      { id: "c", text: "Parce qu\'il veut chanter", isCorrect: false }
+      { id: "a", text: "Elle a fini de vérifier son travail", isCorrect: true },
+      { id: "b", text: "Elle cherche un crayon de couleur", isCorrect: false },
+      { id: "c", text: "Elle veut appeler la maîtresse", isCorrect: false }
     ],
-    correctAnswer: "Parce que sa petite sœur dort",
-    explanation: "La raison est donnée dans la phrase.",
-    hint: "Relis la fin de la phrase.",
-    tags: ['cm1', 'lecture', 'cause', 'qcm'],
+    correctAnswer: "Elle a fini de vérifier son travail",
+    explanation: "Relire deux fois puis poser le stylo indique qu'elle a terminé.",
+    hint: "Que fait-on quand on a fini un travail ?",
+    tags: ['cm1', 'lecture', 'inference', 'cause', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
     id: "fr-cm1-lecture-104",
     subject: "francais",
-    title: "Repérer le lieu",
+    title: "Déduire le lieu",
     schoolClass: "CM1",
-    generalLevel: "beginner",
+    generalLevel: "intermediate",
     skill: "lecture",
-    subskill: "comprehension explicite",
+    subskill: "inference",
     format: "qcm",
     instructions: "Lis puis réponds.",
-    prompt: "Les élèves déposent leurs livres à la bibliothèque de l\'école. Où sont-ils ?",
+    prompt: "La maîtresse distribue des écouteurs et demande à chacun de s'installer devant un ordinateur. Dans quelle salle sont probablement les élèves ?",
     options: [
-      { id: "a", text: "À la bibliothèque de l\'école", isCorrect: true },
-      { id: "b", text: "À la piscine", isCorrect: false },
-      { id: "c", text: "Au marché", isCorrect: false }
+      { id: "a", text: "Dans la salle informatique", isCorrect: true },
+      { id: "b", text: "Dans la bibliothèque", isCorrect: false },
+      { id: "c", text: "Dans la salle de sport", isCorrect: false }
     ],
-    correctAnswer: "À la bibliothèque de l\'école",
-    explanation: "Le lieu est indiqué clairement dans la phrase.",
-    hint: "Cherche l\'endroit nommé.",
-    tags: ['cm1', 'lecture', 'lieu', 'qcm'],
+    correctAnswer: "Dans la salle informatique",
+    explanation: "Les écouteurs et les ordinateurs font penser à la salle informatique.",
+    hint: "Quels appareils sont cités dans la phrase ?",
+    tags: ['cm1', 'lecture', 'inference', 'lieu', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -7581,7 +7881,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense aux vêtements d\'hiver.",
     tags: ['cm1', 'lecture', 'inference', 'saisons', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -7605,7 +7908,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Lis l\'ordre des actions.",
     tags: ['cm1', 'lecture', 'consigne', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -7629,31 +7935,37 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Observe les objets cités.",
     tags: ['cm1', 'lecture', 'voyage', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
     id: "fr-cm1-lecture-108",
     subject: "francais",
-    title: "Information explicite",
+    title: "Information dans un texte court",
     schoolClass: "CM1",
     generalLevel: "beginner",
     skill: "lecture",
     subskill: "comprehension explicite",
     format: "qcm",
     instructions: "Lis puis réponds.",
-    prompt: "Le mercredi, Inès va au judo après l\'école. Quel jour pratique-t-elle le judo ?",
+    prompt: "À l'école, les activités du périscolaire ont lieu le lundi et le vendredi. Théo, lui, préfère nager et va à la piscine avec son club le mercredi soir. Quel jour Théo va-t-il à la piscine ?",
     options: [
       { id: "a", text: "Le mercredi", isCorrect: true },
-      { id: "b", text: "Le dimanche", isCorrect: false },
-      { id: "c", text: "Tous les jours", isCorrect: false }
+      { id: "b", text: "Le lundi", isCorrect: false },
+      { id: "c", text: "Le vendredi", isCorrect: false }
     ],
     correctAnswer: "Le mercredi",
-    explanation: "Le jour est écrit dans la phrase.",
-    hint: "Cherche un nom de jour.",
-    tags: ['cm1', 'lecture', 'jour', 'qcm'],
+    explanation: "Le texte précise que Théo va à la piscine le mercredi soir.",
+    hint: "Lundi et vendredi sont des jours du périscolaire, pas de Théo.",
+    tags: ['cm1', 'lecture', 'comprehension', 'jour', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -7677,7 +7989,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche la cause donnée avant donc.",
     tags: ['cm1', 'lecture', 'logique', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -7701,31 +8016,37 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Qui reçoit le stylo ?",
     tags: ['cm1', 'lecture', 'personnage', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
     id: "fr-cm1-lecture-111",
     subject: "francais",
-    title: "Comprendre une affiche",
+    title: "Interpréter une affiche",
     schoolClass: "CM1",
-    generalLevel: "advanced",
+    generalLevel: "intermediate",
     skill: "lecture",
     subskill: "document court",
     format: "qcm",
     instructions: "Lis puis réponds.",
-    prompt: "Affiche : 'La fête de l\'école aura lieu samedi à 10 h dans la cour.' Où se déroulera la fête ?",
+    prompt: "Affiche : 'Fête de l'école — samedi 14 juin — à partir de 10 h — entrée libre — dans la cour.' Un voisin arrive à 9 h 30. Que faut-il lui dire ?",
     options: [
-      { id: "a", text: "Dans la cour", isCorrect: true },
-      { id: "b", text: "Dans la forêt", isCorrect: false },
-      { id: "c", text: "À la cantine", isCorrect: false }
+      { id: "a", text: "C'est trop tôt, la fête commence à 10 h", isCorrect: true },
+      { id: "b", text: "Il doit payer pour entrer", isCorrect: false },
+      { id: "c", text: "La fête est annulée", isCorrect: false }
     ],
-    correctAnswer: "Dans la cour",
-    explanation: "L'affiche donne le lieu : la cour.",
-    hint: "Repère le lieu dans l\'affiche.",
-    tags: ['cm1', 'lecture', 'affiche', 'qcm'],
+    correctAnswer: "C'est trop tôt, la fête commence à 10 h",
+    explanation: "'À partir de 10 h' signifie qu'on ne peut pas entrer avant.",
+    hint: "Cherche l'horaire d'ouverture.",
+    tags: ['cm1', 'lecture', 'affiche', 'document', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -7740,16 +8061,19 @@ export const frenchExercises: FrenchExercise[] = [
     instructions: "Lis puis réponds.",
     prompt: "Après avoir gagné la course, Sami lève les bras et sourit largement. Comment se sent-il probablement ?",
     options: [
-      { id: "a", text: "Heureux", isCorrect: true },
-      { id: "b", text: "Endormi", isCorrect: false },
-      { id: "c", text: "Invisible", isCorrect: false }
+      { id: "a", text: "Heureux et fier", isCorrect: true },
+      { id: "b", text: "Soulagé mais inquiet", isCorrect: false },
+      { id: "c", text: "Indifférent", isCorrect: false }
     ],
-    correctAnswer: "Heureux",
-    explanation: "Lever les bras et sourire montrent la joie.",
+    correctAnswer: "Heureux et fier",
+    explanation: "Lever les bras et sourire montrent la joie et la fierté.",
     hint: "Observe les gestes du personnage.",
     tags: ['cm1', 'lecture', 'emotion', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -7773,7 +8097,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche la première action.",
     tags: ['cm1', 'lecture', 'chronologie', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -7797,31 +8124,37 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense au métier cité.",
     tags: ['cm1', 'lecture', 'lieu', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
     id: "fr-cm1-lecture-115",
     subject: "francais",
-    title: "Identifier l\'objet",
+    title: "Comprendre le but d'une action",
     schoolClass: "CM1",
-    generalLevel: "beginner",
+    generalLevel: "intermediate",
     skill: "lecture",
-    subskill: "comprehension explicite",
+    subskill: "inference",
     format: "qcm",
     instructions: "Lis puis réponds.",
-    prompt: "Pour son exposé, Jade découpe des images dans un vieux magazine. Que découpe-t-elle ?",
+    prompt: "Pour compléter son exposé sur les animaux, Jade cherche des illustrations dans de vieux magazines. Elle en découpe plusieurs avec soin. Quel est le but de cette action ?",
     options: [
-      { id: "a", text: "Des images", isCorrect: true },
-      { id: "b", text: "Des pommes", isCorrect: false },
-      { id: "c", text: "Des chaussures", isCorrect: false }
+      { id: "a", text: "Illustrer son exposé", isCorrect: true },
+      { id: "b", text: "Décorer sa chambre", isCorrect: false },
+      { id: "c", text: "Créer un jeu de cartes", isCorrect: false }
     ],
-    correctAnswer: "Des images",
-    explanation: "Le texte indique qu\'elle découpe des images.",
-    hint: "Cherche ce que Jade découpe.",
-    tags: ['cm1', 'lecture', 'objet', 'qcm'],
+    correctAnswer: "Illustrer son exposé",
+    explanation: "Le texte indique qu'elle cherche des illustrations pour son exposé.",
+    hint: "Relis la première phrase pour trouver le but.",
+    tags: ['cm1', 'lecture', 'inference', 'but', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -7845,7 +8178,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche l\'objet demandé.",
     tags: ['cm1', 'lecture', 'message', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -7869,31 +8205,37 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense aux habitudes du coucher.",
     tags: ['cm1', 'lecture', 'temps', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
     id: "fr-cm1-lecture-118",
     subject: "francais",
-    title: "Comprendre une règle",
+    title: "Comprendre une règle avec condition",
     schoolClass: "CM1",
-    generalLevel: "advanced",
+    generalLevel: "intermediate",
     skill: "lecture",
     subskill: "regle",
     format: "qcm",
     instructions: "Lis puis réponds.",
-    prompt: "Règle : 'On ne court pas dans les couloirs.' Que faut-il éviter ?",
+    prompt: "Règle de jeu : 'Le lanceur doit compter jusqu'à dix avant de se retourner ; sinon, son équipe perd un point.' Qu'arrive-t-il si le lanceur se retourne trop tôt ?",
     options: [
-      { id: "a", text: "Courir dans les couloirs", isCorrect: true },
-      { id: "b", text: "Lire en classe", isCorrect: false },
-      { id: "c", text: "Ranger ses affaires", isCorrect: false }
+      { id: "a", text: "Son équipe perd un point", isCorrect: true },
+      { id: "b", text: "L'adversaire gagne deux points", isCorrect: false },
+      { id: "c", text: "Le jeu recommence depuis le début", isCorrect: false }
     ],
-    correctAnswer: "Courir dans les couloirs",
-    explanation: "La règle interdit de courir dans les couloirs.",
-    hint: "Cherche ce qui est interdit.",
-    tags: ['cm1', 'lecture', 'regle', 'qcm'],
+    correctAnswer: "Son équipe perd un point",
+    explanation: "La règle dit 'sinon, son équipe perd un point'.",
+    hint: "Cherche ce qui se passe après 'sinon'.",
+    tags: ['cm1', 'lecture', 'regle', 'condition', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -7917,7 +8259,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche la phrase avec le même sens.",
     tags: ['cm1', 'lecture', 'reformulation', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -7941,7 +8286,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Observe les indices de la classe.",
     tags: ['cm1', 'lecture', 'ecole', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
   /* =====================================================================
@@ -7968,7 +8316,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Regarde le nombre du sujet.",
     tags: ['cm1', 'orthographe', 'accord', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -7991,7 +8342,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Peut-on remplacer par cela est ?",
     tags: ['cm1', 'orthographe', 'cest-sest', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -8014,7 +8368,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Peut-on dire avaient préparé ?",
     tags: ['cm1', 'orthographe', 'on-ont', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -8037,7 +8394,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Le mot suivant est-il un nom ?",
     tags: ['cm1', 'orthographe', 'ce-se', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -8060,53 +8420,63 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pose-t-on une question sur un endroit ?",
     tags: ['cm1', 'orthographe', 'ou-ou-accent', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
     id: "fr-cm1-orthographe-106",
     subject: "francais",
-    title: "a ou à",
+    title: "a ou à — phrase complexe",
     schoolClass: "CM1",
     generalLevel: "beginner",
     skill: "orthographe",
     subskill: "homophones grammaticaux",
     format: "qcm",
     instructions: "Choisis le bon mot.",
-    prompt: "Lina _____ un vélo rouge.",
+    prompt: "Ma tante _____ toujours eu le sens du détail.",
     options: [
       { id: "a", text: "a", isCorrect: true },
       { id: "b", text: "à", isCorrect: false }
     ],
     correctAnswer: "a",
-    explanation: "Ici, a est le verbe avoir.",
-    hint: "Peut-on dire avait ?",
+    explanation: "On écrit 'a' (verbe avoir) → on pouvait dire 'avait toujours eu'.",
+    hint: "Peut-on remplacer par 'avait' ?",
     tags: ['cm1', 'orthographe', 'a-a-grave', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:orthographe',
   },
 
 {
     id: "fr-cm1-orthographe-107",
     subject: "francais",
-    title: "et ou est",
+    title: "et ou est — deux blancs",
     schoolClass: "CM1",
     generalLevel: "beginner",
     skill: "orthographe",
     subskill: "homophones grammaticaux",
     format: "qcm",
-    instructions: "Choisis le bon mot.",
-    prompt: "Le jardin _____ très grand.",
+    instructions: "Choisis la bonne paire.",
+    prompt: "Ce château _____ entouré de douves _____ de hauts remparts.",
     options: [
-      { id: "a", text: "et", isCorrect: false },
-      { id: "b", text: "est", isCorrect: true }
+      { id: "a", text: "est / et", isCorrect: true },
+      { id: "b", text: "et / et", isCorrect: false },
+      { id: "c", text: "est / est", isCorrect: false }
     ],
-    correctAnswer: "est",
-    explanation: "On écrit est avec le verbe être.",
-    hint: "Peut-on dire était ?",
+    correctAnswer: "est / et",
+    explanation: "Le premier est le verbe être (on peut dire 'était'), le second relie deux groupes.",
+    hint: "Pour le premier blanc, peut-on dire 'était' ?",
     tags: ['cm1', 'orthographe', 'et-est', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -8129,7 +8499,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Peut-on dire cependant ?",
     tags: ['cm1', 'orthographe', 'mes-mais', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -8152,31 +8525,37 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Peut-on dire étaient ?",
     tags: ['cm1', 'orthographe', 'son-sont', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:orthographe',
   },
 
 {
     id: "fr-cm1-orthographe-110",
     subject: "francais",
-    title: "Pluriel régulier",
+    title: "Pluriel en -aux",
     schoolClass: "CM1",
-    generalLevel: "beginner",
+    generalLevel: "intermediate",
     skill: "orthographe",
-    subskill: "pluriel des noms",
+    subskill: "pluriel des noms en -al",
     format: "qcm",
     instructions: "Choisis le bon mot.",
-    prompt: "Plusieurs jardin :",
+    prompt: "Plusieurs animal :",
     options: [
-      { id: "a", text: "des jardin", isCorrect: false },
-      { id: "b", text: "des jardins", isCorrect: true },
-      { id: "c", text: "des jardint", isCorrect: false }
+      { id: "a", text: "des animals", isCorrect: false },
+      { id: "b", text: "des animaux", isCorrect: true },
+      { id: "c", text: "des animalx", isCorrect: false }
     ],
-    correctAnswer: "des jardins",
-    explanation: "Au pluriel, on ajoute généralement un s.",
-    hint: "Il y en a plusieurs.",
-    tags: ['cm1', 'orthographe', 'pluriel', 'qcm'],
+    correctAnswer: "des animaux",
+    explanation: "Les noms en -al font leur pluriel en -aux.",
+    hint: "Regarde la terminaison du mot.",
+    tags: ['cm1', 'orthographe', 'pluriel', 'al-aux', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -8200,7 +8579,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Regarde la fin du mot.",
     tags: ['cm1', 'orthographe', 'pluriel', 'eau', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -8224,55 +8606,64 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Regarde s\'il y en a plusieurs.",
     tags: ['cm1', 'orthographe', 'accord-adjectif', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
     id: "fr-cm1-orthographe-113",
     subject: "francais",
-    title: "Majuscule au nom propre",
+    title: "Majuscule aux noms propres",
     schoolClass: "CM1",
     generalLevel: "beginner",
     skill: "orthographe",
     subskill: "majuscule",
     format: "qcm",
     instructions: "Choisis le bon mot.",
-    prompt: "Lequel est bien écrit ?",
+    prompt: "Laquelle de ces phrases est correctement écrite ?",
     options: [
-      { id: "a", text: "paris", isCorrect: false },
-      { id: "b", text: "Paris", isCorrect: true },
-      { id: "c", text: "paRis", isCorrect: false }
+      { id: "a", text: "Ma cousine habite à bordeaux, près de la garonne.", isCorrect: false },
+      { id: "b", text: "Ma cousine habite à Bordeaux, près de la Garonne.", isCorrect: true },
+      { id: "c", text: "Ma Cousine habite à Bordeaux, près de la Garonne.", isCorrect: false }
     ],
-    correctAnswer: "Paris",
-    explanation: "Un nom de ville prend une majuscule.",
-    hint: "C'est un nom propre.",
-    tags: ['cm1', 'orthographe', 'majuscule', 'qcm'],
+    correctAnswer: "Ma cousine habite à Bordeaux, près de la Garonne.",
+    explanation: "Les noms de ville et de fleuve prennent une majuscule ; 'cousine' est un nom commun.",
+    hint: "Quels mots sont des noms propres ?",
+    tags: ['cm1', 'orthographe', 'majuscule', 'nom-propre', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:orthographe',
   },
 
 {
     id: "fr-cm1-orthographe-114",
     subject: "francais",
-    title: "Ponctuation de phrase",
+    title: "Virgule dans une énumération",
     schoolClass: "CM1",
-    generalLevel: "beginner",
+    generalLevel: "intermediate",
     skill: "orthographe",
     subskill: "ponctuation",
     format: "qcm",
     instructions: "Choisis le bon mot.",
-    prompt: "Laquelle de ces phrases est bien ponctuée ?",
+    prompt: "Laquelle est correctement ponctuée ?",
     options: [
-      { id: "a", text: "les enfants jouent dehors", isCorrect: false },
-      { id: "b", text: "Les enfants jouent dehors.", isCorrect: true },
-      { id: "c", text: "Les enfants jouent dehors,", isCorrect: false }
+      { id: "a", text: "Dans son cartable il y avait un cahier un stylo et une règle.", isCorrect: false },
+      { id: "b", text: "Dans son cartable, il y avait un cahier, un stylo et une règle.", isCorrect: true },
+      { id: "c", text: "Dans son cartable, il y avait un cahier, un stylo, et une règle,", isCorrect: false }
     ],
-    correctAnswer: "Les enfants jouent dehors.",
-    explanation: "Une phrase affirmative commence par une majuscule et se termine par un point.",
-    hint: "Vérifie le début et la fin.",
-    tags: ['cm1', 'orthographe', 'ponctuation', 'qcm'],
+    correctAnswer: "Dans son cartable, il y avait un cahier, un stylo et une règle.",
+    explanation: "Une virgule après le CC de lieu et entre les éléments de la liste ; pas de virgule avant 'et' ni en fin de phrase.",
+    hint: "Regarde la virgule après 'cartable' et entre les objets.",
+    tags: ['cm1', 'orthographe', 'ponctuation', 'virgule', 'enumeration', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -8295,7 +8686,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Regarde le genre du nom.",
     tags: ['cm1', 'orthographe', 'accord', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -8318,7 +8712,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Y a-t-il un ou plusieurs cahiers ?",
     tags: ['cm1', 'orthographe', 'leur-leurs', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -8341,7 +8738,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Peut-on dire ces chaussures-là ?",
     tags: ['cm1', 'orthographe', 'ces-ses', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -8365,7 +8765,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Remplace le sujet par nous.",
     tags: ['cm1', 'orthographe', 'accord', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:orthographe',
   },
 
 
@@ -8393,7 +8796,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le mot qui décrit le nom.",
     tags: ['cm1', 'grammaire', 'adjectif', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -8417,55 +8823,64 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Le déterminant accompagne le nom.",
     tags: ['cm1', 'grammaire', 'determinant', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
 {
     id: "fr-cm1-grammaire-103",
     subject: "francais",
-    title: "Repérer le sujet",
+    title: "Repérer le sujet — CC en tête",
     schoolClass: "CM1",
     generalLevel: "beginner",
     skill: "grammaire",
     subskill: "identifier le sujet",
     format: "qcm",
     instructions: "Choisis la bonne réponse.",
-    prompt: "Les voyageurs attendent le train.",
+    prompt: "Dans la forêt, les oiseaux chantent à l'aurore. Quel est le sujet du verbe 'chantent' ?",
     options: [
-      { id: "a", text: "Les voyageurs", isCorrect: true },
-      { id: "b", text: "attendent", isCorrect: false },
-      { id: "c", text: "le train", isCorrect: false }
+      { id: "a", text: "Dans la forêt", isCorrect: false },
+      { id: "b", text: "les oiseaux", isCorrect: true },
+      { id: "c", text: "à l'aurore", isCorrect: false }
     ],
-    correctAnswer: "Les voyageurs",
-    explanation: "Le sujet est celui qui fait l'action d'attendre.",
-    hint: "Qui attend ?",
-    tags: ['cm1', 'grammaire', 'sujet', 'qcm'],
+    correctAnswer: "les oiseaux",
+    explanation: "'Les oiseaux' est celui qui chante ; 'Dans la forêt' est un complément de lieu.",
+    hint: "Qui chante ? Attention, le sujet n'est pas toujours en premier.",
+    tags: ['cm1', 'grammaire', 'sujet', 'cc-lieu', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
 {
     id: "fr-cm1-grammaire-104",
     subject: "francais",
-    title: "Repérer le verbe",
+    title: "Verbe conjugué ou infinitif",
     schoolClass: "CM1",
     generalLevel: "beginner",
     skill: "grammaire",
     subskill: "identifier le verbe",
     format: "qcm",
     instructions: "Choisis la bonne réponse.",
-    prompt: "Le facteur distribue le courrier.",
+    prompt: "Dans 'La pluie empêche les enfants de sortir.', quel est le verbe conjugué ?",
     options: [
-      { id: "a", text: "facteur", isCorrect: false },
-      { id: "b", text: "distribue", isCorrect: true },
-      { id: "c", text: "courrier", isCorrect: false }
+      { id: "a", text: "pluie", isCorrect: false },
+      { id: "b", text: "empêche", isCorrect: true },
+      { id: "c", text: "sortir", isCorrect: false }
     ],
-    correctAnswer: "distribue",
-    explanation: "Distribue est le verbe, il dit l\'action.",
-    hint: "Cherche ce qui se passe.",
-    tags: ['cm1', 'grammaire', 'verbe', 'qcm'],
+    correctAnswer: "empêche",
+    explanation: "'Empêche' est conjugué (il empêchait) ; 'sortir' est à l'infinitif.",
+    hint: "Le verbe conjugué change selon le sujet ; l'infinitif ne change pas.",
+    tags: ['cm1', 'grammaire', 'verbe', 'infinitif', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -8489,7 +8904,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le mot avec une majuscule.",
     tags: ['cm1', 'grammaire', 'nom-propre', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -8513,7 +8931,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le petit mot sujet.",
     tags: ['cm1', 'grammaire', 'pronom', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -8537,53 +8958,62 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Prends tout le groupe qui fait l\'action.",
     tags: ['cm1', 'grammaire', 'groupe-nominal', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:grammaire',
   },
 
 {
     id: "fr-cm1-grammaire-108",
     subject: "francais",
-    title: "Masculin ou féminin",
+    title: "Genre d'un nom — cas ambigu",
     schoolClass: "CM1",
     generalLevel: "beginner",
     skill: "grammaire",
     subskill: "genre du nom",
     format: "qcm",
     instructions: "Choisis la bonne réponse.",
-    prompt: "Le mot maison est :",
+    prompt: "Le mot 'silence' est :",
     options: [
-      { id: "a", text: "Masculin", isCorrect: false },
-      { id: "b", text: "Féminin", isCorrect: true }
+      { id: "a", text: "Masculin", isCorrect: true },
+      { id: "b", text: "Féminin", isCorrect: false }
     ],
-    correctAnswer: "Féminin",
-    explanation: "On dit la maison : le nom est féminin.",
-    hint: "Écoute le déterminant qui convient.",
+    correctAnswer: "Masculin",
+    explanation: "On dit 'un silence' : le nom est masculin.",
+    hint: "Essaie de placer 'un' ou 'une' devant le mot.",
     tags: ['cm1', 'grammaire', 'genre', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
 {
     id: "fr-cm1-grammaire-109",
     subject: "francais",
-    title: "Singulier ou pluriel",
+    title: "Singulier ou pluriel — nom invariable",
     schoolClass: "CM1",
     generalLevel: "beginner",
     skill: "grammaire",
     subskill: "nombre",
     format: "qcm",
     instructions: "Choisis la bonne réponse.",
-    prompt: "Le groupe 'les arbres' est :",
+    prompt: "Dans 'La brebis broute', le sujet est au :",
     options: [
-      { id: "a", text: "Singulier", isCorrect: false },
-      { id: "b", text: "Pluriel", isCorrect: true }
+      { id: "a", text: "Singulier", isCorrect: true },
+      { id: "b", text: "Pluriel", isCorrect: false }
     ],
-    correctAnswer: "Pluriel",
-    explanation: "Les arbres désigne plusieurs arbres.",
-    hint: "Y en a-t-il un ou plusieurs ?",
-    tags: ['cm1', 'grammaire', 'nombre', 'qcm'],
+    correctAnswer: "Singulier",
+    explanation: "Le déterminant 'La' indique le singulier, même si 'brebis' se termine par -s.",
+    hint: "Regarde le déterminant, pas la terminaison du nom.",
+    tags: ['cm1', 'grammaire', 'nombre', 'nom-invariable', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -8591,7 +9021,7 @@ export const frenchExercises: FrenchExercise[] = [
     subject: "francais",
     title: "Nature du mot",
     schoolClass: "CM1",
-    generalLevel: "advanced",
+    generalLevel: "intermediate",
     skill: "grammaire",
     subskill: "nature des mots",
     format: "qcm",
@@ -8603,11 +9033,14 @@ export const frenchExercises: FrenchExercise[] = [
       { id: "c", text: "Un déterminant", isCorrect: false }
     ],
     correctAnswer: "Un verbe",
-    explanation: "Chante exprime l\'action.",
+    explanation: "Chante exprime l'action.",
     hint: "Est-ce une action ?",
     tags: ['cm1', 'grammaire', 'nature-des-mots', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -8631,7 +9064,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche ce qui précise le nom.",
     tags: ['cm1', 'grammaire', 'complement-du-nom', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -8655,7 +9091,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "La personne qui parle est incluse.",
     tags: ['cm1', 'grammaire', 'pronom', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -8679,7 +9118,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Prends le verbe avec son complément.",
     tags: ['cm1', 'grammaire', 'groupe-verbal', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -8703,7 +9145,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Le mot montre à qui appartient le nom.",
     tags: ['cm1', 'grammaire', 'determinant', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -8727,7 +9172,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Le mot donne une précision.",
     tags: ['cm1', 'grammaire', 'adjectif', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -8751,7 +9199,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Qui brille ?",
     tags: ['cm1', 'grammaire', 'sujet', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -8775,7 +9226,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Le verbe conjugué change selon le sujet.",
     tags: ['cm1', 'grammaire', 'verbe', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -8799,7 +9253,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "C'est le petit mot placé avant le nom.",
     tags: ['cm1', 'grammaire', 'determinant', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:grammaire',
   },
 
 
@@ -8827,55 +9284,64 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense à nous -ons.",
     tags: ['cm1', 'conjugaison', 'present', '1er-groupe', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:conjugaison',
   },
 
 {
     id: "fr-cm1-conjugaison-102",
     subject: "francais",
-    title: "Présent du verbe être",
+    title: "Présent du verbe être — sujet composé",
     schoolClass: "CM1",
-    generalLevel: "beginner",
+    generalLevel: "intermediate",
     skill: "conjugaison",
     subskill: "etre au present",
     format: "qcm",
     instructions: "Choisis la bonne forme du verbe.",
-    prompt: "Vous _____ prêts.",
+    prompt: "Léa et son frère _____ souvent en retard.",
     options: [
-      { id: "a", text: "êtes", isCorrect: true },
-      { id: "b", text: "sommes", isCorrect: false },
-      { id: "c", text: "est", isCorrect: false }
+      { id: "a", text: "sommes", isCorrect: false },
+      { id: "b", text: "êtes", isCorrect: false },
+      { id: "c", text: "sont", isCorrect: true }
     ],
-    correctAnswer: "êtes",
-    explanation: "Avec vous, le verbe être se conjugue êtes.",
-    hint: "Récite je suis, tu es, il est...",
+    correctAnswer: "sont",
+    explanation: "'Léa et son frère' peut se remplacer par 'ils' → ils sont.",
+    hint: "Remplace le sujet par 'ils' ou 'elles'.",
     tags: ['cm1', 'conjugaison', 'etre', 'present', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:conjugaison',
   },
 
 {
     id: "fr-cm1-conjugaison-103",
     subject: "francais",
-    title: "Présent du verbe avoir",
+    title: "Présent du verbe avoir — accord",
     schoolClass: "CM1",
-    generalLevel: "beginner",
+    generalLevel: "intermediate",
     skill: "conjugaison",
     subskill: "avoir au present",
     format: "qcm",
     instructions: "Choisis la bonne forme du verbe.",
-    prompt: "Ils _____ faim.",
+    prompt: "Les élèves de ma classe _____ une heure d'EPS chaque jour.",
     options: [
-      { id: "a", text: "ont", isCorrect: true },
+      { id: "a", text: "a", isCorrect: false },
       { id: "b", text: "avez", isCorrect: false },
-      { id: "c", text: "as", isCorrect: false }
+      { id: "c", text: "ont", isCorrect: true }
     ],
     correctAnswer: "ont",
-    explanation: "Avec ils, le verbe avoir se conjugue ont.",
-    hint: "Pense à ils ont.",
+    explanation: "'Les élèves' se remplace par 'ils' → ils ont.",
+    hint: "Quel pronom peut remplacer 'les élèves de ma classe' ?",
     tags: ['cm1', 'conjugaison', 'avoir', 'present', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -8899,7 +9365,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Je vais, tu vas, il va.",
     tags: ['cm1', 'conjugaison', 'aller', 'present', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -8923,7 +9392,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense à nous faisons.",
     tags: ['cm1', 'conjugaison', 'faire', 'present', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -8947,7 +9419,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le temps du passé qui dure.",
     tags: ['cm1', 'conjugaison', 'imparfait', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -8971,7 +9446,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense à la terminaison -ions.",
     tags: ['cm1', 'conjugaison', 'imparfait', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -8995,7 +9473,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche la forme du passé.",
     tags: ['cm1', 'conjugaison', 'etre', 'imparfait', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -9019,7 +9500,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense au passé.",
     tags: ['cm1', 'conjugaison', 'avoir', 'imparfait', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -9043,7 +9527,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le temps de demain.",
     tags: ['cm1', 'conjugaison', 'futur', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -9067,7 +9554,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense à j\'irai, tu iras...",
     tags: ['cm1', 'conjugaison', 'futur', 'aller', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -9091,7 +9581,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "C'est la forme du dictionnaire.",
     tags: ['cm1', 'conjugaison', 'infinitif', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -9115,7 +9608,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le temps du moment.",
     tags: ['cm1', 'conjugaison', '2e-groupe', 'present', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -9139,7 +9635,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Le mot hier t\'aide.",
     tags: ['cm1', 'conjugaison', 'temps', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -9163,7 +9662,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense à ils viennent.",
     tags: ['cm1', 'conjugaison', 'venir', 'present', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -9187,7 +9689,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense à demain ou plus tard.",
     tags: ['cm1', 'conjugaison', 'etre', 'futur', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:conjugaison',
   },
 
 
@@ -9215,55 +9720,64 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le même radical.",
     tags: ['cm1', 'vocabulaire', 'famille-de-mots', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
     id: "fr-cm1-vocabulaire-102",
     subject: "francais",
-    title: "Synonyme courant",
+    title: "Synonyme d'un adjectif",
     schoolClass: "CM1",
     generalLevel: "beginner",
     skill: "vocabulaire",
     subskill: "synonymes",
     format: "qcm",
     instructions: "Choisis la bonne réponse.",
-    prompt: "Le synonyme de 'rapide' est :",
+    prompt: "Le synonyme de 'courageux' est :",
     options: [
-      { id: "a", text: "vite", isCorrect: true },
-      { id: "b", text: "lentement", isCorrect: false },
-      { id: "c", text: "lourd", isCorrect: false }
+      { id: "a", text: "vaillant", isCorrect: true },
+      { id: "b", text: "craintif", isCorrect: false },
+      { id: "c", text: "agile", isCorrect: false }
     ],
-    correctAnswer: "vite",
-    explanation: "Rapide et vite expriment l\'idée de vitesse.",
-    hint: "Cherche un mot proche.",
+    correctAnswer: "vaillant",
+    explanation: "Courageux et vaillant désignent la même qualité de caractère.",
+    hint: "Cherche un mot qui exprime la même qualité.",
     tags: ['cm1', 'vocabulaire', 'synonymes', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
     id: "fr-cm1-vocabulaire-103",
     subject: "francais",
-    title: "Antonyme courant",
+    title: "Antonyme avec nuance",
     schoolClass: "CM1",
     generalLevel: "beginner",
     skill: "vocabulaire",
     subskill: "antonymes",
     format: "qcm",
     instructions: "Choisis la bonne réponse.",
-    prompt: "L'antonyme de 'monter' est :",
+    prompt: "L'antonyme de 'négliger' est :",
     options: [
-      { id: "a", text: "descendre", isCorrect: true },
-      { id: "b", text: "grimper", isCorrect: false },
-      { id: "c", text: "regarder", isCorrect: false }
+      { id: "a", text: "soigner", isCorrect: true },
+      { id: "b", text: "oublier", isCorrect: false },
+      { id: "c", text: "chercher", isCorrect: false }
     ],
-    correctAnswer: "descendre",
-    explanation: "Descendre est le contraire de monter.",
-    hint: "Cherche l\'idée inverse.",
+    correctAnswer: "soigner",
+    explanation: "Soigner est le contraire de négliger.",
+    hint: "'Oublier' est proche de 'négliger', mais ce n'est pas le contraire.",
     tags: ['cm1', 'vocabulaire', 'antonymes', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -9287,7 +9801,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Trois mots vont ensemble.",
     tags: ['cm1', 'vocabulaire', 'intrus', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -9311,7 +9828,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense au verbe regarder.",
     tags: ['cm1', 'vocabulaire', 'definition', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -9324,18 +9844,21 @@ export const frenchExercises: FrenchExercise[] = [
     subskill: "champ lexical",
     format: "qcm",
     instructions: "Choisis la bonne réponse.",
-    prompt: "Lequel appartient au champ lexical de la mer ?",
+    prompt: "Parmi ces mots, lequel appartient au champ lexical de la mer ?",
     options: [
-      { id: "a", text: "vague", isCorrect: true },
-      { id: "b", text: "bureau", isCorrect: false },
-      { id: "c", text: "craie", isCorrect: false }
+      { id: "a", text: "marée", isCorrect: true },
+      { id: "b", text: "plateau", isCorrect: false },
+      { id: "c", text: "torrent", isCorrect: false }
     ],
-    correctAnswer: "vague",
-    explanation: "Une vague appartient au vocabulaire de la mer.",
-    hint: "Pense à la plage et à l\'océan.",
-    tags: ['cm1', 'vocabulaire', 'champ-lexical', 'qcm'],
+    correctAnswer: "marée",
+    explanation: "La marée est un phénomène marin. Le torrent est de l'eau douce de montagne.",
+    hint: "Le torrent est de l'eau, mais appartient-il à la mer ?",
+    tags: ['cm1', 'vocabulaire', 'champ-lexical', 'mer', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -9359,31 +9882,37 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Ne prends pas la phrase au pied de la lettre.",
     tags: ['cm1', 'vocabulaire', 'expression', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
     id: "fr-cm1-vocabulaire-108",
     subject: "francais",
-    title: "Catégorie de mots",
+    title: "Identifier un sentiment",
     schoolClass: "CM1",
     generalLevel: "beginner",
     skill: "vocabulaire",
     subskill: "categories",
     format: "qcm",
     instructions: "Choisis la bonne réponse.",
-    prompt: "Lequel de ces mots est un fruit ?",
+    prompt: "Lequel de ces mots désigne un sentiment ?",
     options: [
-      { id: "a", text: "abricot", isCorrect: true },
-      { id: "b", text: "camion", isCorrect: false },
-      { id: "c", text: "tapis", isCorrect: false }
+      { id: "a", text: "fierté", isCorrect: true },
+      { id: "b", text: "grimace", isCorrect: false },
+      { id: "c", text: "sourire", isCorrect: false }
     ],
-    correctAnswer: "abricot",
-    explanation: "L'abricot est un fruit.",
-    hint: "Cherche un aliment qui pousse sur un arbre.",
-    tags: ['cm1', 'vocabulaire', 'categories', 'qcm'],
+    correctAnswer: "fierté",
+    explanation: "La fierté est un sentiment intérieur. Une grimace et un sourire sont des expressions du visage.",
+    hint: "Un sentiment est quelque chose qu'on ressent à l'intérieur.",
+    tags: ['cm1', 'vocabulaire', 'categories', 'sentiments', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -9407,31 +9936,37 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche la partie commune.",
     tags: ['cm1', 'vocabulaire', 'famille-de-mots', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
     id: "fr-cm1-vocabulaire-110",
     subject: "francais",
-    title: "Synonyme de content",
+    title: "Synonyme avec nuance",
     schoolClass: "CM1",
     generalLevel: "beginner",
     skill: "vocabulaire",
     subskill: "synonymes",
     format: "qcm",
     instructions: "Choisis la bonne réponse.",
-    prompt: "Le synonyme de 'content' est :",
+    prompt: "Le synonyme de 'bruyant' est :",
     options: [
-      { id: "a", text: "heureux", isCorrect: true },
-      { id: "b", text: "fâché", isCorrect: false },
-      { id: "c", text: "lent", isCorrect: false }
+      { id: "a", text: "tapageur", isCorrect: true },
+      { id: "b", text: "silencieux", isCorrect: false },
+      { id: "c", text: "fatigant", isCorrect: false }
     ],
-    correctAnswer: "heureux",
-    explanation: "Content et heureux ont un sens proche.",
-    hint: "Cherche un mot positif.",
-    tags: ['cm1', 'vocabulaire', 'synonyme', 'qcm'],
+    correctAnswer: "tapageur",
+    explanation: "Bruyant et tapageur signifient tous deux 'qui fait beaucoup de bruit'.",
+    hint: "'Silencieux' est le contraire ; 'fatigant' n'est pas un synonyme.",
+    tags: ['cm1', 'vocabulaire', 'synonymes', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -9455,31 +9990,37 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche l\'idée opposée.",
     tags: ['cm1', 'vocabulaire', 'antonyme', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
     id: "fr-cm1-vocabulaire-112",
     subject: "francais",
-    title: "Mot générique",
+    title: "Hyperonyme précis",
     schoolClass: "CM1",
     generalLevel: "advanced",
     skill: "vocabulaire",
-    subskill: "categories",
+    subskill: "categories semantiques",
     format: "qcm",
     instructions: "Choisis la bonne réponse.",
-    prompt: "Pomme, poire, banane : ce sont des...",
+    prompt: "Tulipe, pivoine, narcisse : quel est le terme générique le plus précis ?",
     options: [
-      { id: "a", text: "fruits", isCorrect: true },
-      { id: "b", text: "outils", isCorrect: false },
-      { id: "c", text: "meubles", isCorrect: false }
+      { id: "a", text: "plantes", isCorrect: false },
+      { id: "b", text: "fleurs", isCorrect: true },
+      { id: "c", text: "végétaux", isCorrect: false }
     ],
-    correctAnswer: "fruits",
-    explanation: "Pomme, poire et banane sont des fruits.",
-    hint: "Cherche la grande catégorie.",
-    tags: ['cm1', 'vocabulaire', 'categorie', 'qcm'],
+    correctAnswer: "fleurs",
+    explanation: "'Fleurs' est le terme exact. 'Plantes' et 'végétaux' sont trop vagues.",
+    hint: "Cherche le mot qui regroupe ces trois éléments de façon précise, ni trop large ni trop étroit.",
+    tags: ['cm1', 'vocabulaire', 'hyperonyme', 'categorie', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -9503,7 +10044,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense à la boulangerie.",
     tags: ['cm1', 'vocabulaire', 'definition', 'metier', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -9527,7 +10071,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Trois mots appartiennent au temps.",
     tags: ['cm1', 'vocabulaire', 'intrus', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -9551,31 +10098,37 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Choisis le mot le plus exact.",
     tags: ['cm1', 'vocabulaire', 'precision', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
     id: "fr-cm1-vocabulaire-116",
     subject: "francais",
-    title: "Champ lexical de l\'école",
+    title: "Champ lexical de l'école",
     schoolClass: "CM1",
     generalLevel: "beginner",
     skill: "vocabulaire",
     subskill: "champ lexical",
     format: "qcm",
     instructions: "Choisis la bonne réponse.",
-    prompt: "Lequel appartient au champ lexical de l\'école ?",
+    prompt: "Lequel appartient au champ lexical de l'école ?",
     options: [
-      { id: "a", text: "cahier", isCorrect: true },
-      { id: "b", text: "volcan", isCorrect: false },
-      { id: "c", text: "voilier", isCorrect: false }
+      { id: "a", text: "ardoise", isCorrect: true },
+      { id: "b", text: "sablier", isCorrect: false },
+      { id: "c", text: "ardillon", isCorrect: false }
     ],
-    correctAnswer: "cahier",
-    explanation: "Le cahier est un objet lié à l\'école.",
-    hint: "Pense à la classe.",
+    correctAnswer: "ardoise",
+    explanation: "L'ardoise est un outil scolaire. Le sablier mesure le temps (parfois en classe, mais non spécifiquement scolaire). L'ardillon est la partie d'une boucle de ceinture.",
+    hint: "Quel objet est vraiment propre à l'école ?",
     tags: ['cm1', 'vocabulaire', 'champ-lexical', 'ecole', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
 
@@ -9585,25 +10138,28 @@ export const frenchExercises: FrenchExercise[] = [
 {
     id: "fr-cm1-expression-101",
     subject: "francais",
-    title: "Choisir la phrase correcte",
+    title: "Phrase avec proposition relative",
     schoolClass: "CM1",
     generalLevel: "intermediate",
     skill: "expression_ecrite",
     subskill: "phrase correcte",
     format: "qcm",
     instructions: "Choisis la bonne réponse.",
-    prompt: "Laquelle de ces phrases est correcte ?",
+    prompt: "Laquelle de ces phrases est correctement écrite ?",
     options: [
-      { id: "a", text: "Le chat dort sur le canapé.", isCorrect: true },
-      { id: "b", text: "le chat dort sur le canapé", isCorrect: false },
-      { id: "c", text: "Le chat dort sur le canapé", isCorrect: false }
+      { id: "a", text: "L'élève, qui avait bien révisé, a obtenu une bonne note.", isCorrect: true },
+      { id: "b", text: "L'élève qui avait bien révisé, a obtenu une bonne note.", isCorrect: false },
+      { id: "c", text: "L'élève, qui avait bien révisé a obtenu une bonne note.", isCorrect: false }
     ],
-    correctAnswer: "Le chat dort sur le canapé.",
-    explanation: "La phrase correcte commence par une majuscule et finit par un point.",
-    hint: "Vérifie le début et la fin de la phrase.",
-    tags: ['cm1', 'expression-ecrite', 'phrase', 'qcm'],
+    correctAnswer: "L'élève, qui avait bien révisé, a obtenu une bonne note.",
+    explanation: "La proposition relative est encadrée par deux virgules.",
+    hint: "Les virgules encadrent la proposition qui complète le nom.",
+    tags: ['cm1', 'expression-ecrite', 'phrase', 'virgule', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:expression_ecrite',
   },
 
 {
@@ -9627,31 +10183,37 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Regarde le type de phrase.",
     tags: ['cm1', 'expression-ecrite', 'ponctuation', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'milieu',
+    skill_id: 'francais:expression_ecrite',
   },
 
 {
     id: "fr-cm1-expression-103",
     subject: "francais",
-    title: "Ordre des mots",
+    title: "Reconstruire une phrase",
     schoolClass: "CM1",
     generalLevel: "beginner",
     skill: "expression_ecrite",
     subskill: "ordonner une phrase",
     format: "qcm",
     instructions: "Choisis la bonne réponse.",
-    prompt: "Laquelle est correcte ?",
+    prompt: "Laquelle de ces phrases est dans le bon ordre ?",
     options: [
-      { id: "a", text: "Dans le jardin jouent les enfants.", isCorrect: false },
-      { id: "b", text: "Les enfants jouent dans le jardin.", isCorrect: true },
-      { id: "c", text: "Jardin dans jouent le les enfants.", isCorrect: false }
+      { id: "a", text: "Ce matin, des nuages gris ont envahi le ciel.", isCorrect: true },
+      { id: "b", text: "Des nuages gris ce matin le ciel ont envahi.", isCorrect: false },
+      { id: "c", text: "Gris des nuages le ciel ont envahi ce matin.", isCorrect: false }
     ],
-    correctAnswer: "Les enfants jouent dans le jardin.",
-    explanation: "Les mots doivent être placés dans un ordre correct.",
-    hint: "Cherche la phrase la plus naturelle.",
+    correctAnswer: "Ce matin, des nuages gris ont envahi le ciel.",
+    explanation: "La phrase bien ordonnée suit la structure : CC de temps + sujet + verbe + COD.",
+    hint: "Cherche la phrase la plus naturelle à lire.",
     tags: ['cm1', 'expression-ecrite', 'ordre-des-mots', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:expression_ecrite',
   },
 
 {
@@ -9674,7 +10236,10 @@ export const frenchExercises: FrenchExercise[] = [
       lecture_simplifiee: { instruction: "Écris une petite phrase.", extraHint: "Tu peux écrire une phrase courte." },
       attention_courte: { instruction: "Écris juste une phrase courte." },
       defi_avance: { challengeExtension: "Ajoute un détail en plus dans ta phrase." }
-    })
+    }),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:expression_ecrite',
   },
 
 {
@@ -9697,7 +10262,10 @@ export const frenchExercises: FrenchExercise[] = [
       lecture_simplifiee: { instruction: "Écris une petite phrase.", extraHint: "Tu peux écrire une phrase courte." },
       attention_courte: { instruction: "Écris juste une phrase courte." },
       defi_avance: { challengeExtension: "Ajoute un détail en plus dans ta phrase." }
-    })
+    }),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:expression_ecrite',
   },
 
 {
@@ -9720,31 +10288,37 @@ export const frenchExercises: FrenchExercise[] = [
       lecture_simplifiee: { instruction: "Écris une petite phrase.", extraHint: "Tu peux écrire une phrase courte." },
       attention_courte: { instruction: "Écris juste une phrase courte." },
       defi_avance: { challengeExtension: "Ajoute un détail en plus dans ta phrase." }
-    })
+    }),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:expression_ecrite',
   },
 
 {
     id: "fr-cm1-expression-107",
     subject: "francais",
-    title: "Choisir la meilleure formulation",
+    title: "Choisir la formulation la plus claire",
     schoolClass: "CM1",
     generalLevel: "advanced",
     skill: "expression_ecrite",
     subskill: "meilleure formulation",
     format: "qcm",
     instructions: "Choisis la bonne réponse.",
-    prompt: "Laquelle de ces phrases est la mieux écrite ?",
+    prompt: "Laquelle de ces phrases est la plus claire et la mieux rédigée ?",
     options: [
-      { id: "a", text: "Nous allons demain au musée.", isCorrect: false },
-      { id: "b", text: "Nous allons au musée demain.", isCorrect: true },
-      { id: "c", text: "Allons nous demain musée au.", isCorrect: false }
+      { id: "a", text: "Ce livre je l'ai lu hier et c'était bien ce livre.", isCorrect: false },
+      { id: "b", text: "J'ai lu ce livre hier ; je l'ai trouvé passionnant.", isCorrect: true },
+      { id: "c", text: "Hier j'ai lu le livre et il était bien et je l'ai aimé.", isCorrect: false }
     ],
-    correctAnswer: "Nous allons au musée demain.",
-    explanation: "La phrase choisie est claire et bien ordonnée.",
-    hint: "Cherche la phrase la plus naturelle.",
+    correctAnswer: "J'ai lu ce livre hier ; je l'ai trouvé passionnant.",
+    explanation: "La phrase B évite les répétitions, utilise un vocabulaire précis et une ponctuation correcte.",
+    hint: "Cherche la phrase sans répétition inutile et avec un vocabulaire riche.",
     tags: ['cm1', 'expression-ecrite', 'formulation', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:expression_ecrite',
   },
 
 {
@@ -9768,7 +10342,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le mot qui explique la raison.",
     tags: ['cm1', 'expression-ecrite', 'connecteur', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:expression_ecrite',
   },
 
 /* =====================================================================
@@ -9777,49 +10354,55 @@ export const frenchExercises: FrenchExercise[] = [
 {
     id: "fr-cm2-lecture-101",
     subject: "francais",
-    title: "Inférence voyage",
+    title: "Inférence — activité en cours",
     schoolClass: "CM2",
     generalLevel: "intermediate",
     skill: "lecture",
     subskill: "inférence",
     format: "qcm",
     instructions: "Lis puis réponds.",
-    prompt: "Sami met sa valise dans le coffre et vérifie son billet. Où va-t-il probablement ?",
+    prompt: "Amira allume sa lampe de bureau, avance sa chaise et ouvre son cahier à la page marquée. Que fait-elle probablement ?",
     options: [
-      { id: "a", text: "En voyage", isCorrect: true },
-      { id: "b", text: "Au fond du jardin", isCorrect: false },
-      { id: "c", text: "Sous la table", isCorrect: false }
+      { id: "a", text: "Elle s'apprête à travailler ou à réviser", isCorrect: true },
+      { id: "b", text: "Elle prépare un repas de fête", isCorrect: false },
+      { id: "c", text: "Elle range sa chambre en silence", isCorrect: false }
     ],
-    correctAnswer: "En voyage",
-    explanation: "Une valise et un billet font penser à un départ en voyage.",
-    hint: "Regarde les indices : valise, billet.",
+    correctAnswer: "Elle s'apprête à travailler ou à réviser",
+    explanation: "Lampe de bureau, chaise avancée et cahier ouvert sont des indices d'une activité de travail ou d'étude.",
+    hint: "Observe les trois gestes : lampe, chaise, cahier.",
     tags: ['cm2', 'lecture', 'inference', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
 {
     id: "fr-cm2-lecture-102",
     subject: "francais",
-    title: "Comprendre une affiche",
+    title: "Inférence sur un document pratique",
     schoolClass: "CM2",
     generalLevel: "advanced",
     skill: "lecture",
     subskill: "document court",
     format: "qcm",
     instructions: "Lis puis réponds.",
-    prompt: "Affiche : 'La répétition de chorale aura lieu jeudi à 17 h en salle 3.' Où se déroule la répétition ?",
+    prompt: "Affiche : 'La répétition de chorale aura lieu jeudi à 17 h en salle 3.' Si Louis arrive à 17 h 10, que peut-il penser ?",
     options: [
-      { id: "a", text: "En salle 3", isCorrect: true },
-      { id: "b", text: "Dans la cour", isCorrect: false },
-      { id: "c", text: "Au gymnase", isCorrect: false }
+      { id: "a", text: "Il est arrivé en retard", isCorrect: true },
+      { id: "b", text: "Il est en avance de 10 minutes", isCorrect: false },
+      { id: "c", text: "Il s'est trompé de salle", isCorrect: false }
     ],
-    correctAnswer: "En salle 3",
-    explanation: "Le lieu est indiqué dans l\'affiche.",
-    hint: "Repère le lieu précis.",
-    tags: ['cm2', 'lecture', 'affiche', 'qcm'],
+    correctAnswer: "Il est arrivé en retard",
+    explanation: "La répétition commence à 17 h. Arriver à 17 h 10, c'est avoir 10 minutes de retard.",
+    hint: "Compare l'heure de Louis avec l'heure indiquée sur l'affiche.",
+    tags: ['cm2', 'lecture', 'document', 'inference', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -9843,7 +10426,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche la raison donnée avant la conséquence.",
     tags: ['cm2', 'lecture', 'logique', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -9867,31 +10453,37 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense au lieu du métier cité.",
     tags: ['cm2', 'lecture', 'lieu', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
     id: "fr-cm2-lecture-105",
     subject: "francais",
-    title: "Information explicite",
+    title: "Combiner deux informations",
     schoolClass: "CM2",
-    generalLevel: "beginner",
+    generalLevel: "intermediate",
     skill: "lecture",
     subskill: "compréhension explicite",
     format: "qcm",
     instructions: "Lis puis réponds.",
-    prompt: "Chaque samedi matin, Nina rejoint son équipe au stade pour s\'entraîner. Où va Nina le samedi matin ?",
+    prompt: "Chaque samedi matin, Nina rejoint son équipe au stade. Son entraîneur dit qu'elle est la première arrivée depuis des semaines. Que peut-on dire de Nina ?",
     options: [
-      { id: "a", text: "Au stade", isCorrect: true },
-      { id: "b", text: "À la bibliothèque", isCorrect: false },
-      { id: "c", text: "Au cinéma", isCorrect: false }
+      { id: "a", text: "Elle est ponctuelle et régulière dans son entraînement", isCorrect: true },
+      { id: "b", text: "Elle déteste le sport mais s'y oblige", isCorrect: false },
+      { id: "c", text: "Elle arrive souvent en retard à l'entraînement", isCorrect: false }
     ],
-    correctAnswer: "Au stade",
-    explanation: "Le lieu est écrit dans la phrase.",
-    hint: "Relis le groupe de lieu.",
-    tags: ['cm2', 'lecture', 'lieu', 'qcm'],
+    correctAnswer: "Elle est ponctuelle et régulière dans son entraînement",
+    explanation: "Arriver chaque semaine ET en premier montre ponctualité et régularité.",
+    hint: "Combine les deux informations : chaque samedi + première arrivée.",
+    tags: ['cm2', 'lecture', 'comprehension', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -9915,7 +10507,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Observe la réaction du personnage.",
     tags: ['cm2', 'lecture', 'emotion', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -9939,7 +10534,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Repère l\'action placée juste avant puis.",
     tags: ['cm2', 'lecture', 'chronologie', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -9963,7 +10561,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Lis les actions dans l\'ordre.",
     tags: ['cm2', 'lecture', 'consigne', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -9987,7 +10588,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche la phrase de même sens.",
     tags: ['cm2', 'lecture', 'reformulation', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -10011,7 +10615,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense aux signes dans le ciel.",
     tags: ['cm2', 'lecture', 'meteo', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -10035,7 +10642,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche à qui on peut demander une autorisation.",
     tags: ['cm2', 'lecture', 'message', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -10059,7 +10669,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche l\'horaire suivant.",
     tags: ['cm2', 'lecture', 'horaire', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -10083,31 +10696,37 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Observe les indices culturels.",
     tags: ['cm2', 'lecture', 'lieu', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
     id: "fr-cm2-lecture-114",
     subject: "francais",
-    title: "Cause d\'une action",
+    title: "Déduire une information implicite",
     schoolClass: "CM2",
-    generalLevel: "beginner",
+    generalLevel: "intermediate",
     skill: "lecture",
-    subskill: "compréhension explicite",
+    subskill: "inférence",
     format: "qcm",
     instructions: "Lis puis réponds.",
-    prompt: "Tom ferme son manteau parce qu\'il a très froid. Pourquoi ferme-t-il son manteau ?",
+    prompt: "Tom ferme son manteau parce qu'il a très froid. Sa sœur, au contraire, porte juste un t-shirt. Qu'est-ce que cela indique ?",
     options: [
-      { id: "a", text: "Parce qu\'il a très froid", isCorrect: true },
-      { id: "b", text: "Parce qu\'il veut courir", isCorrect: false },
-      { id: "c", text: "Parce qu\'il cherche son stylo", isCorrect: false }
+      { id: "a", text: "Tom est plus frileux que sa sœur", isCorrect: true },
+      { id: "b", text: "Sa sœur a aussi très froid mais ne le dit pas", isCorrect: false },
+      { id: "c", text: "Tom porte un manteau parce qu'il le trouve beau", isCorrect: false }
     ],
-    correctAnswer: "Parce qu\'il a très froid",
-    explanation: "La raison est donnée clairement.",
-    hint: "Relis la fin de la phrase.",
-    tags: ['cm2', 'lecture', 'cause', 'qcm'],
+    correctAnswer: "Tom est plus frileux que sa sœur",
+    explanation: "Tom se couvre car il a froid ; sa sœur ne se couvre pas : elle n'a pas froid. Tom est donc plus sensible au froid.",
+    hint: "Compare les vêtements des deux personnages et leurs sensations.",
+    tags: ['cm2', 'lecture', 'inference', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -10131,7 +10750,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Repère les indices de classe.",
     tags: ['cm2', 'lecture', 'ecole', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -10155,7 +10777,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche ce que tous les exemples ont en commun.",
     tags: ['cm2', 'lecture', 'idee-principale', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -10179,7 +10804,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche l\'opinion exprimée.",
     tags: ['cm2', 'lecture', 'avis', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -10203,7 +10831,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche ce qui est demandé.",
     tags: ['cm2', 'lecture', 'regle', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -10227,7 +10858,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Observe la scène décrite.",
     tags: ['cm2', 'lecture', 'temps', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:lecture',
   },
 
 {
@@ -10251,7 +10885,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche de qui on continue à parler.",
     tags: ['cm2', 'lecture', 'pronom', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'fin',
+    skill_id: 'francais:lecture',
   },
 
 
@@ -10279,7 +10916,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le vrai sujet.",
     tags: ['cm2', 'orthographe', 'accord', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10302,7 +10942,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense au verbe se lever.",
     tags: ['cm2', 'orthographe', 'ce-se', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10325,7 +10968,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "La question porte sur un endroit.",
     tags: ['cm2', 'orthographe', 'ou-ou-accent', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10348,7 +10994,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Y a-t-il un ou plusieurs instruments ?",
     tags: ['cm2', 'orthographe', 'leur-leurs', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10371,7 +11020,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Teste avec cela est.",
     tags: ['cm2', 'orthographe', 'cest-sest', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10394,7 +11046,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Peut-on dire avait appris ?",
     tags: ['cm2', 'orthographe', 'a-a-grave', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10417,7 +11072,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Peut-on dire était ?",
     tags: ['cm2', 'orthographe', 'et-est', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10441,7 +11099,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Regarde la transformation du mot.",
     tags: ['cm2', 'orthographe', 'pluriel', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'fin',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10465,7 +11126,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "C'est un pluriel particulier.",
     tags: ['cm2', 'orthographe', 'pluriel', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'fin',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10489,7 +11153,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Regarde le nom maisons.",
     tags: ['cm2', 'orthographe', 'accord-adjectif', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10513,7 +11180,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le nom du fleuve.",
     tags: ['cm2', 'orthographe', 'majuscule', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10537,7 +11207,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Vérifie le début et la fin.",
     tags: ['cm2', 'orthographe', 'ponctuation', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'fin',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10560,7 +11233,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Peut-on dire avaient terminé ?",
     tags: ['cm2', 'orthographe', 'on-ont', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10583,7 +11259,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Peut-on dire étaient fermés ?",
     tags: ['cm2', 'orthographe', 'son-sont', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10606,7 +11285,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Peut-on dire cependant ?",
     tags: ['cm2', 'orthographe', 'mes-mais', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10629,7 +11311,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Regarde le genre du nom.",
     tags: ['cm2', 'orthographe', 'accord', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10652,7 +11337,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Peut-on dire ces décisions-là ?",
     tags: ['cm2', 'orthographe', 'ces-ses', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:orthographe',
   },
 
 {
@@ -10676,7 +11364,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Observe le sujet féminin pluriel.",
     tags: ['cm2', 'orthographe', 'accord', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:orthographe',
   },
 
 
@@ -10704,7 +11395,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le groupe qui précise le nom.",
     tags: ['cm2', 'grammaire', 'complement-du-nom', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -10728,7 +11422,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le petit mot sujet.",
     tags: ['cm2', 'grammaire', 'pronom', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -10752,7 +11449,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le mot qui donne une précision.",
     tags: ['cm2', 'grammaire', 'adjectif', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -10776,7 +11476,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Il précise comment on avance.",
     tags: ['cm2', 'grammaire', 'adverbe', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -10800,7 +11503,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Qui brille ?",
     tags: ['cm2', 'grammaire', 'sujet', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'fin',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -10824,7 +11530,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche la forme du dictionnaire.",
     tags: ['cm2', 'grammaire', 'infinitif', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -10848,7 +11557,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Prends tout le groupe.",
     tags: ['cm2', 'grammaire', 'groupe-nominal', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -10872,7 +11584,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Il montre à qui appartiennent les voisins.",
     tags: ['cm2', 'grammaire', 'determinant', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -10896,7 +11611,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le mot avec majuscule.",
     tags: ['cm2', 'grammaire', 'nom-propre', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'foundation',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -10920,7 +11638,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche ce qui est préparé.",
     tags: ['cm2', 'grammaire', 'complement', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -10944,7 +11665,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense au mot qu\'on évite de répéter.",
     tags: ['cm2', 'grammaire', 'pronom', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -10968,7 +11692,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Compte les verbes conjugués.",
     tags: ['cm2', 'grammaire', 'phrase-complexe', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'fin',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -10992,7 +11719,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le mot qui ajoute une précision.",
     tags: ['cm2', 'grammaire', 'adverbe', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -11016,7 +11746,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "C'est le petit mot devant le nom.",
     tags: ['cm2', 'grammaire', 'determinant', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -11040,7 +11773,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche ce qui se passe.",
     tags: ['cm2', 'grammaire', 'verbe', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -11064,7 +11800,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Qui découvre ?",
     tags: ['cm2', 'grammaire', 'sujet', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -11088,7 +11827,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Observe son rôle entre les deux groupes.",
     tags: ['cm2', 'grammaire', 'conjonction', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:grammaire',
   },
 
 {
@@ -11112,7 +11854,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Compte les verbes.",
     tags: ['cm2', 'grammaire', 'phrase-complexe', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:grammaire',
   },
 
 
@@ -11140,7 +11885,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense à j\'irai, tu iras, il ira.",
     tags: ['cm2', 'conjugaison', 'futur', 'aller', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'fin',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11164,7 +11912,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche d'abord l'auxiliaire.",
     tags: ['cm2', 'conjugaison', 'passe-compose', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11188,7 +11939,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "C'est un souvenir du passé.",
     tags: ['cm2', 'conjugaison', 'imparfait', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11212,7 +11966,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense à ils viennent.",
     tags: ['cm2', 'conjugaison', 'venir', 'present', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11236,7 +11993,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Le mot plus tard indique le futur.",
     tags: ['cm2', 'conjugaison', 'etre', 'futur', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'fin',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11260,7 +12020,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Observe le sujet féminin pluriel.",
     tags: ['cm2', 'conjugaison', 'passe-compose', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'fin',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11284,7 +12047,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Regarde la terminaison.",
     tags: ['cm2', 'conjugaison', 'temps', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'fin',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11308,7 +12074,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche la forme du dictionnaire.",
     tags: ['cm2', 'conjugaison', 'infinitif', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11332,7 +12101,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense à vous pouvez.",
     tags: ['cm2', 'conjugaison', 'pouvoir', 'present', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11356,7 +12128,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le temps du souvenir.",
     tags: ['cm2', 'conjugaison', 'avoir', 'imparfait', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11380,7 +12155,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Trouve l\'auxiliaire correct.",
     tags: ['cm2', 'conjugaison', 'faire', 'passe-compose', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11404,7 +12182,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Le mot plus tard t\'aide.",
     tags: ['cm2', 'conjugaison', 'futur', '1er-groupe', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11428,7 +12209,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense à tu dois.",
     tags: ['cm2', 'conjugaison', 'devoir', 'present', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11452,7 +12236,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche la forme du passé.",
     tags: ['cm2', 'conjugaison', 'etre', 'imparfait', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11476,7 +12263,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Auxiliaire avoir + participe passé.",
     tags: ['cm2', 'conjugaison', 'prendre', 'passe-compose', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'fin',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11500,7 +12290,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le temps du plus tard.",
     tags: ['cm2', 'conjugaison', 'temps', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11524,7 +12317,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense à nous voyons.",
     tags: ['cm2', 'conjugaison', 'voir', 'present', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
 {
@@ -11548,7 +12344,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Observe l\'auxiliaire + participe passé.",
     tags: ['cm2', 'conjugaison', 'temps', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:conjugaison',
   },
 
 
@@ -11577,7 +12376,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le contraire.",
     tags: ['cm2', 'vocabulaire', 'antonymes', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -11601,7 +12403,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche un mot de même sens.",
     tags: ['cm2', 'vocabulaire', 'synonymes', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -11625,7 +12430,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense aux paysages d\'altitude.",
     tags: ['cm2', 'vocabulaire', 'champ-lexical', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -11649,7 +12457,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le même radical.",
     tags: ['cm2', 'vocabulaire', 'famille-de-mots', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -11673,7 +12484,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Ne prends pas la phrase au pied de la lettre.",
     tags: ['cm2', 'vocabulaire', 'expression', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -11697,7 +12511,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche les trois mots de la même catégorie.",
     tags: ['cm2', 'vocabulaire', 'intrus', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -11721,7 +12538,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense à la géographie.",
     tags: ['cm2', 'vocabulaire', 'definition', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -11745,7 +12565,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Choisis le mot exact.",
     tags: ['cm2', 'vocabulaire', 'precision', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -11769,7 +12592,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche un verbe voisin.",
     tags: ['cm2', 'vocabulaire', 'synonymes', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -11793,7 +12619,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche l\'idée opposée.",
     tags: ['cm2', 'vocabulaire', 'antonymes', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -11817,7 +12646,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche un mot d\'émotion.",
     tags: ['cm2', 'vocabulaire', 'champ-lexical', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -11841,7 +12673,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le radical commun.",
     tags: ['cm2', 'vocabulaire', 'famille-de-mots', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -11865,7 +12700,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Pense aux étoiles et aux planètes.",
     tags: ['cm2', 'vocabulaire', 'definition', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -11889,7 +12727,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le sens lié à la nature.",
     tags: ['cm2', 'vocabulaire', 'sens-propre', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -11913,7 +12754,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche la grande famille de mots.",
     tags: ['cm2', 'vocabulaire', 'categorie', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:vocabulaire',
   },
 
 {
@@ -11937,7 +12781,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Choisis le mot le plus précis.",
     tags: ['cm2', 'vocabulaire', 'precision', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:vocabulaire',
   },
 
 
@@ -11947,25 +12794,28 @@ export const frenchExercises: FrenchExercise[] = [
 {
     id: "fr-cm2-expression-101",
     subject: "francais",
-    title: "Choisir la meilleure phrase",
+    title: "Identifier la phrase la mieux construite",
     schoolClass: "CM2",
-    generalLevel: "advanced",
+    generalLevel: "intermediate",
     skill: "expression_ecrite",
     subskill: "choisir la meilleure formulation",
     format: "qcm",
     instructions: "Choisis la bonne réponse.",
-    prompt: "Laquelle de ces phrases est la mieux écrite ?",
+    prompt: "Laquelle de ces phrases est correctement construite ?",
     options: [
-      { id: "a", text: "Nous irons au musée demain.", isCorrect: true },
-      { id: "b", text: "Nous irons demain au musée.", isCorrect: false },
-      { id: "c", text: "Irons nous demain musée au.", isCorrect: false }
+      { id: "a", text: "Les enfants qui jouaient dans le parc sont rentrés chez eux.", isCorrect: true },
+      { id: "b", text: "Les enfants qui joue dans le parc rentrent chez eux hier.", isCorrect: false },
+      { id: "c", text: "Les enfants rentrés jouaient dans le parc chez eux sont.", isCorrect: false }
     ],
-    correctAnswer: "Nous irons au musée demain.",
-    explanation: "La phrase choisie est correcte et naturelle.",
-    hint: "Cherche la formulation la plus claire.",
-    tags: ['cm2', 'expression-ecrite', 'formulation', 'qcm'],
+    correctAnswer: "Les enfants qui jouaient dans le parc sont rentrés chez eux.",
+    explanation: "La première phrase respecte l'accord du verbe (jouaient, pluriel) et la cohérence des temps.",
+    hint: "Vérifie les accords du verbe et le sens logique de chaque phrase.",
+    tags: ['cm2', 'expression-ecrite', 'phrase', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'debut',
+    skill_id: 'francais:expression_ecrite',
   },
 
 {
@@ -11989,7 +12839,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Vérifie majuscule et ponctuation.",
     tags: ['cm2', 'expression-ecrite', 'ponctuation', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'fin',
+    skill_id: 'francais:expression_ecrite',
   },
 
 {
@@ -12013,7 +12866,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le mot qui explique la raison.",
     tags: ['cm2', 'expression-ecrite', 'connecteur', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:expression_ecrite',
   },
 
 {
@@ -12037,7 +12893,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche la phrase réaliste.",
     tags: ['cm2', 'expression-ecrite', 'coherence', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:expression_ecrite',
   },
 
 {
@@ -12061,7 +12920,10 @@ export const frenchExercises: FrenchExercise[] = [
     hint: "Cherche le mot de conséquence.",
     tags: ['cm2', 'expression-ecrite', 'connecteur', 'qcm'],
     estimatedMinutes: 3,
-    adaptations: cloneDefaultAdaptations()
+    adaptations: cloneDefaultAdaptations(),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:expression_ecrite',
   },
 
 {
@@ -12085,7 +12947,10 @@ export const frenchExercises: FrenchExercise[] = [
       attention_courte: { instruction: "Écris juste une phrase courte." },
       progressif: { splitSteps: ["Choisis une idée.", "Écris la phrase.", "Relis-la."], extraHint: "Vérifie le verbe et le point final." },
       defi_avance: { challengeExtension: "Ajoute un détail précis ou une deuxième phrase." }
-    })
+    }),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:expression_ecrite',
   },
 
 {
@@ -12109,7 +12974,10 @@ export const frenchExercises: FrenchExercise[] = [
       attention_courte: { instruction: "Écris juste une phrase courte." },
       progressif: { splitSteps: ["Choisis une idée.", "Écris la phrase.", "Relis-la."], extraHint: "Vérifie le verbe et le point final." },
       defi_avance: { challengeExtension: "Ajoute un détail précis ou une deuxième phrase." }
-    })
+    }),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:expression_ecrite',
   },
 
 {
@@ -12133,7 +13001,10 @@ export const frenchExercises: FrenchExercise[] = [
       attention_courte: { instruction: "Écris juste une phrase courte." },
       progressif: { splitSteps: ["Choisis une idée.", "Écris la phrase.", "Relis-la."], extraHint: "Vérifie le verbe et le point final." },
       defi_avance: { challengeExtension: "Ajoute un détail précis ou une deuxième phrase." }
-    })
+    }),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:expression_ecrite',
   },
 
 {
@@ -12157,7 +13028,10 @@ export const frenchExercises: FrenchExercise[] = [
       attention_courte: { instruction: "Écris juste une phrase courte." },
       progressif: { splitSteps: ["Choisis une idée.", "Écris la phrase.", "Relis-la."], extraHint: "Vérifie le verbe et le point final." },
       defi_avance: { challengeExtension: "Ajoute un détail précis ou une deuxième phrase." }
-    })
+    }),
+    difficulty_tier: 'advanced',
+    school_period: 'fin',
+    skill_id: 'francais:expression_ecrite',
   },
 
 {
@@ -12181,7 +13055,10 @@ export const frenchExercises: FrenchExercise[] = [
       attention_courte: { instruction: "Écris juste une phrase courte." },
       progressif: { splitSteps: ["Choisis une idée.", "Écris la phrase.", "Relis-la."], extraHint: "Vérifie le verbe et le point final." },
       defi_avance: { challengeExtension: "Ajoute un détail précis ou une deuxième phrase." }
-    })
+    }),
+    difficulty_tier: 'standard',
+    school_period: 'milieu',
+    skill_id: 'francais:expression_ecrite',
   },
 
 ];

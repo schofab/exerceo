@@ -28,6 +28,8 @@ export function mapToExercise(e: FrenchExercise): Exercise | null {
     options: e.options.map((o) => o.text),
     bonne_reponse: correctOption.text,
     explication: e.explanation,
+    ...(e.difficulty_tier  !== undefined && { difficulty_tier: e.difficulty_tier }),
+    ...(e.school_period    !== undefined && { school_period:   e.school_period }),
   };
 }
 

@@ -1,3 +1,7 @@
+import type { DifficultyTier, SchoolPeriod } from './core/exercise-core.types';
+
+export type { DifficultyTier, SchoolPeriod };
+
 export type Niveau = "CP" | "CE1" | "CE2" | "CM1" | "CM2";
 
 export type Matiere = "francais" | "mathematiques" | "anglais" | "sciences" | "decouverte_du_monde";
@@ -39,6 +43,8 @@ export type Exercise = {
   options: string[];
   bonne_reponse: string;
   explication: string;
+  difficulty_tier?: DifficultyTier;
+  school_period?: SchoolPeriod;
 };
 
 export type GenerateExerciseParams = {

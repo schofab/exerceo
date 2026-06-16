@@ -17,6 +17,7 @@ import { validateExercise } from "./validator";
 import { antiRepeatSort } from "./core/exercise-core.anti-repetition";
 import type { Exercise, SousDomaine } from "./types";
 import type { ExerciceGenere, Matiere, TypeExercice } from "../types";
+import type { GeneralLevel } from "./core/exercise-core.types";
 
 // ─── Progression pédagogique : niveaux autorisés par classe ──────────────────
 // Chaque enfant peut accéder à sa classe ET à la classe inférieure (révision).
@@ -40,6 +41,30 @@ const SOUS_DOMAINE_LABELS: Partial<Record<SousDomaine, string>> = {
   vocabulaire:       "Vocabulaire",
   expression_ecrite: "Expression écrite",
 };
+
+// ─── Filtre par profil élève (difficulty_tier) ────────────────────────────────
+//
+//   beginner      → foundation seulement        (items guidés, faible ambiguïté)
+//   intermediate  → foundation + standard        (cœur du programme)
+//   advanced      → standard + advanced          (items discriminants)
+//   undefined     → tout le pool                (comportement existant inchangé)
+//
+// Les items sans difficulty_tier passent toujours (rétrocompatiblité).
+//
+const TIERS_AUTORISES: Record<GeneralLevel, Set<string>> = {
+  beginner:     new Set(['foundation']),
+  intermediate: new Set(['foundation', 'standard']),
+  advanced:     new Set(['standard', 'advanced']),
+};
+
+function filterByGeneralLevel(
+  pool: Exercise[],
+  generalLevel: GeneralLevel | undefined,
+): Exercise[] {
+  if (!generalLevel) return pool;
+  const allowed = TIERS_AUTORISES[generalLevel];
+  return pool.filter((e) => !e.difficulty_tier || allowed.has(e.difficulty_tier));
+}
 
 // ─── Ordre de priorité des skills pour varier les sessions ───────────────────
 // On tourne sur cet ordre pour garantir la diversité pédagogique.
@@ -78,14 +103,23 @@ export function selectFrenchExercises(
   count: number,
   ordreDebut: number = 1,
   seenBankIds: string[] = [],
+  generalLevel?: GeneralLevel,
 ): SelectedBankExercise[] {
   // 1. Déterminer les niveaux autorisés pour cette classe
   const niveauxAutorisés = NIVEAUX_AUTORISES[classe] ?? [classe];
 
-  // 2. Pool complet : niveaux autorisés + exercices valides uniquement
-  const poolComplet = EXERCISE_BANK.filter(
-    (e) => niveauxAutorisés.includes(e.niveau) && validateExercise(e)
+  // 2. Pool complet : niveaux autorisés + exercices valides + filtre profil élève
+  const poolComplet = filterByGeneralLevel(
+    EXERCISE_BANK.filter((e) => niveauxAutorisés.includes(e.niveau) && validateExercise(e)),
+    generalLevel,
   );
+
+  if (generalLevel) {
+    console.log(
+      `[EXERCEO] Français filtre generalLevel=${generalLevel} : `
+      + `${poolComplet.length} items dans le profil`
+    );
+  }
 
   if (poolComplet.length === 0) {
     console.error(
