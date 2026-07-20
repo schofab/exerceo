@@ -1,0 +1,51 @@
+import { cloneDefaultAdaptations } from '../../../core/exercise-core.adaptations';
+import type { EnglishExercise } from '../english.types';
+
+export const englishCm1VocJoursExercises: EnglishExercise[] = [
+  {
+    id: 'en-cm1-voc-010',
+    subject: 'anglais',
+    title: 'Jour : Monday',
+    schoolClass: 'CM1',
+    generalLevel: 'beginner',
+    skill: 'vocabulaire',
+    subskill: 'jours',
+    format: 'qcm',
+    instructions: 'Quel est ce jour en français ?',
+    prompt: 'Que veut dire « Monday » en français ?',
+    options: [
+      { id: 'a', text: 'Mardi', isCorrect: false },
+      { id: 'b', text: 'Lundi', isCorrect: true },
+      { id: 'c', text: 'Mercredi', isCorrect: false },
+    ],
+    correctAnswer: 'Lundi',
+    explanation: '« Monday » veut dire lundi en français.',
+    hint: "C'est le 1ᵉʳ jour de la semaine de travail.",
+    tags: ['cm1', 'anglais', 'vocabulaire', 'jours', 'qcm'],
+    estimatedMinutes: 2,
+    adaptations: cloneDefaultAdaptations(),
+  },
+  {
+    id: 'en-cm1-voc-011',
+    subject: 'anglais',
+    title: 'Jour : Friday',
+    schoolClass: 'CM1',
+    generalLevel: 'beginner',
+    skill: 'vocabulaire',
+    subskill: 'jours',
+    format: 'qcm',
+    instructions: 'Quel est ce jour en français ?',
+    prompt: 'Que veut dire « Friday » en français ?',
+    options: [
+      { id: 'a', text: 'Jeudi', isCorrect: false },
+      { id: 'b', text: 'Vendredi', isCorrect: true },
+      { id: 'c', text: 'Samedi', isCorrect: false },
+    ],
+    correctAnswer: 'Vendredi',
+    explanation: '« Friday » veut dire vendredi en français.',
+    hint: "C'est le dernier jour d'école de la semaine.",
+    tags: ['cm1', 'anglais', 'vocabulaire', 'jours', 'qcm'],
+    estimatedMinutes: 2,
+    adaptations: cloneDefaultAdaptations(),
+  },
+];

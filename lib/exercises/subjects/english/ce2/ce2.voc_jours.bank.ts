@@ -1,0 +1,51 @@
+import { cloneDefaultAdaptations } from '../../../core/exercise-core.adaptations';
+import type { EnglishExercise } from '../english.types';
+
+export const englishCe2VocJoursExercises: EnglishExercise[] = [
+  {
+    id: 'en-ce2-voc-013',
+    subject: 'anglais',
+    title: 'Jour : Saturday',
+    schoolClass: 'CE2',
+    generalLevel: 'beginner',
+    skill: 'vocabulaire',
+    subskill: 'jours',
+    format: 'qcm',
+    instructions: 'Quel est ce jour en français ?',
+    prompt: 'Que veut dire « Saturday » en français ?',
+    options: [
+      { id: 'a', text: 'Vendredi', isCorrect: false },
+      { id: 'b', text: 'Dimanche', isCorrect: false },
+      { id: 'c', text: 'Samedi', isCorrect: true },
+    ],
+    correctAnswer: 'Samedi',
+    explanation: '« Saturday » veut dire samedi en français.',
+    hint: "C'est le premier jour du week-end.",
+    tags: ['ce2', 'anglais', 'vocabulaire', 'jours', 'qcm'],
+    estimatedMinutes: 2,
+    adaptations: cloneDefaultAdaptations(),
+  },
+  {
+    id: 'en-ce2-voc-014',
+    subject: 'anglais',
+    title: 'Jour : Sunday',
+    schoolClass: 'CE2',
+    generalLevel: 'beginner',
+    skill: 'vocabulaire',
+    subskill: 'jours',
+    format: 'qcm',
+    instructions: 'Quel est ce jour en français ?',
+    prompt: 'Que veut dire « Sunday » en français ?',
+    options: [
+      { id: 'a', text: 'Dimanche', isCorrect: true },
+      { id: 'b', text: 'Samedi', isCorrect: false },
+      { id: 'c', text: 'Lundi', isCorrect: false },
+    ],
+    correctAnswer: 'Dimanche',
+    explanation: '« Sunday » veut dire dimanche en français.',
+    hint: '« Sun » = soleil → le jour du soleil.',
+    tags: ['ce2', 'anglais', 'vocabulaire', 'jours', 'qcm'],
+    estimatedMinutes: 2,
+    adaptations: cloneDefaultAdaptations(),
+  },
+];

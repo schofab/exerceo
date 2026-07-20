@@ -6,6 +6,7 @@ export const SKILL_TO_SOUS_DOMAINE_SCIENCE: Record<ScienceSkill, SousDomaine> = 
   vivant:        'vivant',
   corps:         'corps',
   environnement: 'environnement',
+  matiere:       'matiere',
 };
 
 export function mapScienceToExercise(e: ScienceExercise): Exercise | null {

@@ -1,0 +1,51 @@
+import { cloneDefaultAdaptations } from '../../../core/exercise-core.adaptations';
+import type { EnglishExercise } from '../english.types';
+
+export const englishCpVocEcoleExercises: EnglishExercise[] = [
+  {
+    id: 'en-cp-voc-022',
+    subject: 'anglais',
+    title: 'École : pencil',
+    schoolClass: 'CP',
+    generalLevel: 'beginner',
+    skill: 'vocabulaire',
+    subskill: 'ecole',
+    format: 'qcm',
+    instructions: 'Quel objet est-ce en français ?',
+    prompt: 'Que veut dire « a pencil » en français ?',
+    options: [
+      { id: 'a', text: 'Une gomme', isCorrect: false },
+      { id: 'b', text: 'Une règle', isCorrect: false },
+      { id: 'c', text: 'Un crayon', isCorrect: true },
+    ],
+    correctAnswer: 'Un crayon',
+    explanation: '« Pencil » veut dire crayon en français.',
+    hint: 'On écrit avec.',
+    tags: ['cp', 'anglais', 'vocabulaire', 'ecole', 'qcm'],
+    estimatedMinutes: 2,
+    adaptations: cloneDefaultAdaptations(),
+  },
+  {
+    id: 'en-cp-voc-023',
+    subject: 'anglais',
+    title: 'École : book',
+    schoolClass: 'CP',
+    generalLevel: 'beginner',
+    skill: 'vocabulaire',
+    subskill: 'ecole',
+    format: 'qcm',
+    instructions: 'Quel objet est-ce en français ?',
+    prompt: 'Que veut dire « a book » en français ?',
+    options: [
+      { id: 'a', text: 'Un cahier', isCorrect: false },
+      { id: 'b', text: 'Un livre', isCorrect: true },
+      { id: 'c', text: 'Un stylo', isCorrect: false },
+    ],
+    correctAnswer: 'Un livre',
+    explanation: '« Book » veut dire livre en français.',
+    hint: "On le lit pour apprendre ou pour s'amuser.",
+    tags: ['cp', 'anglais', 'vocabulaire', 'ecole', 'qcm'],
+    estimatedMinutes: 2,
+    adaptations: cloneDefaultAdaptations(),
+  },
+];

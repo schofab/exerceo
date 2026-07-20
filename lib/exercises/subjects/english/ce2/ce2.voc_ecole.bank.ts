@@ -1,0 +1,51 @@
+import { cloneDefaultAdaptations } from '../../../core/exercise-core.adaptations';
+import type { EnglishExercise } from '../english.types';
+
+export const englishCe2VocEcoleExercises: EnglishExercise[] = [
+  {
+    id: 'en-ce2-voc-007',
+    subject: 'anglais',
+    title: 'École : rubber',
+    schoolClass: 'CE2',
+    generalLevel: 'intermediate',
+    skill: 'vocabulaire',
+    subskill: 'ecole',
+    format: 'qcm',
+    instructions: 'Quel objet est-ce en français ?',
+    prompt: 'Que veut dire « a rubber » en anglais britannique ?',
+    options: [
+      { id: 'a', text: 'Une règle', isCorrect: false },
+      { id: 'b', text: 'Une gomme', isCorrect: true },
+      { id: 'c', text: 'Un crayon', isCorrect: false },
+    ],
+    correctAnswer: 'Une gomme',
+    explanation: '« Rubber » (anglais britannique) veut dire gomme en français.',
+    hint: "On l'utilise pour effacer les erreurs.",
+    tags: ['ce2', 'anglais', 'vocabulaire', 'ecole', 'qcm'],
+    estimatedMinutes: 2,
+    adaptations: cloneDefaultAdaptations(),
+  },
+  {
+    id: 'en-ce2-voc-008',
+    subject: 'anglais',
+    title: 'École : school bag',
+    schoolClass: 'CE2',
+    generalLevel: 'intermediate',
+    skill: 'vocabulaire',
+    subskill: 'ecole',
+    format: 'qcm',
+    instructions: 'Quel objet est-ce en français ?',
+    prompt: 'Que veut dire « a school bag » en français ?',
+    options: [
+      { id: 'a', text: 'Une trousse', isCorrect: false },
+      { id: 'b', text: 'Un stylo', isCorrect: false },
+      { id: 'c', text: 'Un cartable', isCorrect: true },
+    ],
+    correctAnswer: 'Un cartable',
+    explanation: '« School bag » veut dire cartable en français.',
+    hint: "On le porte sur le dos pour aller à l'école.",
+    tags: ['ce2', 'anglais', 'vocabulaire', 'ecole', 'qcm'],
+    estimatedMinutes: 2,
+    adaptations: cloneDefaultAdaptations(),
+  },
+];

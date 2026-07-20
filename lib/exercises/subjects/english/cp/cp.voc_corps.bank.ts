@@ -1,0 +1,51 @@
+import { cloneDefaultAdaptations } from '../../../core/exercise-core.adaptations';
+import type { EnglishExercise } from '../english.types';
+
+export const englishCpVocCorpsExercises: EnglishExercise[] = [
+  {
+    id: 'en-cp-voc-024',
+    subject: 'anglais',
+    title: 'Corps : head',
+    schoolClass: 'CP',
+    generalLevel: 'beginner',
+    skill: 'vocabulaire',
+    subskill: 'corps',
+    format: 'qcm',
+    instructions: 'Quelle partie du corps est-ce ?',
+    prompt: 'Que veut dire « head » en français ?',
+    options: [
+      { id: 'a', text: 'Le pied', isCorrect: false },
+      { id: 'b', text: 'Le bras', isCorrect: false },
+      { id: 'c', text: 'La tête', isCorrect: true },
+    ],
+    correctAnswer: 'La tête',
+    explanation: '« Head » veut dire tête en français.',
+    hint: "C'est la partie la plus haute du corps.",
+    tags: ['cp', 'anglais', 'vocabulaire', 'corps', 'qcm'],
+    estimatedMinutes: 2,
+    adaptations: cloneDefaultAdaptations(),
+  },
+  {
+    id: 'en-cp-voc-025',
+    subject: 'anglais',
+    title: 'Corps : hand',
+    schoolClass: 'CP',
+    generalLevel: 'beginner',
+    skill: 'vocabulaire',
+    subskill: 'corps',
+    format: 'qcm',
+    instructions: 'Quelle partie du corps est-ce ?',
+    prompt: 'Que veut dire « hand » en français ?',
+    options: [
+      { id: 'a', text: 'Le bras', isCorrect: false },
+      { id: 'b', text: 'La main', isCorrect: true },
+      { id: 'c', text: 'La jambe', isCorrect: false },
+    ],
+    correctAnswer: 'La main',
+    explanation: '« Hand » veut dire main en français.',
+    hint: 'Tu as 5 doigts sur chaque « hand ».',
+    tags: ['cp', 'anglais', 'vocabulaire', 'corps', 'qcm'],
+    estimatedMinutes: 2,
+    adaptations: cloneDefaultAdaptations(),
+  },
+];

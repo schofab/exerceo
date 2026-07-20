@@ -1,0 +1,103 @@
+import { cloneDefaultAdaptations } from '../../../core/exercise-core.adaptations';
+import type { DecouverteExercise } from '../decouverte_du_monde.types';
+
+const A = cloneDefaultAdaptations();
+
+export const ddmCe1ReperesExercises: DecouverteExercise[] = [
+
+  // CE1 · reperes · avant_apres
+  {
+    id: 'ddm-ce1-rep-001',
+    subject: 'decouverte_du_monde',
+    title: 'Repas du matin',
+    schoolClass: 'CE1',
+    generalLevel: 'beginner',
+    skill: 'reperes',
+    subskill: 'avant_apres',
+    format: 'qcm',
+    instructions: 'Choisis la bonne réponse.',
+    prompt: 'Quel repas mange-t-on le matin ?',
+    options: [
+      { id: 'a', text: 'le déjeuner', isCorrect: false },
+      { id: 'b', text: 'le dîner', isCorrect: false },
+      { id: 'c', text: 'le souper', isCorrect: false },
+      { id: 'd', text: 'le petit-déjeuner', isCorrect: true },
+    ],
+    correctAnswer: 'le petit-déjeuner',
+    explanation: 'Le matin, on prend le petit-déjeuner pour bien commencer la journée.',
+    hint: 'C\'est le premier repas de la journée.',
+    estimatedMinutes: 1,
+    adaptations: A,
+  },
+  {
+    id: 'ddm-ce1-rep-002',
+    subject: 'decouverte_du_monde',
+    title: 'Repas du soir',
+    schoolClass: 'CE1',
+    generalLevel: 'beginner',
+    skill: 'reperes',
+    subskill: 'avant_apres',
+    format: 'qcm',
+    instructions: 'Choisis le repas du soir.',
+    prompt: 'Quel repas mange-t-on le soir ?',
+    options: [
+      { id: 'a', text: 'le petit-déjeuner', isCorrect: false },
+      { id: 'b', text: 'le déjeuner', isCorrect: false },
+      { id: 'c', text: 'le dîner', isCorrect: true },
+      { id: 'd', text: 'le goûter', isCorrect: false },
+    ],
+    correctAnswer: 'le dîner',
+    explanation: 'Le soir, on dîne en famille avant de se coucher.',
+    hint: 'C\'est le dernier repas de la journée.',
+    estimatedMinutes: 1,
+    adaptations: A,
+  },
+
+  // CE1 · reperes · carte
+  {
+    id: 'ddm-ce1-rep-003',
+    subject: 'decouverte_du_monde',
+    title: 'Symboles sur une carte',
+    schoolClass: 'CE1',
+    generalLevel: 'beginner',
+    skill: 'reperes',
+    subskill: 'carte',
+    format: 'qcm',
+    instructions: 'Choisis la bonne réponse.',
+    prompt: 'Sur une carte, les villes sont souvent représentées par…',
+    options: [
+      { id: 'a', text: 'des nuages', isCorrect: false },
+      { id: 'b', text: 'des triangles', isCorrect: false },
+      { id: 'c', text: 'des points ou des ronds', isCorrect: true },
+      { id: 'd', text: 'des croix rouges', isCorrect: false },
+    ],
+    correctAnswer: 'des points ou des ronds',
+    explanation: 'Sur la plupart des cartes, les villes sont marquées par un point ou un rond avec leur nom à côté.',
+    hint: 'Cherche un petit point avec le nom de la ville.',
+    estimatedMinutes: 1,
+    adaptations: A,
+  },
+  {
+    id: 'ddm-ce1-rep-004',
+    subject: 'decouverte_du_monde',
+    title: 'La légende d\'une carte',
+    schoolClass: 'CE1',
+    generalLevel: 'beginner',
+    skill: 'reperes',
+    subskill: 'carte',
+    format: 'qcm',
+    instructions: 'Choisis la bonne réponse.',
+    prompt: 'Sur une carte, la légende nous explique…',
+    options: [
+      { id: 'a', text: 'la météo du jour', isCorrect: false },
+      { id: 'b', text: 'ce que représentent les symboles et les couleurs', isCorrect: true },
+      { id: 'c', text: 'le nom de l\'auteur', isCorrect: false },
+      { id: 'd', text: 'comment dessiner la carte', isCorrect: false },
+    ],
+    correctAnswer: 'ce que représentent les symboles et les couleurs',
+    explanation: 'La légende est le tableau qui explique le sens de chaque couleur ou symbole utilisé sur la carte.',
+    hint: 'Elle te dit ce que veut dire chaque couleur ou dessin.',
+    estimatedMinutes: 1,
+    adaptations: A,
+  },
+];

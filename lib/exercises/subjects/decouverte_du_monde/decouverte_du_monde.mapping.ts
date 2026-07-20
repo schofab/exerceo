@@ -6,6 +6,7 @@ export const SKILL_TO_SOUS_DOMAINE_DECOUVERTE: Record<DecouverteSkill, SousDomai
   temps:    'temps',
   espace:   'espace',
   reperes:  'reperes',
+  vivant:   'vivant',
 };
 
 export function mapDecouverteToExercise(e: DecouverteExercise): Exercise | null {

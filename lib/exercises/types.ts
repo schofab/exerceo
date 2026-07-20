@@ -4,7 +4,7 @@ export type { DifficultyTier, SchoolPeriod };
 
 export type Niveau = "CP" | "CE1" | "CE2" | "CM1" | "CM2";
 
-export type Matiere = "francais" | "mathematiques" | "anglais" | "sciences" | "decouverte_du_monde";
+export type Matiere = "francais" | "mathematiques" | "anglais" | "sciences" | "decouverte_du_monde" | "histoire_geo";
 
 export type SousDomaine =
   | "homophones"
@@ -25,9 +25,12 @@ export type SousDomaine =
   | "vivant"
   | "corps"
   | "environnement"
+  | "matiere"
   | "temps"
   | "espace"
-  | "reperes";
+  | "reperes"
+  | "histoire"
+  | "geographie";
 
 export type ExerciseType = "qcm";
 

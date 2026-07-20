@@ -1,0 +1,51 @@
+import { cloneDefaultAdaptations } from '../../../core/exercise-core.adaptations';
+import type { EnglishExercise } from '../english.types';
+
+export const englishCm1VocMeteoExercises: EnglishExercise[] = [
+  {
+    id: 'en-cm1-voc-008',
+    subject: 'anglais',
+    title: 'Météo : It is cold',
+    schoolClass: 'CM1',
+    generalLevel: 'beginner',
+    skill: 'vocabulaire',
+    subskill: 'meteo',
+    format: 'qcm',
+    instructions: 'Traduis cette phrase météo.',
+    prompt: "Que veut dire « It is cold today » en français ?",
+    options: [
+      { id: 'a', text: "Il fait chaud aujourd'hui.", isCorrect: false },
+      { id: 'b', text: "Il fait froid aujourd'hui.", isCorrect: true },
+      { id: 'c', text: "Il pleut aujourd'hui.", isCorrect: false },
+    ],
+    correctAnswer: "Il fait froid aujourd'hui.",
+    explanation: "« Cold » = froid. « Today » = aujourd'hui.",
+    hint: '« Cold » = froid.',
+    tags: ['cm1', 'anglais', 'vocabulaire', 'meteo', 'qcm'],
+    estimatedMinutes: 2,
+    adaptations: cloneDefaultAdaptations(),
+  },
+  {
+    id: 'en-cm1-voc-009',
+    subject: 'anglais',
+    title: 'Météo : It is raining',
+    schoolClass: 'CM1',
+    generalLevel: 'beginner',
+    skill: 'vocabulaire',
+    subskill: 'meteo',
+    format: 'qcm',
+    instructions: 'Traduis cette phrase météo.',
+    prompt: 'Que veut dire « It is raining » en français ?',
+    options: [
+      { id: 'a', text: 'Il neige.', isCorrect: false },
+      { id: 'b', text: 'Il fait soleil.', isCorrect: false },
+      { id: 'c', text: 'Il pleut.', isCorrect: true },
+    ],
+    correctAnswer: 'Il pleut.',
+    explanation: '« Raining » vient de « rain » = pluie. « It is raining » = Il pleut.',
+    hint: '« Rain » = la pluie.',
+    tags: ['cm1', 'anglais', 'vocabulaire', 'meteo', 'qcm'],
+    estimatedMinutes: 2,
+    adaptations: cloneDefaultAdaptations(),
+  },
+];
