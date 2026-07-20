@@ -37,14 +37,14 @@ const FEATURES = [
   },
   {
     titre: "Courte et motivante",
-    texte: "Des séances de 5 à 20 minutes pour s'entraîner sans surcharge ni découragement.",
+    texte: "De 5 à 20 exercices par séance, estimés 5 à 20 minutes, pour s'entraîner sans surcharge ni découragement.",
     bg: "#e190c9",
     color: "#071453",
   },
 ]
 
 const MINI_STEPS = [
-  { num: "1", texte: "Choisissez la classe, les matières et le temps disponible." },
+  { num: "1", texte: "Choisissez la classe, les matières et le nombre d'exercices souhaité." },
   { num: "2", texte: "Exerceo compose une séance adaptée au niveau et aux besoins de votre enfant." },
   { num: "3", texte: "Votre enfant s'entraîne à son rythme, progresse et débloque des récompenses au fil des sessions." },
 ]

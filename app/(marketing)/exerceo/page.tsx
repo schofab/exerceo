@@ -18,13 +18,13 @@ const FEATURES = [
   { titre: "Adapté à chaque enfant",       texte: "Classe, niveau, matières, profil d'apprentissage — chaque session est unique.",           bg: GREEN,      color: NAVY    },
   { titre: "Programme officiel EN",        texte: "Exercices alignés sur les attendus de l'Éducation Nationale, du CP au CM2.",               bg: PURPLE,     color: "#fff"  },
   { titre: "Récompenses & Doceo",          texte: "Étoiles, badges et créatures Doceo à collectionner pour garder la motivation.",             bg: "#f9de6f",  color: NAVY    },
-  { titre: "Rapide & sans pression",       texte: "3 à 12 exercices en 5 à 20 minutes. Conçu pour accompagner, pas pour stresser.",            bg: "#e190c9",  color: NAVY    },
+  { titre: "Rapide & sans pression",       texte: "5 à 20 exercices, estimés 5 à 20 minutes. Conçu pour accompagner, pas pour stresser.",     bg: "#e190c9",  color: NAVY    },
   { titre: "Profils d'apprentissage",      texte: "Standard, lecture simplifiée, attention courte, progressif ou défi avancé.",                bg: "#ffb86b",  color: NAVY    },
   { titre: "Sans publicité",               texte: "Aucune pub, aucun tracking inutile. Une expérience propre et respectueuse des données.",    bg: "#f0f2ff",  color: NAVY    },
 ]
 
 const MINI_STEPS = [
-  { num: "1", texte: "Choisissez votre enfant, les matières et le temps disponible." },
+  { num: "1", texte: "Choisissez votre enfant, les matières et le nombre d'exercices souhaité." },
   { num: "2", texte: "exerceō compose une séance d'exercices adaptée à sa classe et à ses besoins." },
   { num: "3", texte: "Votre enfant s'entraîne, progresse et gagne des récompenses au fil des sessions." },
 ]

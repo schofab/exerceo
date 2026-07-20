@@ -156,7 +156,7 @@ if (!trial.isTrialActive) {
   //
   // ═══════════════════════════════════════════════════════════════════════════
 
-  const NB_TOTAL = NB_EXERCICES_PAR_DUREE[temps_disponible] ?? 3;
+  const NB_TOTAL = NB_EXERCICES_PAR_DUREE[temps_disponible] ?? 5;
   const inclusFrancais = matieres.includes("Français");
   const inclusMaths    = matieres.includes("Mathématiques");
   const inclusAnglais  = matieres.includes("Anglais");
@@ -542,7 +542,7 @@ if (!trial.isTrialActive) {
       rawClaude = await genererExercices(
         enfant,
         autresMatieres,
-        temps_disponible,
+        nbClaude,
         difficultes,
         faiblesses,
         nbClaude

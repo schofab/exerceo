@@ -15,7 +15,7 @@ const SECTIONS = [
     num: "1",
     titre: "Choisir une séance",
     texte: [
-      "En quelques clics, vous choisissez l'enfant concerné, la ou les matières à travailler, ainsi que le temps disponible.",
+      "En quelques clics, vous choisissez l'enfant concerné, la ou les matières à travailler, ainsi que le nombre d'exercices souhaité.",
       "exerceō permet de créer une séance adaptée au niveau scolaire et au profil de chaque enfant.",
     ],
   },

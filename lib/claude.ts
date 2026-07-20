@@ -7,12 +7,13 @@ const client = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
-// Nombre d'exercices selon le temps disponible (exporté pour route.ts)
+// Correspondance exerciceCount → estimatedMinutes (exporté pour route.ts)
+// La clé est le nombre d'exercices choisi ; la valeur est l'estimation en minutes.
 export const NB_EXERCICES_PAR_DUREE: Record<number, number> = {
-  5:  3,
-  10: 6,
-  15: 9,
-  20: 12,
+  5:  5,
+  10: 10,
+  15: 15,
+  20: 20,
 };
 
 const SYSTEM_PROMPT = `Tu es EXERCEO AI, un moteur pédagogique expert conçu pour générer des exercices scolaires personnalisés d'une qualité irréprochable pour des enfants du primaire français (6 à 11 ans).
@@ -243,12 +244,12 @@ const PROFIL_DESCRIPTIONS: Record<LearningProfile, string> = {
 export async function genererExercices(
   enfant: Enfant,
   matieres: Matiere[],
-  tempsDisponible: number,
+  exerciseCount: number,
   difficultes: string,
   faiblesses: NotionStats[] = [],
-  nbOverride?: number        // override le nb d'exercices calculé (ex: pour les matières non-Français)
+  nbOverride?: number
 ): Promise<ExerciceGenere[]> {
-  const nbExercices = nbOverride ?? NB_EXERCICES_PAR_DUREE[tempsDisponible] ?? 3;
+  const nbExercices = nbOverride ?? exerciseCount;
 
   const niveauTexte: Record<string, string> = {
     debutant:      "débutant (besoins de soutien, exercices simples)",
@@ -301,7 +302,7 @@ export async function genererExercices(
 - Lacunes (matières) : ${enfant.lacunes.length > 0 ? enfant.lacunes.join(", ") : "non précisé"}
 - Difficultés spécifiques par matière : ${difficultesParMatiere.length > 0 ? difficultesParMatiere.join(" | ") : "aucune"}
 - Matières de cette session : ${matieres.join(", ")}
-- Temps disponible : ${tempsDisponible} minutes
+- Nombre d'exercices à générer : ${nbExercices}
 - Difficultés signalées par le parent : ${difficultes || "aucune"}
 ${faiblessesSection}
 ${contraintes.instructionNiveau}

@@ -7,11 +7,12 @@ import type { Enfant, Matiere } from "@/lib/types";
 import Button from "./ui/Button";
 import { MATIERE_COLORS, getMatieresByClasse, getSubjectLabel } from "@/lib/matieres";
 
-const DUREES = [
-  { value: 5,  label: "5 min",  count: 3 },
-  { value: 10, label: "10 min", count: 6 },
-  { value: 15, label: "15 min", count: 9 },
-  { value: 20, label: "20 min", count: 12 },
+// Chaque option représente un nombre d'exercices. La durée est une estimation secondaire.
+const OPTIONS_SESSION = [
+  { exerciseCount: 5,  estimatedMinutes: 5  },
+  { exerciseCount: 10, estimatedMinutes: 10 },
+  { exerciseCount: 15, estimatedMinutes: 15 },
+  { exerciseCount: 20, estimatedMinutes: 20 },
 ];
 
 const MOTS_INTERDITS = [
@@ -34,18 +35,18 @@ interface SessionFormProps {
 export default function SessionForm({ enfants, defaultEnfantId }: SessionFormProps) {
   const router = useRouter();
 
-  const [enfantId, setEnfantId]       = useState(defaultEnfantId ?? enfants[0]?.id ?? "");
-  const [matieres, setMatieres]       = useState<Matiere[]>([]);
-  const [temps, setTemps]             = useState(10);
-  const [difficultes, setDifficultes] = useState("");
-  const [loading, setLoading]         = useState(false);
-  const [error, setError]             = useState("");
+  const [enfantId, setEnfantId]               = useState(defaultEnfantId ?? enfants[0]?.id ?? "");
+  const [matieres, setMatieres]               = useState<Matiere[]>([]);
+  const [selectedExerciseCount, setSelectedExerciseCount] = useState(10);
+  const [difficultes, setDifficultes]         = useState("");
+  const [loading, setLoading]                 = useState(false);
+  const [error, setError]                     = useState("");
 
   const enfantSelectionne = enfants.find((e) => e.id === enfantId);
   const classeEnfant = enfantSelectionne?.classe ?? "CP";
   const matieresList = getMatieresByClasse(classeEnfant) as Matiere[];
 
-  const maxMatieres = DUREES.find((d) => d.value === temps)?.count ?? 5;
+  const maxMatieres = selectedExerciseCount;
   const limiteActive = matieres.length >= Math.min(maxMatieres, matieresList.length);
 
   useEffect(() => {
@@ -53,7 +54,7 @@ export default function SessionForm({ enfants, defaultEnfantId }: SessionFormPro
     if (matieres.length > max) {
       setMatieres((prev) => prev.slice(0, max));
     }
-  }, [temps]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [selectedExerciseCount]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     setMatieres((prev) => prev.filter((m) => matieresList.includes(m)));
@@ -93,7 +94,7 @@ export default function SessionForm({ enfants, defaultEnfantId }: SessionFormPro
         body: JSON.stringify({
           enfant_id: enfantId,
           matieres,
-          temps_disponible: temps,
+          temps_disponible: selectedExerciseCount,
           difficultes,
         }),
       });
@@ -163,7 +164,7 @@ export default function SessionForm({ enfants, defaultEnfantId }: SessionFormPro
           <span className="text-gray-400 font-normal">(au moins une)</span>
           {limiteActive && matieres.length > 0 && (
             <span className="ml-2 text-xs font-medium" style={{ color: "#748bf7" }}>
-              {matieres.length}/{Math.min(maxMatieres, matieresList.length)} max pour {temps} min
+              {matieres.length}/{Math.min(maxMatieres, matieresList.length)} max pour {selectedExerciseCount} exercices
             </span>
           )}
         </label>
@@ -192,38 +193,41 @@ export default function SessionForm({ enfants, defaultEnfantId }: SessionFormPro
         </div>
       </div>
 
-      {/* Durée */}
+      {/* Nombre d'exercices */}
       <div>
         <label className="block text-sm font-bold text-navy-800 mb-2">
-          Temps disponible
+          Nombre d&apos;exercices
         </label>
         <div className="flex gap-2">
-          {DUREES.map((d) => (
-            <button
-              key={d.value}
-              type="button"
-              onClick={() => setTemps(d.value)}
-              className="flex-1 flex flex-col items-center py-2.5 rounded-2xl text-sm font-bold border-2 transition-all duration-150 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
-              style={
-                temps === d.value
-                  ? { backgroundColor: "#748bf7", color: "#ffffff", borderColor: "#748bf7" }
-                  : { backgroundColor: "#ffffff", color: "#071453", borderColor: "#e9ecf8" }
-              }
-            >
-              <Image
-                src="/icons/picto-timer.svg"
-                alt=""
-                width={20}
-                height={20}
-                className="mb-0.5"
-                style={{ opacity: temps === d.value ? 1 : 0.4 }}
-              />
-              <span>{d.label}</span>
-              <span className="text-xs mt-0.5 opacity-60">
-                {d.count} exercices
-              </span>
-            </button>
-          ))}
+          {OPTIONS_SESSION.map((opt) => {
+            const selected = selectedExerciseCount === opt.exerciseCount;
+            return (
+              <button
+                key={opt.exerciseCount}
+                type="button"
+                onClick={() => setSelectedExerciseCount(opt.exerciseCount)}
+                className="flex-1 flex flex-col items-center py-2.5 rounded-2xl text-sm font-bold border-2 transition-all duration-150 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                style={
+                  selected
+                    ? { backgroundColor: "#748bf7", color: "#ffffff", borderColor: "#748bf7" }
+                    : { backgroundColor: "#ffffff", color: "#071453", borderColor: "#e9ecf8" }
+                }
+              >
+                <Image
+                  src="/icons/picto-timer.svg"
+                  alt=""
+                  width={20}
+                  height={20}
+                  className="mb-0.5"
+                  style={{ opacity: selected ? 1 : 0.4 }}
+                />
+                <span>{opt.exerciseCount} exercices</span>
+                <span className="text-xs mt-0.5 opacity-60">
+                  ~{opt.estimatedMinutes} min
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
 

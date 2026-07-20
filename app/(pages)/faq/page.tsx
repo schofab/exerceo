@@ -98,19 +98,19 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
     reponse: (
       <>
         <p>
-          Vous choisissez la durée avant chaque session : 5, 10, 15 ou 20
-          minutes. Le nombre d'exercices s'adapte :
+          Vous choisissez le nombre d'exercices avant chaque session : 5, 10, 15
+          ou 20 exercices. Chaque option affiche une estimation de durée :
         </p>
         <ul className="mt-2 space-y-1 list-disc list-inside text-gray-600">
-          <li>5 min → 3 exercices</li>
-          <li>10 min → 6 exercices</li>
-          <li>15 min → 9 exercices</li>
-          <li>20 min → 12 exercices</li>
+          <li>5 exercices → environ 5 min</li>
+          <li>10 exercices → environ 10 min</li>
+          <li>15 exercices → environ 15 min</li>
+          <li>20 exercices → environ 20 min</li>
         </ul>
         <p className="mt-2">
-          Ces durées sont indicatives : chaque enfant avance à son propre rythme,
-          et certains prendront un peu plus ou un peu moins de temps selon les
-          exercices proposés.
+          Ces durées sont des estimations : chaque enfant avance à son propre
+          rythme, et certains prendront un peu plus ou un peu moins de temps
+          selon les exercices proposés.
         </p>
         <p className="mt-2">
           L'objectif est de proposer des sessions courtes et régulières, sans
@@ -185,8 +185,8 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
       <p>
         Oui. Lors de la création d'une session, vous sélectionnez les matières
         que vous souhaitez travailler. Le nombre de matières sélectionnables
-        dépend de la durée choisie (par exemple, une session de 5 minutes
-        génère 3 exercices, donc au maximum 3 matières différentes).
+        dépend du nombre d'exercices choisi (par exemple, une session de 5
+        exercices autorise au maximum 5 matières différentes).
       </p>
     ),
   },
