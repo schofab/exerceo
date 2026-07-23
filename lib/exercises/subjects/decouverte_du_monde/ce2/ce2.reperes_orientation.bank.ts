@@ -212,6 +212,7 @@ export const ddmCe2ReperesOrientationExercises: DecouverteExercise[] = [
     hint: '3 × 100 km = ?',
     estimatedMinutes: 2,
     adaptations: A,
+    meta: { numericLoad: 'medium' },
   },
   {
     id: 'ddm-ce2-rep-038',

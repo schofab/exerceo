@@ -1,6 +1,7 @@
 import type { Exercise, SousDomaine } from '../../types';
 import type { DecouverteExercise, DecouverteSkill } from './decouverte_du_monde.types';
 import { decouverteDuMondeExercises } from './decouverte_du_monde.bank';
+import { getExerciseMeta } from '../../core/exercise-core.meta';
 
 export const SKILL_TO_SOUS_DOMAINE_DECOUVERTE: Record<DecouverteSkill, SousDomaine> = {
   temps:    'temps',
@@ -25,6 +26,7 @@ export function mapDecouverteToExercise(e: DecouverteExercise): Exercise | null 
     options:       e.options.map((o) => o.text),
     bonne_reponse: correctOption.text,
     explication:   e.explanation,
+    meta:          getExerciseMeta(e),
   };
 }
 

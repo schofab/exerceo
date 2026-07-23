@@ -8,6 +8,7 @@ import { selectScienceExercises } from "@/lib/exercises/science-selector";
 import { selectDecouverteDuMondeExercises } from "@/lib/exercises/decouverte-selector";
 import type { SelectedBankExercise } from "@/lib/exercises/french-selector";
 import type { Enfant, ExerciceGenere, Matiere, NotionStats } from "@/lib/types";
+import { DEFAULT_SUPPORT_NEEDS } from "@/lib/types";
 import type { EnfantCompetence } from "@/lib/competences/types";
 import { computeTrialStatus } from "@/lib/trial";
 
@@ -118,6 +119,8 @@ if (!trial.isTrialActive) {
     return NextResponse.json({ error: "Enfant introuvable" }, { status: 404 });
   }
 
+  const supportNeeds = enfant.support_needs ?? DEFAULT_SUPPORT_NEEDS;
+
   // Créer la session en base
   const { data: sessionData, error: sessionError } = await supabase
     .from("sessions")
@@ -213,7 +216,7 @@ if (!trial.isTrialActive) {
       console.warn("[EXERCEO] Impossible de récupérer l'historique des exercices vus.");
     }
 
-    const selected = selectFrenchExercises(enfant.classe, nbFrancais, 1, seenBankIds);
+    const selected = selectFrenchExercises(enfant.classe, nbFrancais, 1, seenBankIds, undefined, supportNeeds);
     exercicesBank.push(...selected);
 
     // ── DEBUG LOG ──
@@ -289,6 +292,8 @@ if (!trial.isTrialActive) {
       exercicesBank.length + 1,
       seenMathIds,
       mathCompetences,
+      undefined,
+      supportNeeds,
     );
     exercicesBank.push(...selected);
 
@@ -343,6 +348,7 @@ if (!trial.isTrialActive) {
       nbAnglais,
       exercicesBank.length + 1,
       seenEnglishIds,
+      supportNeeds,
     );
     exercicesBank.push(...selected);
 
@@ -397,6 +403,7 @@ if (!trial.isTrialActive) {
       nbSciences,
       exercicesBank.length + 1,
       seenScienceIds,
+      supportNeeds,
     );
     exercicesBank.push(...selected);
 
@@ -451,6 +458,7 @@ if (!trial.isTrialActive) {
       nbDecouverte,
       exercicesBank.length + 1,
       seenDecouverteIds,
+      supportNeeds,
     );
     exercicesBank.push(...selected);
 
@@ -506,11 +514,11 @@ if (!trial.isTrialActive) {
     }
 
     const selectedSc = selectScienceExercises(
-      enfant.classe, nbSc, exercicesBank.length + 1, seenQtmIds,
+      enfant.classe, nbSc, exercicesBank.length + 1, seenQtmIds, supportNeeds,
     ).map((ex) => ({ ...ex, matiere: "Questionner le monde" as Matiere }));
 
     const selectedDdm = selectDecouverteDuMondeExercises(
-      enfant.classe, nbDdm, exercicesBank.length + selectedSc.length + 1, seenQtmIds,
+      enfant.classe, nbDdm, exercicesBank.length + selectedSc.length + 1, seenQtmIds, supportNeeds,
     ).map((ex) => ({ ...ex, matiere: "Questionner le monde" as Matiere }));
 
     exercicesBank.push(...selectedSc, ...selectedDdm);

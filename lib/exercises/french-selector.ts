@@ -15,9 +15,12 @@
 import { EXERCISE_BANK } from "./bank";
 import { validateExercise } from "./validator";
 import { antiRepeatSort } from "./core/exercise-core.anti-repetition";
-import type { Exercise, SousDomaine } from "./types";
+import { sortByAdaptiveCompatibility, enforceAdaptiveCaps } from "./core/exercise-core.adaptive-selection";
+import type { Exercise, SousDomaine, ExerciseMeta } from "./types";
 import type { ExerciceGenere, Matiere, TypeExercice } from "../types";
 import type { GeneralLevel } from "./core/exercise-core.types";
+import type { SupportNeeds } from "../types";
+import { DEFAULT_SUPPORT_NEEDS } from "../types";
 
 // ─── Progression pédagogique : niveaux autorisés par classe ──────────────────
 // Chaque enfant peut accéder à sa classe ET à la classe inférieure (révision).
@@ -81,11 +84,12 @@ const SKILL_PRIORITY_ORDER: SousDomaine[] = [
 
 // ─── Types exportés ───────────────────────────────────────────────────────────
 
-/** ExerciceGenere enrichi des métadonnées de debug */
+/** ExerciceGenere enrichi des métadonnées de debug et d'adaptation */
 export interface SelectedBankExercise extends ExerciceGenere {
   _bank_id:     string;
-  _debug_classe: string;  // niveau de l'exercice dans la banque (CP, CE1…)
-  _debug_skill:  string;  // sous_domaine de l'exercice
+  _debug_classe: string;    // niveau de l'exercice dans la banque (CP, CE1…)
+  _debug_skill:  string;    // sous_domaine de l'exercice
+  meta?:         ExerciseMeta; // tags adaptatifs résolus (textLoad, numericLoad, visualLoad, guidance)
 }
 
 // ─── Fonction principale ──────────────────────────────────────────────────────
@@ -104,7 +108,9 @@ export function selectFrenchExercises(
   ordreDebut: number = 1,
   seenBankIds: string[] = [],
   generalLevel?: GeneralLevel,
+  supportNeeds?: SupportNeeds,
 ): SelectedBankExercise[] {
+  const resolvedNeeds = supportNeeds ?? DEFAULT_SUPPORT_NEEDS;
   // 1. Déterminer les niveaux autorisés pour cette classe
   const niveauxAutorisés = NIVEAUX_AUTORISES[classe] ?? [classe];
 
@@ -145,8 +151,11 @@ export function selectFrenchExercises(
   const selected: Exercise[] = [];
   const usedSkills = new Set<string>();
 
-  // Passe A — depuis les nouveaux (shuffle)
-  const nouveauxMelanges = antiRepeatSort(shuffle(poolNouveaux), seenBankIds, EXERCISE_BANK);
+  // Passe A — depuis les nouveaux (shuffle + anti-répétition + tri adaptatif)
+  const nouveauxMelanges = sortByAdaptiveCompatibility(
+    antiRepeatSort(shuffle(poolNouveaux), seenBankIds, EXERCISE_BANK),
+    resolvedNeeds,
+  );
   selectWithSkillDiversity(nouveauxMelanges, count, selected, usedSkills);
 
   // Passe B — depuis les déjà vus si les nouveaux sont insuffisants
@@ -177,8 +186,9 @@ export function selectFrenchExercises(
     }
   }
 
-  // 5. Mapper vers SelectedBankExercise
-  return selected.slice(0, count).map((e, i): SelectedBankExercise => ({
+  // 5. Enforcement des plafonds adaptatifs puis mapping
+  const finalSelected = enforceAdaptiveCaps(selected.slice(0, count), poolComplet, resolvedNeeds, count);
+  return finalSelected.map((e, i): SelectedBankExercise => ({
     ordre:            ordreDebut + i,
     matiere:          "Français" as Matiere,
     sous_matiere:     SOUS_DOMAINE_LABELS[e.sous_domaine] ?? "Français",
@@ -190,6 +200,7 @@ export function selectFrenchExercises(
     _bank_id:         e.id,
     _debug_classe:    e.niveau,
     _debug_skill:     e.sous_domaine,
+    meta:             e.meta,
   }));
 }
 

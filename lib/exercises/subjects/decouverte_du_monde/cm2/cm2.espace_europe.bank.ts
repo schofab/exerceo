@@ -96,6 +96,7 @@ export const ddmCm2EspaceEuropeExercises: DecouverteExercise[] = [
     hint: "Carpates = grand arc montagneux d'Europe centrale et de l'Est.",
     estimatedMinutes: 1,
     adaptations: A,
+    meta: { visualLoad: 'high' },
   },
   {
     id: 'ddm-cm2-esp-033',
@@ -142,6 +143,7 @@ export const ddmCm2EspaceEuropeExercises: DecouverteExercise[] = [
     hint: "Les Balkans = sud-est de l'Europe (Grèce, Serbie, Croatie…).",
     estimatedMinutes: 1,
     adaptations: A,
+    meta: { visualLoad: 'high' },
   },
   {
     id: 'ddm-cm2-esp-035',
@@ -303,6 +305,7 @@ export const ddmCm2EspaceEuropeExercises: DecouverteExercise[] = [
     hint: "Adriatique = entre l'Italie et les Balkans.",
     estimatedMinutes: 1,
     adaptations: A,
+    meta: { visualLoad: 'high' },
   },
   {
     id: 'ddm-cm2-esp-042',
@@ -487,6 +490,7 @@ export const ddmCm2EspaceEuropeExercises: DecouverteExercise[] = [
     hint: "Bosphore → Istanbul → Turquie → passage entre mer Noire et Méditerranée.",
     estimatedMinutes: 1,
     adaptations: A,
+    meta: { visualLoad: 'high' },
   },
   {
     id: 'ddm-cm2-esp-050',

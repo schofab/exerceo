@@ -96,6 +96,7 @@ export const ddmCm2EspaceMondeExercises: DecouverteExercise[] = [
     hint: "L'Égypte est en Afrique, même si elle est souvent associée au Proche-Orient.",
     estimatedMinutes: 1,
     adaptations: A,
+    meta: { visualLoad: 'high' },
   },
   {
     id: 'ddm-cm2-esp-008',
@@ -556,6 +557,7 @@ export const ddmCm2EspaceMondeExercises: DecouverteExercise[] = [
     hint: "Méditerranée = 3 continents autour : Europe, Afrique, Asie.",
     estimatedMinutes: 1,
     adaptations: A,
+    meta: { visualLoad: 'high' },
   },
   {
     id: 'ddm-cm2-esp-028',

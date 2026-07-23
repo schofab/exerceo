@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
-import type { Enfant, ExerciceGenere, LearningProfile, Matiere, NotionStats, ReponseClaudeJSON } from "./types";
+import type { Enfant, ExerciceGenere, LearningProfile, Matiere, NotionStats, ReponseClaudeJSON, SupportNeeds } from "./types";
+import { DEFAULT_SUPPORT_NEEDS } from "./types";
 import { buildExerciseConstraints } from "./curriculum/helpers";
 import type { Classe } from "./curriculum/types";
 
@@ -241,6 +242,58 @@ const PROFIL_DESCRIPTIONS: Record<LearningProfile, string> = {
     "vocabulaire plus riche, reformulations moins évidentes, défis inattendus.",
 };
 
+// Construit le bloc textuel des besoins d'adaptation pour le prompt IA.
+// Retourne une chaîne vide si aucun besoin n'est activé (backward-compatible).
+function buildSupportNeedsSection(needs: SupportNeeds): string {
+  const lines: string[] = [];
+
+  if (needs.dyslexia) {
+    lines.push(
+      "• Difficultés de lecture (dyslexie déclarée) → " +
+      "Consignes très courtes (1-2 lignes max), préfère les formats visuels (QCM, vrai/faux), " +
+      "un seul point par exercice, évite les textes longs ou denses."
+    );
+  }
+  if (needs.dysorthography) {
+    lines.push(
+      "• Difficultés d'orthographe (dysorthographie déclarée) → " +
+      "Évite les exercices qui exigent de l'écriture libre ou la production spontanée de mots, " +
+      "privilégie QCM et vrai/faux, n'évalue pas la vitesse ou la quantité de texte produit."
+    );
+  }
+  if (needs.dyscalculia) {
+    lines.push(
+      "• Difficultés avec les nombres (dyscalculie déclarée) → " +
+      "Progression très graduelle en Mathématiques, limite la densité d'exercices de calcul pur " +
+      "dans la même session, privilégie les formats guidés avec étapes intermédiaires, " +
+      "évite les séquences de calcul rapide ou chronométré."
+    );
+  }
+  if (needs.dyspraxia) {
+    lines.push(
+      "• Difficultés visuo-spatiales ou gestuelles (dyspraxie déclarée) → " +
+      "Présentation la plus aérée possible, un seul élément à traiter à la fois, " +
+      "évite les exercices qui demandent à visualiser des formes complexes ou à organiser l'espace."
+    );
+  }
+  if (needs.attentionSupport) {
+    lines.push(
+      "• Difficultés d'attention ou de concentration (TDAH / attention courte déclarée) → " +
+      "Consignes ultra-courtes et segmentées, contextes familiers et ludiques, " +
+      "exercices rapides à lire et à répondre, formulations dynamiques et positives."
+    );
+  }
+
+  if (lines.length === 0) return "";
+
+  return (
+    "\nBESOINS D'ADAPTATION DÉCLARÉS (à appliquer à toute la session) :\n" +
+    lines.join("\n") +
+    "\n→ Ces adaptations s'appliquent en priorité sur le format et la présentation, " +
+    "pas sur le niveau pédagogique. L'objectif reste la zone proximale de développement.\n"
+  );
+}
+
 export async function genererExercices(
   enfant: Enfant,
   matieres: Matiere[],
@@ -280,6 +333,10 @@ export async function genererExercices(
   const profilKey = (enfant.learning_profile ?? "standard") as LearningProfile;
   const profilDesc = PROFIL_DESCRIPTIONS[profilKey];
 
+  // Besoins d'adaptation déclarés
+  const supportNeeds: SupportNeeds = enfant.support_needs ?? DEFAULT_SUPPORT_NEEDS;
+  const supportNeedsSection = buildSupportNeedsSection(supportNeeds);
+
   // Faiblesses détectées automatiquement (notions avec taux < 60 %)
   const faiblessesFragiles = faiblesses.filter((f) => f.est_fragile);
   const faiblessesSection =
@@ -304,7 +361,7 @@ export async function genererExercices(
 - Matières de cette session : ${matieres.join(", ")}
 - Nombre d'exercices à générer : ${nbExercices}
 - Difficultés signalées par le parent : ${difficultes || "aucune"}
-${faiblessesSection}
+${supportNeedsSection}${faiblessesSection}
 ${contraintes.instructionNiveau}
 
 INSTRUCTIONS FINALES :

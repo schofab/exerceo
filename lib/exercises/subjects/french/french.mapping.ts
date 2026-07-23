@@ -2,6 +2,7 @@ import type { Exercise, SousDomaine } from '../../types';
 import type { FrenchExercise } from './french.types';
 import type { FrenchSkill } from './french.types';
 import { frenchExercises } from './french.bank';
+import { getExerciseMeta } from '../../core/exercise-core.meta';
 
 export const SKILL_TO_SOUS_DOMAINE: Record<FrenchSkill, SousDomaine> = {
   lecture: 'lecture',
@@ -30,6 +31,7 @@ export function mapToExercise(e: FrenchExercise): Exercise | null {
     explication: e.explanation,
     ...(e.difficulty_tier  !== undefined && { difficulty_tier: e.difficulty_tier }),
     ...(e.school_period    !== undefined && { school_period:   e.school_period }),
+    meta: getExerciseMeta(e),
   };
 }
 

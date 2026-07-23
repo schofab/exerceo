@@ -72,6 +72,7 @@ export const ddmCm1TempsExercises: DecouverteExercise[] = [
     explanation: "Les dates av. J.-C. vont à rebours : -3000 est plus ancien que -500. Plus le chiffre est grand en valeur absolue, plus c'est ancien.",
     hint: "Avant J.-C. : les chiffres diminuent en allant vers 0.",
     estimatedMinutes: 1,
+    meta: { numericLoad: 'medium' },
     adaptations: A,
   },
   {
@@ -95,6 +96,7 @@ export const ddmCm1TempsExercises: DecouverteExercise[] = [
     explanation: "Le XVIIIe siècle correspond aux années 1700 à 1799. 1789 est bien dans le XVIIIe siècle. Règle : siècle = centaine d'années + 1.",
     hint: "1789 → les centaines = 17 → siècle 18 = XVIIIe.",
     estimatedMinutes: 1,
+    meta: { numericLoad: 'medium' },
     adaptations: A,
   },
   {
@@ -348,6 +350,7 @@ export const ddmCm1TempsExercises: DecouverteExercise[] = [
     explanation: "De -200 à 0 = 200 ans, puis de 0 à 50 = 50 ans. Total : 200 + 50 = 250 ans.",
     hint: "Compte de -200 à 0, puis de 0 à 50.",
     estimatedMinutes: 1,
+    meta: { numericLoad: 'high' },
     adaptations: A,
   },
   {
@@ -417,6 +420,7 @@ export const ddmCm1TempsExercises: DecouverteExercise[] = [
     explanation: "Les grandes cathédrales gothiques (Notre-Dame de Paris, Chartres, Reims) sont construites entre le XIIe et le XIVe siècle, en plein Moyen Âge.",
     hint: "1150–1350 se situe entre 476 et 1492 → Moyen Âge.",
     estimatedMinutes: 1,
+    meta: { numericLoad: 'medium' },
     adaptations: A,
   },
   {
@@ -440,6 +444,7 @@ export const ddmCm1TempsExercises: DecouverteExercise[] = [
     explanation: "L'an 1000 est en plein Moyen Âge (476–1492). La France n'existe pas encore : on parle de « royaume des Francs ».",
     hint: "Moyen Âge = 476 à 1492 → l'an 1000 est au milieu.",
     estimatedMinutes: 1,
+    meta: { numericLoad: 'medium' },
     adaptations: A,
   },
   {
@@ -509,6 +514,7 @@ export const ddmCm1TempsExercises: DecouverteExercise[] = [
     explanation: "Le Moyen Âge s'étend de 476 à 1492, soit environ 1016 ans. On l'appelle parfois le « millénaire médiéval ».",
     hint: "1492 − 476 ≈ 1000 ans.",
     estimatedMinutes: 1,
+    meta: { numericLoad: 'medium' },
     adaptations: A,
   },
   {

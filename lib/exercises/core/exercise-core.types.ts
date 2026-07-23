@@ -83,6 +83,41 @@ export interface StudentProfile {
 
 export type ExerciseFormat = 'qcm' | 'fill_in_blank' | 'short_answer';
 
+/**
+ * Niveau de charge cognitive sur un axe donné.
+ *   low    → faible charge / impact réduit sur la matière ciblée
+ *   medium → charge standard
+ *   high   → charge élevée, contexte long, ou multi-étapes
+ */
+export type LoadLevel = 'low' | 'medium' | 'high';
+
+/**
+ * Niveau de guidage de l'exercice.
+ *   guided → réponse très cadrée, choix limité (QCM, vrai/faux, texte à trous)
+ *   open   → production plus libre, faible contrainte de forme
+ */
+export type GuidanceLevel = 'guided' | 'open';
+
+/**
+ * Métadonnées adaptatives d'un exercice.
+ * Tous les champs sont optionnels — la migration est progressive.
+ * En l'absence de champ, `getExerciseMeta()` dérive une valeur par heuristique.
+ *
+ * NE PAS UTILISER pour définir la difficulté pédagogique (→ difficulty_tier)
+ * ni le profil élève cible (→ generalLevel). Ces tags décrivent la CHARGE
+ * cognitive de l'exercice sur différentes dimensions.
+ */
+export interface ExerciseMeta {
+  /** Charge de lecture : longueur du contexte, densité textuelle. */
+  textLoad?: LoadLevel;
+  /** Charge numérique : volume et complexité des calculs attendus. */
+  numericLoad?: LoadLevel;
+  /** Charge visuo-spatiale : repérage, schéma, tableau, carte. */
+  visualLoad?: LoadLevel;
+  /** Niveau de guidage de la réponse attendue. */
+  guidance?: GuidanceLevel;
+}
+
 export interface ExerciseValidationResult {
   exerciseId: string;
   valid: boolean;
@@ -107,4 +142,6 @@ export interface BaseExercise<TSkill extends string = string> {
   tags?: string[];
   estimatedMinutes: number;
   adaptations: ExerciseProfileAdaptation[];
+  /** Métadonnées adaptatives. Optionnel — voir `getExerciseMeta()` si absent. */
+  meta?: ExerciseMeta;
 }

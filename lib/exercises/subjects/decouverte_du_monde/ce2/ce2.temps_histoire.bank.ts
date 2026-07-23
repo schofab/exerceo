@@ -326,6 +326,7 @@ export const ddmCe2TempsHistoireExercises: DecouverteExercise[] = [
     explanation: 'Pour les dates av. J.-C., plus le nombre est grand, plus l\'événement est ancien. -500 est avant -100 dans le temps.',
     hint: 'Avant J.-C. : plus le chiffre est grand, plus c\'est ancien.',
     estimatedMinutes: 1,
+    meta: { numericLoad: 'medium' },
     adaptations: A,
   },
   {
@@ -372,6 +373,7 @@ export const ddmCe2TempsHistoireExercises: DecouverteExercise[] = [
     explanation: 'Le XXe siècle = de 1900 à 1999. Le XIXe siècle = 1800-1899. Le XXIe siècle (le nôtre) = 2000-2099.',
     hint: 'Le 20e siècle = les années 1900.',
     estimatedMinutes: 1,
+    meta: { numericLoad: 'medium' },
     adaptations: A,
   },
   {

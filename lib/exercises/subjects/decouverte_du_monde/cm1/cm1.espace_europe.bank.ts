@@ -27,6 +27,7 @@ export const ddmCm1EspaceEuropeExercises: DecouverteExercise[] = [
     hint: "L'Europe est au nord-ouest de l'Eurasie.",
     estimatedMinutes: 1,
     adaptations: A,
+    meta: { visualLoad: 'high' },
   },
   {
     id: 'ddm-cm1-esp-032',
@@ -188,6 +189,7 @@ export const ddmCm1EspaceEuropeExercises: DecouverteExercise[] = [
     hint: "Les Alpes sont le plus grand massif montagneux d'Europe de l'Ouest.",
     estimatedMinutes: 1,
     adaptations: A,
+    meta: { visualLoad: 'high' },
   },
   {
     id: 'ddm-cm1-esp-039',
@@ -418,6 +420,7 @@ export const ddmCm1EspaceEuropeExercises: DecouverteExercise[] = [
     hint: "Baltique = nord-est de l'Europe.",
     estimatedMinutes: 1,
     adaptations: A,
+    meta: { visualLoad: 'high' },
   },
   {
     id: 'ddm-cm1-esp-049',

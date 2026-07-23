@@ -74,6 +74,7 @@ export const ddmCe1ReperesCarteExercises: DecouverteExercise[] = [
     hint: 'L\'opposé de l\'Est, c\'est l\'Ouest.',
     estimatedMinutes: 1,
     adaptations: A,
+    meta: { visualLoad: 'high' },
   },
   {
     id: 'ddm-ce1-rep-028',

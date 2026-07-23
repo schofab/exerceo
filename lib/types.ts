@@ -15,6 +15,26 @@ export type LearningProfile =
   | "progressif"
   | "defi_avance";
 
+// Besoins d'adaptation déclarés par le parent.
+// Ces champs ne constituent pas un diagnostic médical : ils servent à adapter
+// le format et la présentation des exercices (consignes, densité, types).
+// Tous les champs sont false par défaut — rétrocompatibilité totale.
+export interface SupportNeeds {
+  dyslexia: boolean;       // Difficultés de lecture
+  dysorthography: boolean; // Difficultés d'orthographe
+  dyscalculia: boolean;    // Difficultés avec les nombres
+  dyspraxia: boolean;      // Difficultés visuo-spatiales ou gestuelles
+  attentionSupport: boolean; // Difficultés d'attention et de concentration
+}
+
+export const DEFAULT_SUPPORT_NEEDS: SupportNeeds = {
+  dyslexia: false,
+  dysorthography: false,
+  dyscalculia: false,
+  dyspraxia: false,
+  attentionSupport: false,
+};
+
 // Statistiques par notion (retournées par get_faiblesses_enfant)
 export interface NotionStats {
   sous_matiere: string;
@@ -33,10 +53,10 @@ export interface Enfant {
   age: number;
   classe: Classe;
   niveau: Niveau;
-  progression_stage: ProgressionStage;
   facilites: Matiere[];
   lacunes: Matiere[];
   learning_profile: LearningProfile;
+  support_needs: SupportNeeds;
   created_at: string;
 }
 
@@ -75,7 +95,6 @@ export interface Reponse {
 // Énumérations
 export type Classe = "CP" | "CE1" | "CE2" | "CM1" | "CM2";
 export type Niveau = "debutant" | "intermediaire" | "avance";
-export type ProgressionStage = "early" | "mid" | "late";
 export type Matiere =
   | "Mathématiques"
   | "Français"

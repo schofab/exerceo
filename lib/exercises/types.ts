@@ -1,6 +1,6 @@
-import type { DifficultyTier, SchoolPeriod } from './core/exercise-core.types';
+import type { DifficultyTier, ExerciseMeta, SchoolPeriod } from './core/exercise-core.types';
 
-export type { DifficultyTier, SchoolPeriod };
+export type { DifficultyTier, ExerciseMeta, SchoolPeriod };
 
 export type Niveau = "CP" | "CE1" | "CE2" | "CM1" | "CM2";
 
@@ -48,6 +48,8 @@ export type Exercise = {
   explication: string;
   difficulty_tier?: DifficultyTier;
   school_period?: SchoolPeriod;
+  /** Métadonnées adaptatives, préservées depuis la source BaseExercise via les mapping files. */
+  meta?: ExerciseMeta;
 };
 
 export type GenerateExerciseParams = {

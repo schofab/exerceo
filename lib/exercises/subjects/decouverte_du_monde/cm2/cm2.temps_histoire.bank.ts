@@ -394,6 +394,7 @@ export const ddmCm2TempsHistoireExercises: DecouverteExercise[] = [
     explanation: "Ordre chronologique : 1492 (Colomb) → 1789 (Révolution) → 1848 (abolition esclavage) → 1957 (traité de Rome).",
     hint: "Place les dates dans l'ordre croissant : 1492 < 1789 < 1848 < 1957.",
     estimatedMinutes: 1,
+    meta: { numericLoad: 'medium' },
     adaptations: A,
   },
   {
@@ -463,6 +464,7 @@ export const ddmCm2TempsHistoireExercises: DecouverteExercise[] = [
     explanation: "Louis XIV règne de 1643 (à 4 ans !) à sa mort en 1715, soit 72 ans. C'est le plus long règne de monarque en Europe. Il centralise le pouvoir et fait construire Versailles.",
     hint: "Louis XIV monte sur le trône à 4 ans et règne 72 ans.",
     estimatedMinutes: 1,
+    meta: { numericLoad: 'medium' },
     adaptations: A,
   },
   {
@@ -578,6 +580,7 @@ export const ddmCm2TempsHistoireExercises: DecouverteExercise[] = [
     explanation: "Le XXIe siècle (et le 3e millénaire) commence officiellement le 1er janvier 2001, car il n'y a pas d'an zéro : après l'an 1 av. J.-C. vient l'an 1 ap. J.-C.",
     hint: "Il n'y a pas d'an 0. Le 1er siècle va de l'an 1 à l'an 100. Donc le XXIe siècle commence en 2001.",
     estimatedMinutes: 1,
+    meta: { numericLoad: 'medium' },
     adaptations: A,
   },
 ];

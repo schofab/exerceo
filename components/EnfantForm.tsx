@@ -3,12 +3,21 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
-import type { Classe, Enfant, LearningProfile, Matiere, Niveau } from "@/lib/types";
+import type { Classe, Enfant, LearningProfile, Matiere, Niveau, SupportNeeds } from "@/lib/types";
+import { DEFAULT_SUPPORT_NEEDS } from "@/lib/types";
 import Button from "./ui/Button";
 import Input from "./ui/Input";
 import { getMatieresByClasse, getSubjectLabel } from "@/lib/matieres";
 
 const CLASSES: Classe[] = ["CP", "CE1", "CE2", "CM1", "CM2"];
+
+const SUPPORT_NEEDS_OPTIONS: { key: keyof SupportNeeds; label: string; detail: string }[] = [
+  { key: "dyslexia",       label: "Difficultés de lecture",                    detail: "Consignes courtes, formats visuels (QCM, vrai/faux) en priorité" },
+  { key: "dysorthography", label: "Difficultés d'orthographe",                 detail: "Exercices qui n'évaluent pas la production écrite libre" },
+  { key: "dyscalculia",    label: "Difficultés avec les nombres",               detail: "Exercices mathématiques plus progressifs, moins de densité numérique" },
+  { key: "dyspraxia",      label: "Difficultés visuo-spatiales ou gestuelles",  detail: "Présentation aérée, moins d'éléments simultanés à l'écran" },
+  { key: "attentionSupport", label: "Difficultés d'attention ou de concentration", detail: "Consignes ultra-courtes, exercices rapides à traiter" },
+];
 const NIVEAUX: { value: Niveau; label: string }[] = [
   { value: "debutant", label: "Débutant — besoin de soutien" },
   { value: "intermediaire", label: "Intermédiaire — niveau moyen" },
@@ -64,6 +73,9 @@ export default function EnfantForm({ enfant, userId }: EnfantFormProps) {
   );
   const [facilites, setFacilites] = useState<Matiere[]>(enfant?.facilites ?? []);
   const [lacunes, setLacunes] = useState<Matiere[]>(enfant?.lacunes ?? []);
+  const [supportNeeds, setSupportNeeds] = useState<SupportNeeds>(
+    enfant?.support_needs ?? DEFAULT_SUPPORT_NEEDS
+  );
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -95,6 +107,7 @@ export default function EnfantForm({ enfant, userId }: EnfantFormProps) {
       learning_profile: learningProfile,
       facilites,
       lacunes,
+      support_needs: supportNeeds,
     };
 
     try {
@@ -271,6 +284,42 @@ export default function EnfantForm({ enfant, userId }: EnfantFormProps) {
             >
               {getSubjectLabel(m, classe)}
             </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Besoins d'adaptation */}
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+          Besoins d&apos;adaptation{" "}
+          <span className="text-gray-400 font-normal">(optionnel)</span>
+        </label>
+        <p className="text-xs text-gray-400 mb-3 leading-relaxed">
+          Ces réglages permettent d&apos;adapter le format des exercices. Ils ne constituent pas un diagnostic médical.
+        </p>
+        <div className="space-y-2">
+          {SUPPORT_NEEDS_OPTIONS.map((opt) => (
+            <label
+              key={opt.key}
+              className={`flex items-start gap-3 p-3 rounded-xl border-2 cursor-pointer transition ${
+                supportNeeds[opt.key]
+                  ? "border-violet-400 bg-violet-50"
+                  : "border-gray-200 hover:border-violet-200"
+              }`}
+            >
+              <input
+                type="checkbox"
+                checked={supportNeeds[opt.key]}
+                onChange={(e) =>
+                  setSupportNeeds({ ...supportNeeds, [opt.key]: e.target.checked })
+                }
+                className="mt-0.5 flex-shrink-0 accent-violet-600"
+              />
+              <span className="flex flex-col">
+                <span className="text-sm font-medium text-gray-800">{opt.label}</span>
+                <span className="text-xs text-gray-500 leading-snug">{opt.detail}</span>
+              </span>
+            </label>
           ))}
         </div>
       </div>

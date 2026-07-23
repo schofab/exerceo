@@ -645,6 +645,7 @@ export const scienceCm1TerreExercises: ScienceExercise[] = [
     tags: ['cm1', 'sciences', 'terre', 'astronomie', 'gravite', 'poids', 'qcm'],
     estimatedMinutes: 2,
     adaptations: cloneDefaultAdaptations(),
+    meta: { numericLoad: 'medium' },
   },
   {
     id: 'sc-cm1-ter-029',

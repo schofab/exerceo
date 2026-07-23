@@ -326,6 +326,7 @@ export const ddmCm1EspaceFranceExercises: DecouverteExercise[] = [
     hint: "L'Espagne sépare la France du Portugal.",
     estimatedMinutes: 1,
     adaptations: A,
+    meta: { visualLoad: 'high' },
   },
   {
     id: 'ddm-cm1-esp-020',

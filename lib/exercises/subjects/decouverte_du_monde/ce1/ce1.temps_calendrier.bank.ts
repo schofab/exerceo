@@ -188,6 +188,7 @@ export const ddmCe1TempsCalendrierExercises: DecouverteExercise[] = [
     explanation: 'Un mois contient environ 4 semaines (28 à 31 jours ÷ 7 = ≈ 4 semaines).',
     hint: '7 jours × 4 semaines = 28 jours ≈ un mois.',
     estimatedMinutes: 1,
+    meta: { numericLoad: 'medium' },
     adaptations: A,
   },
   {
@@ -303,6 +304,7 @@ export const ddmCe1TempsCalendrierExercises: DecouverteExercise[] = [
     explanation: 'Janvier=1, Février=2, Mars=3, Avril=4, Mai=5, Juin=6. Le 6e mois est juin.',
     hint: 'Compte sur tes doigts : janv., fév., mars, avr., mai, juin.',
     estimatedMinutes: 1,
+    meta: { numericLoad: 'medium' },
     adaptations: A,
   },
   {
@@ -372,6 +374,7 @@ export const ddmCe1TempsCalendrierExercises: DecouverteExercise[] = [
     explanation: 'Une semaine = 7 jours. 3 + 7 = 10. Dans une semaine = lundi 10 mars.',
     hint: 'Une semaine = 7 jours. 3 + 7 = ?',
     estimatedMinutes: 1,
+    meta: { numericLoad: 'medium' },
     adaptations: A,
   },
   {
@@ -441,6 +444,7 @@ export const ddmCe1TempsCalendrierExercises: DecouverteExercise[] = [
     explanation: 'Janv=1, Fév=2, Mars=3, Avr=4, Mai=5, Juin=6, Juill=7, Août=8. Le 8e mois est août.',
     hint: 'Juillet = 7e. Après juillet vient…',
     estimatedMinutes: 1,
+    meta: { numericLoad: 'medium' },
     adaptations: A,
   },
   {

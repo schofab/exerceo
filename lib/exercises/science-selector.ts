@@ -15,9 +15,12 @@
 import { EXERCISE_BANK_SCIENCE } from "./subjects/science/science.mapping";
 import { validateExercise } from "./validator";
 import { antiRepeatSort } from "./core/exercise-core.anti-repetition";
+import { sortByAdaptiveCompatibility, enforceAdaptiveCaps } from "./core/exercise-core.adaptive-selection";
 import type { Exercise, SousDomaine } from "./types";
 import type { ExerciceGenere, Matiere, TypeExercice } from "../types";
 import type { SelectedBankExercise } from "./french-selector";
+import type { SupportNeeds } from "../types";
+import { DEFAULT_SUPPORT_NEEDS } from "../types";
 
 // ─── Progression pédagogique : niveaux autorisés par classe ──────────────────
 const NIVEAUX_AUTORISES: Record<string, string[]> = {
@@ -57,7 +60,9 @@ export function selectScienceExercises(
   count: number,
   ordreDebut: number = 1,
   seenBankIds: string[] = [],
+  supportNeeds?: SupportNeeds,
 ): SelectedBankExercise[] {
+  const resolvedNeeds = supportNeeds ?? DEFAULT_SUPPORT_NEEDS;
   const niveauxAutorises = NIVEAUX_AUTORISES[classe] ?? [classe];
 
   const poolComplet = EXERCISE_BANK_SCIENCE.filter(
@@ -85,8 +90,11 @@ export function selectScienceExercises(
   const selected: Exercise[] = [];
   const usedSkills = new Set<string>();
 
-  // Passe A — depuis les nouveaux
-  selectWithSkillDiversity(antiRepeatSort(shuffle(poolNouveaux), seenBankIds, EXERCISE_BANK_SCIENCE), count, selected, usedSkills);
+  // Passe A — depuis les nouveaux (anti-répétition + tri adaptatif)
+  selectWithSkillDiversity(
+    sortByAdaptiveCompatibility(antiRepeatSort(shuffle(poolNouveaux), seenBankIds, EXERCISE_BANK_SCIENCE), resolvedNeeds),
+    count, selected, usedSkills,
+  );
 
   // Passe B — fallback sur les déjà vus
   if (selected.length < count) {
@@ -112,8 +120,9 @@ export function selectScienceExercises(
     }
   }
 
-  // Mapper vers SelectedBankExercise
-  return selected.slice(0, count).map((e, i): SelectedBankExercise => ({
+  // Enforcement des plafonds adaptatifs puis mapping
+  const finalSelected = enforceAdaptiveCaps(selected.slice(0, count), poolComplet, resolvedNeeds, count);
+  return finalSelected.map((e, i): SelectedBankExercise => ({
     ordre:            ordreDebut + i,
     matiere:          "Sciences" as Matiere,
     sous_matiere:     SOUS_DOMAINE_LABELS_SCIENCE[e.sous_domaine] ?? "Sciences",
@@ -125,6 +134,7 @@ export function selectScienceExercises(
     _bank_id:         e.id,
     _debug_classe:    e.niveau,
     _debug_skill:     e.sous_domaine,
+    meta:             e.meta,
   }));
 }
 

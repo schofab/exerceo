@@ -19,11 +19,14 @@
 import { EXERCISE_BANK_MATHS } from "./subjects/maths/maths.mapping";
 import { validateExercise } from "./validator";
 import { antiRepeatSort } from "./core/exercise-core.anti-repetition";
+import { sortByAdaptiveCompatibility, enforceAdaptiveCaps } from "./core/exercise-core.adaptive-selection";
 import type { Exercise, SousDomaine } from "./types";
 import type { ExerciceGenere, Matiere, TypeExercice } from "../types";
 import type { SelectedBankExercise } from "./french-selector";
 import type { EnfantCompetence } from "../competences/types";
 import type { GeneralLevel } from "./core/exercise-core.types";
+import type { SupportNeeds } from "../types";
+import { DEFAULT_SUPPORT_NEEDS } from "../types";
 
 // ─── Progression pédagogique : niveaux autorisés par classe ──────────────────
 const NIVEAUX_AUTORISES: Record<string, string[]> = {
@@ -170,7 +173,9 @@ export function selectMathExercises(
   seenBankIds: string[] = [],
   competences: EnfantCompetence[] = [],
   generalLevel?: GeneralLevel,
+  supportNeeds?: SupportNeeds,
 ): SelectedBankExercise[] {
+  const resolvedNeeds = supportNeeds ?? DEFAULT_SUPPORT_NEEDS;
   const niveauxAutorises = NIVEAUX_AUTORISES[classe] ?? [classe];
 
   const poolComplet = filterByGeneralLevel(
@@ -229,9 +234,12 @@ export function selectMathExercises(
   const selected: Exercise[] = [];
   const usedSkills = new Set<string>();
 
-  // Passe A — depuis les nouveaux (triés anti-répétition)
+  // Passe A — depuis les nouveaux (anti-répétition + tri adaptatif)
   selectWithSkillDiversity(
-    antiRepeatSort(shuffle(poolNouveaux), seenBankIds, EXERCISE_BANK_MATHS),
+    sortByAdaptiveCompatibility(
+      antiRepeatSort(shuffle(poolNouveaux), seenBankIds, EXERCISE_BANK_MATHS),
+      resolvedNeeds,
+    ),
     count,
     selected,
     usedSkills,
@@ -274,8 +282,9 @@ export function selectMathExercises(
     + selected.map((e) => e.sous_domaine).join(", ")
   );
 
-  // Mapper vers SelectedBankExercise
-  return selected.slice(0, count).map((e, i): SelectedBankExercise => ({
+  // Enforcement des plafonds adaptatifs puis mapping
+  const finalSelected = enforceAdaptiveCaps(selected.slice(0, count), poolComplet, resolvedNeeds, count);
+  return finalSelected.map((e, i): SelectedBankExercise => ({
     ordre:            ordreDebut + i,
     matiere:          "Mathématiques" as Matiere,
     sous_matiere:     SOUS_DOMAINE_LABELS_MATHS[e.sous_domaine] ?? "Mathématiques",
@@ -287,6 +296,7 @@ export function selectMathExercises(
     _bank_id:         e.id,
     _debug_classe:    e.niveau,
     _debug_skill:     e.sous_domaine,
+    meta:             e.meta,
   }));
 }
 

@@ -2,6 +2,7 @@ import type { Exercise, SousDomaine } from '../../types';
 import type { EnglishExercise } from './english.types';
 import type { EnglishSkill } from './english.types';
 import { englishExercises } from './english.bank';
+import { getExerciseMeta } from '../../core/exercise-core.meta';
 
 export const SKILL_TO_SOUS_DOMAINE_ENGLISH: Record<EnglishSkill, SousDomaine> = {
   vocabulaire:   'vocabulaire',
@@ -25,6 +26,7 @@ export function mapEnglishToExercise(e: EnglishExercise): Exercise | null {
     options: e.options.map((o) => o.text),
     bonne_reponse: correctOption.text,
     explication: e.explanation,
+    meta: getExerciseMeta(e),
   };
 }
 

@@ -419,6 +419,7 @@ export const ddmCe2EspaceFranceExercises: DecouverteExercise[] = [
     hint: 'Le Portugal est à l\'ouest de l\'Espagne — entre les deux il y a l\'Espagne.',
     estimatedMinutes: 1,
     adaptations: A,
+    meta: { visualLoad: 'high' },
   },
   {
     id: 'ddm-ce2-esp-031',

@@ -2,6 +2,7 @@ import type { Exercise, SousDomaine } from '../../types';
 import type { MathExercise } from './maths.types';
 import type { MathSkill } from './maths.types';
 import { mathsExercises } from './maths.bank';
+import { getExerciseMeta } from '../../core/exercise-core.meta';
 
 export const SKILL_TO_SOUS_DOMAINE_MATHS: Record<MathSkill, SousDomaine> = {
   numeration: 'numeration',
@@ -30,6 +31,7 @@ export function mapMathToExercise(e: MathExercise): Exercise | null {
     explication: e.explanation,
     ...(e.difficulty_tier  !== undefined && { difficulty_tier: e.difficulty_tier }),
     ...(e.school_period    !== undefined && { school_period:   e.school_period }),
+    meta: getExerciseMeta(e),
   };
 }
 
