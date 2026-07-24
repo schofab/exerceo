@@ -57,8 +57,7 @@ export default async function PagesLayout({
                     className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border"
                     style={{ backgroundColor: "#f5f9ff", color: "#748bf7", borderColor: "#e0e7ff" }}
                   >
-                    <Image src="/icons/picto-cible.svg" alt="" width={14} height={14} />
-                    {profile?.sessions_used ?? 0}/3
+                    Essai gratuit
                   </span>
                 )}
                 <form action={signOut}>

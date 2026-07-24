@@ -2,15 +2,14 @@
 
 export type ProgressionStage = "early" | "mid" | "late";
 
-const TRIAL_SESSIONS = parseInt(process.env.TRIAL_SESSIONS ?? "7", 10);
+const TRIAL_DAYS = 14;
 
 export interface TrialStatus {
   isPremium: boolean;
   isTrialActive: boolean;
-  freeSessionsTotal: number;
-  freeSessionsUsed: number;
-  freeSessionsRemaining: number | null; // null si premium
-  reason: "premium" | "trial_active" | "trial_expired_sessions";
+  trialDaysTotal: number;
+  trialDaysRemaining: number | null; // null si premium
+  reason: "premium" | "trial_active" | "trial_expired";
 }
 
 export function computeTrialStatus(profile: {
@@ -18,28 +17,29 @@ export function computeTrialStatus(profile: {
   sessions_used: number | null;
   created_at?: string | null;
 }): TrialStatus {
-  const used = Math.max(0, profile.sessions_used ?? 0);
-
   if (profile.is_premium) {
     return {
       isPremium: true,
       isTrialActive: true,
-      freeSessionsTotal: TRIAL_SESSIONS,
-      freeSessionsUsed: used,
-      freeSessionsRemaining: null,
+      trialDaysTotal: TRIAL_DAYS,
+      trialDaysRemaining: null,
       reason: "premium",
     };
   }
 
-  const remaining = Math.max(0, TRIAL_SESSIONS - used);
+  const createdAt = profile.created_at ? new Date(profile.created_at) : null;
+  const now = new Date();
+  const daysElapsed = createdAt
+    ? Math.floor((now.getTime() - createdAt.getTime()) / (1000 * 60 * 60 * 24))
+    : TRIAL_DAYS;
+  const daysRemaining = Math.max(0, TRIAL_DAYS - daysElapsed);
 
   return {
     isPremium: false,
-    isTrialActive: remaining > 0,
-    freeSessionsTotal: TRIAL_SESSIONS,
-    freeSessionsUsed: used,
-    freeSessionsRemaining: remaining,
-    reason: remaining > 0 ? "trial_active" : "trial_expired_sessions",
+    isTrialActive: daysRemaining > 0,
+    trialDaysTotal: TRIAL_DAYS,
+    trialDaysRemaining: daysRemaining,
+    reason: daysRemaining > 0 ? "trial_active" : "trial_expired",
   };
 }
 

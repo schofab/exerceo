@@ -64,7 +64,7 @@ export default function ExerceoPage() {
             Accéder à l'app
           </a>
         </div>
-        <p className="text-xs text-gray-400">Gratuit · 3 sessions offertes · Sans engagement</p>
+        <p className="text-xs text-gray-400">14 jours d&apos;essai gratuit · Sans carte bancaire</p>
       </section>
 
       {/* ── Comment ça marche ── */}
@@ -117,10 +117,10 @@ export default function ExerceoPage() {
         <h2 className="text-2xl font-extrabold" style={{ color: NAVY }}>Tarifs</h2>
         <div className="grid sm:grid-cols-2 gap-4 items-stretch">
           <div className="rounded-2xl border-2 border-gray-100 p-6 flex flex-col gap-4">
-            <p className="text-lg font-extrabold" style={{ color: NAVY }}>Gratuit</p>
-            <p className="text-3xl font-extrabold" style={{ color: NAVY }}>0 €</p>
+            <p className="text-lg font-extrabold" style={{ color: NAVY }}>Essai gratuit</p>
+            <p className="text-3xl font-extrabold" style={{ color: NAVY }}>14 jours</p>
             <ul className="space-y-2 text-sm text-gray-600 flex-1">
-              {["1 profil enfant", "3 sessions pour tester", "Toutes les matières", "Récompenses & Doceo"].map((item) => (
+              {["1 profil enfant", "Sessions illimitées pendant l'essai", "Toutes les matières", "Récompenses & Doceo"].map((item) => (
                 <li key={item} className="flex items-center gap-2">
                   <span style={{ color: GREEN }} className="font-bold">✓</span>{item}
                 </li>
@@ -131,21 +131,17 @@ export default function ExerceoPage() {
               className="mt-auto block text-center px-4 py-2.5 rounded-xl text-sm font-bold border-2 transition-opacity hover:opacity-80"
               style={{ borderColor: GREEN, color: GREEN }}
             >
-              Commencer gratuitement
+              Commencer l&apos;essai gratuit
             </a>
           </div>
 
           <div className="rounded-2xl p-6 flex flex-col gap-4" style={{ backgroundColor: NAVY }}>
-            <div className="flex items-center justify-between">
-              <p className="text-lg font-extrabold text-white">Premium</p>
-              <span className="text-xs font-bold px-2.5 py-1 rounded-full" style={{ backgroundColor: GREEN, color: NAVY }}>À vie</span>
-            </div>
+            <p className="text-lg font-extrabold text-white">Premium</p>
             <p className="text-3xl font-extrabold text-white">
-              <span className="line-through opacity-40 text-2xl mr-1">19 €</span>
-              15 € <span className="text-sm font-medium opacity-60">une seule fois</span>
+              29 € <span className="text-sm font-medium opacity-60">par an</span>
             </p>
             <ul className="space-y-2 text-sm text-white opacity-90 flex-1">
-              {["Enfants illimités", "Sessions illimitées", "Toutes les matières", "Récompenses & Doceo", "Accès à vie, sans abonnement"].map((item) => (
+              {["Enfants illimités", "Sessions illimitées", "Toutes les matières", "Récompenses & Doceo"].map((item) => (
                 <li key={item} className="flex items-center gap-2">
                   <span style={{ color: GREEN }} className="font-bold">✓</span>{item}
                 </li>
@@ -156,7 +152,7 @@ export default function ExerceoPage() {
               className="mt-auto block text-center px-4 py-2.5 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90"
               style={{ backgroundColor: PURPLE }}
             >
-              Passer Premium
+              Démarrer les 14 jours gratuits
             </a>
           </div>
         </div>
@@ -181,7 +177,7 @@ export default function ExerceoPage() {
         >
           Créer un compte gratuitement
         </a>
-        <p className="text-xs text-gray-400">Sans carte bancaire · Sans engagement</p>
+        <p className="text-xs text-gray-400">14 jours d&apos;essai gratuit · Sans carte bancaire</p>
       </section>
 
       {/* ── Retour ── */}

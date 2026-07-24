@@ -11,6 +11,15 @@ function getAdminClient() {
   );
 }
 
+async function setPremium(userId: string, value: boolean) {
+  const supabase = getAdminClient();
+  const { error } = await supabase
+    .from("profiles")
+    .update({ is_premium: value })
+    .eq("id", userId);
+  if (error) throw error;
+}
+
 export async function POST(request: Request) {
   const body = await request.text();
   const sig = request.headers.get("stripe-signature");
@@ -31,27 +40,53 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Signature invalide" }, { status: 400 });
   }
 
-  if (event.type === "checkout.session.completed") {
-    const session = event.data.object as Stripe.Checkout.Session;
-    const userId = session.metadata?.user_id;
+  try {
+    switch (event.type) {
+      // Checkout complété : l'abonnement (ou l'essai) vient de démarrer
+      case "checkout.session.completed": {
+        const session = event.data.object as Stripe.Checkout.Session;
+        const userId = session.metadata?.user_id;
+        if (!userId) {
+          console.error("checkout.session.completed : user_id manquant");
+          break;
+        }
+        await setPremium(userId, true);
+        console.log(`[stripe] checkout complété — is_premium=true pour ${userId}`);
+        break;
+      }
 
-    if (!userId) {
-      console.error("user_id manquant dans les metadata Stripe");
-      return NextResponse.json({ error: "user_id manquant" }, { status: 400 });
+      // Abonnement supprimé (résiliation, impayé définitif, etc.)
+      case "customer.subscription.deleted": {
+        const sub = event.data.object as Stripe.Subscription;
+        const userId = sub.metadata?.user_id;
+        if (!userId) {
+          console.error("customer.subscription.deleted : user_id manquant dans metadata");
+          break;
+        }
+        await setPremium(userId, false);
+        console.log(`[stripe] abonnement supprimé — is_premium=false pour ${userId}`);
+        break;
+      }
+
+      // Abonnement mis à jour : on révoque si le statut est annulé
+      case "customer.subscription.updated": {
+        const sub = event.data.object as Stripe.Subscription;
+        const userId = sub.metadata?.user_id;
+        if (!userId) break;
+        if (sub.status === "canceled") {
+          await setPremium(userId, false);
+          console.log(`[stripe] abonnement annulé — is_premium=false pour ${userId}`);
+        }
+        break;
+      }
+
+      default:
+        // Événement non géré — ignoré silencieusement
+        break;
     }
-
-    const supabase = getAdminClient();
-    const { error } = await supabase
-      .from("profiles")
-      .update({ is_premium: true })
-      .eq("id", userId);
-
-    if (error) {
-      console.error("Erreur mise à jour premium:", error);
-      return NextResponse.json({ error: "Erreur base de données" }, { status: 500 });
-    }
-
-    console.log(`Utilisateur ${userId} passé Premium`);
+  } catch (err) {
+    console.error(`[stripe] erreur traitement ${event.type}:`, err);
+    return NextResponse.json({ error: "Erreur serveur" }, { status: 500 });
   }
 
   return NextResponse.json({ received: true });

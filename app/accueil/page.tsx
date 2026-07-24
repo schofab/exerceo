@@ -220,7 +220,7 @@ export default async function AccueilPage() {
             {!user && (
               <>
                 <p className="text-xs text-gray-400">
-                  3 séances offertes · Sans carte bancaire · Sans engagement
+                  14 jours d&apos;essai gratuit · Sans carte bancaire
                 </p>
                 <p className="text-xs" style={{ color: "#9298c8" }}>
                   Du CP au CM2 · Séances courtes · Exercices pensés pour l'entraînement à la maison
@@ -438,7 +438,7 @@ export default async function AccueilPage() {
               Prêt à commencer ?
             </h2>
             <p className="text-sm text-gray-500 mb-6">
-              Essayez Exerceo gratuitement avec 3 sessions offertes, sans carte bancaire.
+              Essayez exerceō gratuitement pendant 14 jours, sans carte bancaire.
             </p>
             <Link
               href="/inscription"

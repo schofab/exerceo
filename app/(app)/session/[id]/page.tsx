@@ -22,10 +22,9 @@ interface Reponse {
 type TrialStatus = {
   isPremium: boolean;
   isTrialActive: boolean;
-  freeSessionsTotal: number;
-  freeSessionsUsed: number;
-  freeSessionsRemaining: number | null;
-  reason: "premium" | "trial_active" | "trial_expired_sessions";
+  trialDaysTotal: number;
+  trialDaysRemaining: number | null;
+  reason: "premium" | "trial_active" | "trial_expired";
 };
 
 // Messages de motivation par tranche de score
@@ -280,10 +279,7 @@ export default function SessionPage() {
       : 0;
 
   const canStartNewSession =
-    !!trialStatus &&
-    (trialStatus.isPremium ||
-      (trialStatus.isTrialActive &&
-        (trialStatus.freeSessionsRemaining ?? 0) > 0));
+    !!trialStatus && (trialStatus.isPremium || trialStatus.isTrialActive);
 
   return (
     <div className="space-y-5">

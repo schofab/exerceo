@@ -6,7 +6,7 @@ import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import type { Enfant, NotionStats, Profile } from "@/lib/types";
-import { LIMITE_ENFANTS_GRATUIT, LIMITE_SESSIONS_GRATUITES } from "@/lib/types";
+import { LIMITE_ENFANTS_GRATUIT } from "@/lib/types";
 import DeleteEnfantButton from "@/components/DeleteEnfantButton";
 import ProgressionEnfant from "@/components/ProgressionEnfant";
 import TrialBanner from "@/components/TrialBanner";
@@ -86,8 +86,6 @@ export default async function TableauDeBordPage() {
     }
   });
 
-  const sessionRestantes =
-    LIMITE_SESSIONS_GRATUITES - (profile?.sessions_used ?? 0);
   const peutAjouterEnfant =
     profile?.is_premium || (enfants ?? []).length < LIMITE_ENFANTS_GRATUIT;
 

@@ -169,6 +169,5 @@ export interface CreatureAvecStatut extends Creature {
 }
 
 // ── Limites du plan gratuit ────────────────────────────────────
-export const LIMITE_SESSIONS_GRATUITES = 3;
 export const LIMITE_ENFANTS_GRATUIT = 1;
-export const PRIX_PREMIUM_CENTIMES = 1500; // 15€ en centimes
+export const PRIX_PREMIUM_CENTIMES = 2900; // 29€/an en centimes

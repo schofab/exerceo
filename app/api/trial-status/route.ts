@@ -45,9 +45,8 @@ export async function GET() {
   return NextResponse.json({
     isPremium: trial.isPremium,
     isTrialActive: trial.isTrialActive,
-    freeSessionsTotal: trial.freeSessionsTotal,
-    freeSessionsUsed: trial.freeSessionsUsed,
-    freeSessionsRemaining: trial.freeSessionsRemaining,
+    trialDaysTotal: trial.trialDaysTotal,
+    trialDaysRemaining: trial.trialDaysRemaining,
     reason: trial.reason,
   });
 }

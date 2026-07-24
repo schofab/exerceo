@@ -14,26 +14,19 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
     reponse: (
       <>
         <p>
-          exerceō est disponible en deux formules :
+          exerceō propose un essai gratuit de 14 jours, sans carte bancaire.
+          Après l&apos;essai, l&apos;abonnement est à <strong>29 € par an</strong>.
         </p>
         <ul className="mt-2 space-y-1 list-disc list-inside text-gray-600">
           <li>
-            <strong>Gratuit — 0 €</strong> : 1 profil enfant, 3 sessions pour
-            découvrir l'application, accès à toutes les matières et aux
-            récompenses Doceo.
+            <strong>Essai gratuit — 14 jours</strong> : 1 profil enfant, accès
+            à toutes les matières et aux récompenses Doceo.
           </li>
           <li>
-            <strong>Premium — 15 € une seule fois</strong> : enfants illimités,
-            sessions illimitées, accès à vie sans abonnement.{" "}
-            <span style={{ color: PURPLE }} className="font-semibold">
-              Offre de lancement : 15 € au lieu de 19 €.
-            </span>
+            <strong>Premium — 29 € par an</strong> : enfants illimités, sessions
+            illimitées, accès complet à toutes les matières.
           </li>
         </ul>
-        <p className="mt-2">
-          Aucun abonnement, aucune reconduction automatique. Vous payez une fois
-          et c'est pour toujours.
-        </p>
       </>
     ),
   },
@@ -43,10 +36,10 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
       <>
         <p>
           exerceō est développé et maintenu de façon indépendante, sans
-          investisseurs ni modèle publicitaire. Le prix unique de 15 € couvre
-          les coûts d'infrastructure (hébergement, base de données,
-          enrichissement continu de la banque d'exercices) et permet à
-          l'application d'exister durablement.
+          investisseurs ni modèle publicitaire. L&apos;abonnement de 29 € par an
+          couvre les coûts d&apos;infrastructure (hébergement, base de données,
+          enrichissement continu de la banque d&apos;exercices) et permet à
+          l&apos;application d&apos;exister durablement.
         </p>
         <p className="mt-2">
           Pas de données revendues, pas de publicité ciblée. Votre enfant
@@ -86,8 +79,8 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
     question: "Puis-je utiliser exerceō pour plusieurs enfants ?",
     reponse: (
       <p>
-        Avec le compte gratuit, vous pouvez créer <strong>1 profil enfant</strong>.
-        Avec le compte Premium (15 € une fois), vous pouvez créer{" "}
+        Pendant l&apos;essai gratuit, vous pouvez créer <strong>1 profil enfant</strong>.
+        Avec le compte Premium (29 € par an), vous pouvez créer{" "}
         <strong>autant de profils que vous le souhaitez</strong> — pratique pour
         les familles avec plusieurs enfants à des niveaux différents.
       </p>
@@ -127,8 +120,8 @@ const FAQ: { question: string; reponse: React.ReactNode }[] = [
         sessions sont courtes, les exercices variés, et un système de
         récompenses (étoiles, créatures Doceo à collectionner) donne à l'enfant
         une motivation concrète au-delà de la note. Bien sûr, chaque enfant est
-        différent — c'est pourquoi les 3 sessions gratuites permettent de tester
-        l'adhésion avant tout engagement.
+        différent — c&apos;est pourquoi les 14 jours d&apos;essai gratuit permettent de
+        tester l&apos;application avant tout engagement.
       </p>
     ),
   },
@@ -273,7 +266,7 @@ export default function FaqPage() {
           </a>
         </div>
         <p className="text-xs text-gray-400">
-          3 sessions offertes · Sans carte bancaire
+          14 jours d&apos;essai gratuit · Sans carte bancaire
         </p>
       </div>
     </div>

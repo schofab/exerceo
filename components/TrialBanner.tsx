@@ -5,10 +5,9 @@ import { useEffect, useState } from "react";
 type TrialStatus = {
   isPremium: boolean;
   isTrialActive: boolean;
-  freeSessionsTotal: number;
-  freeSessionsUsed: number;
-  freeSessionsRemaining: number | null;
-  reason: "premium" | "trial_active" | "trial_expired_sessions";
+  trialDaysTotal: number;
+  trialDaysRemaining: number | null;
+  reason: "premium" | "trial_active" | "trial_expired";
 };
 
 export default function TrialBanner() {
@@ -42,17 +41,16 @@ export default function TrialBanner() {
   if (status.isPremium) {
     return (
       <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
-        Vous êtes sur l’offre Premium. Accès illimité activé.
+        Vous êtes sur l&apos;offre Premium. Accès illimité activé.
       </div>
     );
   }
 
   if (status.isTrialActive) {
+    const j = status.trialDaysRemaining ?? 0;
     return (
       <div className="rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800">
-        Il vous reste {status.freeSessionsRemaining} séance
-        {status.freeSessionsRemaining === 1 ? "" : "s"} gratuite
-        {status.freeSessionsRemaining === 1 ? "" : "s"} sur {status.freeSessionsTotal}.
+        Il vous reste {j} jour{j > 1 ? "s" : ""} sur votre essai gratuit.
       </div>
     );
   }

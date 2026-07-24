@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { stripe } from "@/lib/stripe";
-import { PRIX_PREMIUM_CENTIMES } from "@/lib/types";
 
 export async function GET() {
   const supabase = await createClient();
@@ -16,23 +15,20 @@ export async function GET() {
   }
 
   const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+  const priceId = process.env.STRIPE_PRICE_ID;
+
+  if (!priceId) {
+    console.error("STRIPE_PRICE_ID manquant");
+    return NextResponse.redirect(new URL("/tableau-de-bord", appUrl));
+  }
 
   const session = await stripe.checkout.sessions.create({
-    mode: "payment",
-    line_items: [
-      {
-        price_data: {
-          currency: "eur",
-          product_data: {
-            name: "Minis Exos Premium",
-            description:
-              "Accès illimité à vie — exercices personnalisés pour vos enfants",
-          },
-          unit_amount: PRIX_PREMIUM_CENTIMES,
-        },
-        quantity: 1,
-      },
-    ],
+    mode: "subscription",
+    line_items: [{ price: priceId, quantity: 1 }],
+    subscription_data: {
+      trial_period_days: 14,
+      metadata: { user_id: user.id },
+    },
     metadata: { user_id: user.id },
     success_url: `${appUrl}/succes`,
     cancel_url: `${appUrl}/tableau-de-bord`,

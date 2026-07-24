@@ -17,7 +17,7 @@ export default function InscriptionPage() {
             Créez votre compte
           </h1>
           <p className="text-center text-sm font-bold text-navy-800 mb-6">
-            3 sessions gratuites, sans carte bancaire.
+            14 jours d&apos;essai gratuit, sans carte bancaire.
           </p>
           <AuthForm mode="inscription" />
         </div>

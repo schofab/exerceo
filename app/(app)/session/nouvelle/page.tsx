@@ -95,7 +95,7 @@ export default async function NouvelleSessionPage({
           style={{ backgroundColor: "#fff7ed", border: "1.5px solid #fed7aa" }}
         >
           <p className="text-base font-extrabold" style={{ color: "#9a3412" }}>
-            Votre essai gratuit est terminé.
+            Votre essai de 14 jours est terminé.
           </p>
           <p className="text-sm mt-1" style={{ color: "#c2410c" }}>
             Passez à Premium pour continuer à créer de nouvelles sessions.
