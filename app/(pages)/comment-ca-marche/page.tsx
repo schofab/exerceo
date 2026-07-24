@@ -88,6 +88,30 @@ export default function CommentCaMarchePage() {
         ))}
       </div>
 
+      {/* ── Adaptation des sessions ── */}
+      <div
+        className="rounded-2xl p-5 space-y-3 border border-gray-200"
+        style={{ backgroundColor: "#fffdf5" }}
+      >
+        <h2 className="font-extrabold text-sm" style={{ color: NAVY }}>
+          Adaptation des sessions
+        </h2>
+        <div className="space-y-3 text-sm text-gray-600 leading-relaxed">
+          <p>
+            Selon les informations renseignées dans le profil de l&apos;élève,
+            certaines sessions peuvent être ajustées afin de limiter la présence
+            de certains types d&apos;exercices plus exigeants, notamment en calcul
+            ou en repérage visuel.
+          </p>
+          <p>
+            Ces ajustements restent partiels et dépendent des exercices
+            disponibles dans chaque matière. Ils ont pour objectif de proposer
+            un parcours un peu plus accessible, sans remplacer un
+            accompagnement pédagogique, scolaire ou spécialisé.
+          </p>
+        </div>
+      </div>
+
       {/* ── Ce qu'Exerceo est et n'est pas ── */}
       <div
         className="rounded-2xl p-5 space-y-3 border border-gray-200"
