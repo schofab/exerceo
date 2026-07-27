@@ -130,21 +130,6 @@ export default async function AccueilPage() {
           <div className="flex items-center gap-2">
             {user ? (
               <>
-                {profile?.is_premium && (
-                  <span
-                    className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold"
-                    style={{ backgroundColor: GREEN, color: NAVY }}
-                  >
-                    ✦ Premium
-                  </span>
-                )}
-                <Link
-                  href="/tableau-de-bord"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm font-semibold text-white transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: PURPLE }}
-                >
-                  Tableau de bord
-                </Link>
                 <AccueilSignOut />
               </>
             ) : (

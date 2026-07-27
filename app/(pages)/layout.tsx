@@ -1,5 +1,4 @@
 import { createClient } from "@/lib/supabase/server";
-import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import Footer from "@/components/Footer";
@@ -19,16 +18,6 @@ export default async function PagesLayout({
     data: { user },
   } = await supabase.auth.getUser();
 
-  let profile: { is_premium: boolean; sessions_used: number } | null = null;
-  if (user) {
-    const { data } = await supabase
-      .from("profiles")
-      .select("is_premium, sessions_used")
-      .eq("id", user.id)
-      .single();
-    profile = data;
-  }
-
   async function signOut() {
     "use server";
     const supabase = await createClient();
@@ -46,22 +35,6 @@ export default async function PagesLayout({
           <div className="flex items-center gap-3">
             {user ? (
               <>
-                {profile?.is_premium ? (
-                  <span
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border"
-                    style={{ backgroundColor: "#6bd6a6", color: "#071453", borderColor: "#6bd6a6" }}
-                  >
-                    <Image src="/icons/picto-premium-blanc.svg" alt="" width={14} height={14} />
-                    Premium
-                  </span>
-                ) : (
-                  <span
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border"
-                    style={{ backgroundColor: "#f5f9ff", color: "#748bf7", borderColor: "#e0e7ff" }}
-                  >
-                    Essai gratuit
-                  </span>
-                )}
                 <form action={signOut}>
                   <button
                     type="submit"
