@@ -11,7 +11,6 @@ import type { FeedbackSignal } from "@/components/ExerciceFeedback";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import CreatureUnlockPopup from "@/components/CreatureUnlockPopup";
-import TrialBanner from "@/components/TrialBanner";
 
 interface Reponse {
   exercice_id: string;
@@ -283,8 +282,6 @@ export default function SessionPage() {
 
   return (
     <div className="space-y-5">
-      <TrialBanner />
-
       {/* ── Header ── */}
       <div className="animate-fade-slide-up">
         <h1 className="text-2xl font-extrabold" style={{ color: "#071453" }}>

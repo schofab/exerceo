@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 type TrialStatus = {
   isPremium: boolean;
@@ -38,13 +39,7 @@ export default function TrialBanner() {
 
   if (loading || !status) return null;
 
-  if (status.isPremium) {
-    return (
-      <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
-        Vous êtes sur l&apos;offre Premium. Accès illimité activé.
-      </div>
-    );
-  }
+  if (status.isPremium) return null;
 
   if (status.isTrialActive) {
     const j = status.trialDaysRemaining ?? 0;
@@ -56,8 +51,16 @@ export default function TrialBanner() {
   }
 
   return (
-    <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-      Votre essai gratuit est terminé. Passez à Premium pour continuer.
+    <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900 flex items-center justify-between gap-3 flex-wrap">
+      <span>Votre essai gratuit est terminé.</span>
+      <Link
+        href="/api/stripe/checkout"
+        prefetch={false}
+        className="inline-flex items-center justify-center px-4 py-1.5 rounded-lg text-xs font-bold text-white transition-opacity hover:opacity-90 flex-shrink-0"
+        style={{ backgroundColor: "#748bf7" }}
+      >
+        Passer Premium
+      </Link>
     </div>
   );
 }

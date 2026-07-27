@@ -9,8 +9,6 @@ import type { Enfant, NotionStats, Profile } from "@/lib/types";
 import { LIMITE_ENFANTS_GRATUIT } from "@/lib/types";
 import DeleteEnfantButton from "@/components/DeleteEnfantButton";
 import ProgressionEnfant from "@/components/ProgressionEnfant";
-import TrialBanner from "@/components/TrialBanner";
-
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Tableau de bord — exerceō" };
 
@@ -91,10 +89,6 @@ export default async function TableauDeBordPage() {
 
   return (
     <div className="space-y-6 animate-fade-slide-up">
-
-      {/* ── Bannière statut d'essai / premium ── */}
-      <TrialBanner />
-
 
       {/* ── Profils enfants ── */}
       <div>

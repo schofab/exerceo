@@ -8,8 +8,6 @@ import Image from "next/image";
 import Button from "@/components/ui/Button";
 import { MATIERES_LIST } from "@/lib/matieres";
 import { computeTrialStatus } from "@/lib/trial";
-import TrialBanner from "@/components/TrialBanner";
-
 export const metadata = { title: "Nouvelle session — exerceō" };
 
 // ── Helpers ──────────────────────────────────────────────────────
@@ -133,8 +131,6 @@ const faiblesses: NotionStats[] = faiblessesArray.filter(
 
     return (
     <div className="space-y-5 animate-fade-slide-up">
-
-      <TrialBanner />
 
       {/* ── Message de bienvenue + profil enfant ── */}
       <div className="rounded-2xl bg-white border border-blue-100 shadow-sm px-5 py-4 flex items-center gap-3">
