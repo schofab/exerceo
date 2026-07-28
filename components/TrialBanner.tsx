@@ -44,8 +44,16 @@ export default function TrialBanner() {
   if (status.isTrialActive) {
     const j = status.trialDaysRemaining ?? 0;
     return (
-      <div className="rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800">
-        Il vous reste <strong>{j} jour{j > 1 ? "s" : ""}</strong> sur votre essai gratuit.
+      <div className="rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800 flex items-center justify-between gap-3 flex-wrap">
+        <span>Il vous reste <strong>{j} jour{j > 1 ? "s" : ""}</strong> d'essai gratuit.</span>
+        <Link
+          href="/api/stripe/checkout"
+          prefetch={false}
+          className="inline-flex items-center justify-center px-4 py-1.5 rounded-lg text-xs font-bold text-white transition-opacity hover:opacity-90 flex-shrink-0"
+          style={{ backgroundColor: "#748bf7" }}
+        >
+          Passer Premium maintenant
+        </Link>
       </div>
     );
   }
