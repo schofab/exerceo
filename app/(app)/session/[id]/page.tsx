@@ -444,7 +444,7 @@ export default function SessionPage() {
               </Button>
             ) : (
               <Button
-                onClick={() => router.push("/premium")}
+                onClick={() => router.push("/api/stripe/checkout")}
                 size="lg"
               >
                 Passer Premium

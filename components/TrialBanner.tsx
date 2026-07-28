@@ -45,7 +45,7 @@ export default function TrialBanner() {
     const j = status.trialDaysRemaining ?? 0;
     return (
       <div className="rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800">
-        Il vous reste {j} jour{j > 1 ? "s" : ""} sur votre essai gratuit.
+        Il vous reste <strong>{j} jour{j > 1 ? "s" : ""}</strong> sur votre essai gratuit.
       </div>
     );
   }
@@ -59,7 +59,7 @@ export default function TrialBanner() {
         className="inline-flex items-center justify-center px-4 py-1.5 rounded-lg text-xs font-bold text-white transition-opacity hover:opacity-90 flex-shrink-0"
         style={{ backgroundColor: "#748bf7" }}
       >
-        Passer Premium
+        Passer Premium — 29 €/an
       </Link>
     </div>
   );
