@@ -10,27 +10,50 @@ function getAdminClient() {
   );
 }
 
-// Résolution userId : metadata en priorité, fallback via stripe_customer_id en base
+// Résolution userId dans cet ordre :
+// 1. metadata.user_id (argument direct)
+// 2. lookup stripe_customer_id en base
+// 3. fetch subscription Stripe → metadata.user_id (fallback autoritatif)
 async function resolveUserId(
   metadataUserId: string | undefined | null,
-  customerId: string | null | undefined
+  customerId: string | null | undefined,
+  subId?: string | null
 ): Promise<string | null> {
+  // 1. metadata directe
   if (metadataUserId) return metadataUserId;
-  if (!customerId) return null;
 
-  const supabase = getAdminClient();
-  const { data, error } = await supabase
-    .from("profiles")
-    .select("id")
-    .eq("stripe_customer_id", customerId)
-    .single();
+  // 2. lookup via stripe_customer_id déjà stocké en base
+  if (customerId) {
+    const supabase = getAdminClient();
+    const { data, error } = await supabase
+      .from("profiles")
+      .select("id")
+      .eq("stripe_customer_id", customerId)
+      .single();
 
-  if (error) {
-    console.error(`[stripe] resolveUserId — erreur lookup customer ${customerId}:`, error.message);
-    return null;
+    if (error) {
+      console.error(`[stripe] resolveUserId — erreur lookup customer ${customerId}:`, error.message);
+    } else if (data?.id) {
+      return data.id;
+    }
   }
 
-  return data?.id ?? null;
+  // 3. fetch la subscription Stripe directement pour lire ses metadata
+  // Fiable car user_id est posé dans subscription_data.metadata au checkout
+  if (subId) {
+    try {
+      const sub = await stripe.subscriptions.retrieve(subId);
+      const uid = sub.metadata?.user_id;
+      if (uid) {
+        console.log(`[stripe] resolveUserId — user_id récupéré depuis subscription Stripe (${subId})`);
+        return uid;
+      }
+    } catch (err) {
+      console.error(`[stripe] resolveUserId — impossible de récupérer subscription ${subId}:`, err);
+    }
+  }
+
+  return null;
 }
 
 interface ProfilePatch {
@@ -88,14 +111,14 @@ export async function POST(request: Request) {
     switch (event.type) {
 
       // ── checkout.session.completed ──────────────────────────────────────────
-      // Stocke customer + subscription IDs dès le checkout pour que le fallback
-      // resolveUserId fonctionne sur les events suivants.
-      // Si payment_status === "paid", active le premium immédiatement.
-      // Sinon, l'activation est prise en charge par invoice.paid ci-dessous.
+      // Persiste stripe_customer_id + stripe_subscription_id dès le checkout
+      // pour que le fallback resolveUserId fonctionne sur les events suivants.
+      // Active is_premium immédiatement si payment_status === "paid".
+      // Sinon, l'activation est prise en charge par invoice.paid.
       case "checkout.session.completed": {
         const session = event.data.object as Stripe.Checkout.Session;
 
-        const metaUserId = session.metadata?.user_id;
+        const metaUserId = session.metadata?.user_id ?? null;
         const customerId =
           typeof session.customer === "string"
             ? session.customer
@@ -109,10 +132,10 @@ export async function POST(request: Request) {
           `[stripe] checkout.session.completed — payment_status=${session.payment_status} customer=${customerId} sub=${subId} meta_user=${metaUserId}`
         );
 
-        const userId = await resolveUserId(metaUserId, customerId);
+        const userId = await resolveUserId(metaUserId, customerId, subId);
         if (!userId) {
           console.error(
-            `[stripe] checkout.session.completed — userId introuvable. meta=${metaUserId} customer=${customerId}`
+            `[stripe] checkout.session.completed — userId introuvable. meta=${metaUserId} customer=${customerId} sub=${subId}`
           );
           break;
         }
@@ -140,9 +163,8 @@ export async function POST(request: Request) {
       }
 
       // ── invoice.paid / invoice.payment_succeeded ────────────────────────────
-      // Source d'autorité pour l'activation premium : couvre le paiement initial
-      // et tous les renouvellements annuels. Les deux events transportent le même
-      // objet Invoice et sont traités avec la même logique.
+      // Source d'autorité pour l'activation premium. Résolution userId en 3 étapes :
+      // subscription_details.metadata → stripe_customer_id en base → fetch Stripe.
       case "invoice.paid":
       case "invoice.payment_succeeded": {
         const invoice = event.data.object as Stripe.Invoice;
@@ -156,19 +178,20 @@ export async function POST(request: Request) {
             ? invoice.subscription
             : (invoice.subscription as Stripe.Subscription | null)?.id ?? null;
 
-        // subscription_details.metadata est propagé depuis subscription_data.metadata du checkout
-        const metaUserId =
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (invoice as any).subscription_details?.metadata?.user_id ?? null;
+        // Chemin 1 : subscription_details.metadata (propagé depuis subscription_data.metadata)
+        // Peut être null sur la première facture selon le timing de l'event Stripe.
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const metaUserId = (invoice as any).subscription_details?.metadata?.user_id ?? null;
 
         console.log(
           `[stripe] ${event.type} — customer=${customerId} sub=${subId} meta_user=${metaUserId}`
         );
 
-        const userId = await resolveUserId(metaUserId, customerId);
+        // Chemins 2 et 3 gérés dans resolveUserId (lookup DB puis fetch Stripe)
+        const userId = await resolveUserId(metaUserId, customerId, subId);
         if (!userId) {
           console.error(
-            `[stripe] ${event.type} — userId introuvable. customer=${customerId} sub=${subId}`
+            `[stripe] ${event.type} — userId introuvable après tous les fallbacks. customer=${customerId} sub=${subId}`
           );
           break;
         }
@@ -187,7 +210,6 @@ export async function POST(request: Request) {
       }
 
       // ── customer.subscription.updated ───────────────────────────────────────
-      // Surveille les changements de statut : réactivation, impayé, annulation.
       case "customer.subscription.updated": {
         const sub = event.data.object as Stripe.Subscription;
 
@@ -200,7 +222,7 @@ export async function POST(request: Request) {
           `[stripe] customer.subscription.updated — status=${sub.status} customer=${customerId}`
         );
 
-        const userId = await resolveUserId(sub.metadata?.user_id, customerId);
+        const userId = await resolveUserId(sub.metadata?.user_id, customerId, sub.id);
         if (!userId) {
           console.error(
             `[stripe] customer.subscription.updated — userId introuvable. customer=${customerId}`
@@ -239,7 +261,6 @@ export async function POST(request: Request) {
       }
 
       // ── customer.subscription.deleted ───────────────────────────────────────
-      // Abonnement résilié définitivement côté Stripe.
       case "customer.subscription.deleted": {
         const sub = event.data.object as Stripe.Subscription;
 
@@ -252,7 +273,7 @@ export async function POST(request: Request) {
           `[stripe] customer.subscription.deleted — customer=${customerId}`
         );
 
-        const userId = await resolveUserId(sub.metadata?.user_id, customerId);
+        const userId = await resolveUserId(sub.metadata?.user_id, customerId, sub.id);
         if (!userId) {
           console.error(
             `[stripe] customer.subscription.deleted — userId introuvable. customer=${customerId}`
