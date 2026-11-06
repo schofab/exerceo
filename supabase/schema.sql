@@ -35,8 +35,11 @@ create table if not exists public.enfants (
   age int not null check (age between 5 and 12),
   classe text not null check (classe in ('CP', 'CE1', 'CE2', 'CM1', 'CM2')),
   niveau text not null check (niveau in ('debutant', 'intermediaire', 'avance')),
+  learning_profile text not null default 'standard'
+    check (learning_profile in ('standard', 'lecture_simplifiee', 'attention_courte', 'progressif', 'defi_avance')),
   facilites text[] not null default '{}',
   lacunes text[] not null default '{}',
+  support_needs jsonb not null default '{"dyslexia":false,"dysorthography":false,"dyscalculia":false,"dyspraxia":false,"attentionSupport":false}'::jsonb,
   created_at timestamptz not null default now()
 );
 

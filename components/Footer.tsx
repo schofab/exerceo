@@ -16,11 +16,15 @@ export default function Footer() {
     <footer className="mt-12 border-t border-gray-100 py-8 px-4">
       <div className="max-w-md mx-auto space-y-4">
         {/* Logos sur une ligne */}
-        <Link href="/accueil" className="inline-flex items-center gap-2">
-          <Image src="/icons/Logo-exerceo.svg" alt="exerceō" width={90} height={24} />
+        <div className="inline-flex items-center gap-2">
+          <Link href="/accueil">
+            <Image src="/icons/Logo-exerceo.svg" alt="exerceō" width={90} height={24} />
+          </Link>
           <span className="text-xs font-medium text-gray-400">par</span>
-          <Image src="/icons/Logo-mixarto.svg" alt="mixarto" width={72} height={20} />
-        </Link>
+          <Link href="https://mixarto.com" target="_blank" rel="noopener noreferrer">
+            <Image src="/icons/Logo-mixarto.svg" alt="mixarto" width={72} height={20} />
+          </Link>
+        </div>
 
         {/* Phrase rassurante */}
         <p className="text-xs text-gray-500 leading-relaxed">
