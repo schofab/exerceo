@@ -87,6 +87,15 @@ export default function NavActions() {
         </Link>
       )}
 
+      {status?.isPremium && (
+        <span
+          className="text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap"
+          style={{ backgroundColor: "#d1fae5", color: "#065f46" }}
+        >
+          ✦ Premium
+        </span>
+      )}
+
       {/* Bouton déconnexion — icône uniquement */}
       <button
         onClick={handleSignOut}
