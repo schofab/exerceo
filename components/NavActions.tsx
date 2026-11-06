@@ -63,7 +63,7 @@ export default function NavActions() {
             className="text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap"
             style={{ backgroundColor: "#e8edff", color: "#071453" }}
           >
-            {status.trialDaysRemaining} j
+            {status.trialDaysRemaining}j gratuits restants
           </span>
           <Link
             href="/api/stripe/checkout"
@@ -71,7 +71,7 @@ export default function NavActions() {
             className="text-xs font-bold px-3 py-1.5 rounded-lg text-white transition-opacity hover:opacity-90 whitespace-nowrap"
             style={{ backgroundColor: "#748bf7" }}
           >
-            Premium
+            Passer Premium
           </Link>
         </>
       )}
