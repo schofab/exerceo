@@ -2,9 +2,8 @@ import { createClient } from "@/lib/supabase/server"
 import Link from "next/link"
 import Image from "next/image"
 import Footer from "@/components/Footer"
-import AccueilSignOut from "@/components/AccueilSignOut"
 import AppSubNav from "@/components/AppSubNav"
-import TrialBanner from "@/components/TrialBanner"
+import NavActions from "@/components/NavActions"
 import type { Enfant, Profile } from "@/lib/types"
 
 export const dynamic = "force-dynamic"
@@ -129,9 +128,7 @@ export default async function AccueilPage() {
           {/* Actions header */}
           <div className="flex items-center gap-2">
             {user ? (
-              <>
-                <AccueilSignOut />
-              </>
+              <NavActions />
             ) : (
               <>
                 <Link
@@ -156,13 +153,6 @@ export default async function AccueilPage() {
 
       {/* ── Barre de navigation secondaire ── */}
       {user && <AppSubNav />}
-
-      {/* ── Bandeau trial (connecté uniquement) ── */}
-      {user && (
-        <div className="max-w-lg mx-auto w-full px-4 pt-4">
-          <TrialBanner />
-        </div>
-      )}
 
       <main className="flex-1">
 

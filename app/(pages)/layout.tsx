@@ -2,9 +2,8 @@ import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import Footer from "@/components/Footer";
-import { redirect } from "next/navigation";
 import AppSubNav from "@/components/AppSubNav";
-import TrialBanner from "@/components/TrialBanner";
+import NavActions from "@/components/NavActions";
 
 export const dynamic = "force-dynamic";
 
@@ -18,13 +17,6 @@ export default async function PagesLayout({
     data: { user },
   } = await supabase.auth.getUser();
 
-  async function signOut() {
-    "use server";
-    const supabase = await createClient();
-    await supabase.auth.signOut();
-    redirect("/connexion");
-  }
-
   return (
     <div className="min-h-screen bg-white flex flex-col">
 
@@ -34,16 +26,7 @@ export default async function PagesLayout({
           <Logo className="scale-75 origin-left" />
           <div className="flex items-center gap-3">
             {user ? (
-              <>
-                <form action={signOut}>
-                  <button
-                    type="submit"
-                    className="text-sm text-gray-400 hover:text-gray-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-gray-100"
-                  >
-                    Déconnexion
-                  </button>
-                </form>
-              </>
+              <NavActions />
             ) : (
               <>
                 <Link
@@ -68,13 +51,6 @@ export default async function PagesLayout({
 
       {/* ── Barre secondaire (connecté uniquement) ── */}
       {user && <AppSubNav />}
-
-      {/* ── Bandeau trial (connecté uniquement) ── */}
-      {user && (
-        <div className="max-w-lg mx-auto w-full px-4 sm:px-6 pt-4">
-          <TrialBanner />
-        </div>
-      )}
 
       {/* ── Contenu ── */}
       <main className="flex-1 max-w-lg mx-auto w-full px-4 sm:px-6 py-10">
