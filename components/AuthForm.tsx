@@ -90,15 +90,27 @@ export default function AuthForm({ mode }: AuthFormProps) {
           required
           autoComplete="email"
         />
-        <Input
-          label="Mot de passe"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Minimum 6 caractères"
-          required
-          autoComplete={mode === "inscription" ? "new-password" : "current-password"}
-        />
+        <div>
+          <Input
+            label="Mot de passe"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Minimum 6 caractères"
+            required
+            autoComplete={mode === "inscription" ? "new-password" : "current-password"}
+          />
+          {mode === "connexion" && (
+            <div className="mt-1.5 text-right">
+              <Link
+                href="/mot-de-passe-oublie"
+                className="text-xs text-gray-400 hover:text-blue-600 transition-colors"
+              >
+                Mot de passe oublié ?
+              </Link>
+            </div>
+          )}
+        </div>
 
         {error && (
           <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
