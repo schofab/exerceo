@@ -78,8 +78,23 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Profil introuvable" }, { status: 404 });
   }
 
+  // Rate limiting : max 10 sessions par heure par utilisateur
+  const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000).toISOString();
+  const { count: sessionsLastHour } = await supabase
+    .from("sessions")
+    .select("id", { count: "exact", head: true })
+    .eq("parent_id", user.id)
+    .gte("created_at", oneHourAgo);
+
+  if ((sessionsLastHour ?? 0) >= 10) {
+    return NextResponse.json(
+      { error: "Trop de sessions générées. Réessaie dans une heure." },
+      { status: 429 }
+    );
+  }
+
   // Vérifier le quota
-const trial = computeTrialStatus(profile);
+  const trial = computeTrialStatus(profile);
 
 if (!trial.isTrialActive) {
   return NextResponse.json(

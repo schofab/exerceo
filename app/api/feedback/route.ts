@@ -5,6 +5,10 @@ export async function POST(req: Request) {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
 
+  if (!user) {
+    return NextResponse.json({ error: "Non authentifié" }, { status: 401 });
+  }
+
   const body = await req.json();
 
   const { prenom, appareil, note, points_positifs, points_ameliorer, bug, usage_regulier, intention_payer } = body;
