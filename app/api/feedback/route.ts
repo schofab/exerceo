@@ -11,7 +11,7 @@ export async function POST(req: Request) {
 
   const body = await req.json();
 
-  const { prenom, appareil, note, points_positifs, points_ameliorer, bug, usage_regulier, intention_payer } = body;
+  const { prenom, appareil, note, points_positifs, points_ameliorer, bug, usage_regulier, intention_payer, commentaire_libre } = body;
 
   if (!prenom || !note) {
     return NextResponse.json({ error: "Champs obligatoires manquants" }, { status: 400 });
@@ -27,6 +27,7 @@ export async function POST(req: Request) {
     bug,
     usage_regulier,
     intention_payer,
+    commentaire_libre,
   });
 
   if (error) {

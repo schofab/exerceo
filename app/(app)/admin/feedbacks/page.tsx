@@ -17,6 +17,7 @@ type Feedback = {
   bug: string | null;
   usage_regulier: boolean | null;
   intention_payer: boolean | null;
+  commentaire_libre: string | null;
 };
 
 export default async function AdminFeedbacksPage() {
@@ -94,6 +95,13 @@ export default async function AdminFeedbacksPage() {
               <div>
                 <span className="text-xs font-semibold text-red-500">🐛 Bug</span>
                 <p className="text-sm text-gray-700 mt-0.5">{f.bug}</p>
+              </div>
+            )}
+
+            {f.commentaire_libre && (
+              <div>
+                <span className="text-xs font-semibold text-gray-400">💬 Commentaire libre</span>
+                <p className="text-sm text-gray-700 mt-0.5">{f.commentaire_libre}</p>
               </div>
             )}
 

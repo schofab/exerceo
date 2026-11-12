@@ -23,6 +23,7 @@ export default function FeedbackPage() {
   const [bug, setBug] = useState("");
   const [usageRegulier, setUsageRegulier] = useState<boolean | null>(null);
   const [intentionPayer, setIntentionPayer] = useState<boolean | null>(null);
+  const [commentaireLibre, setCommentaireLibre] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -42,6 +43,7 @@ export default function FeedbackPage() {
         bug,
         usage_regulier: usageRegulier,
         intention_payer: intentionPayer,
+        commentaire_libre: commentaireLibre,
       }),
     });
 
@@ -239,6 +241,20 @@ export default function FeedbackPage() {
               </button>
             ))}
           </div>
+        </div>
+
+        {/* Commentaire libre */}
+        <div className="space-y-1.5">
+          <label className="text-sm font-semibold" style={{ color: "#071453" }}>
+            Autre chose à ajouter ?
+          </label>
+          <textarea
+            value={commentaireLibre}
+            onChange={(e) => setCommentaireLibre(e.target.value)}
+            rows={4}
+            placeholder="Remarques libres, idées, impressions générales…"
+            className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 resize-none"
+          />
         </div>
 
         {error && (
