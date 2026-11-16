@@ -23,6 +23,7 @@ export default function FeedbackPage() {
   const [bug, setBug] = useState("");
   const [usageRegulier, setUsageRegulier] = useState<boolean | null>(null);
   const [intentionPayer, setIntentionPayer] = useState<boolean | null>(null);
+  const [avisPrix, setAvisPrix] = useState<string | null>(null);
   const [commentaireLibre, setCommentaireLibre] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
@@ -43,6 +44,7 @@ export default function FeedbackPage() {
         bug,
         usage_regulier: usageRegulier,
         intention_payer: intentionPayer,
+        avis_prix: avisPrix,
         commentaire_libre: commentaireLibre,
       }),
     });
@@ -238,6 +240,34 @@ export default function FeedbackPage() {
                 }}
               >
                 {l}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Avis sur le prix */}
+        <div className="space-y-1.5">
+          <label className="text-sm font-semibold" style={{ color: "#071453" }}>
+            29 €/an, c'est…
+          </label>
+          <div className="flex gap-2 flex-wrap">
+            {[
+              { value: "trop_cher",    label: "Trop cher" },
+              { value: "juste",        label: "Le bon prix" },
+              { value: "pas_assez",    label: "Pas assez cher" },
+            ].map(({ value, label }) => (
+              <button
+                key={value}
+                type="button"
+                onClick={() => setAvisPrix(value)}
+                className="text-sm px-4 py-2 rounded-xl border font-medium transition-colors"
+                style={{
+                  backgroundColor: avisPrix === value ? "#748bf7" : "white",
+                  color: avisPrix === value ? "white" : "#071453",
+                  borderColor: avisPrix === value ? "#748bf7" : "#e0e7ff",
+                }}
+              >
+                {label}
               </button>
             ))}
           </div>
