@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   title: "exerceō — Des exercices sur-mesure pour votre enfant",
   description:
     "En 30 secondes, générez des exercices ludiques et personnalisés selon la classe, le niveau et les besoins de votre enfant.",
+  appleWebApp: {
+    capable: true,
+    title: "exerceō",
+    statusBarStyle: "default",
+  },
+  icons: {
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
