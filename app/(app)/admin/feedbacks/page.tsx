@@ -17,7 +17,7 @@ type Feedback = {
   bug: string | null;
   usage_regulier: boolean | null;
   intention_payer: boolean | null;
-  avis_prix: string | null;
+  prix_wtp: number | null;
   commentaire_libre: string | null;
 };
 
@@ -99,12 +99,10 @@ export default async function AdminFeedbacksPage() {
               </div>
             )}
 
-            {f.avis_prix && (
+            {f.prix_wtp !== null && f.prix_wtp !== undefined && (
               <div>
-                <span className="text-xs font-semibold text-gray-400">💶 Avis prix</span>
-                <p className="text-sm text-gray-700 mt-0.5">
-                  {f.avis_prix === "trop_cher" ? "Trop cher" : f.avis_prix === "juste" ? "Le bon prix" : "Pas assez cher"}
-                </p>
+                <span className="text-xs font-semibold text-gray-400">💶 Prix accepté</span>
+                <p className="text-sm text-gray-700 mt-0.5">{f.prix_wtp} €/an</p>
               </div>
             )}
             {f.commentaire_libre && (
